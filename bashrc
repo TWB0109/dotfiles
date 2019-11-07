@@ -79,6 +79,12 @@ if ${use_color} ; then
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
+ alias cb='clear && bash'
+ alias kdeid='kdeconnect-cli -l --id-only'
+ alias autoscript='~/.autoscript.sh'
+ alias powermenu='~/.powermenu.sh'
+ alias dotpush='~/.git-dotfiles.sh'
+
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
