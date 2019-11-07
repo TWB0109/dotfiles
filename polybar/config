@@ -18,22 +18,31 @@
 
 [colors]
 ;background = ${@background}
-background = #04142E
-background-alt = #000E22 
+background = #09053A
+background-alt = #71368B 
 ;foreground = ${xrdb:color7:#222}
-foreground = #969390 
-foreground-alt = #606F88
-primary = #969390
-secondary = #606F88 
+foreground = #FAE819 
+foreground-alt = #FEF056
+primary = #FAE819
+secondary = #B52F87 
 alert = #bd2c40
-underline = #969390 
+underline = #EFAECB 
+
+;[colors]
+;background = ${xrdb:color0}
+;foreground = ${xrdb:color7}
+;foreground-alt = ${xrdb:color7}
+;primary = ${xrdb:color1}
+;secondary = ${xrdb:color2}
+;alert = ${xrdb:color3}
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
+;override-redirect = true
+;offset-x = 25%
+;offset-y = 0%
 radius = 0.0
 fixed-center = true
 
@@ -58,9 +67,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = bspwm i3 browser rhythmbox nau gcolor  
+modules-left = i3 reddit 
 modules-center = calendar date mpd 
-modules-right = xbacklight pulseaudio wlan battery powermenu 
+modules-right = DoNotDisturb xbacklight pulseaudio wlan battery powermenu 
 tray-position = right
 ;tray-padding = 2
 ;tray-background = #0063ff
@@ -263,7 +272,7 @@ time = %I:%M
 ;time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.underline}
+format-prefix-foreground = ${colors.foreground}
 format-prefix-padding = 2
 
 label = %time% 
@@ -335,24 +344,24 @@ format-discharging = <animation-discharging> <label-discharging>
 ;format-discharging-underline = ${colors.underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.underline}
+format-full-prefix-foreground = ${colors.foreground}
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 =  
-ramp-capacity-foreground = ${colors.underline}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 =  
 animation-charging-1 =  
 animation-charging-2 =   
-animation-charging-foreground = ${colors.underline}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.underline}
+animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 1000
 
 [module/temperature]
@@ -505,6 +514,15 @@ content-foreground = ${colors.foreground}
 
 click-left = gsimplecal 
 
+[module/DoNotDisturb]
+type = custom/text
+content = "ﮖ"
+
+content-foreground = ${colors.foreground}
+
+click-left= $HOME/.donotdisturb.sh
+click-right = $HOME/.disturb.sh
+
 [module/ncmpcpp]
 type = custom/text
 content = ﱘ
@@ -513,6 +531,16 @@ content-foreground = ${colors.foreground}
 content-padding = 2
 
 click-left = ncmpcpp
+
+[module/reddit]
+type = custom/text
+content = 樓
+
+content-foreground = ${colors.foreground}
+content-padding = 2
+
+click-left = chromium reddit.com
+click-right = chromium reddit.com/r/unixporn/
 
 [settings]
 screenchange-reload = true
