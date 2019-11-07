@@ -46,6 +46,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
+for_window [class="^floating$"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id xfce4-terminal && xdotool set_window --class floating $(xdotool getwindowfocus)
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -55,25 +58,31 @@ bindsym $mod+d exec rofi -show drun
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 bindsym $mod+ctrl+a exec --no-startup-id rofi -show run
-bindsym $mod+shift+w exec --no-startup-id rofi -show window
+bindsym $mod+ shift+w exec --no-startup-id rofi -show window
+# Open a rofi power manager
+bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
+# Opepn a rofi mpd manager
+bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
+# Open rofi Game Shortcuts
+bindsym $mod+Shift+g exec --no-startup-id ~/.rofi-games.sh
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+ h focus left
+bindsym $mod+ j focus down
+bindsym $mod+ k focus up
+bindsym $mod+ l focus right
+              
+# alternative ly, you can use the cursor keys:
+bindsym $mod+ Left focus left
+bindsym $mod+ Down focus down
+bindsym $mod+ Up focus up
+bindsym $mod+ Right focus right
+              
+# move focuse d window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -120,24 +129,27 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $1 "feh --bg-scale ~/Imágenes/vicecity.jpg"
+set $2 "feh --bg-scale ~/Imágenes/vicecity2.jpg"
+set $3 "feh --bg-scale ~/Imágenes/vicecity3.jpg"
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2 
+bindsym $mod+3 workspace $ws3 
+bindsym $mod+4 workspace $ws4 
+bindsym $mod+5 workspace $ws5 
+bindsym $mod+6 workspace $ws6 
+bindsym $mod+7 workspace $ws7 
+bindsym $mod+8 workspace $ws8 
+bindsym $mod+9 workspace $ws9 
+bindsym $mod+0 workspace $ws0 
 
 bindsym $mod+x mode "$mode_system"
 set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym s exec --no-startup-id betterlockscreen -s dimblur, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym x exec --no-startup-id i3exit shutdown, mode "default"
@@ -173,10 +185,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -205,9 +217,9 @@ bindsym $mod+minus scratchpad show
 #pixel 1
 
 #class                 border  backgr. text    indicator child_border
-client.focused          #969390 #969390 #285577
+client.focused          #71368B #71368B #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #04142E #04142E #292d2e #222222
+client.unfocused        #09053A #09053A #292d2e #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -219,25 +231,32 @@ new_float none
 
 			      # GAPS CONFIGURATION
 
-gaps inner  10
+gaps inner  5
 gaps outer  10
 
 # Activate smart borders (always)
 smart_borders on 
 
 # Startup applications
+exec --no-startup-id dunst
 # exec_always --no-startup-id pulseaudio --start -D
 # exec --no-startup-id pulseaudio --kill
+#exec --no-startup-id kdeconnect-indicator &
 exec --no-startup-id nm-pavucontrol
-exec_always --no-startup-id compton -b -f -c -r 12 -o 0.20 -l 0 -t 0 -D 10 
+exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec --no-startup-id blueman
-exec --no-startup-id wal -i /home/brandon/Imágenes/bluemountain.jpg  
+exec_always --no-startup-id pamac-tray &
+#exec --no-startup-id clipit
+#exec --no-startup-id blueman
+exec --no-startup-id wal -i /home/brandon/Imágenes/vicecity.jpg  
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id kdeconnect 
+#exec_always --no-startup-id polybar example & 
+#exec_always --no-startup-id kdeconnect 
+#exec_always --no-startup-id killall mpd
 exec --no-startup-id mpd --verbose
+exec --no-startup-id notify-send "Bienvenido, Brandon. Pasa un buen rato."
+exec --no-startup-id betterlockscreen -u ~/Imágenes/vicecity.jpg
+exec --no-startup-id kdeconnect-indicator &
