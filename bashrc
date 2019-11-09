@@ -84,6 +84,7 @@ if ${use_color} ; then
  alias autoscript='~/.autoscript.sh'
  alias powermenu='~/.powermenu.sh'
  alias dotpush='~/.git-dotfiles.sh'
+ alias blocks='~/blocks.sh'
 
 else
 	if [[ ${EUID} == 0 ]] ; then
