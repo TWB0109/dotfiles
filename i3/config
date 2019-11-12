@@ -217,9 +217,9 @@ bindsym $mod+minus scratchpad show
 #pixel 1
 
 #class                 border  backgr. text    indicator child_border
-client.focused          #71368B #71368B #285577
+client.focused          #922932 #922932 #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #09053A #09053A #292d2e #222222
+client.unfocused        #0F0F0E #0F0F0E #292d2e #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -243,7 +243,7 @@ exec --no-startup-id dunst
 # exec --no-startup-id pulseaudio --kill
 #exec --no-startup-id kdeconnect-indicator &
 exec --no-startup-id nm-pavucontrol
-exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 
+exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l -1 -t -1 -D 10 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 #exec --no-startup-id nitrogen --restore
@@ -251,7 +251,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id pamac-tray &
 #exec --no-startup-id clipit
 #exec --no-startup-id blueman
-exec --no-startup-id wal -i /home/brandon/Imágenes/vicecity.jpg  
+exec --no-startup-id wal -i /home/brandon/Imágenes/glitchskull.jpg  
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always --no-startup-id polybar example & 
 #exec_always --no-startup-id kdeconnect 
