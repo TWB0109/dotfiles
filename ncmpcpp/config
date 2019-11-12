@@ -30,7 +30,8 @@ now_playing_suffix = "$/b$9"
 
 [statusbar]
 #progressbar_look = "─╼ "
-progressbar_look = "●  "
+#progressbar_look = "●  "
+progressbar_look = ""
 progressbar_color = "black"
 statusbar_visibility = "no"
 statusbar_color = "default"
