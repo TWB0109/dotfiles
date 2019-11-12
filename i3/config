@@ -258,5 +258,5 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always --no-startup-id killall mpd
 exec --no-startup-id mpd --verbose
 exec --no-startup-id notify-send "Bienvenido, Brandon. Pasa un buen rato."
-exec --no-startup-id betterlockscreen -u ~/Imágenes/vicecity.jpg
+exec --no-startup-id betterlockscreen -u ~/Imágenes/blurglitchskull.jpg
 exec --no-startup-id kdeconnect-indicator &
