@@ -18,15 +18,16 @@
 
 [colors]
 ;background = ${@background}
-background = #09053A
-background-alt = #71368B 
+background = #0F0F0E
+background-alt = #0F0F0E 
+background-alt-alt = #210f10
 ;foreground = ${xrdb:color7:#222}
-foreground = #FAE819 
-foreground-alt = #FEF056
-primary = #FAE819
-secondary = #B52F87 
+foreground = #922932 
+foreground-alt = #933250
+primary = #922932
+secondary = #933250
 alert = #bd2c40
-underline = #EFAECB 
+underline = #922932 
 
 ;[colors]
 ;background = ${xrdb:color0}
@@ -82,8 +83,8 @@ tray-position = right
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -384,33 +385,12 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
-type = custom/menu
+type = custom/text
+content = 襤
 
-expand-right = true
+content-foreground = ${colors.foreground}
 
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+click-left = ~/.powermenu.sh
 
 [module/spotify]
 type = custom/script
@@ -523,15 +503,6 @@ content-foreground = ${colors.foreground}
 click-left= $HOME/.donotdisturb.sh
 click-right = $HOME/.disturb.sh
 
-[module/ncmpcpp]
-type = custom/text
-content = ﱘ
-
-content-foreground = ${colors.foreground}
-content-padding = 2
-
-click-left = ncmpcpp
-
 [module/reddit]
 type = custom/text
 content = 樓
@@ -541,6 +512,12 @@ content-padding = 2
 
 click-left = chromium reddit.com
 click-right = chromium reddit.com/r/unixporn/
+
+[module/bg]
+type = custom/text
+content = 
+
+content-foreground = #000000
 
 [settings]
 screenchange-reload = true
