@@ -85,6 +85,7 @@ if ${use_color} ; then
  alias powermenu='~/.powermenu.sh'
  alias dotpush='~/.git-dotfiles.sh'
  alias blocks='~/blocks.sh'
+ alias touchpadr='xinput disable 11 && xinput enable 11'
 
 else
 	if [[ ${EUID} == 0 ]] ; then
