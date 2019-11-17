@@ -212,6 +212,19 @@ bindsym $mod+plus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+# Key binding for mpc toggle, next and previous
+bindsym $mod+o exec --no-startup-id mpc toggle
+bindsym $mod+i exec --no-startup-id mpc prev
+bindsym $mod+p exec --no-startup-id mpc next
+
+# Key binding for mpc random
+bindsym $mod+z exec --no-startup-id mpc random on && notify-send "Random" "On"
+bindsym $mod+Shift+z exec --no-startup-id mpc random off && notify-send "Random" "Off"
+
+# Key binding for max and min brightness
+bindsym $mod+u exec --no-startup-id xbacklight -set 100
+bindsym $mod+y exec --no-startup-id xbacklight -set 0
+
 # You can also use any non-zero value if you'd like to have a border
 #for_window [class=".*"] border 
 #pixel 1
@@ -242,9 +255,9 @@ exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
 # exec_always --no-startup-id pulseaudio --start -D
 # exec --no-startup-id pulseaudio --kill
-#exec --no-startup-id kdeconnect-indicator &
+exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id nm-pavucontrol
-exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l -1 -t -1 -D 10 
+exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.1 --corner-radius 10 --backend glx 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 #exec --no-startup-id nitrogen --restore
