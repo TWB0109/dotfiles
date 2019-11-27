@@ -4,7 +4,8 @@ OffTheBalls
 Enter the Gungeon
 Party Hard
 SteamWorld Dig
-Undertale" | rofi -dmenu -p "Games")
+Undertale
+Bit Trip Runner" | rofi -dmenu -p "Games")
 
 if [ "$varName" == "DDLC" ];
 then
@@ -34,4 +35,9 @@ fi
 if [ "$varName" == "Undertale" ];
 then
   cd ~/Games/Undertale/ && cd game && ./UNDERTALE &
+fi
+
+if [ "$varName" == "Bit Trip Runner" ];
+then
+  cd ~/Games/'BIT TRIP Runner'/ && cd game && cd bit.trip.runner-1.0-64 && cd bit.trip.runner && ./bit.trip.runner
 fi
