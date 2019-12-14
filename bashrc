@@ -76,6 +76,7 @@ if ${use_color} ; then
 	fi
 
 	alias ls='ls --color=auto'
+ alias chall='chmod +x *'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -85,9 +86,9 @@ if ${use_color} ; then
  alias powermenu='~/.powermenu.sh'
  alias dotpush='~/.git-dotfiles.sh'
  alias blocks='~/blocks.sh'
- alias touchpadr='xinput disable 11 && xinput enable 11'
+ alias touchreset='xinput disable 16 && xinput enable 16'
  alias autoclass='~/.autoclass.sh'
- alias google.com='tabbed surf -e google.com'
+ alias turf='tabbed surf -e'
 
  repo='https://github.com/TWB0109/dotfiles.git'
 
