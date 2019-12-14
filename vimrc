@@ -1,6 +1,7 @@
 set nu
 set laststatus =2
 let g:move_key_mdifier = 'C' 
+iabbrev *** •
 inoremap ii <ESC>
 inoremap <M-H> <Left>
 inoremap <M-J> <Down>
@@ -74,9 +75,7 @@ Plug '~/my-prototype-plugin'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'matze/vim-move'
 Plug 'https://github.com/etdev/vim-hexcolor.git'
 
 " Initialize plugin system
@@ -84,10 +83,9 @@ call plug#end()
 filetype plugin indent on
 filetype indent on
 set smartindent
-set expandtab
 set tabstop=1 
 set softtabstop=1  
-set shiftwidth=2
+set shiftwidth=4
 set cindent
 set autoindent
 colorscheme wal
