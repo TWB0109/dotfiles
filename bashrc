@@ -88,7 +88,6 @@ if ${use_color} ; then
  alias blocks='~/blocks.sh'
  alias touchreset='xinput disable 16 && xinput enable 16'
  alias autoclass='~/.autoclass.sh'
- alias turf='tabbed surf -e'
 
  repo='https://github.com/TWB0109/dotfiles.git'
 
