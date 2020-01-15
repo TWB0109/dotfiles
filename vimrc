@@ -2,6 +2,7 @@ set nu
 set laststatus =2
 let g:move_key_mdifier = 'C' 
 iabbrev *** •
+iabbrev TTTTT `
 inoremap ii <ESC>
 inoremap <M-H> <Left>
 inoremap <M-J> <Down>
