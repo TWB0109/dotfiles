@@ -9,6 +9,8 @@ inoremap <M-J> <Down>
 inoremap <M-K> <Up>
 inoremap <M-L> <Right>
 syntax on
+vnoremap <C-c> :%w !xsel -i -b <CR><CR>
+vnoremap <C-v> :%w !xsel -o -b <CR><CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
