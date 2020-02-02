@@ -32,10 +32,10 @@ exec --no-startup-id nm-applet &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status 
+bindsym XF86AudioRaiseVolume exec --no-startup-id volchange volup && pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status 
+bindsym XF86AudioLowerVolume exec --no-startup-id volchange voldown && pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status 
+bindsym XF86AudioMute exec --no-startup-id volchange volmute && pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status 
+bindsym XF86AudioMicMute exec --no-startup-id volchange volmute &&pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status 
 
 # Use xbacklight to adjust brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
@@ -65,6 +65,8 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
 bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
 # Open rofi Game Shortcuts
 bindsym $mod+Shift+g exec --no-startup-id ~/.rofi-games.sh
+# Open Surf Web Browser
+bindsym $mod+Shift+s exec --no-startup-id tabbed surf -e
 
 # change focus
 bindsym $mod+ h focus left
@@ -147,9 +149,9 @@ bindsym $mod+0 workspace $ws0
 bindsym $mod+x mode "$mode_system"
 set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
+    bindsym l exec --no-startup-id betterlockscreen -l, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id betterlockscreen -s dimblur, mode "default"
+    bindsym s exec --no-startup-id betterlockscreen -s, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym x exec --no-startup-id i3exit shutdown, mode "default"
@@ -204,8 +206,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Shift+s exec --no-startup-id gnome-screenshot
- 
 # Make the currently focused window a scratchpad
 bindsym $mod+plus move scratchpad
 
@@ -251,26 +251,18 @@ gaps outer  10
 smart_borders on 
 
 # Startup applications
+exec --no-startup-id wal -i /home/brandon/Imágenes/glitchskull.jpg  
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
+exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.1 --corner-radius 10 --backend glx 
 # exec_always --no-startup-id pulseaudio --start -D
 # exec --no-startup-id pulseaudio --kill
-exec --no-startup-id indicator-kdeconnect &
-exec --no-startup-id nm-pavucontrol
-exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.1 --corner-radius 10 --backend glx 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id nm-applet
-exec_always --no-startup-id pamac-tray &
-#exec --no-startup-id clipit
-#exec --no-startup-id blueman
-exec --no-startup-id wal -i /home/brandon/Imágenes/glitchskull.jpg  
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id polybar example & 
-#exec_always --no-startup-id kdeconnect 
-#exec_always --no-startup-id killall mpd
 exec --no-startup-id mpd --verbose
-exec --no-startup-id notify-send "Bienvenido, Brandon. Pasa un buen rato."
+exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id betterlockscreen -u ~/Imágenes/blurglitchskull.jpg
-exec --no-startup-id kdeconnect-indicator &
