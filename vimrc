@@ -1,3 +1,5 @@
+set ruler
+set showcmd
 set nu
 set laststatus =2
 let g:move_key_mdifier = 'C' 
@@ -89,6 +91,9 @@ set smartindent
 set tabstop=1 
 set softtabstop=1  
 set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
 set cindent
 set autoindent
 colorscheme wal
