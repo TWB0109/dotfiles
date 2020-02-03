@@ -86,7 +86,7 @@ if ${use_color} ; then
  alias powermenu='~/.powermenu.sh'
  alias dotpush='~/.git-dotfiles.sh'
  alias blocks='~/blocks.sh'
- alias touchreset='xinput disable 16 && xinput enable 16'
+ alias touchreset='xinput disable 12 && xinput enable 12'
  alias autoclass='~/.autoclass.sh'
 
  repo='https://github.com/TWB0109/dotfiles.git'
