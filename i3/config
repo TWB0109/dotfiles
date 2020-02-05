@@ -262,11 +262,9 @@ exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
 exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.1 --corner-radius 10 --backend glx 
-# exec_always --no-startup-id pulseaudio --start -D
-# exec --no-startup-id pulseaudio --kill
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
-#exec --no-startup-id nitrogen --restore
 exec --no-startup-id mpd --verbose
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id betterlockscreen -u ~/Imágenes/blurglitchskull.jpg
+exec --no-startup-id volnoti
