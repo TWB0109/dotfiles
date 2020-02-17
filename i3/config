@@ -256,12 +256,13 @@ smart_borders on
 
 # Startup applications
 exec --no-startup-id wal -i /home/brandon/Imágenes/glitchskull.jpg  
+exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
-exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.1 --corner-radius 10 --backend glx 
+exec_always --no-startup-id compton -b -f -c -r 5 -o 0.50 -l 0 -t 0 -D 10 --inactive-dim 0.2 --corner-radius 10 --backend glx 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 exec --no-startup-id mpd --verbose
