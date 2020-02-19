@@ -256,7 +256,6 @@ smart_borders on
 
 # Startup applications
 exec --no-startup-id wal -i /home/brandon/Imágenes/glitchskull.jpg  
-exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
@@ -267,5 +266,6 @@ exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 exec --no-startup-id mpd --verbose
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-startup-id betterlockscreen -u ~/Imágenes/blurglitchskull.jpg
+exec --no-startup-id betterlockscreen -u ~/Imágenes/blurBreakerSkull.png
 exec --no-startup-id volnoti
+exec --no-startup-id nitrogen --restore
