@@ -254,7 +254,7 @@ gaps outer  10
 smart_borders on 
 
 # Startup applications
-exec --no-startup-id wal -i -n /home/brandon/Imágenes/glitchskull.jpg
+exec --no-startup-id wal -i ~/Imágenes/lvcrftnhorror.jpg -n
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
