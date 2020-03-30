@@ -69,7 +69,7 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
 # Opepn a rofi mpd manager
 bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
 # Open Surf Web Browser
-bindsym $mod+Shift+s exec --no-startup-id tabbed surf -e
+bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x 'https://duckduckgo.com'
 
 # change focus
 bindsym $mod+ h focus left
@@ -266,5 +266,5 @@ exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 exec --no-startup-id mpd --verbose
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-startup-id betterlockscreen -u ~/Imágenes/blurBreakerSkull.png
+exec --no-startup-id betterlockscreen -u ~/Imágenes/lvcrftnhorror.jpg
 exec --no-startup-id nitrogen --restore
