@@ -69,7 +69,7 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
 # Opepn a rofi mpd manager
 bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
 # Open Surf Web Browser
-bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x 'https://duckduckgo.com'
+bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
 
 # change focus
 bindsym $mod+ h focus left
