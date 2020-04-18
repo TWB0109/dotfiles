@@ -3,7 +3,7 @@
 configFile=""
 gitRepository="https://github.com/TWB0109/dotfiles.git"
 
-echo "What config file do you want to push?"
+echo "What config file do you want to push?(i3/polybar/bash/vim)"
 read configFile
 
 if [ "$configFile" == "i3" ];
