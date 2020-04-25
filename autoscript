@@ -1,0 +1,11 @@
+#!/bin/bash
+
+varname=""
+printf "What is your script name? \n"
+
+read varname
+
+touch $varname
+echo "#!/bin/bash" > $varname
+chmod +x $varname 
+vim $varname

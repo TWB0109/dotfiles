@@ -1,0 +1,5 @@
+#!/bin/bash
+
+idd=$(xinput --list | grep 'ETPS/2 Elantech Touchpad' | awk '{print $6}' | cut -d'=' -f2)
+
+xinput enable $idd
