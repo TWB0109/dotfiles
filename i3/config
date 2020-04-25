@@ -47,8 +47,12 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable/Enable Touchpad 
+bindsym $mod+g exec --no-startup-id touchdisable
+bindsym $mod+Shift+g exec --no-startup-id touchenable
+
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec xfce4-terminal 
 
 for_window [class="^floating$"] floating enable
 bindsym $mod+Shift+Return exec --no-startup-id xfce4-terminal && xdotool set_window --class floating $(xdotool getwindowfocus)
@@ -123,16 +127,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:www"
+set $ws2 "2:mp3"
+set $ws3 "3:prod"
+set $ws4 "4:term"
+set $ws5 "5:game"
+set $ws6 "6:6"
+set $ws7 "7:7"
+set $ws8 "8:8"
+set $ws9 "9:9"
+set $ws10 "10:10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1 
@@ -147,7 +151,8 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws0 
 
 bindsym $mod+x mode "$mode_system"
-set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
+#set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
+set $mode_system (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -238,32 +243,36 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #client.background       #ffffff
 
-default_border pixel 5
+default_border pixel 3
 #default_floating_border pixel 5 
 new_float none
 
 			      # GAPS CONFIGURATION
 
-gaps inner  5
-gaps outer  10
+#gaps inner  5
+#gaps outer  10
 
 # Activate smart borders (always)
 smart_borders on 
 
-# Flash Focus
-bindsym $mod+Shift+n exec --no-startup-id flash_window
+# Always float anki add screen
+for_window [title="Add"] floating enable 
+for_window [title="Add" floating] resize set 600 400
 
 # Startup applications
+exec --no-startup-id ibus-daemon -drx
+exec --no-startup-id xss-lock -- betterlockscreen -l dimblur &
 exec --no-startup-id wal -i ~/Imágenes/lvcrftnhorror.jpg -n
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id flashfocus
+#exec_always --no-startup-id flashfocus
 exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html' 
 exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
 #exec_always --no-startup-id compton -b -f -r 2 -o 0.50 -l 1 -t 1 -D 10 --backend glx 
-exec_always --no-startup-id killall compton && compton --config ~/.config/compton.conf 
+exec_always --no-startup-id compton --config ~/.config/compton.conf
+#exec_always --no-startup-id picom --config ~/.config/picom.conf --vsync
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 exec --no-startup-id mpd --verbose
