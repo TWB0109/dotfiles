@@ -75,6 +75,12 @@ bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
 # Open Surf Web Browser
 bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
 
+# Swap Esc and Caps 
+bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
+
+# Swap Esc and Caps to normal
+bindsym $mod+Shift+b exec --no-startup-id setxkbmap -option
+
 # change focus
 bindsym $mod+ h focus left
 bindsym $mod+ j focus down
@@ -260,6 +266,7 @@ for_window [title="Add"] floating enable
 for_window [title="Add" floating] resize set 600 400
 
 # Startup applications
+exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id xss-lock -- betterlockscreen -l dimblur &
 exec --no-startup-id wal -i ~/Imágenes/lvcrftnhorror.jpg -n
@@ -275,6 +282,7 @@ exec_always --no-startup-id compton --config ~/.config/compton.conf
 #exec_always --no-startup-id picom --config ~/.config/picom.conf --vsync
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
+#exec --no-startup-id killall mpd
 exec --no-startup-id mpd --verbose
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id betterlockscreen -u ~/Imágenes/lvcrftnhorror.jpg
