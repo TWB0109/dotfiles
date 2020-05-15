@@ -52,10 +52,10 @@ bindsym $mod+g exec --no-startup-id touchdisable
 bindsym $mod+Shift+g exec --no-startup-id touchenable
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal 
+bindsym $mod+Return exec termite 
 
 for_window [class="^floating$"] floating enable
-bindsym $mod+Shift+Return exec --no-startup-id xfce4-terminal && xdotool set_window --class floating $(xdotool getwindowfocus)
+bindsym $mod+Shift+Return exec --no-startup-id termite && xdotool set_window --class floating $(xdotool getwindowfocus)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -278,8 +278,7 @@ exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id dunst
 #exec_always --no-startup-id compton -b -f -r 2 -o 0.50 -l 1 -t 1 -D 10 --backend glx 
-exec_always --no-startup-id compton --config ~/.config/compton.conf
-#exec_always --no-startup-id picom --config ~/.config/picom.conf --vsync
+exec_always --no-startup-id picom --config ~/.config/compton.conf --vsync
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
 #exec --no-startup-id killall mpd
