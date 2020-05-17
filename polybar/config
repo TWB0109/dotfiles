@@ -17,25 +17,115 @@
 ;==========================================================
 
 [colors]
-;background = ${@background}
-background = #0F0F0E
-background-alt = #0F0F0E 
-background-alt-alt = #210f10
-;foreground = ${xrdb:color7:#222}
-foreground = #922932 
-foreground-alt = #933250
-primary = #922932
-secondary = #933250
+background = #10071D
+background-alt = #100918
+background-alt-alt = #000000 
+foreground = #AE61DA 
+foreground-alt = #AE61DA 
+primary = #AE61DA
+secondary = #302567
 alert = #bd2c40
-underline = #922932 
+underline = #AE61DA
 
-;[colors]
-;background = ${xrdb:color0}
-;foreground = ${xrdb:color7}
-;foreground-alt = ${xrdb:color7}
-;primary = ${xrdb:color1}
-;secondary = ${xrdb:color2}
-;alert = ${xrdb:color3}
+[bar/left]
+override-redirect = true
+offset-x = 0.5%
+offset-y = 0.5%
+width = 41.5%
+height = 31
+radius = 0.0
+fixed-center = true
+
+line-size = 3
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = NotoSansMono Nerd Font:pixelsize=10;1
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-left = i3 mpd 
+
+[bar/clock]
+override-redirect = true
+offset-x = 42%
+offset-y = 0.5%
+width = 16%
+height = 31
+radius = 0.0
+fixed-center = true
+
+line-size = 3
+
+background = ${colors.foreground}
+foreground = ${colors.background}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = NotoSansMono Nerd Font:pixelsize=10;1
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-center = calendar date
+
+[bar/right]
+override-redirect = true
+offset-x = 58%
+offset-y = 0.5%
+width = 41.5%
+height = 31
+radius = 0.0
+fixed-center = true
+
+tray-position = right
+tray-background = ${colors.foreground}
+tray-padding = 
+
+line-size = 3
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = NotoSansMono Nerd Font:pixelsize=10;1
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-right = DoNotDisturb backlight pulseaudio xkeyboard wlan battery 
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -55,7 +145,8 @@ line-size = 3
 line-color = #f00
 
 border-size = 4
-border-color = #00000000
+;border-color = #00000000
+border-color = #10071D
 
 padding-left = 0
 padding-right = 2
@@ -64,13 +155,12 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-;font-0 = GNUTypewriter:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = i3 reddit 
+modules-left = i3 taskwarrior
 modules-center = calendar date mpd 
-modules-right = DoNotDisturb xbacklight pulseaudio wlan battery powermenu 
+modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
 tray-position = right
 ;tray-padding = 2
 ;tray-background = #0063ff
@@ -95,14 +185,17 @@ format = <label>
 label = %title%
 label-maxlen =50
 
-;[module/xkeyboard]
-;type = internal/xkeyboard
-;blacklist-0 = num lock
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num 
 
-;label-indicator-padding = 2
-;label-indicator-margin = 1
-;label-indicator-background = ${colors.secondary}
-;label-indicator-underline = ${colors.secondary}
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.background}
+label-indicator-foreground = ${colors.foreground}
+
+label-indicator-on-capslock =
+label-indicator-off-capslock = 
 
 [module/filesystem]
 type = internal/fs
@@ -114,50 +207,30 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index% 
-label-focused-background = ${colors.background-alt}
-;label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+strip-wsnumbers = true
 
 ; Only show workspaces on the same output as the bar
 ; pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1.5
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.underline}
-label-focused-padding = 2
+label-focused = %name%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 1.5
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused = %name%
+label-unfocused-padding = 1.5
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -168,15 +241,15 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1.5
 
 ; Separator in between workspaces
 ; label-separator = |
 
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-foreground = ${colors.foreground}
 
 icon-prev = 玲
 icon-stop = 栗
@@ -186,6 +259,8 @@ icon-next = 怜
 
 label-song-maxlen = 25
 label-song-ellipsis = true
+label-song-foreground = ${colors.foreground}
+label-song-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -337,7 +412,6 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 100
-
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #00000000
 
@@ -383,14 +457,6 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/text
-content = 襤
-
-content-foreground = ${colors.foreground}
-
-click-left = ~/.powermenu.sh
 
 [module/spotify]
 type = custom/script
@@ -513,11 +579,14 @@ content-padding = 2
 click-left = chromium reddit.com
 click-right = chromium reddit.com/r/unixporn/
 
-[module/bg]
-type = custom/text
-content = 
-
-content-foreground = #000000
+[module/taskwarrior]
+intreval = 30
+type = custom/script
+exec = ~/.config/polybar/taskPolybar.sh
+format = <label>
+format-foreground = ${colors.foreground}
+format-prefix = " "
+click-left = task "$((`cat /tmp/tw_polybar_id`))" done
 
 [settings]
 screenchange-reload = true
