@@ -138,11 +138,11 @@ set $ws2 "2:mp3"
 set $ws3 "3:prod"
 set $ws4 "4:term"
 set $ws5 "5:game"
-set $ws6 "6:6"
-set $ws7 "7:7"
-set $ws8 "8:8"
-set $ws9 "9:9"
-set $ws10 "10:10"
+#set $ws6 "6:6"
+#set $ws7 "7:7"
+#set $ws8 "8:8"
+#set $ws9 "9:9"
+#set $ws10 "10:10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1 
@@ -150,11 +150,11 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3 
 bindsym $mod+4 workspace $ws4 
 bindsym $mod+5 workspace $ws5 
-bindsym $mod+6 workspace $ws6 
-bindsym $mod+7 workspace $ws7 
-bindsym $mod+8 workspace $ws8 
-bindsym $mod+9 workspace $ws9 
-bindsym $mod+0 workspace $ws0 
+#bindsym $mod+6 workspace $ws6 
+#bindsym $mod+7 workspace $ws7 
+#bindsym $mod+8 workspace $ws8 
+#bindsym $mod+9 workspace $ws9 
+#bindsym $mod+0 workspace $ws0 
 
 bindsym $mod+x mode "$mode_system"
 #set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
@@ -241,9 +241,9 @@ bindsym $mod+y exec --no-startup-id xbacklight -set 0
 #pixel 1
 
 #class                 border  backgr. text    indicator child_border
-client.focused          #149A4B #149A4B #285577
+client.focused          #AE61DA #AE61DA #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #020807 #020807 #292d2e #222222
+client.unfocused        #10071D #10071D #292d2e #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -266,23 +266,20 @@ for_window [title="Add"] floating enable
 for_window [title="Add" floating] resize set 600 400
 
 # Startup applications
-exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id ibus-daemon -drx
-exec --no-startup-id xss-lock -- betterlockscreen -l dimblur &
-exec --no-startup-id wal -i ~/Imágenes/lvcrftnhorror.jpg -n
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id flashfocus
-exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html' 
+exec --no-startup-id dunst
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id wal -i ~/Imágenes/sakuratown.png -n
+exec_always --no-startup-id ~/scripts/autodetect-display.sh
+exec_always --no-startup-id xrdb -load .Xresources
+exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync
+exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
+exec --no-startup-id calcursea
+exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
+exec --no-startup-id ibus-daemon -drx
+exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
-exec --no-startup-id dunst
-#exec_always --no-startup-id compton -b -f -r 2 -o 0.50 -l 1 -t 1 -D 10 --backend glx 
-exec_always --no-startup-id picom --config ~/.config/compton.conf --vsync
-exec_always --no-startup-id xrdb -load .Xresources
-exec_always --no-startup-id ~/scripts/autodetect-display.sh           # exec monitor detection automatically and set correctly
-#exec --no-startup-id killall mpd
 exec --no-startup-id mpd --verbose
-exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-startup-id betterlockscreen -u ~/Imágenes/lvcrftnhorror.jpg
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id betterlockscreen -u ~/Imágenes/sakuratown.png
