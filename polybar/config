@@ -158,7 +158,7 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = i3 taskwarrior
+modules-left = i3 
 modules-center = calendar date mpd 
 modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
 tray-position = right
