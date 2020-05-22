@@ -75,21 +75,18 @@ if ${use_color} ; then
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
-	alias ls='ls --color=auto'
- alias chall='chmod +x *'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
- alias cb='clear && bash'
- alias kdeid='kdeconnect-cli -l --id-only'
- alias autoscript='~/.autoscript.sh'
- alias powermenu='~/.powermenu.sh'
- alias dotpush='~/.git-dotfiles.sh'
- alias blocks='~/blocks.sh'
- alias touchreset='xinput disable 12 && xinput enable 12'
- alias autoclass='~/.autoclass.sh'
+  alias ls='ls --color=auto'
+  alias chall='chmod +x *'
+  alias grep='grep --colour=auto'
+  alias egrep='egrep --colour=auto'
+  alias fgrep='fgrep --colour=auto'
+  alias cb='clear && bash'
+  alias kdeid='kdeconnect-cli -l --id-only'
+  alias powermenu='~/.powermenu.sh'
+  alias pavol='pactl set-sink-volume @DEFAULT_SINK@'
 
  repo='https://github.com/TWB0109/dotfiles.git'
+ LATEXDIR='/home/brandon/Documentos/LaTeX/'
 
 else
 	if [[ ${EUID} == 0 ]] ; then
@@ -167,5 +164,12 @@ cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 
 neofetch 
+
+export EDITOR=vim
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export XIM_PROGRAM=/usr/bin/ibus-daemon
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
