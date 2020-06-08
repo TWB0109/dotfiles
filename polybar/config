@@ -27,106 +27,6 @@ secondary = #302567
 alert = #bd2c40
 underline = #AE61DA
 
-[bar/left]
-override-redirect = true
-offset-x = 0.5%
-offset-y = 0.5%
-width = 41.5%
-height = 31
-radius = 0.0
-fixed-center = true
-
-line-size = 3
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSansMono Nerd Font:pixelsize=10;1
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-modules-left = i3 mpd 
-
-[bar/clock]
-override-redirect = true
-offset-x = 42%
-offset-y = 0.5%
-width = 16%
-height = 31
-radius = 0.0
-fixed-center = true
-
-line-size = 3
-
-background = ${colors.foreground}
-foreground = ${colors.background}
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSansMono Nerd Font:pixelsize=10;1
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-modules-center = calendar date
-
-[bar/right]
-override-redirect = true
-offset-x = 58%
-offset-y = 0.5%
-width = 41.5%
-height = 31
-radius = 0.0
-fixed-center = true
-
-tray-position = right
-tray-background = ${colors.foreground}
-tray-padding = 
-
-line-size = 3
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-padding-left = 2
-padding-right = 2
-
-module-margin-left = 2
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSansMono Nerd Font:pixelsize=10;1
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-modules-right = DoNotDisturb backlight pulseaudio xkeyboard wlan battery 
-
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -154,13 +54,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=9:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
 modules-left = i3 
-modules-center = calendar date mpd 
-modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
+modules-center = date mpd 
+modules-right = DoNotDisturb pacman xbacklight pulseaudio wlan battery xkeyboard 
 tray-position = right
 ;tray-padding = 2
 ;tray-background = #0063ff
@@ -341,7 +241,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %d-%m-%y "
+date = " %d/%m/%y "
 ;date-alt = " %Y-%m-%d"
 
 time = %I:%M
@@ -569,24 +469,14 @@ content-foreground = ${colors.foreground}
 click-left= $HOME/.donotdisturb.sh
 click-right = $HOME/.disturb.sh
 
-[module/reddit]
-type = custom/text
-content = 樓
-
-content-foreground = ${colors.foreground}
-content-padding = 2
-
-click-left = chromium reddit.com
-click-right = chromium reddit.com/r/unixporn/
-
-[module/taskwarrior]
-intreval = 30
+[module/pacman]
 type = custom/script
-exec = ~/.config/polybar/taskPolybar.sh
-format = <label>
+exec = pacman -Qu | wc -l
+interval = 10000
+label =   %output%
 format-foreground = ${colors.foreground}
-format-prefix = " "
-click-left = task "$((`cat /tmp/tw_polybar_id`))" done
+format-background = ${colors.background}
+format-padding = 1
 
 [settings]
 screenchange-reload = true
