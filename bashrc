@@ -1,7 +1,13 @@
-#
-# ~/.bashrc
-#
-
+######################################
+#    _               _               #
+#   | |__   __ _ ___| |__  _ __ ___  #
+#   | '_ \ / _` / __| '_ \| '__/ __| #
+#  _| |_) | (_| \__ \ | | | | | (__  #
+# (_)_.__/ \__,_|___/_| |_|_|  \___| #
+#                                    #
+#               TWB0109              #
+######################################
+ 
 [[ $- != *i* ]] && return
 
 colors() {
@@ -75,16 +81,36 @@ if ${use_color} ; then
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
-  alias ls='ls --color=auto'
+  # Aliasies
+
+  # Default
+  alias ls='exa --color=always --group-directories-first'
   alias chall='chmod +x *'
   alias grep='grep --colour=auto'
   alias egrep='egrep --colour=auto'
   alias fgrep='fgrep --colour=auto'
+  alias date='LC_ALL=C date'
+
+  # Programs
   alias cb='clear && bash'
   alias kdeid='kdeconnect-cli -l --id-only'
   alias powermenu='~/.powermenu.sh'
   alias pavol='pactl set-sink-volume @DEFAULT_SINK@'
+  alias sxiv='sxiv -a'
+  alias dvtm='dvtm -m ^f'
+  alias drivemount='rclone mount GDrive: ~/Drive --daemon'
+  alias driveumount='fusermount -u ~/Drive'
+  alias cdate='date "+%d-%m-%Y"'
+  alias tdate='date -d tomorrow "+%d-%m-%Y"'
 
+  #Vim-Like
+  alias q='exit'
+  alias v='vim'
+  alias lsd='du -h | sort -n -r'
+  alias brc='vim ~/.bashrc'
+  alias vrc='vim ~/.vimrc'
+  alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+  
  repo='https://github.com/TWB0109/dotfiles.git'
  LATEXDIR='/home/brandon/Documentos/LaTeX/'
 
@@ -150,7 +176,7 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-export PATH="/home/brandon/.local/bin:$PATH"
+export PATH="/home/brandon/.local/bin:/home/brandon/.rofi/scripts:$PATH"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -165,7 +191,10 @@ source ~/.cache/wal/colors-tty.sh
 
 neofetch 
 
+export XDG_MUSIC_DIR=~/Música/
+
 export EDITOR=vim
+export TERMINAL=termite
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -173,3 +202,5 @@ export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/brandon/.config/broot/launcher/bash/br
