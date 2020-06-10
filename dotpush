@@ -3,7 +3,7 @@
 configFile=""
 gitRepository="https://github.com/TWB0109/dotfiles.git"
 
-echo "What config file do you want to push?(i3/polybar/bash/vim)"
+echo "What config file do you want to push?(i3/polybar/bash/zsh/vim)"
 read configFile
 
 if [ "$configFile" == "i3" ];
@@ -43,12 +43,27 @@ if [ "$configFile" == "bash" ];
 then
   cd $HOME
   git clone $gitRepository
-  cp -a .bashrc dotfiles/
+  cp -a .bashrc dotfiles/bashrc
   cd dotfiles
-  mv .bashrc bashrc
 
   git add .
   git commit -m "Updated bash config file"
+  git push https://github.com/TWB0109/dotfiles.git master
+
+  cd ..
+  rm -rf dotfiles
+  exit
+fi
+
+if [ "$configFile" == "zsh" ];
+then
+  cd $HOME
+  git clone $gitRepository
+  cp -a .zshrc dotfiles/zshrc
+  cd dotfiles
+
+  git add .
+  git commit -m "Updated zsh config file"
   git push https://github.com/TWB0109/dotfiles.git master
 
   cd ..
