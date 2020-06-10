@@ -33,6 +33,9 @@ bindsym $mod+7 exec --no-startup-id sh ~/.rofi/scripts/rofiemoji
 # Open daily schedule
 bindsym $mod+8 exec --no-startup-id zathura ~/agenda/dailySchedule.pdf
 
+# Screenshot
+bindsym Print exec --no-startup-id gnome-screenshot -i
+
 # Disable/Enable Touchpad 
 bindsym $mod+g exec --no-startup-id touchdisable
 bindsym $mod+Shift+g exec --no-startup-id touchenable
@@ -180,16 +183,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -228,11 +231,13 @@ bindsym $mod+y exec --no-startup-id xbacklight -set 0
 #pixel 1
 
 #class                 border  backgr. text    indicator child_border
-client.focused          #AE61DA #AE61DA #285577
+client.focused          #B8BB26 #B8BB26 #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #10071D #10071D #292d2e #222222
+client.unfocused        #32302f #32302f #292d2e #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.placeholder      #665c54 #665c54 #ffffff #000000   #0c0c0c
+
+set $background #32302f
 
 #client.background       #ffffff
 
@@ -257,9 +262,10 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Startup applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id redshift
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id wal -i ~/Imágenes/sakuratown.png --vte -n
+exec --no-startup-id wal --theme ~/.walthemes/base16-gruvbox-soft.json --vte -n
 exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync
