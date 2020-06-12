@@ -1,3 +1,13 @@
+##############################            
+#            _               #
+#    _______| |__  _ __ ___  #
+#   |_  / __| '_ \| '__/ __| #
+#  _ / /\__ \ | | | | | (__  #
+# (_)___|___/_| |_|_|  \___| #
+#                            #
+#            TWB0109         #
+##############################
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -40,8 +50,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
+# DISABLE_MAGIC_FUNCTIONS=true 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
@@ -88,6 +97,7 @@ plugins=(
 )
 
 # Startup
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source $ZSH/oh-my-zsh.sh
 # Import colorscheme from wal asynchronously
@@ -96,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added
 source ~/.cache/wal/colors-tty.sh
-neofetch
+# neofetch
 # Better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;3"
 export XDG_MUSIC_DIR=~/music/
@@ -148,7 +158,3 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3
 repo='https://github.com/TWB0109/dotfiles.git'
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

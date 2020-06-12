@@ -137,15 +137,15 @@ label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 1.5
+label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -310,7 +310,7 @@ format-charging-foreground = ${colors.background}
 
 # Discharging
 format-discharging = <label-discharging>
-label-discharging =  ﮤ %percentage%
+label-discharging =  ﮤ%percentage%
 
 format-discharging-padding = 2 
 format-discharging-background = ${colors.light-green}

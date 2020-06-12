@@ -1,3 +1,13 @@
+""""""""""""""""""""""""""""""""
+"        _                     "
+" __   _(_)_ __ ___  _ __ ___  "
+" \ \ / / | '_ ` _ \| '__/ __| "
+"  \ V /| | | | | | | | | (__  "
+" (_)_/ |_|_| |_| |_|_|  \___| "
+"                              "
+"           TWB0109            "
+""""""""""""""""""""""""""""""""
+
 set completeopt=longest,menuone
 set shortmess+=A
 set ruler
@@ -23,12 +33,20 @@ set splitright
 let mapleader = ','
 let g:user_emmet_leader_key = ','
 
-"Enable Omnicomplete for supported filetypes
+" Vim-Markdown folding disable
+let g:vim_markdown_folding_disable = 1
+
+" Tab mappings
+nnoremap tt :tabf 
+nmap tn :tabn <CR><CR>
+nmap tp :tabp <CR><CR>
+
+" Enable Omnicomplete for supported filetypes
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType py setlocal omnifunc=pythoncomplete#Complete
 
-"Enable italic comments in bash
+" Enable italic comments in bash
 highlight Comment cterm=italic gui=italic
 
 " Toggle relative numbers
@@ -107,10 +125,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'https://github.com/etdev/vim-hexcolor.git'
 Plug 'alvan/vim-closetag'
 Plug 'vim-syntastic/syntastic'
-Plug 'dag/vim-fish'
 Plug 'davidhalter/jedi-vim'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
-Plug 'dpelle/vim-LanguageTool'
 Plug 'valloric/youcompleteme'
 Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim'
@@ -118,6 +134,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'plasticboy/vim-markdown'
 
 " Initialize plugin system
 call plug#end()
@@ -126,11 +143,8 @@ filetype plugin indent on
 filetype indent on
 
 set smartindent
-set tabstop=1 
-set softtabstop=1  
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set tabstop=3
+set shiftwidth=3
 set expandtab
 set cindent
 set autoindent
