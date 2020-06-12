@@ -25,10 +25,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 floating_modifier $mod
 
 # Notify current day 
-bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(date "+%a %d/%m/%y")"
+bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(LC_ALL=C date "+%a %d/%m/%y")"
 
 # Get a rofi emoji selector
-bindsym $mod+7 exec --no-startup-id sh ~/.rofi/scripts/rofiemoji
+bindsym $mod+7 exec --no-startup-id sh .scripts/rofiemoji
 
 # Open daily schedule
 bindsym $mod+8 exec --no-startup-id zathura ~/agenda/dailySchedule.pdf
@@ -146,8 +146,52 @@ bindsym $mod+5 workspace $ws5
 #bindsym $mod+9 workspace $ws9 
 #bindsym $mod+0 workspace $ws0 
 
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+9 mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 bindsym $mod+x mode "$mode_system"
-#set $mode_system  (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 set $mode_system (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
@@ -208,10 +252,17 @@ bindsym $mod+plus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Key binding for mpc toggle, next and previous
-bindsym $mod+o exec --no-startup-id mpc toggle
-bindsym $mod+i exec --no-startup-id mpc prev
-bindsym $mod+p exec --no-startup-id mpc next
+# Mpc music mode 
+bindsym $mod+o mode "$mode_mpc"
+set $mode_mpc (i)prev, (o)play/pause, (p)next
+mode "$mode_mpc" {
+    bindsym i exec --no-startup-id mpc prev, mode "default"
+    bindsym o exec --no-startup-id mpc toggle, mode "default"
+    bindsym p exec --no-startup-id mpc next, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Key bindings for XF86 media controls for spotify
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous -p spotify
@@ -262,13 +313,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Startup applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal --theme ~/.walthemes/base16-gruvbox-soft.json --vte -n
 exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
-exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync
+exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id calcursea
 exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
@@ -278,5 +329,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
-exec --no-startup-id betterlockscreen -u ~/Imágenes/sakuratown.png
+exec --no-startup-id betterlockscreen -u ~/Imágenes/background-tela.jpg
 exec --no-startup-id flatpak run com.github.marktext.marktext &
