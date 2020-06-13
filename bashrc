@@ -5,7 +5,7 @@
 #  _| |_) | (_| \__ \ | | | | | (__  #
 # (_)_.__/ \__,_|___/_| |_|_|  \___| #
 #                                    #
-#               TWB0109              #
+#             TWB0109                #
 ######################################
  
 [[ $- != *i* ]] && return
@@ -102,10 +102,11 @@ if ${use_color} ; then
   alias driveumount='fusermount -u ~/Drive'
   alias cdate='date "+%d-%m-%Y"'
   alias tdate='date -d tomorrow "+%d-%m-%Y"'
+  alias vim='nvim'
 
   #Vim-Like
   alias q='exit'
-  alias v='vim'
+  alias v='nvim'
   alias lsd='du -h | sort -n -r'
   alias brc='vim ~/.bashrc'
   alias vrc='vim ~/.vimrc'
@@ -191,9 +192,9 @@ source ~/.cache/wal/colors-tty.sh
 
 neofetch 
 
-export XDG_MUSIC_DIR=~/Música/
+export XDG_MUSIC_DIR=~/music/
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERMINAL=termite
 
 export GTK_IM_MODULE=ibus
