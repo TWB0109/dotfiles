@@ -263,7 +263,7 @@ label-volume-padding = 2
 
 label-muted = 
 label-muted-foreground = #665C54
-label-muted-background = ${colors.light-blue}
+label-muted-background = ${colors.yellow}
 label-muted-padding = 2
 
 [module/alsa]
