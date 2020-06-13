@@ -63,10 +63,10 @@ font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
 modules-left = i3 
 modules-center = date mpd 
-modules-right = DoNotDisturb pacman xbacklight pulseaudio wlan battery xkeyboard 
+modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
 tray-position = right
 tray-margin = 0
-tray-background = ${colors.green} 
+tray-background = ${colors.red} 
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -94,7 +94,7 @@ blacklist-0 = num
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-format-background = ${colors.red}
+format-background = ${colors.light-green}
 format-foreground = ${colors.background}
 format-padding = 2
 
@@ -172,7 +172,7 @@ type = internal/xbacklight
 
 format = <label> 
 label =   %percentage%
-format-background = ${colors.yellow}
+format-background = ${colors.green}
 format-foreground = ${colors.background}
 format-padding = 2
 
@@ -206,7 +206,7 @@ format-connected = <label-connected>
 ;format-connected-underline = ${colors.underline}
 label-connected =  直 %essid%
 
-label-connected-background = ${colors.light-pink}
+label-connected-background = ${colors.light-blue}
 label-connected-foreground = ${colors.background}
 label-connected-padding = 2
 
@@ -258,7 +258,7 @@ format-volume = <label-volume>
 label-volume =墳 %percentage%%
 
 label-volume-foreground = ${colors.background}
-label-volume-background = ${colors.light-blue}
+label-volume-background = ${colors.yellow}
 label-volume-padding = 2
 
 label-muted = 
@@ -305,7 +305,7 @@ format-charging = <label-charging>
 label-charging = ﮣ%percentage%
 
 format-charging-padding = 2 
-format-charging-background = ${colors.light-green}
+format-charging-background = ${colors.light-pink}
 format-charging-foreground = ${colors.background}
 
 # Discharging
@@ -313,7 +313,7 @@ format-discharging = <label-discharging>
 label-discharging =  ﮤ%percentage%
 
 format-discharging-padding = 2 
-format-discharging-background = ${colors.light-green}
+format-discharging-background = ${colors.light-pink}
 format-discharging-foreground = ${colors.background}
 
 # Full
@@ -321,7 +321,7 @@ format-full = <label-full>
 label-full =  Full
 
 format-full-padding = 2 
-format-full-background = ${colors.light-green}
+format-full-background = ${colors.light-pink}
 format-full-foreground = ${colors.background}
 
 [module/temperature]
@@ -456,15 +456,6 @@ content-margin = 0
 
 click-left= $HOME/.donotdisturb.sh
 click-right = $HOME/.disturb.sh
-
-[module/pacman]
-type = custom/script
-exec = pacman -Qu | wc -l
-interval = 10000
-label =   %output%
-format-foreground = ${colors.background}
-format-background = ${colors.green}
-format-padding = 2
 
 [settings]
 screenchange-reload = true
