@@ -296,7 +296,7 @@ new_float none
 			      # GAPS CONFIGURATION
 
 #gaps inner  5
-#gaps outer  10
+gaps outer  15
 
 # Activate smart borders (always)
 smart_borders on 
@@ -326,5 +326,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
-exec --no-startup-id betterlockscreen -u ~/Imágenes/background-tela.jpg
+exec --no-startup-id betterlockscreen -u ~/pix/background-tela.jpg
 exec --no-startup-id flatpak run com.github.marktext.marktext &
