@@ -149,6 +149,7 @@ alias drivemount="rclone mount GDrive: ~/Drive --daemon"
 alias driveumount="fuseromunt -u ~/Drive"
 alias cdate='date "+%d-%m-%Y"'
 alias tdate='date -d tomorrow "+%d-%m-%Y"'
+alias vim="nvim"
 
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
