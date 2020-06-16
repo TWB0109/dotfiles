@@ -1,4 +1,13 @@
-"Basics
+""""""""""""""""""""""""""""""""
+"        _                     "
+" __   _(_)_ __ ___  _ __ ___  "
+" \ \ / / | '_ ` _ \| '__/ __| "
+"  \ V /| | | | | | | | | (__  "
+" (_)_/ |_|_| |_| |_|_|  \___| "
+"                              "
+"           TWB0109            "
+""""""""""""""""""""""""""""""""
+"Basics 
 set nu
 set cursorline
 set encoding=utf-8
@@ -6,6 +15,8 @@ set showcmd
 set nopaste
 set splitbelow
 set splitright
+set laststatus=2
+set shortmess+=A
 syntax on
 colorscheme desert
 let mapleader = ','
@@ -34,10 +45,14 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType py setlocal omnifunc=pythoncomplete#Complete
 
 "Remember Folds
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
+augroup remember_folds 
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent! loadview
+
+" Vim-Markdown folding disable
+let g:vim_markdown_folding_disable = 1
+
 
 "Elite mode
 let g:elite_mode=1
@@ -47,20 +62,17 @@ if get(g:, 'elite_mode')
     nnoremap <Up>    :resize +2<CR>
     nnoremap <Down>  :resize -2<CR>
     nnoremap <Left>  :vertical resize +2<CR>
-    nnoremap <Right> :vertical reziae -2<CR>
+    nnoremap <Right> :vertical resize -2<CR>
 endif
-
-" Replace quotes with spaces in .json files
-autocmd FileType json setlocal conceallevel=1
 
 "Plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/autoload')
+call plug#begin('~/.vim/autoload')
 
 "Plug Defaults
 Plug 'junegunn/vim-easy-align'
@@ -79,7 +91,6 @@ Plug 'https://github.com/etdev/vim-hexcolor.git'
 Plug 'alvan/vim-closetag'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim'
@@ -91,24 +102,25 @@ Plug 'plasticboy/vim-markdown'
 Plug 'unblevable/quick-scope'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'valloric/youcompleteme'
+Plug 'w0rp/ale'
 
-"Initialize plugin system
+" Initialize plugin system
 call plug#end()
 
 "Complete menu
 set completeopt=longest,menuone
 
-"Filetype omni
+"Filetype omni 
 set omnifunc=syntaxcomplete#Complete
 
-"Indent
-set expandtab
-set cindent
-set autoindent
+"Indent 
+set expandtab 
+set cindent 
+set autoindent 
 set tabstop=4
 set shiftwidth=4
 
-"Filetype
+"Filetype 
 filetype on
 filetype plugin indent on
 filetype indent on
@@ -119,7 +131,7 @@ set pastetoggle=<F10>
 "Haskell 
 let g:haskell_classic_highlighting = 1
 
-"Lightline
+"lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 
