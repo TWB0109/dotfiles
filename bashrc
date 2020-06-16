@@ -102,11 +102,10 @@ if ${use_color} ; then
   alias driveumount='fusermount -u ~/Drive'
   alias cdate='date "+%d-%m-%Y"'
   alias tdate='date -d tomorrow "+%d-%m-%Y"'
-  alias vim='nvim'
 
   #Vim-Like
   alias q='exit'
-  alias v='nvim'
+  alias v='vim'
   alias lsd='du -h | sort -n -r'
   alias brc='vim ~/.bashrc'
   alias vrc='vim ~/.vimrc'
