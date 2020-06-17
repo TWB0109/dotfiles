@@ -214,7 +214,7 @@ format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = 睊  %ifname% disconnected
 
-label-disconnected-background = ${colors.light-pink}
+label-disconnected-background = ${colors.light-blue}
 label-disconnected-foreground = #665C54
 label-disconnected-padding = 2
 
