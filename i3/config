@@ -37,8 +37,8 @@ bindsym $mod+8 exec --no-startup-id zathura ~/agenda/dailySchedule.pdf
 bindsym Print exec --no-startup-id gnome-screenshot -i
 
 # Disable/Enable Touchpad 
-bindsym $mod+g exec --no-startup-id touchdisable
-bindsym $mod+Shift+g exec --no-startup-id touchenable
+bindsym $mod+g exec --no-startup-id $HOME/.scripts/touchdisable
+bindsym $mod+Shift+g exec --no-startup-id $HOME/.scripts/touchenable
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id termite 
@@ -281,7 +281,7 @@ bindsym $mod+y exec --no-startup-id xbacklight -set 0
 #class                 border  backgr. text    indicator child_border
 client.focused          #B8BB26 #B8BB26 #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #32302f #32302f #292d2e #222222
+client.unfocused        #32302f #32302f #D5C4A1 #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #665c54 #665c54 #ffffff #000000   #0c0c0c
 
