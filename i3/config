@@ -310,7 +310,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Startup applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal --theme ~/.walthemes/base16-gruvbox-soft.json --vte -n
@@ -327,4 +327,4 @@ exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
 exec --no-startup-id betterlockscreen -u ~/pix/background-tela.jpg
-exec --no-startup-id flatpak run com.github.marktext.marktext &
+#exec --no-startup-id flatpak run com.github.marktext.marktext &
