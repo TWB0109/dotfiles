@@ -30,9 +30,6 @@ bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(LC_ALL=C date "+%a %d
 # Get a rofi emoji selector
 bindsym $mod+7 exec --no-startup-id sh .scripts/rofiemoji
 
-# Open daily schedule
-bindsym $mod+8 exec --no-startup-id zathura ~/agenda/dailySchedule.pdf
-
 # Screenshot
 bindsym Print exec --no-startup-id gnome-screenshot -i
 
