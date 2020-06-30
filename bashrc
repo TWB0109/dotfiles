@@ -111,7 +111,6 @@ if ${use_color} ; then
   alias vrc='vim ~/.vimrc'
   alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
   
- repo='https://github.com/TWB0109/dotfiles.git'
  LATEXDIR='/home/brandon/Documentos/LaTeX/'
 
 else
@@ -176,7 +175,7 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-export PATH="/home/brandon/.local/bin:/home/brandon/.rofi/scripts:$PATH"
+export PATH="/home/brandon/.local/bin:/home/brandon/.scripts:$PATH"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.

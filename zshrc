@@ -16,7 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.emacs.d/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/brandon/.oh-my-zsh"
@@ -149,13 +149,11 @@ alias drivemount="rclone mount GDrive: ~/Drive --daemon"
 alias driveumount="fuseromunt -u ~/Drive"
 alias cdate='date "+%d-%m-%Y"'
 alias tdate='date -d tomorrow "+%d-%m-%Y"'
-alias vim="vim"
 
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
 
 # User variables
-repo='https://github.com/TWB0109/dotfiles.git'
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
 
