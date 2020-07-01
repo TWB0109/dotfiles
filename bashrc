@@ -192,7 +192,7 @@ neofetch
 
 export XDG_MUSIC_DIR=~/music/
 
-export EDITOR=nvim
+export EDITOR=vim
 export TERMINAL=termite
 
 export GTK_IM_MODULE=ibus
