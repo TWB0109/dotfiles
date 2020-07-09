@@ -7,64 +7,62 @@
 "                              "
 "           TWB0109            "
 """"""""""""""""""""""""""""""""
-
-set completeopt=longest,menuone
-set shortmess+=A
-set ruler
-set showcmd
+"Basics 
 set nu
-set laststatus =2
-let g:move_key_mdifier = 'C' 
-iabbrev *** •
-iabbrev TTTTT `
-inoremap ii <ESC>
-inoremap <M-H> <Left>
-inoremap <M-J> <Down>
-inoremap <M-K> <Up>
-inoremap <M-L> <Right>
-syntax on
-nnoremap <C-N> :NERDTree <CR><CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H> 
+set cursorline
+set encoding=utf-8
+set showcmd
+set nopaste
 set splitbelow
 set splitright
+set laststatus=2
+set shortmess+=A
+syntax on
+colorscheme desert
 let mapleader = ','
 let g:user_emmet_leader_key = ','
 
-" Vim-Markdown folding disable
-let g:vim_markdown_folding_disable = 1
-
-" Tab mappings
-nnoremap tt :tabf 
+"Mappings
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-L>
+nnoremap <C-N> :NERDTree <CR><CR>
+inoremap ii <ESC>
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nnoremap tt :tabf
 nmap tn :tabn <CR><CR>
 nmap tp :tabp <CR><CR>
+nnoremap <C-b> :set rnu! <CR><CR>
 
-" Enable Omnicomplete for supported filetypes
+"Abbrevs
+iabbrev *** • 
+iabbrev TTTTT `
+
+"Autocompletion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType py setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType py setlocal omnifunc=pythoncomplete#Complete
 
-" Enable italic comments in bash
-highlight Comment cterm=italic gui=italic
+"Remember Folds
+augroup remember_folds 
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent! loadview
 
-" Toggle relative numbers
-nnoremap <C-b> :set rnu!<CR>
+"Vim-Markdown folding disable
+let g:vim_markdown_folding_disable = 1
 
-" Remember folds
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
+"Python Highlight
+let g:python_highlight_all = 1
 
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-"Elite Mode"
+"Fzf keybind
+nnoremap <C-T> :FZF <CR><CR>
+
+"Elite mode
 let g:elite_mode=1
-""let g:indentLine_setColors = 0
 
-" Disable arrow movement, resize splits instead.
+"Elite mode def
 if get(g:, 'elite_mode')
     nnoremap <Up>    :resize +2<CR>
     nnoremap <Down>  :resize -2<CR>
@@ -72,17 +70,7 @@ if get(g:, 'elite_mode')
     nnoremap <Right> :vertical resize -2<CR>
 endif
 
-"--AUTOCOMPLETION--
-set omnifunc=syntaxcomplete#Complete
-
-"LaTeX
-let g:neotex_enabled=1
-
-"Language Tool
-let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
-let g:languagetool_lang='es'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+"Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -91,43 +79,25 @@ endif
 
 call plug#begin('~/.vim/autoload')
 
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug Defaults
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'honza/vim-snippets'
+Plug 'sirver/ultisnips'
+Plug 'scrooloose/nerdtree'
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
+"Installed Plugins
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'https://github.com/etdev/vim-hexcolor.git'
 Plug 'alvan/vim-closetag'
-Plug 'vim-syntastic/syntastic'
+Plug 'othree/csscomplete.vim'
+Plug 'othree/html5.vim'
 Plug 'davidhalter/jedi-vim'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
-Plug 'valloric/youcompleteme'
 Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim'
 Plug 'vim-scripts/loremipsum'
@@ -135,26 +105,48 @@ Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'plasticboy/vim-markdown'
-
+Plug 'neovimhaskell/haskell-vim'
+Plug 'valloric/youcompleteme'
+Plug 'w0rp/ale'
+Plug 'gabrielelana/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'vim-python/python-syntax'
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
+ 
 " Initialize plugin system
 call plug#end()
+
+"Complete menu
+set completeopt=longest,menuone
+
+"Filetype omni 
+set omnifunc=syntaxcomplete#Complete
+
+"Indent 
+set expandtab 
+set cindent 
+set autoindent 
+set tabstop=4
+set shiftwidth=4
+
+"Filetype 
 filetype on
 filetype plugin indent on
 filetype indent on
 
-set smartindent
-set tabstop=3
-set shiftwidth=3
-set expandtab
-set cindent
-set autoindent
+"Paste toggle
+set pastetoggle=<F10>
+
+"Haskell 
+let g:haskell_classic_highlighting = 1
+
+"lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 
-" Gruvbox config
+"Colorscheme config
 colorscheme gruvbox
 set background=dark
-set cursorline
 set fillchars+=vert:\ 
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
