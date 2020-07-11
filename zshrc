@@ -16,7 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.gem/ruby/2.7.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/brandon/.oh-my-zsh"
@@ -146,7 +146,7 @@ alias pavol="pactl set-sink-volume @DEFAULT_SINK@"
 alias sxiv="i3-swallow sxiv -a"
 alias dvtm="dvtm -m ^f"
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
-alias driveumount="fuseromunt -u ~/Drive"
+alias driveumount="fusermount -u ~/Drive"
 alias cdate='date "+%d-%m-%Y"'
 alias tdate='date -d tomorrow "+%d-%m-%Y"'
 
@@ -156,4 +156,5 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
+android='/run/user/1000/544ba225466efb1c/primary'
 

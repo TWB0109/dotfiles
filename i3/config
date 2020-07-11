@@ -1,307 +1,328 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
-[colors]
-background = #32302F
-foreground = #D5C4A1 
-alert      = #bd2c40
-underline  = #B8BB26
-primary    = #D5C4A1
-
-red         = #FB4934
-green       = #B8BB26
-yellow      = #FABD2F
-light-blue  = #83A598
-light-pink  = #D3869B
-light-green = #8ec07c
-
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 27
-;override-redirect = true
-;offset-x = 25%
-;offset-y = 0%
-radius = 0.0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-underline = ${colors.underline}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-;border-color = #00000000
-border-color = ${colors.background}
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = fixed:pixelsize=9:antialias=true;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSansMono Nerd Font:pixelsize=10;1
-
-modules-left = i3 
-modules-center = date mpd 
-modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
-tray-position = right
-tray-margin = 0
-tray-background = ${colors.green} 
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/xwindow]
-type = internal/xwindow
-format = <label>
-label = %title%
-label-maxlen =50
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num 
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-format-background = ${colors.light-green}
-format-foreground = ${colors.background}
-format-padding = 2
-
-label-indicator-on-capslock =
-label-indicator-off-capslock = 
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-strip-wsnumbers = true
-
-; Only show workspaces on the same output as the bar
-; pin-workspaces = true
-
-label-mode-padding = 1.5
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.green}
-label-focused-underline = ${colors.green}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.red}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-format-online-foreground = ${colors.foreground}
-format-online-padding = 1
-
-icon-prev = 玲
-icon-stop = 栗
-icon-play = 契
-icon-pause =  
-icon-next = 怜
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-label-song-foreground = ${colors.foreground}
-label-song-padding = 1
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> 
-label =   %percentage%
-format-background = ${colors.green}
-format-foreground = ${colors.background}
-format-padding = 2
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/wlan]
-type = internal/network
-interface = wlo1
-interval = 3.0
-
-format-connected = <label-connected>
-;format-connected-underline = ${colors.underline}
-label-connected =  直 %essid%
-
-label-connected-background = ${colors.light-blue}
-label-connected-foreground = ${colors.background}
-label-connected-padding = 2
-
-format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = 睊  %ifname% disconnected
-
-label-disconnected-background = ${colors.light-blue}
-label-disconnected-foreground = #665C54
-label-disconnected-padding = 2
-
-[module/eth]
-type = internal/network
-interface = enp0s25
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/date]
-type = internal/date
-interval = 5
-
-date = " %d/%m/%y "
-;date-alt = " %Y-%m-%d"
-
-time = %I:%M
-;time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-padding = 1
-format-padding = 2
-format-foreground = ${colors.foreground}
-
-label = %time% 
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <label-volume> 
-label-volume =墳 %percentage%%
-
-label-volume-foreground = ${colors.background}
-label-volume-background = ${colors.yellow}
-label-volume-padding = 2
-
-label-muted = 
-label-muted-foreground = #665C54
-label-muted-background = ${colors.yellow}
-label-muted-padding = 2
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 99
-
-# Charging
-format-charging = <label-charging>
-label-charging = ﮣ%percentage%
-
-format-charging-padding = 2 
-format-charging-background = ${colors.light-pink}
-format-charging-foreground = ${colors.background}
-
-# Discharging
-format-discharging = <label-discharging>
-label-discharging =  ﮤ%percentage%
-
-format-discharging-padding = 2 
-format-discharging-background = ${colors.light-pink}
-format-discharging-foreground = ${colors.background}
-
-# Full
-format-full = <label-full>
-label-full =  Full
-
-format-full-padding = 2 
-format-full-background = ${colors.light-pink}
-format-full-foreground = ${colors.background}
-
-[module/calendar]
-type = custom/text
-content = 
-
-content-foreground = ${colors.foreground}
-;content-padding = 2
-;content-underline = ${colors.underline}
-
-click-left = gsimplecal 
-
-[module/DoNotDisturb]
-type = custom/text
-content = "ﮖ"
-
-content-foreground = ${colors.background}
-content-background = ${colors.red}
-content-padding = 2
-content-margin = 0
-
-click-left= $HOME/.donotdisturb.sh
-click-right = $HOME/.disturb.sh
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-vim:ft=dosini
+###############################################
+#  _ _____                        __ _        #
+# (_)___ /        ___ ___  _ __  / _(_) __ _  #
+# | | |_ \ _____ / __/ _ \| '_ \| |_| |/ _` | #
+# | |___) |_____| (_| (_) | | | |  _| | (_| | #
+# |_|____/       \___\___/|_| |_|_| |_|\__, | #
+#                                      |___/  #
+###############################################
+set $mod Mod4
+font pango:monospace 8
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet & 
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status 
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status 
+
+# Use xbacklight to adjust brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Notify current day 
+bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(LC_ALL=C date "+%a %d/%m/%y")"
+
+# Get a rofi emoji selector
+bindsym $mod+7 exec --no-startup-id sh .scripts/rofiemoji
+
+# Screenshot
+bindsym Print exec --no-startup-id gnome-screenshot -i
+
+# Disable/Enable Touchpad 
+bindsym $mod+g exec --no-startup-id $HOME/.scripts/touchdisable
+bindsym $mod+Shift+g exec --no-startup-id $HOME/.scripts/touchenable
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id termite 
+
+for_window [class="^floating$"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id termite && xdotool set_window --class floating $(xdotool getwindowfocus)
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -p "RUN" -h 31
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym $mod+ctrl+s exec --no-startup-id rofi -show search -modi search:rofi-web-search -i -p "Search: "
+bindsym $mod+ctrl+a exec --no-startup-id rofi -show run
+bindsym $mod+ shift+w exec --no-startup-id rofi -show window
+# Open a rofi power manager
+bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
+# Opepn a rofi mpd manager
+bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
+# Open Surf Web Browser
+bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
+
+# Swap Esc and Caps 
+bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
+
+# Swap Esc and Caps to normal
+bindsym $mod+Shift+b exec --no-startup-id setxkbmap -option
+
+# change focus
+bindsym $mod+ h focus left
+bindsym $mod+ j focus down
+bindsym $mod+ k focus up
+bindsym $mod+ l focus right
+              
+# alternative ly, you can use the cursor keys:
+bindsym $mod+ Left focus left
+bindsym $mod+ Down focus down
+bindsym $mod+ Up focus up
+bindsym $mod+ Right focus right
+              
+# move focuse d window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle, [floating] border none
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:www"
+set $ws2 "2:media"
+set $ws3 "3:prod"
+set $ws4 "4:term"
+set $ws5 "5:game"
+#set $ws6 "6:6"
+#set $ws7 "7:7"
+#set $ws8 "8:8"
+#set $ws9 "9:9"
+#set $ws10 "10:10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2 
+bindsym $mod+3 workspace $ws3 
+bindsym $mod+4 workspace $ws4 
+bindsym $mod+5 workspace $ws5 
+#bindsym $mod+6 workspace $ws6 
+#bindsym $mod+7 workspace $ws7 
+#bindsym $mod+8 workspace $ws8 
+#bindsym $mod+9 workspace $ws9 
+#bindsym $mod+0 workspace $ws0 
+
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+9 mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+x mode "$mode_system"
+set $mode_system (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id betterlockscreen -s, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym x exec --no-startup-id i3exit shutdown, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+plus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Mpc music mode 
+bindsym $mod+o mode "$mode_mpc"
+set $mode_mpc (i)prev, (o)play/pause, (p)next, (z)random
+mode "$mode_mpc" {
+    bindsym i exec --no-startup-id mpc prev, mode "default"
+    bindsym o exec --no-startup-id mpc toggle, mode "default"
+    bindsym p exec --no-startup-id mpc next, mode "default"
+    bindsym z exec --no-startup-id mpc random && notify-send "Random" "$(mpc status | sed -n "3p" | awk '{print $5}')", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Key bindings for XF86 media controls for spotify
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous -p spotify
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause -p spotify
+bindsym XF86AudioNext exec --no-startup-id playerctl next -p spotify
+
+# Key binding for max and min brightness
+bindsym $mod+u exec --no-startup-id xbacklight -set 100
+bindsym $mod+y exec --no-startup-id xbacklight -set 0
+
+# You can also use any non-zero value if you'd like to have a border
+#for_window [class=".*"] border 
+#pixel 1
+
+#class                 border  backgr. text    indicator child_border
+client.focused          #B8BB26 #B8BB26 #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #32302f #32302f #D5C4A1 #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #665c54 #665c54 #ffffff #000000   #0c0c0c
+
+set $background #32302f
+
+#client.background       #ffffff
+
+default_border pixel 3
+#default_floating_border pixel 5 
+new_float none
+
+			      # GAPS CONFIGURATION
+
+#gaps inner  5
+gaps outer  15
+
+# Activate smart borders (always)
+smart_borders on 
+
+# Always float anki add screen
+for_window [title="Add"] floating enable 
+for_window [title="Add" floating] resize set 600 400
+
+# Start Polkit Authentication Agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Startup applications
+#exec --no-startup-id redshift-gtk
+exec --no-startup-id mpDris2 &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id dunst
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id wal --theme ~/.walthemes/base16-gruvbox-soft.json --vte -n
+exec_always --no-startup-id ~/scripts/autodetect-display.sh
+exec_always --no-startup-id xrdb -load .Xresources
+exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync --xrender-sync-fence
+exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
+exec --no-startup-id calcursea
+exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
+exec --no-startup-id ibus-daemon -drx
+exec --no-startup-id setxkbmap -option caps:swapescape
+exec --no-startup-id nm-applet
+exec --no-startup-id indicator-kdeconnect &
+exec --no-startup-id i3-battery-popup -n
+exec --no-startup-id mpd --verbose
+exec --no-startup-id betterlockscreen -u ~/pix/background-tela.jpg
+#exec --no-startup-id flatpak run com.github.marktext.marktext &

@@ -101,16 +101,6 @@ format-padding = 2
 label-indicator-on-capslock =
 label-indicator-off-capslock = 
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -144,7 +134,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
@@ -180,22 +170,6 @@ format-padding = 2
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -266,34 +240,6 @@ label-muted-foreground = #665C54
 label-muted-background = ${colors.yellow}
 label-muted-padding = 2
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -323,117 +269,6 @@ label-full =  Full
 format-full-padding = 2 
 format-full-background = ${colors.light-pink}
 format-full-foreground = ${colors.background}
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/spotify]
-type = custom/script
-interval = 1
-format-prefix = ""
-format = <label>
-exec = python $HOME/spotify_status.py -f '{artist}: {song}'
-;format-underline = #1db954
-
-[module/browser]
-type = custom/text
-content = 爵
-
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
-
-content-foreground = ${colors.foreground}
-;content-underline = ${colors.underline}
-content-padding = 2
-
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
-click-left = falkon &
-
-[module/rhythmbox]
-type = custom/text
-content = ﱘ
- 
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
- 
-content-foreground = ${colors.foreground}
-content-padding = 2
-;content-underline = ${colors.underline}
- 
- ; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $    COMMAND"
- click-left = rhythmbox &
-
-[module/nau]
-type = custom/text
-content = 
- 
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
- 
-content-foreground = ${colors.foreground}
-content-padding = 2
-;content-underline = ${colors.underline}
- 
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c     $    COMMAND"
- click-left = nautilus &
-
-[module/term]
-type = custom/text
-content = 
- 
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
-
-content-foreground = ${colors.foreground}
-content-padding = 2
-content-underline = ${colors.underline}
- 
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c         $    COMMAND"
-click-left = xfce4-terminal
-
-[module/code]
-type = custom/text
-content = ﬏
-  
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
- 
-content-foreground = ${colors.foreground}
-content-padding = 2
-content-underline = ${colors.underline}
-  
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c             $    COMMAND"
-click-left = code &
-
-[module/gcolor]
-type = custom/text
-content = 
-  
-; "content" has the same properties as "format-NAME"
-;content-background = ${colors.background-alt}
- 
-content-foreground = ${colors.foreground}
-content-padding = 2
-;content-underline = ${colors.underline}
-  
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c             $    COMMAND"
-click-left = gcolor2 &
 
 [module/calendar]
 type = custom/text
