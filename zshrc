@@ -132,9 +132,9 @@ else
 fi
 
 # Aliases
-alias ohmyzsh="cd ~/.oh-my-zsh"
+alias omz="cd ~/.oh-my-zsh"
 alias cz="clear && source ~/.zshrc"
-alias ls="exa --color=always --group-directories-first"
+alias ls="lsd --color=always --group-dirs"
 alias chall="chmod +x *"
 alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
@@ -145,6 +145,7 @@ alias -g sw="i3-swallow"
 alias pavol="pactl set-sink-volume @DEFAULT_SINK@"
 alias sxiv="i3-swallow sxiv -a"
 alias dvtm="dvtm -m ^f"
+alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
 alias driveumount="fusermount -u ~/Drive"
 alias cdate='date "+%d-%m-%Y"'
