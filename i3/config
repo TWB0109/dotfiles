@@ -125,11 +125,6 @@ set $ws2 "2:media"
 set $ws3 "3:prod"
 set $ws4 "4:term"
 set $ws5 "5:game"
-#set $ws6 "6:6"
-#set $ws7 "7:7"
-#set $ws8 "8:8"
-#set $ws9 "9:9"
-#set $ws10 "10:10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1 

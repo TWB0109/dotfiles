@@ -53,6 +53,17 @@ augroup remember_folds
 "Vim-Markdown folding disable
 let g:vim_markdown_folding_disable = 1
 
+"Livedown
+let g:livedown_autorun = 0
+let g:livedown_open    = 1
+let g:livedown_port    = 8888
+let g:livedown_browser = "chromium"
+
+"Neotex
+let g:neotex_enabled = 1
+let g:neotex_delay   = 500
+let g:tex_flavor     = "latex"
+
 "Python Highlight
 let g:python_highlight_all = 1
 
@@ -110,7 +121,8 @@ Plug 'w0rp/ale'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'vim-python/python-syntax'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'shime/vim-livedown', { 'for': 'markdown' }
+Plug 'donRaphaco/neotex', { 'for': 'tex'  }
  
 " Initialize plugin system
 call plug#end()
