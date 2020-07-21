@@ -109,9 +109,13 @@ source ~/.cache/wal/colors-tty.sh
 # neofetch
 # Better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;3"
+
+session=$(tmux has-session -t main 2>/dev/null)
+
+[[ "$session" -eq 0 && "$TERM" = "alacritty" ]] && tmux new -s main 2>/dev/null
+
 export XDG_MUSIC_DIR=~/music/
 export TERMINAL=termite
-
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
@@ -158,6 +162,7 @@ alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
 alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
+alias -g att="tmux attach -t"
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
