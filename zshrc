@@ -131,6 +131,9 @@ else
   export EDITOR='vim'
 fi
 
+# Use less as a pager
+export PAGER='less'
+
 # Aliases
 alias omz="cd ~/.oh-my-zsh"
 alias cz="clear && source ~/.zshrc"
@@ -143,7 +146,7 @@ alias date="LC_ALL=C date"
 
 alias -g sw="i3-swallow"
 alias pavol="pactl set-sink-volume @DEFAULT_SINK@"
-alias sxiv="i3-swallow sxiv -a"
+alias sxiv="sxiv -a"
 alias dvtm="dvtm -m ^f"
 alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
@@ -154,6 +157,7 @@ alias tdate='date -d tomorrow "+%d-%m-%Y"'
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
+alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
