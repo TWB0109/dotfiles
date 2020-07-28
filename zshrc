@@ -141,6 +141,7 @@ export PAGER='less'
 
 # Aliases
 alias omz="cd ~/.oh-my-zsh"
+alias c="clear"
 alias cz="clear && source ~/.zshrc"
 alias ls="lsd --color=always --group-dirs"
 alias chall="chmod +x *"
@@ -150,7 +151,7 @@ alias fgrep="fgrep --colour=auto"
 alias date="LC_ALL=C date"
 
 alias -g sw="i3-swallow"
-alias pavol="pactl set-sink-volume @DEFAULT_SINK@"
+alias -g pavol="pactl set-sink-volume @DEFAULT_SINK@"
 alias sxiv="sxiv -a"
 alias dvtm="dvtm -m ^f"
 alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
