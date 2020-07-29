@@ -141,6 +141,7 @@ export PAGER='less'
 
 # Aliases
 alias omz="cd ~/.oh-my-zsh"
+alias -g sed="sed -i"
 alias c="clear"
 alias cz="clear && source ~/.zshrc"
 alias ls="lsd --color=always --group-dirs"
