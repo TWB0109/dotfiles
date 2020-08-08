@@ -112,8 +112,11 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 session=$(tmux has-session -t main 2>/dev/null)
 
-[[ "$session" -eq 0 && "$TERM" = "alacritty" ]] && tmux new -s main 2>/dev/null
-[[ -z "$session" && "$TERM" = "alacritty" ]] && tmux attach -t main
+[[ "$session" -eq 0 && "$TERM" != "screen-256color" ]] && tmux new -s main 2>/dev/null
+[[ -z "$session" && "$TERM" != "screen-256color" ]] && tmux attach -t main
+
+#[[ "$session" -eq 0 && "$TERM" = "alacritty" ]] && tmux new -s main 2>/dev/null
+#[[ -z "$session" && "$TERM" = "alacritty" ]] && tmux attach -t main
 
 export XDG_MUSIC_DIR=~/music/
 export TERMINAL=termite
