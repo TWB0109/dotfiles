@@ -16,7 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.gem/ruby/2.7.0/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.gem/ruby/2.7.0/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/brandon/.oh-my-zsh"
@@ -144,8 +144,8 @@ export PAGER='less'
 
 # Aliases
 alias omz="cd ~/.oh-my-zsh"
-alias -g sed="sed -i"
 alias c="clear"
+alias Syu="sudo pacman -Syu"
 alias cz="clear && source ~/.zshrc"
 alias ls="lsd --color=always --group-dirs"
 alias chall="chmod +x *"
@@ -169,6 +169,7 @@ alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
 alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
 alias -g att="tmux attach -t"
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
