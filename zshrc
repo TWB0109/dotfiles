@@ -155,6 +155,8 @@ export PAGER='less'
 # Aliases
 ## lpass
 alias ghpass="lpass show -c --password github.com"
+
+## Meh
 alias omz="cd ~/.oh-my-zsh"
 alias c="clear"
 alias clipc="xclip -selection clipboard /dev/null"
@@ -168,30 +170,36 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias date="LC_ALL=C date"
+alias colpp="colorpicker --short --one-shot --preview | xsel -b"
 
+## Meh
 alias -g sw="i3-swallow"
 alias -g pavol="pactl set-sink-volume @DEFAULT_SINK@"
 alias sxiv="sxiv -a"
 alias dvtm="dvtm -m ^f"
 alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
+
+## Drive
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
 alias driveumount="fusermount -u ~/Drive"
+
+## Date
 alias cdate="date '+%d-%m-%Y'"
 alias tdate="date -d tomorrow '+%d-%m-%Y'"
 
+## Actually functions
 function gwp () {
     file=$1
     $(gsettings set org.gnome.desktop.background picture-uri "file:///home/brandon/pix/$file")
 }
 
+# Laziness
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
 alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
 alias -g att="tmux attach -t"
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
-
-# Bindings
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
