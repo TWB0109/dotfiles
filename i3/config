@@ -311,7 +311,7 @@ exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-starup-id bash -c $HOME/.scripts/natscroll
+exec --no-startup-id  $HOME/.scripts/natscroll
 exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
