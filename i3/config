@@ -258,9 +258,9 @@ mode "$mode_mpc" {
 }
 
 # Key bindings for XF86 media controls for spotify
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous -p spotify
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause -p spotify
-bindsym XF86AudioNext exec --no-startup-id playerctl next -p spotify
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous 
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause 
+bindsym XF86AudioNext exec --no-startup-id playerctl next 
 
 # Key binding for max and min brightness
 bindsym $mod+u exec --no-startup-id xbacklight -set 100
@@ -311,7 +311,7 @@ exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id picom -t 0 -l 0 --experimental-backends --config ~/.config/compton.conf --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-startup-id calcursea
+exec --no-starup-id bash -c $HOME/.scripts/natscroll
 exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
