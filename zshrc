@@ -153,6 +153,8 @@ fi
 export PAGER='less'
 
 # Aliases
+## lpass
+alias ghpass="lpass show -c --password github.com"
 alias omz="cd ~/.oh-my-zsh"
 alias c="clear"
 alias clipc="xclip -selection clipboard /dev/null"
