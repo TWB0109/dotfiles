@@ -132,6 +132,16 @@ export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=es_CR.UTF-8
 
+# Kunst
+## The size of the album art to be displayed
+export KUNST_SIZE="250x250"
+
+## The position where the album art should be displayed
+export KUNST_POSITION="+900+250"
+
+## Where your music is located
+export KUNST_MUSIC_DIR="/home/brandon/music/"
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -145,6 +155,9 @@ export PAGER='less'
 # Aliases
 alias omz="cd ~/.oh-my-zsh"
 alias c="clear"
+alias clipc="xclip -selection clipboard /dev/null"
+alias z="mpc random -q"
+alias :q="exit"
 alias Syu="sudo pacman -Syu"
 alias cz="clear && source ~/.zshrc"
 alias ls="exa --color=always --group-directories-first"
@@ -161,8 +174,13 @@ alias dvtm="dvtm -m ^f"
 alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
 alias driveumount="fusermount -u ~/Drive"
-alias cdate='date "+%d-%m-%Y"'
-alias tdate='date -d tomorrow "+%d-%m-%Y"'
+alias cdate="date '+%d-%m-%Y'"
+alias tdate="date -d tomorrow '+%d-%m-%Y'"
+
+function gwp () {
+    file=$1
+    $(gsettings set org.gnome.desktop.background picture-uri "file:///home/brandon/pix/$file")
+}
 
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
@@ -170,6 +188,8 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3
 alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
 alias -g att="tmux attach -t"
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+
+# Bindings
 
 # User variables
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
