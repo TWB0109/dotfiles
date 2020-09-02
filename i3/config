@@ -13,9 +13,9 @@ exec --no-startup-id nm-applet &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%  && $refresh_i3status 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%  && $refresh_i3status 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle  && $refresh_i3status 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status 
 
 # Use xbacklight to adjust brightness
@@ -303,9 +303,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Startup applications
 #exec --no-startup-id redshift-gtk
 exec --no-startup-id mpDris2 &
+exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id dunst
-exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal --theme ~/.walthemes/base16-gruvbox-soft.json --vte -n
 exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
@@ -315,7 +315,6 @@ exec --no-startup-id  $HOME/.scripts/natscroll
 exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id nm-applet
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
