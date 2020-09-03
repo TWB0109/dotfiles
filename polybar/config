@@ -62,8 +62,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
 modules-left = i3 
-modules-center = date mpd 
-modules-right = DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
+modules-center = calendar date mpd 
+modules-right = updates-pacman DoNotDisturb xbacklight pulseaudio wlan battery xkeyboard 
 tray-position = right
 tray-margin = 0
 tray-background = ${colors.green} 
@@ -143,6 +143,7 @@ label-urgent-padding = 2
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online-prefix = "♫ "
 format-online-foreground = ${colors.foreground}
 format-online-padding = 1
 
@@ -152,7 +153,7 @@ icon-play = 契
 icon-pause =  
 icon-next = 怜
 
-label-song-maxlen = 25
+label-song-maxlen = 0
 label-song-ellipsis = true
 label-song-foreground = ${colors.foreground}
 label-song-padding = 1
@@ -162,7 +163,7 @@ type = internal/xbacklight
 
 format = <label> 
 label =   %percentage%
-format-background = ${colors.green}
+format-background = ${colors.red}
 format-foreground = ${colors.background}
 format-padding = 2
 
@@ -212,18 +213,18 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %d/%m/%y "
+date = "%a %d, %Y" 
 ;date-alt = " %Y-%m-%d"
 
 time = %I:%M
 ;time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-padding = 1
+;format-prefix = 
+;format-prefix-padding = 1
 format-padding = 2
 format-foreground = ${colors.foreground}
 
-label = %time% 
+label = %date%  %time% 
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -248,7 +249,7 @@ full-at = 99
 
 # Charging
 format-charging = <label-charging>
-label-charging = ﮣ%percentage%
+label-charging =  %percentage%%
 
 format-charging-padding = 2 
 format-charging-background = ${colors.light-pink}
@@ -282,15 +283,21 @@ click-left = gsimplecal
 
 [module/DoNotDisturb]
 type = custom/text
-content = "ﮖ"
+content = "DND"
 
 content-foreground = ${colors.background}
-content-background = ${colors.red}
+content-background = ${colors.light-pink}
 content-padding = 2
 content-margin = 0
 
 click-left= $HOME/.donotdisturb.sh
 click-right = $HOME/.disturb.sh
+
+[module/updates-pacman]
+type = custom/script
+exec = ~/.config/polybar/updates-pacman
+content-foreground = ${colors.foreground}
+interval = 600
 
 [settings]
 screenchange-reload = true

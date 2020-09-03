@@ -295,6 +295,7 @@ smart_borders on
 # Always float anki add screen
 for_window [title="Add"] floating enable 
 for_window [title="Add" floating] resize set 600 400
+for_window [class="plank"] floating enable, border none no_focus
 
 # Start Polkit Authentication Agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
