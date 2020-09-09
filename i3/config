@@ -29,7 +29,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 floating_modifier $mod
 
 # Notify current day 
-bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(LC_ALL=C date "+%a %d/%m/%y")"
+#bindsym $mod+6 exec --no-startup-id  notify-send "Date" "$(LC_ALL=C date "+%a %d/%m/%y")"
 
 # Get a rofi emoji selector
 bindsym $mod+7 exec --no-startup-id sh .scripts/rofiemoji
@@ -46,7 +46,7 @@ bindsym $mod+Shift+g exec --no-startup-id $HOME/.scripts/touchenable
 bindsym $mod+Return exec --no-startup-id alacritty 
 
 for_window [class="^floating$"] floating enable
-bindsym $mod+Shift+Return exec --no-startup-id termite && xdotool set_window --class floating $(xdotool getwindowfocus)
+bindsym $mod+Shift+Return exec --no-startup-id alacritty && xdotool set_window --class floating $(xdotool getwindowfocus)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -60,10 +60,6 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run -p "RUN" -h 31
 bindsym $mod+ctrl+s exec --no-startup-id rofi -show search -modi search:rofi-web-search -i -p "Search: "
 bindsym $mod+ctrl+a exec --no-startup-id rofi -show run
 bindsym $mod+ shift+w exec --no-startup-id rofi -show window
-# Open a rofi power manager
-bindsym $mod+Shift+x exec --no-startup-id ~/.powermenu.sh
-# Opepn a rofi mpd manager
-bindsym $mod+Shift+m exec --no-startup-id rofi-mpc
 # Open Surf Web Browser
 bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
 
@@ -137,11 +133,6 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3 
 bindsym $mod+4 workspace $ws4 
 bindsym $mod+5 workspace $ws5 
-#bindsym $mod+6 workspace $ws6 
-#bindsym $mod+7 workspace $ws7 
-#bindsym $mod+8 workspace $ws8 
-#bindsym $mod+9 workspace $ws9 
-#bindsym $mod+0 workspace $ws0 
 
 set $mode_gaps gaps
 set $mode_gaps_outer outer gaps
@@ -262,7 +253,7 @@ mode "$mode_mpc" {
     bindsym Escape mode "default"
 }
 
-# Key bindings for XF86 media controls for spotify
+# Key bindings for XF86 media controls
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause 
 bindsym XF86AudioNext exec --no-startup-id playerctl next 
@@ -321,5 +312,6 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
-exec --no-startup-id betterlockscreen -u ~/pix/background-tela.jpg
-#exec --no-startup-id flatpak run com.github.marktext.marktext &
+exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
+exec --no-startup-id xautolock -time 5 -locker '$HOME/.local/bin/betterlockscreen -l dimblur --off 5'
+exec --no-startup-id $HOME/.scripts/aarchupstartup.sh
