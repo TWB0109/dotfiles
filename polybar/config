@@ -63,7 +63,7 @@ font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
 modules-left = i3 
 modules-center = calendar date 
-modules-right = DoNotDisturb backlight-acpi pulseaudio wlan battery xkeyboard 
+modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan battery xkeyboard 
 tray-position = right
 tray-margin = 0
 tray-background = ${colors.green} 
@@ -298,6 +298,17 @@ content-margin = 0
 
 click-left= $HOME/.donotdisturb.sh
 click-right = $HOME/.disturb.sh
+
+[module/caffeine]
+type = custom/text
+content = ""
+
+click-left = xautolock -disable && notify-send "Caffeine" "Xautolock is disabled"
+click-right = xautolock -enable && notify-send "Caffeine" "Xautolock is enabled"
+
+content-foreground = ${colors.background}
+content-background = ${colors.light-blue}
+content-padding = 2
 
 [settings]
 screenchange-reload = true
