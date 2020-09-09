@@ -314,5 +314,5 @@ exec --no-startup-id indicator-kdeconnect &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
 exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
-exec --no-startup-id xautolock -time 5 -locker '$HOME/.local/bin/betterlockscreen -l dimblur --off 5' -notify 60 -corners 00+- &
+exec --no-startup-id DISPLAY=:1.0 xautolock -time 5 -locker '$HOME/.local/bin/betterlockscreen -l dimblur --off 5' -notify 60 -corners 00+- &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
