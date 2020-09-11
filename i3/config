@@ -63,6 +63,9 @@ bindsym $mod+ shift+w exec --no-startup-id rofi -show window
 # Open Surf Web Browser
 bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
 
+# Launch a dmenu kde wrapper
+bindsym $mod+ctrl+k exec --no-startup-id $HOME/.scripts/dkde
+
 # Swap Esc and Caps 
 bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
 
@@ -291,9 +294,6 @@ for_window [title="Add"] floating enable
 for_window [title="Add" floating] resize set 600 400
 for_window [class="plank"] floating enable, border none no_focus
 
-# Start Polkit Authentication Agent
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
 # Startup applications
 exec --no-startup-id nm-applet & 
 exec --no-startup-id pamac-tray &
@@ -310,9 +310,10 @@ exec --no-startup-id  $HOME/.scripts/natscroll
 exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id indicator-kdeconnect &
+exec --no-startup-id /usr/lib/kdeconnectd &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
 exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
 exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
