@@ -1,0 +1,6 @@
+#!/bin/bash
+
+idd=$(xinput --list | grep 'ETPS/2 Elantech Touchpad' | awk '{print $6}' | cut -d'=' -f2)
+prop=$(xinput list-props  $idd | grep "Natural Scrolling Enabled (" | awk '{print $5}' | sed 's/[()]*//g' | sed 's/://g')
+
+xinput set-prop $idd $prop 1

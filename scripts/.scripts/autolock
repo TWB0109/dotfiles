@@ -1,0 +1,6 @@
+#!/bin/bash
+
+locker="$HOME/.local/bin/betterlockscreen -l dimblur --off 5"
+
+#export DISPLAY=:1.0
+xautolock -time 5 -notify 60 -corners 00+- -locker '$HOME/.local/bin/betterlockscreen -l dimblur --off 5' 
