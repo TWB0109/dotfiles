@@ -194,6 +194,7 @@ function gwp () {
 }
 
 # Laziness
+alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
@@ -205,3 +206,4 @@ alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
 android='/run/user/1000/544ba225466efb1c/primary'
 
+setopt extended_glob
