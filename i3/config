@@ -8,7 +8,6 @@
 ###############################################
 set $mod Mod4
 font pango:monospace 8
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -73,18 +72,18 @@ bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
 bindsym $mod+Shift+b exec --no-startup-id setxkbmap -option
 
 # change focus
-bindsym $mod+ h focus left
-bindsym $mod+ j focus down
-bindsym $mod+ k focus up
-bindsym $mod+ l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
               
-# alternative ly, you can use the cursor keys:
-bindsym $mod+ Left focus left
-bindsym $mod+ Down focus down
-bindsym $mod+ Up focus up
-bindsym $mod+ Right focus right
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
               
-# move focuse d window
+# move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -124,11 +123,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:www"
-set $ws2 "2:media"
-set $ws3 "3:prod"
-set $ws4 "4:term"
-set $ws5 "5:game"
+set $ws1 "1:1"
+set $ws2 "2:2"
+set $ws3 "3:3"
+set $ws4 "4:4"
+set $ws5 "5:5"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1 
@@ -313,6 +312,7 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
 exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id mpd --verbose
+exec --no-startup-id xss-lock --transfer-sleep-lock -- "betterlockscreen -l dimblur" --nofork &
 exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
 exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
