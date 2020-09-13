@@ -13,12 +13,13 @@ set cursorline
 set encoding=utf-8
 set showcmd
 set nopaste
+set nocompatible
 set splitbelow
 set splitright
 set laststatus=2
 set shortmess+=A
+set clipboard=unnamedplus
 syntax on
-colorscheme desert
 let mapleader = ','
 let g:user_emmet_leader_key = ','
 
@@ -53,11 +54,12 @@ augroup remember_folds
 "Vim-Markdown folding disable
 let g:vim_markdown_folding_disable = 1
 
-"Livedown
-let g:livedown_autorun = 0
-let g:livedown_open    = 1
-let g:livedown_port    = 8888
-let g:livedown_browser = "chromium"
+"MarkdownPreview
+let g:mkdp_auto_start        = 0
+let g:mkdp_auto_close        = 1
+let g:mkdp_refresh_slow      = 1
+let g:mkdp_open_to_the_world = 1
+let g:mkdp_markdown_css      = "~/.vim/autoload/markdown-preview.nvim/air.css"
 
 "Neotex
 let g:neotex_enabled = 1
@@ -67,11 +69,15 @@ let g:tex_flavor     = "latex"
 "Python Highlight
 let g:python_highlight_all = 1
 
-"Fzf keybind
+"FZF
 nnoremap <C-T> :FZF <CR><CR>
+let g:fzf_command_prefix = 'fzf'
 
 "Elite mode
 let g:elite_mode=1
+
+"Vimwiki
+let g:vimwiki_autowriteall=1
 
 "Elite mode def
 if get(g:, 'elite_mode')
@@ -117,12 +123,12 @@ Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'valloric/youcompleteme'
-Plug 'w0rp/ale'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'vim-python/python-syntax'
-Plug 'shime/vim-livedown', { 'for': 'markdown' }
 Plug 'donRaphaco/neotex', { 'for': 'tex'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'vimwiki/vimwiki'
  
 " Initialize plugin system
 call plug#end()
@@ -133,6 +139,7 @@ set completeopt=longest,menuone
 "Filetype omni 
 set omnifunc=syntaxcomplete#Complete
 
+
 "Indent 
 set expandtab 
 set cindent 
@@ -142,6 +149,7 @@ set shiftwidth=4
 
 "Filetype 
 filetype on
+filetype plugin on
 filetype plugin indent on
 filetype indent on
 
