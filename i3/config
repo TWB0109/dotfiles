@@ -48,7 +48,7 @@ for_window [class="^floating$"] floating enable
 bindsym $mod+Shift+Return exec --no-startup-id alacritty && xdotool set_window --class floating $(xdotool getwindowfocus)
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -123,11 +123,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:1"
-set $ws2 "2:2"
-set $ws3 "3:3"
-set $ws4 "4:4"
-set $ws5 "5:5"
+set $ws1 "1:www"
+set $ws2 "2:media"
+set $ws3 "3:prod"
+set $ws4 "4:term"
+set $ws5 "5:game"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1 
@@ -185,7 +185,7 @@ mode "$mode_gaps_outer" {
 bindsym $mod+x mode "$mode_system"
 set $mode_system (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id betterlockscreen -l dimblur, mode "default"
+    bindsym l exec --no-startup-id betterlockscreen -l dimblur --off 5, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym s exec --no-startup-id betterlockscreen -s, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -204,9 +204,9 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+q restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -295,7 +295,6 @@ for_window [class="plank"] floating enable, border none no_focus
 
 # Startup applications
 exec --no-startup-id nm-applet & 
-exec --no-startup-id pamac-tray &
 exec --no-startup-id mpDris2 &
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -306,7 +305,6 @@ exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id  $HOME/.scripts/natscroll
-exec --no-startup-id termite -e calcurse && && xdotool set_window --class floating $(xdotool getwindowfocus)
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
