@@ -57,13 +57,13 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = fixed:pixelsize=9:antialias=true;1
+font-0 = fixed:pixelsize=9:weight=bold:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = i3 
+modules-left = xmonad i3 
 modules-center = calendar date 
-modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan battery xkeyboard 
+modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan xkeyboard 
 tray-position = right
 tray-margin = 0
 tray-background = ${colors.green} 
