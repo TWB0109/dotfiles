@@ -42,10 +42,7 @@ bindsym $mod+g exec --no-startup-id $HOME/.scripts/touchdisable
 bindsym $mod+Shift+g exec --no-startup-id $HOME/.scripts/touchenable
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty 
-
-for_window [class="^floating$"] floating enable
-bindsym $mod+Shift+Return exec --no-startup-id alacritty && xdotool set_window --class floating $(xdotool getwindowfocus)
+bindsym $mod+Shift+Return exec --no-startup-id alacritty 
 
 # kill focused window
 bindsym $mod+Shift+c kill
