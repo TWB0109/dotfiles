@@ -59,8 +59,10 @@ bindsym $mod+ shift+w exec --no-startup-id rofi -show window
 # Open Surf Web Browser
 bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
 
-# Launch a dmenu kde wrapper
+# Launch a dmenu kdeconnect wrapper
 bindsym $mod+ctrl+k exec --no-startup-id $HOME/.scripts/dkde
+# Launch a dmenu nmcli wrapper
+bindsym $mod+ctrl+n exec --no-startup-id networkmanager_dmenu
 
 # Swap Esc and Caps 
 bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
