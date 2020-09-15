@@ -61,12 +61,12 @@ font-0 = fixed:pixelsize=9:weight=bold:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = xmonad i3 
+modules-left = i3 
 modules-center = calendar date 
 modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan xkeyboard 
 tray-position = right
-tray-margin = 0
-tray-background = ${colors.green} 
+;tray-margin = 0
+tray-background = ${colors.background} 
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -94,8 +94,8 @@ blacklist-0 = num
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-format-background = ${colors.light-green}
-format-foreground = ${colors.background}
+;format-background = ${colors.light-green}
+format-foreground = ${colors.light-green}
 format-padding = 2
 
 label-indicator-on-capslock =
@@ -117,9 +117,9 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.green}
-label-focused-underline = ${colors.green}
+label-focused-foreground = ${colors.green}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.background}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -163,20 +163,14 @@ type = internal/xbacklight
 
 format = <label> 
 label =   %percentage%
-format-background = ${colors.red}
-format-foreground = ${colors.background}
+;format-background = ${colors.red}
+format-foreground = ${colors.red}
 format-padding = 2
 
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-
-format = <label> 
-label =   %percentage%
-format-background = ${colors.red}
-format-foreground = ${colors.background}
-format-padding = 2
 
 [module/wlan]
 type = internal/network
@@ -187,15 +181,15 @@ format-connected = <label-connected>
 ;format-connected-underline = ${colors.underline}
 label-connected =  直 %essid%
 
-label-connected-background = ${colors.light-blue}
-label-connected-foreground = ${colors.background}
+;label-connected-background = ${colors.light-blue}
+label-connected-foreground = ${colors.light-blue}
 label-connected-padding = 2
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = 睊  %ifname% disconnected
 
-label-disconnected-background = ${colors.light-blue}
+;label-disconnected-background = ${colors.light-blue}
 label-disconnected-foreground = #665C54
 label-disconnected-padding = 2
 
@@ -238,13 +232,13 @@ type = internal/pulseaudio
 format-volume = <label-volume> 
 label-volume =墳 %percentage%%
 
-label-volume-foreground = ${colors.background}
-label-volume-background = ${colors.yellow}
+label-volume-foreground = ${colors.yellow}
+;label-volume-background = ${colors.yellow}
 label-volume-padding = 2
 
 label-muted = 
 label-muted-foreground = #665C54
-label-muted-background = ${colors.yellow}
+;label-muted-background = ${colors.yellow}
 label-muted-padding = 2
 
 [module/battery]
@@ -291,8 +285,8 @@ click-left = gsimplecal
 type = custom/text
 content = "DND"
 
-content-foreground = ${colors.background}
-content-background = ${colors.light-pink}
+content-foreground = ${colors.light-pink}
+;content-background = ${colors.light-pink}
 content-padding = 2
 content-margin = 0
 
@@ -306,8 +300,8 @@ content = ""
 click-left = xautolock -disable && notify-send "Caffeine" "Xautolock is disabled"
 click-right = xautolock -enable && notify-send "Caffeine" "Xautolock is enabled"
 
-content-foreground = ${colors.background}
-content-background = ${colors.light-blue}
+content-foreground = ${colors.light-blue}
+;content-background = ${colors.light-blue}
 content-padding = 2
 
 [settings]
