@@ -293,22 +293,20 @@ for_window [title="Add" floating] resize set 600 400
 for_window [class="plank"] floating enable, border none no_focus
 
 # Startup applications
-exec --no-startup-id nm-applet & 
+#exec --no-startup-id nm-applet & 
 exec --no-startup-id mpDris2 &
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id wal -R
-exec_always --no-startup-id ~/scripts/autodetect-display.sh
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-exec --no-startup-id  $HOME/.scripts/natscroll
+exec --no-startup-id $HOME/.scripts/natscroll
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
-exec --no-startup-id i3-battery-popup -n
-exec --no-startup-id mpd --verbose
+exec --no-startup-id mpd &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- "betterlockscreen -l dimblur" --nofork &
 exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
 exec --no-startup-id $HOME/.scripts/autolock &
