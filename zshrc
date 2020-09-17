@@ -119,7 +119,7 @@ session=$(tmux has-session -t main 2>/dev/null)
 #[[ -z "$session" && "$TERM" = "alacritty" ]] && tmux attach -t main
 
 export XDG_MUSIC_DIR=~/music/
-export TERMINAL=termite
+export TERMINAL=alacritty
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
@@ -153,9 +153,6 @@ fi
 export PAGER='less'
 
 # Aliases
-## lpass
-alias ghpass="lpass show -c --password github.com"
-
 ## Meh
 alias omz="cd ~/.oh-my-zsh"
 alias c="clear"
@@ -178,6 +175,7 @@ alias -g pavol="pactl set-sink-volume @DEFAULT_SINK@"
 alias sxiv="sxiv -a"
 alias dvtm="dvtm -m ^f"
 alias sptad="env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U"
+alias fetish="clear && info='n os sh wm gtk kern term col n' separator=' ➜ ' accent=2 fet.sh"
 
 ## Drive
 alias drivemount="rclone mount GDrive: ~/Drive --daemon"
