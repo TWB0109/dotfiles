@@ -190,6 +190,10 @@ function gwp () {
     file=$1
     $(gsettings set org.gnome.desktop.background picture-uri "file:///home/brandon/pix/$file")
 }
+function ghpass () {
+    session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
+    bw get password Github --session $session | xclip -selection c 
+}
 
 # Laziness
 alias vw="vim +:VimwikiIndex"
