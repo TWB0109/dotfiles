@@ -16,7 +16,7 @@
 ;
 ;==========================================================
 
-[colors]
+[glob]
 background = #32302F
 foreground = #D5C4A1 
 alert      = #bd2c40
@@ -30,6 +30,8 @@ light-blue  = #83A598
 light-pink  = #D3869B
 light-green = #8ec07c
 
+padding     = 2
+
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -40,19 +42,19 @@ height = 27
 radius = 0.0
 fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
-underline = ${colors.underline}
+background = ${glob.background}
+foreground = ${glob.foreground}
+underline = ${glob.underline}
 
 line-size = 3
 line-color = #f00
 
 border-size = 4
 ;border-color = #00000000
-border-color = ${colors.background}
+border-color = ${glob.background}
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
@@ -66,7 +68,7 @@ modules-center = calendar date
 modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan xkeyboard 
 tray-position = right
 ;tray-margin = 0
-tray-background = ${colors.background} 
+tray-background = ${glob.background} 
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -92,11 +94,11 @@ label-maxlen =50
 type = internal/xkeyboard
 blacklist-0 = num 
 
-label-indicator-padding = 2
+label-indicator-padding = ${glob.padding}
 label-indicator-margin = 1
-;format-background = ${colors.light-green}
-format-foreground = ${colors.light-green}
-format-padding = 2
+;format-background = ${glob.light-green}
+format-foreground = ${glob.light-green}
+format-padding = ${glob.padding}
 
 label-indicator-on-capslock =
 label-indicator-off-capslock = 
@@ -111,20 +113,20 @@ strip-wsnumbers = true
 ; Only show workspaces on the same output as the bar
 ; pin-workspaces = true
 
-label-mode-padding = 1.5
+label-mode-padding = ${glob.padding}
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${glob.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-foreground = ${colors.green}
-label-focused-background = ${colors.background}
-label-focused-underline = ${colors.background}
-label-focused-padding = 2
+label-focused-foreground = ${glob.green}
+label-focused-background = ${glob.background}
+label-focused-underline = ${glob.background}
+label-focused-padding = ${glob.padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = 2
+label-unfocused-padding = ${glob.padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -134,8 +136,8 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.red}
-label-urgent-padding = 2
+label-urgent-background = ${glob.red}
+label-urgent-padding = ${glob.padding}
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -144,8 +146,8 @@ label-urgent-padding = 2
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 format-online-prefix = "♫ "
-format-online-foreground = ${colors.foreground}
-format-online-padding = 1
+format-online-foreground = ${glob.foreground}
+format-online-padding = ${glob.padding}
 
 icon-prev = 玲
 icon-stop = 栗
@@ -155,7 +157,7 @@ icon-next = 怜
 
 label-song-maxlen = 0
 label-song-ellipsis = true
-label-song-foreground = ${colors.foreground}
+label-song-foreground = ${glob.foreground}
 label-song-padding = 1
 
 [module/xbacklight]
@@ -163,9 +165,9 @@ type = internal/xbacklight
 
 format = <label> 
 label =   %percentage%
-;format-background = ${colors.red}
-format-foreground = ${colors.red}
-format-padding = 2
+;format-background = ${glob.red}
+format-foreground = ${glob.red}
+format-padding = ${glob.padding}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -178,20 +180,20 @@ interface = wlo1
 interval = 3.0
 
 format-connected = <label-connected>
-;format-connected-underline = ${colors.underline}
+;format-connected-underline = ${glob.underline}
 label-connected =  直 %essid%
 
-;label-connected-background = ${colors.light-blue}
-label-connected-foreground = ${colors.light-blue}
-label-connected-padding = 2
+;label-connected-background = ${glob.light-blue}
+label-connected-foreground = ${glob.light-blue}
+label-connected-padding = ${glob.padding}
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = 睊  %ifname% disconnected
 
-;label-disconnected-background = ${colors.light-blue}
+;label-disconnected-background = ${glob.light-blue}
 label-disconnected-foreground = #665C54
-label-disconnected-padding = 2
+label-disconnected-padding = ${glob.padding}
 
 [module/eth]
 type = internal/network
@@ -200,14 +202,14 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${glob.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${glob.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -221,8 +223,8 @@ time = %I:%M
 
 ;format-prefix = 
 ;format-prefix-padding = 1
-format-padding = 2
-format-foreground = ${colors.foreground}
+format-padding = ${glob.padding}
+format-foreground = ${glob.foreground}
 
 label = %date%  |  %time% 
 
@@ -232,14 +234,14 @@ type = internal/pulseaudio
 format-volume = <label-volume> 
 label-volume =墳 %percentage%%
 
-label-volume-foreground = ${colors.yellow}
-;label-volume-background = ${colors.yellow}
+label-volume-foreground = ${glob.yellow}
+;label-volume-background = ${glob.yellow}
 label-volume-padding = 2
 
 label-muted = 
 label-muted-foreground = #665C54
-;label-muted-background = ${colors.yellow}
-label-muted-padding = 2
+;label-muted-background = ${glob.yellow}
+label-muted-padding = ${glob.padding}
 
 [module/battery]
 type = internal/battery
@@ -251,33 +253,33 @@ full-at = 99
 format-charging = <label-charging>
 label-charging =  %percentage%%
 
-format-charging-padding = 2 
-format-charging-background = ${colors.light-pink}
-format-charging-foreground = ${colors.background}
+format-charging-padding = ${glob.padding}
+format-charging-background = ${glob.light-pink}
+format-charging-foreground = ${glob.background}
 
 # Discharging
 format-discharging = <label-discharging>
 label-discharging =  ﮤ%percentage%
 
-format-discharging-padding = 2 
-format-discharging-background = ${colors.light-pink}
-format-discharging-foreground = ${colors.background}
+format-discharging-padding = ${glob.padding} 
+format-discharging-background = ${glob.light-pink}
+format-discharging-foreground = ${glob.background}
 
 # Full
 format-full = <label-full>
 label-full =  Full
 
-format-full-padding = 2 
-format-full-background = ${colors.light-pink}
-format-full-foreground = ${colors.background}
+format-full-padding = ${glob.padding}
+format-full-background = ${glob.light-pink}
+format-full-foreground = ${glob.background}
 
 [module/calendar]
 type = custom/text
 content = 
 
-content-foreground = ${colors.foreground}
-;content-padding = 2
-;content-underline = ${colors.underline}
+content-foreground = ${glob.foreground}
+;content-padding = ${glob.padding}
+;content-underline = ${glob.underline}
 
 click-left = gsimplecal 
 
@@ -285,9 +287,9 @@ click-left = gsimplecal
 type = custom/text
 content = "DND"
 
-content-foreground = ${colors.light-pink}
-;content-background = ${colors.light-pink}
-content-padding = 2
+content-foreground = ${glob.light-pink}
+;content-background = ${glob.light-pink}
+content-padding = ${glob.padding}
 content-margin = 0
 
 click-left= $HOME/.donotdisturb.sh
@@ -300,9 +302,9 @@ content = ""
 click-left = xautolock -disable && notify-send "Caffeine" "Xautolock is disabled"
 click-right = xautolock -enable && notify-send "Caffeine" "Xautolock is enabled"
 
-content-foreground = ${colors.light-blue}
-;content-background = ${colors.light-blue}
-content-padding = 2
+content-foreground = ${glob.light-blue}
+;content-background = ${glob.light-blue}
+content-padding = ${glob.padding}
 
 [settings]
 screenchange-reload = true
