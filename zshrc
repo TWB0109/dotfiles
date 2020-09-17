@@ -204,4 +204,7 @@ alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 LATEXDIR='/home/brandon/Documentos/LaTeX/'
 android='/run/user/1000/544ba225466efb1c/primary'
 
+# BitWarden thing
+eval "$(bw completion --shell zsh); compdef _bw bw;"
+
 setopt extended_glob
