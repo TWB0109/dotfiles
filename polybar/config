@@ -181,7 +181,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 ;format-connected-underline = ${glob.underline}
-label-connected =  直 %essid%
+label-connected =  "%{A1:networkmanager_dmenu:}直 %essid%%{A}"
 
 ;label-connected-background = ${glob.light-blue}
 label-connected-foreground = ${glob.light-blue}
