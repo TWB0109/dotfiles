@@ -97,6 +97,7 @@ blacklist-0 = num
 label-indicator-padding = ${glob.padding}
 label-indicator-margin = 1
 ;format-background = ${glob.light-green}
+format-prefix = "⌨  "
 format-foreground = ${glob.light-green}
 format-padding = ${glob.padding}
 
