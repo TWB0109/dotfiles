@@ -11,10 +11,10 @@ font pango:monospace 8
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%  && $refresh_i3status 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%  && $refresh_i3status 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle  && $refresh_i3status 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && xobd_signal
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && xobd_signal
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use xbacklight to adjust brightness
 ##bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
@@ -264,16 +264,22 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 #for_window [class=".*"] border 
 #pixel 1
 
-#class                 border  backgr. text    indicator child_border
-client.focused          #B8BB26 #B8BB26 #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #32302f #32302f #D5C4A1 #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #665c54 #665c54 #ffffff #000000   #0c0c0c
+#class                  border      backgr.     text        indicator child_border
+client.focused          $green      $green      $background
+client.focused_inactive #333333     #5f676a     #ffffff     #484e50   #5f676a
+client.unfocused        $background $background $foreground #222222
+client.urgent           $red        $red        $foreground #900000   #900000
+client.placeholder      #665c54     #665c54     #ffffff     #000000   #0c0c0c
 
-set $background #32302f
-
-#client.background       #ffffff
+set_from_resource  $background  i3wm.color0  #32302f
+set_from_resource  $red         i3wm.color1  #32302f
+set_from_resource  $green       i3wm.color2  #32302f
+set_from_resource  $yellow      i3wm.color3  #32302f
+set_from_resource  $lightBlue   i3wm.color4  #32302f
+set_from_resource  $lightPink   i3wm.color5  #32302f
+set_from_resource  $lightGreen  i3wm.color6  #32302f
+set_from_resource  $foreground  i3wm.color7  #32302f
+set_from_resource  $gray        i3wm.color8  #32302f
 
 default_border pixel 3
 #default_floating_border pixel 5 
@@ -292,6 +298,9 @@ for_window [title="Add"] floating enable
 for_window [title="Add" floating] resize set 600 400
 for_window [class="plank"] floating enable, border none no_focus
 
+# Always float BitWarden
+for_window [class="bitwarden"] floating enable
+
 # Startup applications
 #exec --no-startup-id nm-applet & 
 exec --no-startup-id mpDris2 &
@@ -299,7 +308,9 @@ exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id wal -R
-exec_always --no-startup-id xrdb -load .Xresources
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
+#exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id $HOME/.scripts/natscroll
@@ -312,3 +323,4 @@ exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
 exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id xobd &
