@@ -17,18 +17,18 @@
 ;==========================================================
 
 [glob]
-background = #32302F
-foreground = #D5C4A1 
-alert      = #bd2c40
-underline  = #B8BB26
-primary    = #D5C4A1
+background = ${xrdb: color0}
+foreground = ${xrdb: color7} 
+alert      = ${xrdb: color9}
+underline  = ${xrdb: color2}
+primary    = ${xrdb: color7}
 
-red         = #FB4934
-green       = #B8BB26
-yellow      = #FABD2F
-light-blue  = #83A598
-light-pink  = #D3869B
-light-green = #8ec07c
+red         = ${xrdb: color9}
+green       = ${xrdb: color2}
+yellow      = ${xrdb: color3}
+light-blue  = ${xrdb: color4}
+light-pink  = ${xrdb: color5}
+light-green = ${xrdb: color6}
 
 padding     = 2
 
@@ -136,7 +136,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${glob.red}
+label-urgent-foreground = ${glob.red}
 label-urgent-padding = ${glob.padding}
 
 ; Separator in between workspaces
