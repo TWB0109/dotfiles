@@ -76,3 +76,4 @@ wal -R
 pulseaudio --start -D
 
 xset r rate 660 25
+#
