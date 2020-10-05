@@ -20,7 +20,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 ##bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 ##bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
-# Use lightgit to adjust brightness
+# Use light to adjust brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 
@@ -64,11 +64,13 @@ bindsym $mod+ctrl+k exec --no-startup-id $HOME/.scripts/dkde
 # Launch a dmenu nmcli wrapper
 bindsym $mod+ctrl+n exec --no-startup-id networkmanager_dmenu
 
-# Swap Esc and Caps 
-bindsym $mod+b exec --no-startup-id setxkbmap -option caps:swapescape
+# Hide Polybar
+bindsym $mod+b exec --no-startup-id killall polybar 
+# Show Polybar
+bindsym $mod+shift+b exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Swap Esc and Caps to normal
-bindsym $mod+Shift+b exec --no-startup-id setxkbmap -option
+bindsym $mod+ctrl+b exec --no-startup-id setxkbmap -option
 
 # change focus
 bindsym $mod+h focus left
@@ -266,7 +268,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 #class                  border      backgr.     text        indicator child_border
 client.focused          $green      $green      $background
-client.focused_inactive #333333     #5f676a     #ffffff     #484e50   #5f676a
+client.focused_inactive $background $background #ffffff     #484e50   #5f676a
 client.unfocused        $background $background $foreground #222222
 client.urgent           $red        $red        $foreground #900000   #900000
 client.placeholder      #665c54     #665c54     #ffffff     #000000   #0c0c0c
@@ -301,17 +303,19 @@ for_window [class="plank"] floating enable, border none no_focus
 # Always float BitWarden
 for_window [class="bitwarden"] floating enable
 
+# 
+#for_window [class=".*"] floating enable, border none
+
 # Startup applications
 #exec --no-startup-id nm-applet & 
-exec --no-startup-id mpDris2 &
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id dunst
-exec --no-startup-id wal -R
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id xrdb ~/.Xresources
-#exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
+exec --no-startup-id mpDris2 &
+exec --no-startup-id dunst
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 exec --no-startup-id $HOME/.scripts/natscroll
 exec --no-startup-id ibus-daemon -drx
