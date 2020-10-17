@@ -251,7 +251,7 @@ mode "$mode_mpc" {
     bindsym i exec --no-startup-id mpc prev, mode "default"
     bindsym o exec --no-startup-id mpc toggle, mode "default"
     bindsym p exec --no-startup-id mpc next, mode "default"
-    bindsym z exec --no-startup-id mpc random && notify-send "Random" "$(mpc status | sed -n "3p" | awk '{print $5}')", mode "default"
+    bindsym z exec --no-startup-id mpc random && notify-send "Random" "$(mpc status | sed -n "3p" | awk '{print $6}')", mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -301,14 +301,24 @@ for_window [title="Add" floating] resize set 600 400
 for_window [class="plank"] floating enable, border none no_focus
 
 # Always float BitWarden
-for_window [class="bitwarden"] floating enable
+for_window [class="Bitwarden"] floating enable, border none
+for_window [class="Bitwarden" floating] resize set 600 500
+
+# Always float gnome-screenshot dialog
+for_window [class="gnome-screenshot"] floating enable
+for_window [class="Gnome-screenshot"] floating enable
+for_window [title="Captura de pantalla"] floating enable
+
+# Always float Zoom chat 
+for_window [title="Chat"] floating enable, border none
 
 # 
 #for_window [class=".*"] floating enable, border none
 
 # Startup applications
 #exec --no-startup-id nm-applet & 
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id xrdb ~/.Xresources
@@ -323,7 +333,6 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
 exec --no-startup-id mpd &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- "betterlockscreen -l dimblur" --nofork &
-exec --no-startup-id betterlockscreen -u ~/pix/teagirllowcontrast.png
 exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
