@@ -64,6 +64,9 @@ bindsym $mod+ctrl+k exec --no-startup-id $HOME/.scripts/dkde
 # Launch a dmenu nmcli wrapper
 bindsym $mod+ctrl+n exec --no-startup-id networkmanager_dmenu
 
+# Open last copied url in vlc
+bindsym $mod+y exec --no-startup-id $HOME/.scripts/yvlc
+
 # Hide Polybar
 bindsym $mod+b exec --no-startup-id killall polybar 
 # Show Polybar
