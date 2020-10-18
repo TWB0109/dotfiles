@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nmcli | sed '1q' | awk '{print $4}'

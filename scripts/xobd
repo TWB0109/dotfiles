@@ -1,0 +1,11 @@
+#!/bin/bash
+
+isPipe=$(ls /tmp/ | grep volumebar)
+pipe="/tmp/volumebar"
+
+daemonP () {
+    [[ -z "$isPipe" ]] && mkfifo $pipe
+    tail -f $pipe | xob -s default&
+}
+
+$(daemonP)

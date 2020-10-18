@@ -1,17 +1,17 @@
 #!/bin/bash
 
 pacget(){
-    SEARCHTERM=$(pacman -Sql | fzf)
-    [ -n $SEARCHTERM ] && sudo pacman -S $SEARCHTERM
+    ST=$(pacman -Sql | fzf)
+    [ -n $ST ] && sudo pacman -S $ST
 }
 yayget(){
-    SEARCHTERM=$(yay -Sql | fzf)
-    [ -n $SEARCHTERM ] && yay -S $SEARCHTERM
+    ST=$(yay -Sql | fzf)
+    [ -n $ST ] && yay -S $ST
 }
 
 case "$1" in
-    "pacman")
-        $(pacget);;
-    "yay") 
-        $(yayget);;
+"pacman")
+    $(pacget);;
+"yay") 
+    $(yayget);;
 esac

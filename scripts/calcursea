@@ -1,0 +1,10 @@
+#!/bin/bash
+
+Appointments=$(calcurse -a | sed '1d')
+
+if [ "$Appointments" == "" ]
+then
+    notify-send "You have no appointments for today"
+else
+    notify-send "$Appointments"
+fi

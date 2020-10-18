@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while true; do
+randstat=$(mpc status | awk '{if(NR==3)print $4$5}')
+
+    if [ "$randstat" == "random:on" ]; then
+        echo ""
+    elif [ "$randstat" == "random:off" ]; then
+        echo ""
+    else
+        echo ""
+    fi
+sleep 1
+done
