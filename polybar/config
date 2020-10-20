@@ -35,8 +35,8 @@ padding     = 2
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
-;override-redirect = true
+height = 23
+override-redirect = false
 ;offset-x = 25%
 ;offset-y = 0%
 radius = 0.0
@@ -63,7 +63,7 @@ font-0 = fixed:pixelsize=9:weight=bold:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
-modules-left = i3 
+modules-left = bspwm i3 dwm
 modules-center = calendar date 
 modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan xkeyboard 
 tray-position = right
@@ -103,6 +103,76 @@ format-padding = ${glob.padding}
 
 label-indicator-on-capslock =
 label-indicator-off-capslock = 
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state>
+
+label-focused-foreground = #b8bb26
+label-separator          = "  "
+
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; But if you rename your bspwm monitors with bspc -n this option will no longer
+; behave correctly.
+; Default: true
+pin-workspaces = true
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+[module/dwm]
+type = internal/dwm
+format = <label-tags> | <label-layout>
+
+enable-tags-click = true
+enable-tags-scroll = true
+
+tags-scroll-empty = false
+
+label-layout = %symbol%
+label-layout-foreground = ${glob.foreground}
+label-layout-padding = ${glob.padding}
+
+label-focused = %name%
+label-focused-foreground = ${glob.green}
+label-focused-padding = ${glob.padding}
+
+label-unfocused = %name%
+label-unfocused-foreground = ${glob.light-blue}
+label-unfocused-padding = ${glob.padding}
+
+label-visible = %name%
+label-visible-foreground = ${glob.primary}
+label-visible-padding = ${glob.padding}
+
+label-empty = %name%
+label-empty-foreground = #665C54
+label-empty-padding = ${glob.padding}
+
+label-title-padding = ${glob.padding}
 
 [module/i3]
 type = internal/i3
@@ -319,4 +389,4 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-vim:ft=dosini
+;vim:ft=dosini
