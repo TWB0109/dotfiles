@@ -320,8 +320,7 @@ for_window [title="Chat"] floating enable, border none
 
 # Startup applications
 #exec --no-startup-id nm-applet & 
-#exec --no-startup-id nitrogen --restore
-exec --no-startup-id $HOME/.fehbg
+exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id xrdb ~/.Xresources
