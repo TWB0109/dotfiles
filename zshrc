@@ -125,6 +125,8 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # User configuration
  
 export MANPATH="/usr/local/man:$MANPATH"
@@ -134,7 +136,7 @@ export LANG=es_CR.UTF-8
 
 # Kunst
 ## The size of the album art to be displayed
-export KUNST_SIZE="250x250"
+export KUNST_SIZE="300x300"
 
 ## The position where the album art should be displayed
 export KUNST_POSITION="+900+250"
@@ -190,9 +192,9 @@ function gwp () {
     file=$1
     $(gsettings set org.gnome.desktop.background picture-uri "file:///home/brandon/pix/$file")
 }
-function ghpass () {
+function password () {
     session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-    bw get password Github --session $session | xclip -selection c 
+    bw get password $1 --session $session | xclip -selection c 
 }
 
 # Laziness
