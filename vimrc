@@ -18,8 +18,40 @@ set splitbelow
 set splitright
 set laststatus=2
 set shortmess+=A
-set clipboard=unnamedplus
+set shortmess+=c
 syntax on
+
+"Coc.nvim
+set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
+
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-@> coc#refresh()
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"Emmet
 let mapleader = ','
 let g:user_emmet_leader_key = ','
 
@@ -28,7 +60,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-L>
-nnoremap <C-N> :NERDTree <CR><CR>
+nnoremap <C-N> :NERDTreeToggle <CR><CR>
 inoremap ii <ESC>
 :inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap tt :tabf
@@ -71,7 +103,7 @@ let g:python_highlight_all = 1
 
 "FZF
 nnoremap <C-T> :FZF <CR><CR>
-let g:fzf_command_prefix = 'fzf'
+let g:fzf_command_prefix = 'F'
 
 "Elite mode
 let g:elite_mode=1
@@ -100,10 +132,10 @@ call plug#begin('~/.vim/autoload')
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'honza/vim-snippets'
-Plug 'sirver/ultisnips'
 Plug 'scrooloose/nerdtree'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "Installed Plugins
 Plug 'junegunn/goyo.vim'
@@ -120,15 +152,19 @@ Plug 'turbio/bracey.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'valloric/youcompleteme'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'vim-python/python-syntax'
 Plug 'donRaphaco/neotex', { 'for': 'tex'  }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'vimwiki/vimwiki'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'lambdalisue/fern.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
  
 " Initialize plugin system
 call plug#end()
