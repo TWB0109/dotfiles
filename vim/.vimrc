@@ -163,8 +163,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'vimwiki/vimwiki'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
-Plug 'lambdalisue/fern.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'perservim/nerdcommenter'
  
 " Initialize plugin system
 call plug#end()
