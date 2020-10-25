@@ -1,5 +1,5 @@
  [mpd]
- mpd_music_dir = "~/Música"  
+ mpd_music_dir = "~/music"  
  lyrics_directory  = ~/.ncmpcpp/lyrics
  ncmpcpp_directory  = ~/.ncmpcpp
  mpd_host = "localhost"
@@ -29,9 +29,9 @@ now_playing_prefix = "$b$5"
 now_playing_suffix = "$/b$9"
 
 [statusbar]
-#progressbar_look = "─╼ "
+progressbar_look = "─╼ "
 #progressbar_look = "●  "
-progressbar_look = ""
+#progressbar_look = ""
 progressbar_color = "black"
 statusbar_visibility = "no"
 statusbar_color = "default"
@@ -42,7 +42,7 @@ song_library_format = "{{%a - %t}|{%f}}{$R%l}"
 empty_tag_color = "black"
 
 [Notification script]
-execute_on_song_change = mpdnotify
+# execute_on_song_change = mpdnotify
 
 [global]
 colors_enabled = "yes"
