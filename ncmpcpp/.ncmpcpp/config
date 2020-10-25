@@ -1,6 +1,7 @@
  [mpd]
  mpd_music_dir = "~/music"  
  lyrics_directory  = ~/.ncmpcpp/lyrics
+ playlists_directory  = ~/.ncmpcpp/playlists
  ncmpcpp_directory  = ~/.ncmpcpp
  mpd_host = "localhost"
  mpd_port = "6600"  
