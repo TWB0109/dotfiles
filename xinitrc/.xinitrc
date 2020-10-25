@@ -75,8 +75,5 @@ wal -R
 # Start pulseaudio daemon
 pulseaudio --start -D
 
-# Start mpd
-mpd &
-
 xset r rate 660 25
 
