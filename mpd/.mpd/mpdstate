@@ -1,0 +1,239 @@
+sw_volume: 96
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: play
+current: 166
+time: 9.083000
+random: 1
+repeat: 0
+single: 0
+consume: 0
+crossfade: 5
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Megadeth/Rust In Peace/05 Megadeth - Poison Was The Cure 2004 Digital Remaster.mp3
+1:Against the Current/Against the Current - Legends Never Die.mp3
+2:Agnete Kjolsund/Agnete Kjolsund - Get Jinxed.mp3
+3:Audioslave/Audioslave/01 Audioslave - Cochise.mp3
+4:Audioslave/Audioslave/02 Audioslave - Show Me How to Live.mp3
+5:Audioslave/Audioslave/03 Audioslave - Gasoline.mp3
+6:Audioslave/Audioslave/04 Audioslave - What You Are.mp3
+7:Audioslave/Audioslave/05 Audioslave - Like a Stone.mp3
+8:Audioslave/Audioslave/06 Audioslave - Set It Off.mp3
+9:Audioslave/Audioslave/07 Audioslave - Shadow on the Sun.mp3
+10:Audioslave/Audioslave/08 Audioslave - I Am the Highway.mp3
+11:Audioslave/Audioslave/09 Audioslave - Exploder.mp3
+12:Audioslave/Audioslave/10 Audioslave - Bring Em Back Alive.mp3
+13:Audioslave/Audioslave/11 Audioslave - Light My Way.mp3
+14:Audioslave/Audioslave/12 Audioslave - Getaway Car.mp3
+15:Audioslave/Audioslave/13 Audioslave - The Last Remaining Light.mp3
+16:blackbear/blackbear - Do Re mi.mp3
+17:blackbear/blackbear - Idfc.mp3
+18:blackbear/ANONYMOUS/01 blackbear - PINK ROLEX.mp3
+19:blackbear/ANONYMOUS/02 blackbear - HATE MY GUTS.mp3
+20:blackbear/ANONYMOUS/03 blackbear - DRUG DEALER.mp3
+21:blackbear/ANONYMOUS/04 blackbear - SWEAR TO GOD.mp3
+22:blackbear/ANONYMOUS/05 blackbear - MAKE A MESS.mp3
+23:blackbear/ANONYMOUS/06 blackbear - SICK OF IT ALL.mp3
+24:blackbear/ANONYMOUS/07 blackbear - CHANGES.mp3
+25:blackbear/ANONYMOUS/08 blackbear - HIGH1X.mp3
+26:blackbear/ANONYMOUS/09 blackbear - DOWN.mp3
+27:blackbear/ANONYMOUS/10 blackbear - BURNT AF.mp3
+28:blackbear/ANONYMOUS/11 blackbear - HEARTBROKEN.mp3
+29:blackbear/ANONYMOUS/12 blackbear - 1 SIDED LOVE.mp3
+30:blackbear/ANONYMOUS/13 blackbear - LOSING YOU.mp3
+31:blackbear/ANONYMOUS/14 blackbear - ITS ALL GONNA BURN.mp3
+32:blackbear/ANONYMOUS/15 blackbear - DEAD BALLOONS.mp3
+33:blackbear/ANONYMOUS/16 blackbear - TOO CLOSE.mp3
+34:blackbear/ANONYMOUS/17 blackbear - DEAD TO ME.mp3
+35:blackbear/ANONYMOUS/18 blackbear - NYLA.mp3
+36:Billie Eilish/Billie Eilish - bellyache.mp3
+37:Billie Eilish/Billie Eilish - idontwannabeyouanymore.mp3
+38:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/01 Billie Eilish - !!!!!!!.mp3
+39:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/02 Billie Eilish - bad guy.mp3
+40:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/03 Billie Eilish - xanny.mp3
+41:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/04 Billie Eilish - you should see me in a crown.mp3
+42:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/05 Billie Eilish - all the good girls go to hell.mp3
+43:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/06 Billie Eilish - wish you were gay.mp3
+44:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/07 Billie Eilish - when the party's over.mp3
+45:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/08 Billie Eilish - 8.mp3
+46:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/09 Billie Eilish - my strange addiction.mp3
+47:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/10 Billie Eilish - bury a friend.mp3
+48:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/11 Billie Eilish - ilomilo.mp3
+49:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/12 Billie Eilish - listen before i go.mp3
+50:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/13 Billie Eilish - i love you.mp3
+51:Billie Eilish/WHEN WE ALL FALL ASLEEP, WHERE DO WE GO/14 Billie Eilish - goodbye.mp3
+52:Charlie Puth/Charlie Puth - Attention.mp3
+53:cuco/cuco - CR-V.mp3
+54:cuco/cuco - Dontmakemefallinlove.mp3
+55:cuco/cuco - Drown.mp3
+56:cuco/cuco - Lo Que Siento.mp3
+57:cuco/cuco - Summer Time High Time.mp3
+58:Ed Sheeran/Ed Sheeran - Beautiful People feat. Khalid.mp3
+59:Ed Sheeran/Ed Sheeran - Perfect Symphony.mp3
+60:Ed Sheeran/+ Deluxe Version/01 Ed Sheeran - The A Team.mp3
+61:Ed Sheeran/+ Deluxe Version/03 Ed Sheeran - U.N.I..mp3
+62:Ed Sheeran/+ Deluxe Version/04 Ed Sheeran - Grade 8.mp3
+63:Ed Sheeran/+ Deluxe Version/05 Ed Sheeran - Wake Me Up.mp3
+64:Ed Sheeran/+ Deluxe Version/06 Ed Sheeran - Small Bump.mp3
+65:Ed Sheeran/+ Deluxe Version/07 Ed Sheeran - This.mp3
+66:Ed Sheeran/+ Deluxe Version/08 Ed Sheeran - The City.mp3
+67:Ed Sheeran/+ Deluxe Version/09 Ed Sheeran - Lego House.mp3
+68:Ed Sheeran/+ Deluxe Version/10 Ed Sheeran - You Need Me, I Don't Need You.mp3
+69:Ed Sheeran/+ Deluxe Version/11 Ed Sheeran - Kiss Me.mp3
+70:Ed Sheeran/+ Deluxe Version/12 Ed Sheeran - Give Me Love.mp3
+71:Ed Sheeran/+ Deluxe Version/13 Ed Sheeran - Autumn Leaves.mp3
+72:Ed Sheeran/+ Deluxe Version/14 Ed Sheeran - Little Bird.mp3
+73:Ed Sheeran/+ Deluxe Version/15 Ed Sheeran - Gold Rush.mp3
+74:Ed Sheeran/+ Deluxe Version/16 Ed Sheeran - Sunburn.mp3
+75:Ed Sheeran/÷ Deluxe/01 Ed Sheeran - Eraser.mp3
+76:Ed Sheeran/÷ Deluxe/02 Ed Sheeran - Castle on the Hill.mp3
+77:Ed Sheeran/÷ Deluxe/03 Ed Sheeran - Dive.mp3
+78:Ed Sheeran/÷ Deluxe/04 Ed Sheeran - Shape of You.mp3
+79:Ed Sheeran/÷ Deluxe/05 Ed Sheeran - Perfect.mp3
+80:Ed Sheeran/÷ Deluxe/06 Ed Sheeran - Galway Girl.mp3
+81:Ed Sheeran/÷ Deluxe/07 Ed Sheeran - Happier.mp3
+82:Ed Sheeran/÷ Deluxe/08 Ed Sheeran - New Man.mp3
+83:Ed Sheeran/÷ Deluxe/09 Ed Sheeran - Hearts Don't Break Around Here.mp3
+84:Ed Sheeran/÷ Deluxe/10 Ed Sheeran - What Do I Know.mp3
+85:Ed Sheeran/÷ Deluxe/11 Ed Sheeran - How Would You Feel Paean.mp3
+86:Ed Sheeran/÷ Deluxe/13 Ed Sheeran - Barcelona.mp3
+87:Ed Sheeran/÷ Deluxe/14 Ed Sheeran - Bibia Be Ye Ye.mp3
+88:Ed Sheeran/÷ Deluxe/15 Ed Sheeran - Nancy Mulligan.mp3
+89:Ed Sheeran/X Deluxe Edition/01 Ed Sheeran - One.mp3
+90:Ed Sheeran/X Deluxe Edition/02 Ed Sheeran - I'm a Mess.mp3
+91:Ed Sheeran/X Deluxe Edition/03 Ed Sheeran - Sing.mp3
+92:Ed Sheeran/X Deluxe Edition/04 Ed Sheeran - Don't.mp3
+93:Ed Sheeran/X Deluxe Edition/05 Ed Sheeran - Nina.mp3
+94:Ed Sheeran/X Deluxe Edition/06 Ed Sheeran - Photograph.mp3
+95:Ed Sheeran/X Deluxe Edition/07 Ed Sheeran - Bloodstream.mp3
+96:Ed Sheeran/X Deluxe Edition/09 Ed Sheeran - Runaway.mp3
+97:Ed Sheeran/X Deluxe Edition/10 Ed Sheeran - The Man.mp3
+98:Ed Sheeran/X Deluxe Edition/11 Ed Sheeran - Thinking Out Loud.mp3
+99:Ed Sheeran/X Deluxe Edition/12 Ed Sheeran - Afire Love.mp3
+100:Ed Sheeran/X Deluxe Edition/13 Ed Sheeran - Take It Back.mp3
+101:Ed Sheeran/X Deluxe Edition/14 Ed Sheeran - Shirtsleeves.mp3
+102:Ed Sheeran/X Deluxe Edition/15 Ed Sheeran - Even My Dad Does Sometimes.mp3
+103:Ed Sheeran/X Deluxe Edition/16 Ed Sheeran - I See Fire.mp3
+104:Ed Sheeran/X Deluxe Edition/17 Ed Sheeran - All of the Stars.mp3
+105:Foster The People/Foster The People - Pumped Up Kicks.mp3
+106:Foster The People/Sacred Hearts Club/01 Foster The People - Pay the Man.mp3
+107:Foster The People/Sacred Hearts Club/02 Foster The People - Doing It for the Money.mp3
+108:Foster The People/Sacred Hearts Club/03 Foster The People - Sit Next to Me.mp3
+109:Foster The People/Sacred Hearts Club/04 Foster The People - SHC.mp3
+110:Foster The People/Sacred Hearts Club/05 Foster The People - I Love My Friends.mp3
+111:Foster The People/Sacred Hearts Club/07 Foster The People - Static Space Lover.mp3
+112:Foster The People/Sacred Hearts Club/08 Foster The People - Lotus Eater.mp3
+113:Foster The People/Sacred Hearts Club/09 Foster The People - Time to Get Closer.mp3
+114:Foster The People/Sacred Hearts Club/10 Foster The People - Loyal Like Sid & Nancy.mp3
+115:Foster The People/Sacred Hearts Club/11 Foster The People - Harden the Paint.mp3
+116:Foster The People/Sacred Hearts Club/12 Foster The People - III.mp3
+117:half·alive/half·alive - arrow.mp3
+118:half·alive/half·alive - still feel..mp3
+119:half·alive/3/01 half·alive - The Fall.mp3
+120:half·alive/3/02 half·alive - Awake At Night.mp3
+121:half·alive/3/03 half·alive - Tip Toes.mp3
+122:half·alive/Now, Not Yet/01 half·alive - ok ok.mp3
+123:half·alive/Now, Not Yet/02 half·alive - RUNAWAY.mp3
+124:half·alive/Now, Not Yet/03 half·alive - Maybe.mp3
+125:half·alive/Now, Not Yet/04 half·alive - the notion.mp3
+126:half·alive/Now, Not Yet/05 half·alive - still feel..mp3
+127:half·alive/Now, Not Yet/06 half·alive - TrusT.mp3
+128:half·alive/Now, Not Yet/07 half·alive - arrow.mp3
+129:half·alive/Now, Not Yet/08 half·alive - Pure Gold.mp3
+130:half·alive/Now, Not Yet/09 half·alive - ice cold..mp3
+131:half·alive/Now, Not Yet/10 half·alive - Rest.mp3
+132:half·alive/Now, Not Yet/11 half·alive - BREAKFAST.mp3
+133:half·alive/Now, Not Yet/12 half·alive - creature.mp3
+134:LoFi/y2mate.com - drakes_town_lavender_town_theme_x_drake_gods_plan_0D_p8pcidJk.mp3
+135:LoFi/y2mate.com - lavender_town_lo_fi_eu0a5SBTnKs.mp3
+136:LoFi/〘 E I S U 〙- As Long As I Got You (feat. Madson Project.)(MP3_128K).mp3
+137:LoFi/aidan - see your face_ in the darkest places(MP3_128K).mp3
+138:LoFi/aidan - you_re so beautiful (ft. snow)(MP3_128K).mp3
+139:LoFi/Another Man - Ty(MP3_128K).mp3
+140:LoFi/benm - That_s Right feat. Courtney Hooker(MP3_128K).mp3
+141:LoFi/beowulf - darkness tonight(MP3_128K).mp3
+142:LoFi/beowulf - i_ll give you the moon(MP3_128K).mp3
+143:LoFi/Billie Eilish - watch (SOLANTA _ Frivvi Fox Flip)(MP3_128K).mp3
+144:LoFi/Blankz - Nakama(MP3_128K).mp3
+145:LoFi/blind.scream - I could die looking into her eyes(MP3_128K).mp3
+146:LoFi/Brevin Kim - dance(MP3_128K).mp3
+147:LoFi/Camila Cabello - Havana (E L E V N S Remix)(MP3_128K).mp3
+148:LoFi/chuckee. - champagne cola(MP3_128K).mp3
+149:LoFi/Clairo - Bubblegum (Orca Vibes Remix)(MP3_128K).mp3
+150:LoFi/david - ruse(MP3_128K).mp3
+151:LoFi/delayde - cycles (feat. kerri)(MP3_128K).mp3
+152:LoFi/Derateo------  - The Joke(MP3_128K).mp3
+153:LoFi/druid - famine(MP3_128K).mp3
+154:LoFi/ＦＡＤＥＤ - never gonna see you again(MP3_128K).mp3
+155:LoFi/falcxne - reminisce(MP3_128K).mp3
+156:LoFi/fats_e - i_d prefer an unmarked grave(MP3_128K).mp3
+157:LoFi/fudasca - I_M A FOOL (ft. Thomas Reid)(MP3_128K).mp3
+158:LoFi/fudasca - screaming eyes (ft. madson project)(MP3_128K).mp3
+159:LoFi/fudasca _ mishaal - disguise (feat. joshmalilay)(MP3_128K).mp3
+160:LoFi/Hans. - Froyo ft. Clairo (prod. Aso)(MP3_128K).mp3
+161:LoFi/happy accidents _ lofi ∙ chill ∙ r_b mix(MP3_128K).mp3
+162:LoFi/hashir - defection (Official Music Video)(MP3_128K).mp3
+163:LoFi/hateful - when i met u(MP3_128K).mp3
+164:LoFi/hateful x madson project - falling down(MP3_128K).mp3
+165:LoFi/hazy nights - Stay(MP3_128K).mp3
+166:LoFi/Hemi - Bitter Sweet(MP3_128K).mp3
+167:LoFi/if you want me(MP3_128K).mp3
+168:LoFi/ｊａｒｊａｒｊｒ - ambitions(MP3_128K).mp3
+169:LoFi/kal.kal - there_s treasure everywhere_ (ft. alcoda _ jade rabbits)(MP3_128K).mp3
+170:LoFi/keshi - magnolia(MP3_128K).mp3
+171:LoFi/khai dreams - Blue Moon (Produced by barnes blvd.)(MP3_128K).mp3
+172:LoFi/khai dreams - Find My Way (feat. Atwood)(MP3_128K).mp3
+173:LoFi/khai dreams - Lost in you (prod. rowen westervelt)(MP3_128K).mp3
+174:LoFi/khai dreams - New Place to Begin(MP3_128K).mp3
+175:LoFi/khai dreams - Through and Through (Prod.Wizard Island)(MP3_128K).mp3
+176:LoFi/khai dreams - Time to Time(MP3_128K).mp3
+177:LoFi/khai dreams - Ultimately (Prod. barnes blvd.)(MP3_128K).mp3
+178:LoFi/killedmyself - don_t worry about me(MP3_128K).mp3
+179:LoFi/Kina - Can We Kiss Forever_ (ft. Adriana Proenza)(MP3_128K).mp3
+180:LoFi/kina - get you the moon (feat. snow)(MP3_128K).mp3
+181:LoFi/kina - i feel empty(MP3_128K).mp3
+182:LoFi/Kina _ Essence - Are You Still With Him (ft. Madson Project.)(MP3_128K).mp3
+183:LoFi/kodaline - all i want (hateful remix)(MP3_128K).mp3
+184:LoFi/la2toronto - Xxx(MP3_128K).mp3
+185:LoFi/lomode - intoxicated (ft. ivri)(MP3_128K).mp3
+186:LoFi/lomode - tylenol (ft. ivri)(MP3_128K).mp3
+187:LoFi/ＬＯＳＴ(MP3_128K).mp3
+188:LoFi/love-sadKiD - Breathe w_ Atwood (prod. bluknight)(MP3_128K).mp3
+189:LoFi/Madson Project - Angel (ft. Limbo _ Mishaal) [legendado - tradução PT-BR](MP3_128K).mp3
+190:LoFi/Madson Project. - Angel (feat. Limbo _ Mishaal)(MP3_128K).mp3
+191:LoFi/Madson Project. - no longer in my head(MP3_128K).mp3
+192:LoFi/mandu - beautiful nowhere to be found(MP3_128K).mp3
+193:LoFi/marc - i_m sorry (Prod. jade buddha)(MP3_128K).mp3
+194:LoFi/memori - rose _ boujee(MP3_128K).mp3
+195:LoFi/Mishaal - Runaway (Prod. elament)(MP3_128K).mp3
+196:LoFi/Mounika - Cut My Hair (feat. Cavetown)(MP3_128K).mp3
+197:LoFi/MVDE - bicycles(MP3_128K).mp3
+198:LoFi/niketaz - hachidori _ ハチドリ(MP3_128K).mp3
+199:LoFi/NVTHVN x park bird - Dance in the Living Room (ft. Forrest. _ ok2222)(MP3_128K).mp3
+200:LoFi/nyx - In Your Bones (Prod. reaper)(MP3_128K).mp3
+201:LoFi/ok2222 - i dont love you(MP3_128K).mp3
+202:LoFi/ok2222 x j_san - on and on feat. khai dreams _ barnes blvd(MP3_128K).mp3
+203:LoFi/Ondi Vil _ Teqkoi - I_m Where You Left Me(MP3_128K).mp3
+204:LoFi/Randy Haddock - Meditação(MP3_128K).mp3
+205:LoFi/raychel - i don_t like u(MP3_128K).mp3
+206:LoFi/rei brown - Street Fighter(MP3_128K).mp3
+207:LoFi/S U B W A Y S - アイスクリーム(MP3_128K).mp3
+208:LoFi/saib. - in your arms(MP3_128K).mp3
+209:LoFi/Sarcastic Sounds - Dead Dreams(MP3_128K).mp3
+210:LoFi/sarcastic sounds - losing time(MP3_128K).mp3
+211:LoFi/Sarcastic Sounds - Thief(MP3_128K).mp3
+212:LoFi/Snøw - Sunset_Sunrise (Prod. Kendo)(MP3_128K).mp3
+213:LoFi/Talking to myself - Furino(MP3_128K).mp3
+214:LoFi/temporary nothing(MP3_128K).mp3
+215:LoFi/tiffi _ city girl - remedy (lyrics)(MP3_128K).mp3
+216:LoFi/timmies - disappointed (ft. Alina Neumann)(MP3_128K).mp3
+217:LoFi/Timmies - Revenge(MP3_128K).mp3
+218:LoFi/TRA_H - ＬＥＦＴ ＢＥＨＩＮＤ(MP3_128K).mp3
+219:LoFi/Ty - Missed Calls(MP3_128K).mp3
+220:LoFi/Ty - Talking The Night Away (Prod. Legalvariety_Jabari)(MP3_128K).mp3
+221:LoFi/tyler. - look at ｙｏｕ (ft. Clairo)(MP3_128K).mp3
+222:LoFi/venom - i love to pretend that you love me (prod. ZETO)(MP3_128K).mp3
+223:LoFi/wraith falls - plea-s(MP3_128K).mp3
+playlist_end
