@@ -46,7 +46,7 @@ font:
     family: Hack
     style: Italic
   use_thin_strokes: true
-  size: 10
+  size: 9
 
 # Live config reload (changes require restart)
 live_config_reload: true
