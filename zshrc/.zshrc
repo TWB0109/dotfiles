@@ -156,6 +156,7 @@ export PAGER='less'
 
 # Aliases
 ## Meh
+alias vim="nvim"
 alias omz="cd ~/.oh-my-zsh"
 alias c="clear"
 alias clipc="xclip -selection clipboard /dev/null"

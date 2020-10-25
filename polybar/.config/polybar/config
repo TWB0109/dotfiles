@@ -390,3 +390,4 @@ margin-top = 5
 margin-bottom = 5
 
 ;nvim:ft=dosini
+;vim:ft=dosini

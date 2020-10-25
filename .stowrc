@@ -1,0 +1,6 @@
+#!/bin/perl
+
+\.git 
+\.gitignore
+
+^/README.*
