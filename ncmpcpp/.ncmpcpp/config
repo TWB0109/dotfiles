@@ -1,14 +1,13 @@
- [mpd]
- mpd_music_dir = "~/music"  
- lyrics_directory  = ~/.ncmpcpp/lyrics
- playlists_directory  = ~/.ncmpcpp/playlists
- ncmpcpp_directory  = ~/.ncmpcpp
- mpd_host = "localhost"
- mpd_port = "6600"  
- mpd_connection_timeout = "5"  
- mpd_crossfade_time = "5"  
+[mpd]
+mpd_music_dir = "~/music"  
+lyrics_directory  = ~/.ncmpcpp/lyrics
+ncmpcpp_directory  = ~/.ncmpcpp
+mpd_host = "localhost"
+mpd_port = "6600"  
+mpd_connection_timeout = "5"  
+mpd_crossfade_time = "5"  
 
- [visualizer]
+[visualizer]
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_in_stereo = "yes"
 visualizer_type = "wave"
