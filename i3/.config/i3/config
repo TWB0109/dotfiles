@@ -333,7 +333,7 @@ exec --no-startup-id $HOME/.scripts/natscroll
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
-exec --no-startup-id mpd &
+#exec --no-startup-id mpd &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- "betterlockscreen -l dimblur" --nofork &
 exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
