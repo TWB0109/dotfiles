@@ -15,8 +15,8 @@ env:
 # Window Configuration
 window:
   padding:
-    x: 25
-    y: 25
+    x: 20
+    y: 20
   dynamic_padding: false
 
   dimensions:
