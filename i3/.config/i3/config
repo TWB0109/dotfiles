@@ -317,6 +317,7 @@ for_window [title="Chat"] floating enable, border none
 
 # 
 #for_window [class=".*"] floating enable, border none
+#
 
 # Startup applications
 #exec --no-startup-id nm-applet & 
