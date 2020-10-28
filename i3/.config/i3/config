@@ -340,3 +340,6 @@ exec --no-startup-id $HOME/.scripts/autolock &
 exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id xobd &
+
+#vim: filetype=i3config
+#vim:ft=i3config

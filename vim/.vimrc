@@ -164,8 +164,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'perservim/nerdcommenter'
- 
+Plug 'preservim/nerdcommenter'
+Plug 'mboughaba/i3config.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -198,6 +198,12 @@ let g:haskell_classic_highlighting = 1
 "lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
+
+"i3config
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
 
 "Colorscheme config
 colorscheme gruvbox
