@@ -1,4 +1,3 @@
-**mpd**
-!mpd/
-!.mpd/
-!mpd.conf
+mpd.pid
+mpdstate 
+mpd.db
