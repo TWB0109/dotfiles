@@ -363,8 +363,8 @@ content-foreground = ${glob.light-pink}
 content-padding = ${glob.padding}
 content-margin = 0
 
-click-left= $HOME/.donotdisturb.sh
-click-right = $HOME/.disturb.sh
+click-left= $HOME/.scripts/donotdisturb.sh
+click-right = $HOME/.scripts/disturb.sh
 
 [module/caffeine]
 type = custom/text
