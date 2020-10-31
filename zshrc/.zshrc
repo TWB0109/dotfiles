@@ -97,9 +97,22 @@ plugins=(
 )
 
 # Startup
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
+
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/brandon/.fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/brandon/.fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/brandon/.fzf/shell/completion.zsh" 2> /dev/null
+# Key bindings
+# ------------
+source "/home/brandon/.fzf/shell/key-bindings.zsh"
+
 # Import colorscheme from wal asynchronously
 (cat ~/.cache/wal/sequences &)
 # Alternative (blocks for terminal for 0-3ms)
