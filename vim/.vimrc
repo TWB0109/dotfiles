@@ -166,6 +166,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'mboughaba/i3config.vim'
+Plug 'akiomik/git-gutter-vim'
 
 " Initialize plugin system
 call plug#end()
