@@ -166,9 +166,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'mboughaba/i3config.vim'
-if has('nvim')
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-endif
 
 " Initialize plugin system
 call plug#end()
