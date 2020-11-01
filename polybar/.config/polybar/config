@@ -33,7 +33,7 @@ light-green = ${xrdb: color6}
 padding     = 2
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 23
 override-redirect = false
