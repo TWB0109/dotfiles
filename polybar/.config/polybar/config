@@ -192,18 +192,18 @@ label-mode-background = ${glob.primary}
 label-focused = %name%
 label-focused-foreground = ${glob.green}
 label-focused-background = ${glob.background}
-label-focused-underline = ${glob.background}
 label-focused-padding = ${glob.padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
+label-unfocused-foreground = ${glob.primary}
 label-unfocused-padding = ${glob.padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${glob.light-blue}
+label-visible-background = ${glob.background}
+label-visible-padding = ${glob.padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
@@ -251,7 +251,6 @@ interface = wlo1
 interval = 3.0
 
 format-connected = <label-connected>
-;format-connected-underline = ${glob.underline}
 label-connected =  "%{A1:networkmanager_dmenu:}直 %essid%%{A}"
 
 ;label-connected-background = ${glob.light-blue}
@@ -259,7 +258,6 @@ label-connected-foreground = ${glob.light-blue}
 label-connected-padding = ${glob.padding}
 
 format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = 睊  %ifname% disconnected
 
 ;label-disconnected-background = ${glob.light-blue}
@@ -271,14 +269,12 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${glob.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${glob.foreground-alt}
 
@@ -350,7 +346,6 @@ content = 
 
 content-foreground = ${glob.foreground}
 ;content-padding = ${glob.padding}
-;content-underline = ${glob.underline}
 
 click-left = gsimplecal 
 

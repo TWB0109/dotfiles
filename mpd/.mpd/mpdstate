@@ -1,10 +1,10 @@
-sw_volume: 98
+sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 226
-time: 125.056000
-random: 0
+state: pause
+current: 215
+time: 337.159000
+random: 1
 repeat: 0
 single: 0
 consume: 0
@@ -726,303 +726,210 @@ playlist_begin
 711:Lindsey Stirling/Lindsey Stirling - Underground.mp3
 712:LoFi/y2mate.com - drakes_town_lavender_town_theme_x_drake_gods_plan_0D_p8pcidJk.mp3
 713:LoFi/y2mate.com - lavender_town_lo_fi_eu0a5SBTnKs.mp3
-714:LoFi/〘 E I S U 〙- As Long As I Got You (feat. Madson Project.)(MP3_128K).mp3
-715:LoFi/aidan - see your face_ in the darkest places(MP3_128K).mp3
-716:LoFi/aidan - you_re so beautiful (ft. snow)(MP3_128K).mp3
-717:LoFi/Another Man - Ty(MP3_128K).mp3
-718:LoFi/benm - That_s Right feat. Courtney Hooker(MP3_128K).mp3
-719:LoFi/beowulf - darkness tonight(MP3_128K).mp3
-720:LoFi/beowulf - i_ll give you the moon(MP3_128K).mp3
-721:LoFi/Billie Eilish - watch (SOLANTA _ Frivvi Fox Flip)(MP3_128K).mp3
-722:LoFi/Blankz - Nakama(MP3_128K).mp3
-723:LoFi/blind.scream - I could die looking into her eyes(MP3_128K).mp3
-724:LoFi/Brevin Kim - dance(MP3_128K).mp3
-725:LoFi/Camila Cabello - Havana (E L E V N S Remix)(MP3_128K).mp3
-726:LoFi/chuckee. - champagne cola(MP3_128K).mp3
-727:LoFi/Clairo - Bubblegum (Orca Vibes Remix)(MP3_128K).mp3
-728:LoFi/david - ruse(MP3_128K).mp3
-729:LoFi/delayde - cycles (feat. kerri)(MP3_128K).mp3
-730:LoFi/Derateo------  - The Joke(MP3_128K).mp3
-731:LoFi/druid - famine(MP3_128K).mp3
-732:LoFi/ＦＡＤＥＤ - never gonna see you again(MP3_128K).mp3
-733:LoFi/falcxne - reminisce(MP3_128K).mp3
-734:LoFi/fats_e - i_d prefer an unmarked grave(MP3_128K).mp3
-735:LoFi/fudasca - I_M A FOOL (ft. Thomas Reid)(MP3_128K).mp3
-736:LoFi/fudasca - screaming eyes (ft. madson project)(MP3_128K).mp3
-737:LoFi/fudasca _ mishaal - disguise (feat. joshmalilay)(MP3_128K).mp3
-738:LoFi/Guardin - Evergreen(MP3_128K).mp3
-739:LoFi/Hans. - Froyo ft. Clairo (prod. Aso)(MP3_128K).mp3
-740:LoFi/happy accidents _ lofi ∙ chill ∙ r_b mix(MP3_128K).mp3
-741:LoFi/hashir - defection (Official Music Video)(MP3_128K).mp3
-742:LoFi/hateful - when i met u(MP3_128K).mp3
-743:LoFi/hateful x madson project - falling down(MP3_128K).mp3
-744:LoFi/hazy nights - Stay(MP3_128K).mp3
-745:LoFi/Hemi - Bitter Sweet(MP3_128K).mp3
-746:LoFi/if you want me(MP3_128K).mp3
-747:LoFi/ｊａｒｊａｒｊｒ - ambitions(MP3_128K).mp3
-748:LoFi/kal.kal - there_s treasure everywhere_ (ft. alcoda _ jade rabbits)(MP3_128K).mp3
-749:LoFi/keshi - magnolia(MP3_128K).mp3
-750:LoFi/khai dreams - Blue Moon (Produced by barnes blvd.)(MP3_128K).mp3
-751:LoFi/khai dreams - Find My Way (feat. Atwood)(MP3_128K).mp3
-752:LoFi/khai dreams - Lost in you (prod. rowen westervelt)(MP3_128K).mp3
-753:LoFi/khai dreams - New Place to Begin(MP3_128K).mp3
-754:LoFi/khai dreams - Through and Through (Prod.Wizard Island)(MP3_128K).mp3
-755:LoFi/khai dreams - Time to Time(MP3_128K).mp3
-756:LoFi/khai dreams - Ultimately (Prod. barnes blvd.)(MP3_128K).mp3
-757:LoFi/killedmyself - don_t worry about me(MP3_128K).mp3
-758:LoFi/Kina - Can We Kiss Forever_ (ft. Adriana Proenza)(MP3_128K).mp3
-759:LoFi/kina - get you the moon (feat. snow)(MP3_128K).mp3
-760:LoFi/kina - i feel empty(MP3_128K).mp3
-761:LoFi/Kina _ Essence - Are You Still With Him (ft. Madson Project.)(MP3_128K).mp3
-762:LoFi/kodaline - all i want (hateful remix)(MP3_128K).mp3
-763:LoFi/la2toronto - Xxx(MP3_128K).mp3
-764:LoFi/lomode - intoxicated (ft. ivri)(MP3_128K).mp3
-765:LoFi/lomode - tylenol (ft. ivri)(MP3_128K).mp3
-766:LoFi/ＬＯＳＴ(MP3_128K).mp3
-767:LoFi/love-sadKiD - Breathe w_ Atwood (prod. bluknight)(MP3_128K).mp3
-768:LoFi/Madson Project - Angel (ft. Limbo _ Mishaal) [legendado - tradução PT-BR](MP3_128K).mp3
-769:LoFi/Madson Project. - Angel (feat. Limbo _ Mishaal)(MP3_128K).mp3
-770:LoFi/Madson Project. - no longer in my head(MP3_128K).mp3
-771:LoFi/mandu - beautiful nowhere to be found(MP3_128K).mp3
-772:LoFi/marc - i_m sorry (Prod. jade buddha)(MP3_128K).mp3
-773:LoFi/memori - rose _ boujee(MP3_128K).mp3
-774:LoFi/Mishaal - Runaway (Prod. elament)(MP3_128K).mp3
-775:LoFi/Mounika - Cut My Hair (feat. Cavetown)(MP3_128K).mp3
-776:LoFi/MVDE - bicycles(MP3_128K).mp3
-777:LoFi/niketaz - hachidori _ ハチドリ(MP3_128K).mp3
-778:LoFi/NVTHVN x park bird - Dance in the Living Room (ft. Forrest. _ ok2222)(MP3_128K).mp3
-779:LoFi/nyx - In Your Bones (Prod. reaper)(MP3_128K).mp3
-780:LoFi/ok2222 - i dont love you(MP3_128K).mp3
-781:LoFi/ok2222 x j_san - on and on feat. khai dreams _ barnes blvd(MP3_128K).mp3
-782:LoFi/olivia herdt ⁂ - be there (feat. Sensi Sye)(MP3_128K).mp3
-783:LoFi/Ondi Vil _ Teqkoi - I_m Where You Left Me(MP3_128K).mp3
-784:LoFi/Randy Haddock - Meditação(MP3_128K).mp3
-785:LoFi/raychel - i don_t like u(MP3_128K).mp3
-786:LoFi/rei brown - Street Fighter(MP3_128K).mp3
-787:LoFi/S U B W A Y S - アイスクリーム(MP3_128K).mp3
-788:LoFi/saib. - in your arms(MP3_128K).mp3
-789:LoFi/Sarcastic Sounds - Dead Dreams(MP3_128K).mp3
-790:LoFi/sarcastic sounds - losing time(MP3_128K).mp3
-791:LoFi/Sarcastic Sounds - Suddenly You_re In Love(MP3_128K).mp3
-792:LoFi/Sarcastic Sounds - Thief(MP3_128K).mp3
-793:LoFi/Snøw - Sunset_Sunrise (Prod. Kendo)(MP3_128K).mp3
-794:LoFi/StillSlump - why (prod anky)(MP3_128K).mp3
-795:LoFi/Talking to myself - Furino(MP3_128K).mp3
-796:LoFi/temporary nothing(MP3_128K).mp3
-797:LoFi/tiffi _ city girl - remedy (lyrics)(MP3_128K).mp3
-798:LoFi/timmies - disappointed (ft. Alina Neumann)(MP3_128K).mp3
-799:LoFi/Timmies - Revenge(MP3_128K).mp3
-800:LoFi/TRA_H - ＬＥＦＴ ＢＥＨＩＮＤ(MP3_128K).mp3
-801:LoFi/Ty - Missed Calls(MP3_128K).mp3
-802:LoFi/Ty - She Don_t Want Me (Prod. Legalvariety)(MP3_128K).mp3
-803:LoFi/Ty - Talking The Night Away (Prod. Legalvariety_Jabari)(MP3_128K).mp3
-804:LoFi/tyler. - look at ｙｏｕ (ft. Clairo)(MP3_128K).mp3
-805:LoFi/venom - i love to pretend that you love me (prod. ZETO)(MP3_128K).mp3
-806:LoFi/wraith falls - plea-s(MP3_128K).mp3
-807:lovelytheband/lovelytheband - these are my friends.mp3
-808:Luciano Pavarotti/Luciano Pavarotti - Nessun Dorma.mp3
-809:Macaco/Macaco - Ovejas Negras.mp3
-810:MAGIC!/MAGIC! - Rude.mp3
-811:Marshmello/Marshmello - Happier.mp3
-812:Meghan Trainor (1)/Meghan Trainor - Like I'm Gonna Lose You.mp3
-813:Melanie Martinez/K-12/1. Wheels On The Bus.mp3
-814:Melanie Martinez/K-12/2. Class Fight.mp3
-815:Melanie Martinez/K-12/3. The Principal.mp3
-816:Melanie Martinez/K-12/4. Show & Tell.mp3
-817:Melanie Martinez/K-12/5. Nurse's Office.mp3
-818:Melanie Martinez/K-12/6. Drama Club.mp3
-819:Melanie Martinez/K-12/7. Strawberry Shortcake.mp3
-820:Melanie Martinez/K-12/8. Lunchbox Friend.mp3
-821:Melanie Martinez/K-12/9. Orange Juice.mp3
-822:Melanie Martinez/K-12/10. Detention.mp3
-823:Melanie Martinez/K-12/11. Teacher's Pet.mp3
-824:Melanie Martinez/K-12/12. High School Sweethearts.mp3
-825:Melanie Martinez/K-12/13. Recess.mp3
-826:Miranda!/Miranda! - Don.mp3
-827:Oliver Tree/Oliver Tree - Let Me Down.mp3
-828:Oliver Tree/Oliver Tree - Movement.mp3
-829:Oliver Tree/Alien Boy EP/01 Oliver Tree - Alien Boy.mp3
-830:Oliver Tree/Alien Boy EP/02 Oliver Tree - All I Got.mp3
-831:Oliver Tree/Alien Boy EP/03 Oliver Tree - Enemy.mp3
-832:Oliver Tree/Alien Boy EP/04 Oliver Tree - All That.mp3
-833:Oliver Tree/Alien Boy EP/05 Oliver Tree - Welcome To LA.mp3
-834:Oliver Tree/Alien Boy EP/06 Oliver Tree - Upside Down.mp3
-835:Panic! At The Disco/A Fever You Can't Sweat Out/01 Panic! At The Disco - Introduction.mp3
-836:Panic! At The Disco/A Fever You Can't Sweat Out/02 Panic! At The Disco - The Only Difference Between Martyrdom and Suicide Is Press Coverage.mp3
-837:Panic! At The Disco/A Fever You Can't Sweat Out/03 Panic! At The Disco - London Beckoned Songs About Money Written By Machines.mp3
-838:Panic! At The Disco/A Fever You Can't Sweat Out/04 Panic! At The Disco - Nails For Breakfast, Tacks For Snacks.mp3
-839:Panic! At The Disco/A Fever You Can't Sweat Out/05 Panic! At The Disco - Camisado.mp3
-840:Panic! At The Disco/A Fever You Can't Sweat Out/06 Panic! At The Disco - Time To Dance.mp3
-841:Panic! At The Disco/A Fever You Can't Sweat Out/07 Panic! At The Disco - Lying Is The Most Fun A Girl Can Have Without Taking Her Clothes Off.mp3
-842:Panic! At The Disco/A Fever You Can't Sweat Out/08 Panic! At The Disco - Intermission.mp3
-843:Panic! At The Disco/A Fever You Can't Sweat Out/09 Panic! At The Disco - But It's Better If You Do.mp3
-844:Panic! At The Disco/A Fever You Can't Sweat Out/10 Panic! At The Disco - I Write Sins Not Tragedies.mp3
-845:Panic! At The Disco/A Fever You Can't Sweat Out/11 Panic! At The Disco - I Constantly Thank God For Esteban.mp3
-846:Panic! At The Disco/A Fever You Can't Sweat Out/12 Panic! At The Disco - There's A Good Reason These Tables Are Numbered Honey, You Just Haven't Thought Of It Yet.mp3
-847:Panic! At The Disco/A Fever You Can't Sweat Out/13 Panic! At The Disco - Build God, Then We'll Talk.mp3
-848:Panic! At The Disco/Pray For The Wicked/01 Panic! At The Disco - Say Amen Saturday Night.mp3
-849:Panic! At The Disco/Pray For The Wicked/02 Panic! At The Disco -  A Silver Lining.mp3
-850:Panic! At The Disco/Pray For The Wicked/03 Panic! At The Disco - High Hopes.mp3
-851:Panic! At The Disco/Pray For The Wicked/04 Panic! At The Disco - King Of The Clouds.mp3
-852:Panic! At The Disco/Pray For The Wicked/05 Panic! At The Disco - Hey Look Ma, I Made It.mp3
-853:Panic! At The Disco/Pray For The Wicked/06 Panic! At The Disco - Roaring 20s.mp3
-854:Panic! At The Disco/Pray For The Wicked/07 Panic! At The Disco - Dancing's Not A Crime.mp3
-855:Panic! At The Disco/Pray For The Wicked/08 Panic! At The Disco - One Of The Drunks.mp3
-856:Panic! At The Disco/Pray For The Wicked/09 Panic! At The Disco - The Overpass.mp3
-857:Panic! At The Disco/Pray For The Wicked/10 Panic! At The Disco - Old Fashioned.mp3
-858:Panic! At The Disco/Pray For The Wicked/11 Panic! At The Disco - Dying In LA.mp3
-859:Powfu/Powfu - death bed (coffee for your head).mp3
-860:R. City/R. City - Locked Away.mp3
-861:Rex Orange County/Rex Orange County - Best Friend.mp3
-862:Rex Orange County/Rex Orange County - Edition.mp3
-863:Rex Orange County/Rex Orange County - Loving Is Easy.mp3
-864:Rex Orange County/Rex Orange County - Sunflower.mp3
-865:Rex Orange County/Apricot Princess/01 Rex Orange County - Apricot Princess.mp3
-866:Rex Orange County/Apricot Princess/02 Rex Orange County - Television   So Far So Good.mp3
-867:Rex Orange County/Apricot Princess/03 Rex Orange County - Nothing.mp3
-868:Rex Orange County/Apricot Princess/04 Rex Orange County - Sycamore Girl.mp3
-869:Rex Orange County/Apricot Princess/05 Rex Orange County - Untitled.mp3
-870:Rex Orange County/Apricot Princess/06 Rex Orange County - 4 Seasons.mp3
-871:Rex Orange County/Apricot Princess/07 Rex Orange County - Waiting Room.mp3
-872:Rex Orange County/Apricot Princess/08 Rex Orange County - Rain Man.mp3
-873:Rex Orange County/Apricot Princess/09 Rex Orange County - Never Enough.mp3
-874:Rex Orange County/Apricot Princess/10 Rex Orange County - Happiness.mp3
-875:Rex Orange County/Bcos U Will Never B Free/01 Rex Orange County - Rex Intro.mp3
-876:Rex Orange County/Bcos U Will Never B Free/02 Rex Orange County - Paradise.mp3
-877:Rex Orange County/Bcos U Will Never B Free/03 Rex Orange County - Belly The Grass Stains.mp3
-878:Rex Orange County/Bcos U Will Never B Free/04 Rex Orange County - Corduroy Dreams.mp3
-879:Rex Orange County/Bcos U Will Never B Free/05 Rex Orange County - Japan.mp3
-880:Rex Orange County/Bcos U Will Never B Free/06 Rex Orange County - Portrait of Ned.mp3
-881:Rex Orange County/Bcos U Will Never B Free/07 Rex Orange County - Green Eyes, Pt. II.mp3
-882:Rex Orange County/Bcos U Will Never B Free/08 Rex Orange County - A Song About Being Sad.mp3
-883:Rex Orange County/Bcos U Will Never B Free/09 Rex Orange County - Know Love.mp3
-884:Rex Orange County/Bcos U Will Never B Free/10 Rex Orange County - Curfew....mp3
-885:Rex Orange County/Pony/01 Rex Orange County - 10 10.mp3
-886:Rex Orange County/Pony/02 Rex Orange County - Always.mp3
-887:Rex Orange County/Pony/03 Rex Orange County - Laser Lights.mp3
-888:Rex Orange County/Pony/04 Rex Orange County - Face To Face.mp3
-889:Rex Orange County/Pony/05 Rex Orange County - Stressed Out.mp3
-890:Rex Orange County/Pony/06 Rex Orange County - Never Had The Balls.mp3
-891:Rex Orange County/Pony/07 Rex Orange County - Pluto Projector.mp3
-892:Rex Orange County/Pony/08 Rex Orange County - Every Way.mp3
-893:Rex Orange County/Pony/09 Rex Orange County - It Gets Better.mp3
-894:Rex Orange County/Pony/10 Rex Orange County - It's Not The Same Anymore.mp3
-895:Río Roma/Río Roma - Mi Persona Favorita.mp3
-896:ROSALÍA/El Mal Querer/01 ROSALÍA - MALAMENTE Cap.1 Augurio.mp3
-897:ROSALÍA/El Mal Querer/02 ROSALÍA - QUE NO SALGA LA LUNA Cap.2 Boda.mp3
-898:ROSALÍA/El Mal Querer/03 ROSALÍA - PIENSO EN TU MIRÁ Cap.3 Celos.mp3
-899:ROSALÍA/El Mal Querer/04 ROSALÍA - DE AQUÍ NO SALES Cap.4 Disputa.mp3
-900:ROSALÍA/El Mal Querer/05 ROSALÍA - RENIEGO Cap.5 Lamento.mp3
-901:ROSALÍA/El Mal Querer/06 ROSALÍA - PRESO Cap.6 Clausura.mp3
-902:ROSALÍA/El Mal Querer/07 ROSALÍA - BAGDAD Cap.7 Liturgia.mp3
-903:ROSALÍA/El Mal Querer/08 ROSALÍA - DI MI NOMBRE Cap.8 Éxtasis.mp3
-904:ROSALÍA/El Mal Querer/09 ROSALÍA - NANA Cap.9 Concepción.mp3
-905:ROSALÍA/El Mal Querer/10 ROSALÍA - MALDICIÓN Cap.10 Cordura.mp3
-906:ROSALÍA/El Mal Querer/11 ROSALÍA - A NINGÚN HOMBRE Cap.11 Poder.mp3
-907:SadBoyProlific/SadBoyProlific - Dead And Cold.mp3
-908:Shawn Mendes/Shawn Mendes - Señorita.mp3
-909:Taylor Swift/Taylor Swift - ME! feat. Brendon Urie of Panic! At The Disco.mp3
-910:Tessa Violet/Tessa Violet - Crush.mp3
-911:The Chainsmokers/The Chainsmokers - Closer.mp3
-912:The Glitch Mob/The Glitch Mob - RISE.mp3
-913:timmies/timmies - Tell Me Why I'm Waiting Original Mix.mp3
-914:Tones And I/The Kids Are Coming/01 Tones and I - The Kids Are Coming.mp3
-915:Tones And I/The Kids Are Coming/02 Tones and I - Dance Monkey.mp3
-916:Tones And I/The Kids Are Coming/03 Tones and I - Colourblind.mp3
-917:Tones And I/The Kids Are Coming/04 Tones and I - Johnny Run Away.mp3
-918:Tones And I/The Kids Are Coming/05 Tones and I - Jimmy.mp3
-919:Tones And I/The Kids Are Coming/06 Tones and I - Never Seen The Rain.mp3
-920:Twenty One Pilots/twenty one pilots - Chlorine 19.4326° N, 99.1332° W.mp3
-921:Twenty One Pilots/twenty one pilots - Level of Concern.mp3
-922:Twenty One Pilots/Blurryface/01 twenty one pilots - Heavy Dirty Soul.mp3
-923:Twenty One Pilots/Blurryface/02 twenty one pilots - Stressed Out.mp3
-924:Twenty One Pilots/Blurryface/03 twenty one pilots - Ride.mp3
-925:Twenty One Pilots/Blurryface/04 twenty one pilots - Fairly Local.mp3
-926:Twenty One Pilots/Blurryface/05 twenty one pilots - Tear In My Heart.mp3
-927:Twenty One Pilots/Blurryface/06 twenty one pilots - Lane Boy.mp3
-928:Twenty One Pilots/Blurryface/07 twenty one pilots - The Judge.mp3
-929:Twenty One Pilots/Blurryface/08 twenty one pilots - Doubt.mp3
-930:Twenty One Pilots/Blurryface/09 twenty one pilots - Polarize.mp3
-931:Twenty One Pilots/Blurryface/10 twenty one pilots - We Don’t Believe What’s On T.V..mp3
-932:Twenty One Pilots/Blurryface/11 twenty one pilots - Message Man.mp3
-933:Twenty One Pilots/Blurryface/12 twenty one pilots - Hometown.mp3
-934:Twenty One Pilots/Blurryface/13 twenty one pilots - Not Today.mp3
-935:Twenty One Pilots/Blurryface/14 twenty one pilots - Goner.mp3
-936:Twenty One Pilots/Trench/01 twenty one pilots - Jumpsuit.mp3
-937:Twenty One Pilots/Trench/02 twenty one pilots - Levitate.mp3
-938:Twenty One Pilots/Trench/03 twenty one pilots - Morph.mp3
-939:Twenty One Pilots/Trench/04 twenty one pilots - My Blood.mp3
-940:Twenty One Pilots/Trench/05 twenty one pilots - Chlorine.mp3
-941:Twenty One Pilots/Trench/06 twenty one pilots - Smithereens.mp3
-942:Twenty One Pilots/Trench/07 twenty one pilots - Neon Gravestones.mp3
-943:Twenty One Pilots/Trench/08 twenty one pilots - The Hype.mp3
-944:Twenty One Pilots/Trench/09 twenty one pilots - Nico And The Niners.mp3
-945:Twenty One Pilots/Trench/10 twenty one pilots - Cut My Lip.mp3
-946:Twenty One Pilots/Trench/11 twenty one pilots - Bandito.mp3
-947:Twenty One Pilots/Trench/12 twenty one pilots - Pet Cheetah.mp3
-948:Twenty One Pilots/Trench/13 twenty one pilots - Legend.mp3
-949:Twenty One Pilots/Trench/14 twenty one pilots - Leave The City.mp3
-950:Twenty One Pilots/Twenty One Pilots/01 twenty one pilots - Implicit Demand for Proof.mp3
-951:Twenty One Pilots/Twenty One Pilots/02 twenty one pilots - Fall Away.mp3
-952:Twenty One Pilots/Twenty One Pilots/03 twenty one pilots - The Pantaloon.mp3
-953:Twenty One Pilots/Twenty One Pilots/04 twenty one pilots - Addict With a Pen.mp3
-954:Twenty One Pilots/Twenty One Pilots/05 twenty one pilots - Friend, Please.mp3
-955:Twenty One Pilots/Twenty One Pilots/06 twenty one pilots - March to the Sea.mp3
-956:Twenty One Pilots/Twenty One Pilots/07 twenty one pilots - Johnny Boy.mp3
-957:Twenty One Pilots/Twenty One Pilots/08 twenty one pilots - Oh Ms Believer.mp3
-958:Twenty One Pilots/Twenty One Pilots/09 twenty one pilots - Air Catcher.mp3
-959:Twenty One Pilots/Twenty One Pilots/10 twenty one pilots - Trapdoor.mp3
-960:Twenty One Pilots/Twenty One Pilots/11 twenty one pilots - A Car, a Torch, a Death.mp3
-961:Twenty One Pilots/Twenty One Pilots/12 twenty one pilots - Taxi Cab.mp3
-962:Twenty One Pilots/Twenty One Pilots/13 twenty one pilots - Before You Start Your Day.mp3
-963:Twenty One Pilots/Twenty One Pilots/14 twenty one pilots - Isle of Flightless Birds.mp3
-964:Twenty One Pilots/Vessel/01 twenty one pilots - Ode To Sleep.mp3
-965:Twenty One Pilots/Vessel/02 twenty one pilots - Holding On To You.mp3
-966:Twenty One Pilots/Vessel/03 twenty one pilots - Migraine.mp3
-967:Twenty One Pilots/Vessel/04 twenty one pilots - House Of Gold.mp3
-968:Twenty One Pilots/Vessel/05 twenty one pilots - Car Radio.mp3
-969:Twenty One Pilots/Vessel/06 twenty one pilots - Semi-Automatic.mp3
-970:Twenty One Pilots/Vessel/07 twenty one pilots - Screen.mp3
-971:Twenty One Pilots/Vessel/08 twenty one pilots - The Run And Go.mp3
-972:Twenty One Pilots/Vessel/09 twenty one pilots - Fake You Out.mp3
-973:Twenty One Pilots/Vessel/10 twenty one pilots - Guns For Hands.mp3
-974:Twenty One Pilots/Vessel/11 twenty one pilots - Trees.mp3
-975:Twenty One Pilots/Vessel/12 twenty one pilots - Truce.mp3
-976:Y2K/Y2K - Lalala.mp3
-977:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
-978:Basshunter/Basshunter - Dota.mp3
-979:Y2K/Y2K - Lalala.mp3
-980:Atlas/Atlas - you're my world.mp3
-981:El Cuarteto De Nos/El Cuarteto De Nos - Contrapunto para Humano y Computadora.mp3
-982:El Cuarteto De Nos/Porfiado/01 El Cuarteto De Nos - Algo mejor que hacer.mp3
-983:El Cuarteto De Nos/Porfiado/02 El Cuarteto De Nos - Cuando sea grande.mp3
-984:El Cuarteto De Nos/Porfiado/03 El Cuarteto De Nos - El balcón de Paul.mp3
-985:El Cuarteto De Nos/Porfiado/04 El Cuarteto De Nos - Buen día Benito.mp3
-986:El Cuarteto De Nos/Porfiado/05 El Cuarteto De Nos - El lado soleado de la calle.mp3
-987:El Cuarteto De Nos/Porfiado/06 El Cuarteto De Nos - Lo malo de ser bueno.mp3
-988:El Cuarteto De Nos/Porfiado/07 El Cuarteto De Nos - Enamorado tuyo.mp3
-989:El Cuarteto De Nos/Porfiado/08 El Cuarteto De Nos - Sólo estoy sobreviviendo.mp3
-990:El Cuarteto De Nos/Porfiado/09 El Cuarteto De Nos - Vida ingrata.mp3
-991:El Cuarteto De Nos/Porfiado/10 El Cuarteto De Nos - No te invité a mi cumpleaños.mp3
-992:El Cuarteto De Nos/Porfiado/11 El Cuarteto De Nos - Insaciable.mp3
-993:El Cuarteto De Nos/Porfiado/12 El Cuarteto De Nos - Todos pasan por mi rancho.mp3
-994:half·alive/3/01 half·alive - The Fall.mp3
-995:half·alive/3/02 half·alive - Awake At Night.mp3
-996:half·alive/3/03 half·alive - Tip Toes.mp3
-997:half·alive/Now, Not Yet/01 half·alive - ok ok.mp3
-998:half·alive/Now, Not Yet/02 half·alive - RUNAWAY.mp3
-999:half·alive/Now, Not Yet/03 half·alive - Maybe.mp3
-1000:half·alive/Now, Not Yet/04 half·alive - the notion.mp3
-1001:half·alive/Now, Not Yet/05 half·alive - still feel..mp3
-1002:half·alive/Now, Not Yet/06 half·alive - TrusT.mp3
-1003:half·alive/Now, Not Yet/07 half·alive - arrow.mp3
-1004:half·alive/Now, Not Yet/08 half·alive - Pure Gold.mp3
-1005:half·alive/Now, Not Yet/09 half·alive - ice cold..mp3
-1006:half·alive/Now, Not Yet/10 half·alive - Rest.mp3
-1007:half·alive/Now, Not Yet/11 half·alive - BREAKFAST.mp3
-1008:half·alive/Now, Not Yet/12 half·alive - creature.mp3
-1009:Jack Ü/Jack Ü - Mind.mp3
-1010:Santana/Santana - La Flaca.mp3
-1011:Shawn Mendes/Shawn Mendes - Señorita.mp3
-1012:The Tragically Hip/The Tragically Hip - Ahead By A Century.mp3
+714:lovelytheband/lovelytheband - these are my friends.mp3
+715:Luciano Pavarotti/Luciano Pavarotti - Nessun Dorma.mp3
+716:Macaco/Macaco - Ovejas Negras.mp3
+717:MAGIC!/MAGIC! - Rude.mp3
+718:Marshmello/Marshmello - Happier.mp3
+719:Meghan Trainor (1)/Meghan Trainor - Like I'm Gonna Lose You.mp3
+720:Melanie Martinez/K-12/1. Wheels On The Bus.mp3
+721:Melanie Martinez/K-12/2. Class Fight.mp3
+722:Melanie Martinez/K-12/3. The Principal.mp3
+723:Melanie Martinez/K-12/4. Show & Tell.mp3
+724:Melanie Martinez/K-12/5. Nurse's Office.mp3
+725:Melanie Martinez/K-12/6. Drama Club.mp3
+726:Melanie Martinez/K-12/7. Strawberry Shortcake.mp3
+727:Melanie Martinez/K-12/8. Lunchbox Friend.mp3
+728:Melanie Martinez/K-12/9. Orange Juice.mp3
+729:Melanie Martinez/K-12/10. Detention.mp3
+730:Melanie Martinez/K-12/11. Teacher's Pet.mp3
+731:Melanie Martinez/K-12/12. High School Sweethearts.mp3
+732:Melanie Martinez/K-12/13. Recess.mp3
+733:Miranda!/Miranda! - Don.mp3
+734:Oliver Tree/Oliver Tree - Let Me Down.mp3
+735:Oliver Tree/Oliver Tree - Movement.mp3
+736:Oliver Tree/Alien Boy EP/01 Oliver Tree - Alien Boy.mp3
+737:Oliver Tree/Alien Boy EP/02 Oliver Tree - All I Got.mp3
+738:Oliver Tree/Alien Boy EP/03 Oliver Tree - Enemy.mp3
+739:Oliver Tree/Alien Boy EP/04 Oliver Tree - All That.mp3
+740:Oliver Tree/Alien Boy EP/05 Oliver Tree - Welcome To LA.mp3
+741:Oliver Tree/Alien Boy EP/06 Oliver Tree - Upside Down.mp3
+742:Panic! At The Disco/A Fever You Can't Sweat Out/01 Panic! At The Disco - Introduction.mp3
+743:Panic! At The Disco/A Fever You Can't Sweat Out/02 Panic! At The Disco - The Only Difference Between Martyrdom and Suicide Is Press Coverage.mp3
+744:Panic! At The Disco/A Fever You Can't Sweat Out/03 Panic! At The Disco - London Beckoned Songs About Money Written By Machines.mp3
+745:Panic! At The Disco/A Fever You Can't Sweat Out/04 Panic! At The Disco - Nails For Breakfast, Tacks For Snacks.mp3
+746:Panic! At The Disco/A Fever You Can't Sweat Out/05 Panic! At The Disco - Camisado.mp3
+747:Panic! At The Disco/A Fever You Can't Sweat Out/06 Panic! At The Disco - Time To Dance.mp3
+748:Panic! At The Disco/A Fever You Can't Sweat Out/07 Panic! At The Disco - Lying Is The Most Fun A Girl Can Have Without Taking Her Clothes Off.mp3
+749:Panic! At The Disco/A Fever You Can't Sweat Out/08 Panic! At The Disco - Intermission.mp3
+750:Panic! At The Disco/A Fever You Can't Sweat Out/09 Panic! At The Disco - But It's Better If You Do.mp3
+751:Panic! At The Disco/A Fever You Can't Sweat Out/10 Panic! At The Disco - I Write Sins Not Tragedies.mp3
+752:Panic! At The Disco/A Fever You Can't Sweat Out/11 Panic! At The Disco - I Constantly Thank God For Esteban.mp3
+753:Panic! At The Disco/A Fever You Can't Sweat Out/12 Panic! At The Disco - There's A Good Reason These Tables Are Numbered Honey, You Just Haven't Thought Of It Yet.mp3
+754:Panic! At The Disco/A Fever You Can't Sweat Out/13 Panic! At The Disco - Build God, Then We'll Talk.mp3
+755:Panic! At The Disco/Pray For The Wicked/01 Panic! At The Disco - Say Amen Saturday Night.mp3
+756:Panic! At The Disco/Pray For The Wicked/02 Panic! At The Disco -  A Silver Lining.mp3
+757:Panic! At The Disco/Pray For The Wicked/03 Panic! At The Disco - High Hopes.mp3
+758:Panic! At The Disco/Pray For The Wicked/04 Panic! At The Disco - King Of The Clouds.mp3
+759:Panic! At The Disco/Pray For The Wicked/05 Panic! At The Disco - Hey Look Ma, I Made It.mp3
+760:Panic! At The Disco/Pray For The Wicked/06 Panic! At The Disco - Roaring 20s.mp3
+761:Panic! At The Disco/Pray For The Wicked/07 Panic! At The Disco - Dancing's Not A Crime.mp3
+762:Panic! At The Disco/Pray For The Wicked/08 Panic! At The Disco - One Of The Drunks.mp3
+763:Panic! At The Disco/Pray For The Wicked/09 Panic! At The Disco - The Overpass.mp3
+764:Panic! At The Disco/Pray For The Wicked/10 Panic! At The Disco - Old Fashioned.mp3
+765:Panic! At The Disco/Pray For The Wicked/11 Panic! At The Disco - Dying In LA.mp3
+766:Powfu/Powfu - death bed (coffee for your head).mp3
+767:R. City/R. City - Locked Away.mp3
+768:Rex Orange County/Rex Orange County - Best Friend.mp3
+769:Rex Orange County/Rex Orange County - Edition.mp3
+770:Rex Orange County/Rex Orange County - Loving Is Easy.mp3
+771:Rex Orange County/Rex Orange County - Sunflower.mp3
+772:Rex Orange County/Apricot Princess/01 Rex Orange County - Apricot Princess.mp3
+773:Rex Orange County/Apricot Princess/02 Rex Orange County - Television   So Far So Good.mp3
+774:Rex Orange County/Apricot Princess/03 Rex Orange County - Nothing.mp3
+775:Rex Orange County/Apricot Princess/04 Rex Orange County - Sycamore Girl.mp3
+776:Rex Orange County/Apricot Princess/05 Rex Orange County - Untitled.mp3
+777:Rex Orange County/Apricot Princess/06 Rex Orange County - 4 Seasons.mp3
+778:Rex Orange County/Apricot Princess/07 Rex Orange County - Waiting Room.mp3
+779:Rex Orange County/Apricot Princess/08 Rex Orange County - Rain Man.mp3
+780:Rex Orange County/Apricot Princess/09 Rex Orange County - Never Enough.mp3
+781:Rex Orange County/Apricot Princess/10 Rex Orange County - Happiness.mp3
+782:Rex Orange County/Bcos U Will Never B Free/01 Rex Orange County - Rex Intro.mp3
+783:Rex Orange County/Bcos U Will Never B Free/02 Rex Orange County - Paradise.mp3
+784:Rex Orange County/Bcos U Will Never B Free/03 Rex Orange County - Belly The Grass Stains.mp3
+785:Rex Orange County/Bcos U Will Never B Free/04 Rex Orange County - Corduroy Dreams.mp3
+786:Rex Orange County/Bcos U Will Never B Free/05 Rex Orange County - Japan.mp3
+787:Rex Orange County/Bcos U Will Never B Free/06 Rex Orange County - Portrait of Ned.mp3
+788:Rex Orange County/Bcos U Will Never B Free/07 Rex Orange County - Green Eyes, Pt. II.mp3
+789:Rex Orange County/Bcos U Will Never B Free/08 Rex Orange County - A Song About Being Sad.mp3
+790:Rex Orange County/Bcos U Will Never B Free/09 Rex Orange County - Know Love.mp3
+791:Rex Orange County/Bcos U Will Never B Free/10 Rex Orange County - Curfew....mp3
+792:Rex Orange County/Pony/01 Rex Orange County - 10 10.mp3
+793:Rex Orange County/Pony/02 Rex Orange County - Always.mp3
+794:Rex Orange County/Pony/03 Rex Orange County - Laser Lights.mp3
+795:Rex Orange County/Pony/04 Rex Orange County - Face To Face.mp3
+796:Rex Orange County/Pony/05 Rex Orange County - Stressed Out.mp3
+797:Rex Orange County/Pony/06 Rex Orange County - Never Had The Balls.mp3
+798:Rex Orange County/Pony/07 Rex Orange County - Pluto Projector.mp3
+799:Rex Orange County/Pony/08 Rex Orange County - Every Way.mp3
+800:Rex Orange County/Pony/09 Rex Orange County - It Gets Better.mp3
+801:Rex Orange County/Pony/10 Rex Orange County - It's Not The Same Anymore.mp3
+802:Río Roma/Río Roma - Mi Persona Favorita.mp3
+803:ROSALÍA/El Mal Querer/01 ROSALÍA - MALAMENTE Cap.1 Augurio.mp3
+804:ROSALÍA/El Mal Querer/02 ROSALÍA - QUE NO SALGA LA LUNA Cap.2 Boda.mp3
+805:ROSALÍA/El Mal Querer/03 ROSALÍA - PIENSO EN TU MIRÁ Cap.3 Celos.mp3
+806:ROSALÍA/El Mal Querer/04 ROSALÍA - DE AQUÍ NO SALES Cap.4 Disputa.mp3
+807:ROSALÍA/El Mal Querer/05 ROSALÍA - RENIEGO Cap.5 Lamento.mp3
+808:ROSALÍA/El Mal Querer/06 ROSALÍA - PRESO Cap.6 Clausura.mp3
+809:ROSALÍA/El Mal Querer/07 ROSALÍA - BAGDAD Cap.7 Liturgia.mp3
+810:ROSALÍA/El Mal Querer/08 ROSALÍA - DI MI NOMBRE Cap.8 Éxtasis.mp3
+811:ROSALÍA/El Mal Querer/09 ROSALÍA - NANA Cap.9 Concepción.mp3
+812:ROSALÍA/El Mal Querer/10 ROSALÍA - MALDICIÓN Cap.10 Cordura.mp3
+813:ROSALÍA/El Mal Querer/11 ROSALÍA - A NINGÚN HOMBRE Cap.11 Poder.mp3
+814:SadBoyProlific/SadBoyProlific - Dead And Cold.mp3
+815:Shawn Mendes/Shawn Mendes - Señorita.mp3
+816:Taylor Swift/Taylor Swift - ME! feat. Brendon Urie of Panic! At The Disco.mp3
+817:Tessa Violet/Tessa Violet - Crush.mp3
+818:The Chainsmokers/The Chainsmokers - Closer.mp3
+819:The Glitch Mob/The Glitch Mob - RISE.mp3
+820:timmies/timmies - Tell Me Why I'm Waiting Original Mix.mp3
+821:Tones And I/The Kids Are Coming/01 Tones and I - The Kids Are Coming.mp3
+822:Tones And I/The Kids Are Coming/02 Tones and I - Dance Monkey.mp3
+823:Tones And I/The Kids Are Coming/03 Tones and I - Colourblind.mp3
+824:Tones And I/The Kids Are Coming/04 Tones and I - Johnny Run Away.mp3
+825:Tones And I/The Kids Are Coming/05 Tones and I - Jimmy.mp3
+826:Tones And I/The Kids Are Coming/06 Tones and I - Never Seen The Rain.mp3
+827:Twenty One Pilots/twenty one pilots - Chlorine 19.4326° N, 99.1332° W.mp3
+828:Twenty One Pilots/twenty one pilots - Level of Concern.mp3
+829:Twenty One Pilots/Blurryface/01 twenty one pilots - Heavy Dirty Soul.mp3
+830:Twenty One Pilots/Blurryface/02 twenty one pilots - Stressed Out.mp3
+831:Twenty One Pilots/Blurryface/03 twenty one pilots - Ride.mp3
+832:Twenty One Pilots/Blurryface/04 twenty one pilots - Fairly Local.mp3
+833:Twenty One Pilots/Blurryface/05 twenty one pilots - Tear In My Heart.mp3
+834:Twenty One Pilots/Blurryface/06 twenty one pilots - Lane Boy.mp3
+835:Twenty One Pilots/Blurryface/07 twenty one pilots - The Judge.mp3
+836:Twenty One Pilots/Blurryface/08 twenty one pilots - Doubt.mp3
+837:Twenty One Pilots/Blurryface/09 twenty one pilots - Polarize.mp3
+838:Twenty One Pilots/Blurryface/10 twenty one pilots - We Don’t Believe What’s On T.V..mp3
+839:Twenty One Pilots/Blurryface/11 twenty one pilots - Message Man.mp3
+840:Twenty One Pilots/Blurryface/12 twenty one pilots - Hometown.mp3
+841:Twenty One Pilots/Blurryface/13 twenty one pilots - Not Today.mp3
+842:Twenty One Pilots/Blurryface/14 twenty one pilots - Goner.mp3
+843:Twenty One Pilots/Trench/01 twenty one pilots - Jumpsuit.mp3
+844:Twenty One Pilots/Trench/02 twenty one pilots - Levitate.mp3
+845:Twenty One Pilots/Trench/03 twenty one pilots - Morph.mp3
+846:Twenty One Pilots/Trench/04 twenty one pilots - My Blood.mp3
+847:Twenty One Pilots/Trench/05 twenty one pilots - Chlorine.mp3
+848:Twenty One Pilots/Trench/06 twenty one pilots - Smithereens.mp3
+849:Twenty One Pilots/Trench/07 twenty one pilots - Neon Gravestones.mp3
+850:Twenty One Pilots/Trench/08 twenty one pilots - The Hype.mp3
+851:Twenty One Pilots/Trench/09 twenty one pilots - Nico And The Niners.mp3
+852:Twenty One Pilots/Trench/10 twenty one pilots - Cut My Lip.mp3
+853:Twenty One Pilots/Trench/11 twenty one pilots - Bandito.mp3
+854:Twenty One Pilots/Trench/12 twenty one pilots - Pet Cheetah.mp3
+855:Twenty One Pilots/Trench/13 twenty one pilots - Legend.mp3
+856:Twenty One Pilots/Trench/14 twenty one pilots - Leave The City.mp3
+857:Twenty One Pilots/Twenty One Pilots/01 twenty one pilots - Implicit Demand for Proof.mp3
+858:Twenty One Pilots/Twenty One Pilots/02 twenty one pilots - Fall Away.mp3
+859:Twenty One Pilots/Twenty One Pilots/03 twenty one pilots - The Pantaloon.mp3
+860:Twenty One Pilots/Twenty One Pilots/04 twenty one pilots - Addict With a Pen.mp3
+861:Twenty One Pilots/Twenty One Pilots/05 twenty one pilots - Friend, Please.mp3
+862:Twenty One Pilots/Twenty One Pilots/06 twenty one pilots - March to the Sea.mp3
+863:Twenty One Pilots/Twenty One Pilots/07 twenty one pilots - Johnny Boy.mp3
+864:Twenty One Pilots/Twenty One Pilots/08 twenty one pilots - Oh Ms Believer.mp3
+865:Twenty One Pilots/Twenty One Pilots/09 twenty one pilots - Air Catcher.mp3
+866:Twenty One Pilots/Twenty One Pilots/10 twenty one pilots - Trapdoor.mp3
+867:Twenty One Pilots/Twenty One Pilots/11 twenty one pilots - A Car, a Torch, a Death.mp3
+868:Twenty One Pilots/Twenty One Pilots/12 twenty one pilots - Taxi Cab.mp3
+869:Twenty One Pilots/Twenty One Pilots/13 twenty one pilots - Before You Start Your Day.mp3
+870:Twenty One Pilots/Twenty One Pilots/14 twenty one pilots - Isle of Flightless Birds.mp3
+871:Twenty One Pilots/Vessel/01 twenty one pilots - Ode To Sleep.mp3
+872:Twenty One Pilots/Vessel/02 twenty one pilots - Holding On To You.mp3
+873:Twenty One Pilots/Vessel/03 twenty one pilots - Migraine.mp3
+874:Twenty One Pilots/Vessel/04 twenty one pilots - House Of Gold.mp3
+875:Twenty One Pilots/Vessel/05 twenty one pilots - Car Radio.mp3
+876:Twenty One Pilots/Vessel/06 twenty one pilots - Semi-Automatic.mp3
+877:Twenty One Pilots/Vessel/07 twenty one pilots - Screen.mp3
+878:Twenty One Pilots/Vessel/08 twenty one pilots - The Run And Go.mp3
+879:Twenty One Pilots/Vessel/09 twenty one pilots - Fake You Out.mp3
+880:Twenty One Pilots/Vessel/10 twenty one pilots - Guns For Hands.mp3
+881:Twenty One Pilots/Vessel/11 twenty one pilots - Trees.mp3
+882:Twenty One Pilots/Vessel/12 twenty one pilots - Truce.mp3
+883:Y2K/Y2K - Lalala.mp3
+884:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
+885:Basshunter/Basshunter - Dota.mp3
+886:Y2K/Y2K - Lalala.mp3
+887:Atlas/Atlas - you're my world.mp3
+888:El Cuarteto De Nos/El Cuarteto De Nos - Contrapunto para Humano y Computadora.mp3
+889:El Cuarteto De Nos/Porfiado/01 El Cuarteto De Nos - Algo mejor que hacer.mp3
+890:El Cuarteto De Nos/Porfiado/02 El Cuarteto De Nos - Cuando sea grande.mp3
+891:El Cuarteto De Nos/Porfiado/03 El Cuarteto De Nos - El balcón de Paul.mp3
+892:El Cuarteto De Nos/Porfiado/04 El Cuarteto De Nos - Buen día Benito.mp3
+893:El Cuarteto De Nos/Porfiado/05 El Cuarteto De Nos - El lado soleado de la calle.mp3
+894:El Cuarteto De Nos/Porfiado/06 El Cuarteto De Nos - Lo malo de ser bueno.mp3
+895:El Cuarteto De Nos/Porfiado/07 El Cuarteto De Nos - Enamorado tuyo.mp3
+896:El Cuarteto De Nos/Porfiado/08 El Cuarteto De Nos - Sólo estoy sobreviviendo.mp3
+897:El Cuarteto De Nos/Porfiado/09 El Cuarteto De Nos - Vida ingrata.mp3
+898:El Cuarteto De Nos/Porfiado/10 El Cuarteto De Nos - No te invité a mi cumpleaños.mp3
+899:El Cuarteto De Nos/Porfiado/11 El Cuarteto De Nos - Insaciable.mp3
+900:El Cuarteto De Nos/Porfiado/12 El Cuarteto De Nos - Todos pasan por mi rancho.mp3
+901:half·alive/3/01 half·alive - The Fall.mp3
+902:half·alive/3/02 half·alive - Awake At Night.mp3
+903:half·alive/3/03 half·alive - Tip Toes.mp3
+904:half·alive/Now, Not Yet/01 half·alive - ok ok.mp3
+905:half·alive/Now, Not Yet/02 half·alive - RUNAWAY.mp3
+906:half·alive/Now, Not Yet/03 half·alive - Maybe.mp3
+907:half·alive/Now, Not Yet/04 half·alive - the notion.mp3
+908:half·alive/Now, Not Yet/05 half·alive - still feel..mp3
+909:half·alive/Now, Not Yet/06 half·alive - TrusT.mp3
+910:half·alive/Now, Not Yet/07 half·alive - arrow.mp3
+911:half·alive/Now, Not Yet/08 half·alive - Pure Gold.mp3
+912:half·alive/Now, Not Yet/09 half·alive - ice cold..mp3
+913:half·alive/Now, Not Yet/10 half·alive - Rest.mp3
+914:half·alive/Now, Not Yet/11 half·alive - BREAKFAST.mp3
+915:half·alive/Now, Not Yet/12 half·alive - creature.mp3
+916:Jack Ü/Jack Ü - Mind.mp3
+917:Santana/Santana - La Flaca.mp3
+918:Shawn Mendes/Shawn Mendes - Señorita.mp3
+919:The Tragically Hip/The Tragically Hip - Ahead By A Century.mp3
 playlist_end
