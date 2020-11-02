@@ -1,0 +1,13 @@
+#!/bin/bash
+
+in="eDP-1"
+ex="DP-2"
+
+case "$1" in
+    "single") xrandr --output "$ex" --off --output "$in" --auto                                       ;;
+    "extrar") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900  --right-of "$in" ;;
+    "extral") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --left-of "$in"   ;;
+    "extrau") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --above "$in"     ;;
+    "extrad") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --below "$in"     ;;
+    "duplicate") xrandr --output "$in" --primary --auto --output "$ex" --same-as "$in"                ;;
+esac
