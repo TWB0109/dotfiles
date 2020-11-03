@@ -1,7 +1,7 @@
 #!/bin/bash
 
 file=$(readlink -f "$1")
-base=$(echo "$file" | sed 's/\..*\//')
+base=$(echo "$file" | sed 's/..*\///; s/\...*//')
 
 handlebang () {
     bang=$(head -n 1"$file")
@@ -14,7 +14,7 @@ handlebang () {
 }
 
 case "$1" in
-    *.md) pandoc "$file" -o "$base".pdf ;;
+    *.md) pandoc "$file" -o "$base".pdf --pdf-engine=xelatex;;
     *.py) python "$file" ;;
     *.perl) perl "$file" ;;
     *) handlebang ;;
