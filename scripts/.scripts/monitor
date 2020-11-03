@@ -4,7 +4,8 @@ in="eDP-1"
 ex="DP-2"
 
 case "$1" in
-    "single") xrandr --output "$ex" --off --output "$in" --auto                                       ;;
+    "in") xrandr --output "$ex" --off --output "$in" --auto                                       ;;
+    "ex") xrandr --output "$in" --off --output "$ex" --auto                                       ;;
     "extrar") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900  --right-of "$in" ;;
     "extral") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --left-of "$in"   ;;
     "extrau") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --above "$in"     ;;
