@@ -68,6 +68,10 @@ nmap tn :tabn <CR><CR>
 nmap tp :tabp <CR><CR>
 nnoremap <C-b> :set rnu! <CR><CR>
 map <leader>C :w! \| !pancomp <C-R>%<C-R>
+map <leader>bd :bd <CR><CR>
+map <leader>bn :bn <CR><CR>
+map <leader>bp :bp <CR><CR>
+map <leader>bf :FBuffers <CR>
 
 "Abbrevs
 iabbrev *** • 
