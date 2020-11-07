@@ -1,9 +1,7 @@
 sw_volume: 92
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 55
-time: 9.823000
+state: stop
 random: 1
 repeat: 1
 single: 0
@@ -12,63 +10,4 @@ crossfade: 5
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Agust D/D-2/01 - Moonlight.mp3
-1:Agust D/D-2/02 - Daechwita.mp3
-2:Agust D/D-2/03 - What do you think_.mp3
-3:Agust D/D-2/04 - Strange.mp3
-4:Agust D/D-2/05 - 28.mp3
-5:Agust D/D-2/06 - Burn It.mp3
-6:Agust D/D-2/07 - People.mp3
-7:Agust D/D-2/08 - Honsool.mp3
-8:Agust D/D-2/09 - Interlude _ Set me free.mp3
-9:Agust D/D-2/10 - Dear my friend (feat. Kim Jong Wan of NELL).mp3
-10:BLACKPINK/BLACKPINK - As If It's Your Last.mp3
-11:BLACKPINK/BLACKPINK - How You Like That.mp3
-12:BLACKPINK/BLACKPINK - Kill This Love.mp3
-13:BLACKPINK/BLACKPINK - WHISTLE.mp3
-14:Bobby/Bobby - RISERemix ft. BOBBY of iKON.mp3
-15:Bobby/Bobby - RUNAWAY.mp3
-16:BTS/BTS - Dynamite.mp3
-17:Cö Shu Nie/Cö Shu Nie - asphyxia.mp3
-18:Coalamode/Coalamode. - Nanairo Symphony.mp3
-19:Crush/Crush - Beautiful.mp3
-20:Crush/Crush - Lay Your Head on Me.mp3
-21:Eric Nam/Eric Nam - Perhaps Love.mp3
-22:Goose House/Goose House - Hikarunara.mp3
-23:GOT7/GOT7 - You Calling My Name.mp3
-24:HAIL/HAIL 헤일 - 8%.mp3
-25:KDA/KDA - POP STARS (feat. Jaira Burns).mp3
-26:KDA/ALL OUT/1 - THE BADDEST (feat. Bea Miller & League of Legends).mp3
-27:KDA/ALL OUT/2 - MORE (feat. Lexie Liu, League of Legends, Jaira Burns & Seraphine).mp3
-28:KDA/ALL OUT/3 - VILLAIN (feat. Kim Petras & League of Legends).mp3
-29:KDA/ALL OUT/4 - DRUM GO DUM (feat. Aluna & League of Legends).mp3
-30:KDA/ALL OUT/5 - I'LL SHOW YOU (feat. Annika Wells & League of Legends).mp3
-31:LiSA/LiSA - Crossing Field.mp3
-32:RADWIMPS/Your Name/01 - Dream lantern.mp3
-33:RADWIMPS/Your Name/02 - School road.mp3
-34:RADWIMPS/Your Name/03 - Itomori high school.mp3
-35:RADWIMPS/Your Name/04 - First view of tokyo.mp3
-36:RADWIMPS/Your Name/05 - Cafe at last.mp3
-37:RADWIMPS/Your Name/06 - Theme of Ms. Okudera.mp3
-38:RADWIMPS/Your Name/07 - Unusual changes of two.mp3
-39:RADWIMPS/Your Name/08 - Zenzenzense - movie ver.mp3
-40:RADWIMPS/Your Name/09 - Goshintai.mp3
-41:RADWIMPS/Your Name/10 - Date.mp3
-42:RADWIMPS/Your Name/11 - Autumn festival.mp3
-43:RADWIMPS/Your Name/12 - Evoking memories.mp3
-44:RADWIMPS/Your Name/13 - Visit to Hida.mp3
-45:RADWIMPS/Your Name/14 - Disappeared town.mp3
-46:RADWIMPS/Your Name/15 - Library.mp3
-47:RADWIMPS/Your Name/16 - The night inn.mp3
-48:RADWIMPS/Your Name/17 - Again to Goshintai.mp3
-49:RADWIMPS/Your Name/18 - Kuchikamizake trip.mp3
-50:RADWIMPS/Your Name/19 - Council of war.mp3
-51:RADWIMPS/Your Name/20 - Persuading mayor.mp3
-52:RADWIMPS/Your Name/21 - Theme of Mitsuha.mp3
-53:RADWIMPS/Your Name/22 - Unseen two.mp3
-54:RADWIMPS/Your Name/23 - Katawaredoki.mp3
-55:RADWIMPS/Your Name/24 - Sparkle - movie ver.mp3
-56:RADWIMPS/Your Name/25 - Date 2.mp3
-57:RADWIMPS/Your Name/26 - Nandemonaiya - movie edit.mp3
-58:RADWIMPS/Your Name/27 - Nandemonaiya - movie ver.mp3
 playlist_end
