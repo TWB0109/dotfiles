@@ -145,7 +145,7 @@ fuzzy-match = true
 
 [module/dwm]
 type = internal/dwm
-format = <label-tags> | <label-layout>
+format = <label-tags> | <label-layout> <label-floating>
 
 enable-tags-click = true
 enable-tags-scroll = true
@@ -171,6 +171,12 @@ label-visible-padding = ${glob.padding}
 label-empty = %name%
 label-empty-foreground = #665C54
 label-empty-padding = ${glob.padding}
+
+label-urgent = %name%
+label-urgent-foreground = ${glob.red}
+label-urgent-padding = ${glob.padding}
+
+label-floating = F
 
 label-title-padding = ${glob.padding}
 
