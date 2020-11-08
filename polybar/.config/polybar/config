@@ -145,7 +145,7 @@ fuzzy-match = true
 
 [module/dwm]
 type = internal/dwm
-format = <label-tags> | <label-layout> <label-floating>
+format = <label-tags> | <label-layout>
 
 enable-tags-click = true
 enable-tags-scroll = true
