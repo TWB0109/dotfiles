@@ -18,12 +18,35 @@ set splitbelow
 set splitright
 set laststatus=2
 set shortmess+=A
+set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
+set pastetoggle=<F10>
+
 if has("nvim")
     set shell=/bin/bash
 endif
 
+"Indent 
+set expandtab 
+set cindent 
+set autoindent 
+set tabstop=4
+set shiftwidth=4
+
+"Filetype 
+filetype on
+filetype plugin on
+filetype plugin indent on
+filetype indent on
+
 syntax on
 syntax enable
+
+"i3config
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
 
 "Emmet
 let mapleader = ','
@@ -119,8 +142,6 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
-
 "Installed Plugins
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
@@ -154,29 +175,6 @@ Plug 'rust-lang/rust.vim'
 " Initialize plugin system
 call plug#end()
 
-"Complete menu
-set completeopt=longest,menuone
-
-"Filetype omni 
-set omnifunc=syntaxcomplete#Complete
-
-
-"Indent 
-set expandtab 
-set cindent 
-set autoindent 
-set tabstop=4
-set shiftwidth=4
-
-"Filetype 
-filetype on
-filetype plugin on
-filetype plugin indent on
-filetype indent on
-
-"Paste toggle
-set pastetoggle=<F10>
-
 "Haskell 
 let g:haskell_classic_highlighting = 1
 
@@ -184,16 +182,14 @@ let g:haskell_classic_highlighting = 1
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 
-"i3config
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
-
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<C-S-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+"Deoplete
+call deoplete#custom#option('auto_complete_delay', 150,)
+let g:deoplete#enable_at_startup = 1
 
 "Colorscheme config
 colorscheme gruvbox
