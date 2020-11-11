@@ -215,7 +215,7 @@ function password () {
 # Laziness
 alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.zshrc"
-alias vrc="vim ~/.vimrc"
+alias vrc="vim ~/.config/nvim/init.vim"
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*    \.){3}[0-9]*).*/\2/p'"
 alias 256c="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
 alias -g att="tmux attach -t"
