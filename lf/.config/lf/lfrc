@@ -134,6 +134,7 @@ map pp  $$PAGER       "$f"
 ### Open Directories
 map gh cd ~
 map gc cd ~/.config
+map gv cd ~/.config/nvim/
 map gs cd ~/src/
 map gd cd ~/downloads/
 map gm cd ~/music/
@@ -143,5 +144,5 @@ map gl cd /usr/local/bin
 ### Edit Configs
 map ez $$EDITOR ~/.zshrc
 map ei $$EDITOR ~/.config/i3/config
-map ev $$EDITOR ~/.vimrc 
+map ev $$EDITOR ~/.config/nvim/init.vim
 map elf $$EDITOR ~/.config/lf/lfrc
