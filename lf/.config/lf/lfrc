@@ -132,11 +132,12 @@ map b   $$BROWSER     "$f"
 map pp  $$PAGER       "$f"
 
 ### Open Directories
-map gc  cd ~/.config
-map gh  cd ~
-map gs  cd ~/src/
-map gd  cd ~/src/dwm/
-map gu  cd /usr/bin
+map gh cd ~
+map gc cd ~/.config
+map gs cd ~/src/
+map gd cd ~/downloads/
+map gm cd ~/music/
+map gu cd /usr/bin
 map gl cd /usr/local/bin
 
 ### Edit Configs
