@@ -94,6 +94,7 @@ plugins=(
          zsh-syntax-highlighting
          bgnotify
          colored-man-pages
+         nix-zsh-completions
 )
 
 # Startup
@@ -225,3 +226,4 @@ LATEXDIR='/home/brandon/Documentos/LaTeX/'
 android='/run/user/1000/544ba225466efb1c/primary'
 
 setopt extended_glob
+if [ -e /home/brandon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/brandon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
