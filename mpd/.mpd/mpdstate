@@ -1,9 +1,9 @@
 sw_volume: 98
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 8
-time: 0.637000
+state: play
+current: 187
+time: 12.828000
 random: 1
 repeat: 0
 single: 0
@@ -138,5 +138,82 @@ playlist_begin
 123:Canserbero/Vida/15 - Perdiendo la Fe.mp3
 124:Canserbero/Vida/16 - Ley del Hielo.mp3
 125:Canserbero/Vida/17 - Epílogo.mp3
-126:True Damage/True Damage - Giants.mp3
+126:Coolio/Gangsta's Paradise/01 - That's How It Is (Skit).mp3
+127:Coolio/Gangsta's Paradise/02 - Geto Highlites.mp3
+128:Coolio/Gangsta's Paradise/03 - Gangsta's Paradise.mp3
+129:Coolio/Gangsta's Paradise/04 - Too Hot.mp3
+130:Coolio/Gangsta's Paradise/05 - Cruisin'.mp3
+131:Coolio/Gangsta's Paradise/06 - Exercise Yo Game.mp3
+132:Coolio/Gangsta's Paradise/07 - 1-2-3-4 (Sumpin' New).mp3
+133:Coolio/Gangsta's Paradise/08 - Smilin'.mp3
+134:Coolio/Gangsta's Paradise/09 - Fucc Coolio (Skit).mp3
+135:Coolio/Gangsta's Paradise/10 - Kinda High, Kinda Drunk.mp3
+136:Coolio/Gangsta's Paradise/11 - For My Sistas.mp3
+137:Coolio/Gangsta's Paradise/12 - Is This Me.mp3
+138:Coolio/Gangsta's Paradise/13 - A Thing Going On.mp3
+139:Coolio/Gangsta's Paradise/14 - Bright as the Sun.mp3
+140:Coolio/Gangsta's Paradise/15 - Recoup This.mp3
+141:Coolio/Gangsta's Paradise/16 - The Revolution.mp3
+142:Coolio/Gangsta's Paradise/17 - Get Up Get Down.mp3
+143:Cuco/Cuco - CR-V.mp3
+144:Cuco/Cuco - Dontmakemefallinlove.mp3
+145:Cuco/Cuco - Drown.mp3
+146:Cuco/Cuco - Lo Que Siento.mp3
+147:Joji/Nectar/01 - Ew.mp3
+148:Joji/Nectar/02 - MODUS.mp3
+149:Joji/Nectar/03 - Tick Tock.mp3
+150:Joji/Nectar/04 - Daylight.mp3
+151:Joji/Nectar/05 - Upgrade.mp3
+152:Joji/Nectar/06 - Gimme Love.mp3
+153:Joji/Nectar/07 - Run.mp3
+154:Joji/Nectar/08 - Sanctuary.mp3
+155:Joji/Nectar/09 - High Hopes (feat. Omar Apollo).mp3
+156:Joji/Nectar/10 - NITROUS.mp3
+157:Joji/Nectar/11 - Pretty Boy (feat. Lil Yachty).mp3
+158:Joji/Nectar/12 - Normal People (feat. rei brown).mp3
+159:Joji/Nectar/13 - Afterthought.mp3
+160:Joji/Nectar/14 - Mr. Hollywood.mp3
+161:Joji/Nectar/15 - 777.mp3
+162:Joji/Nectar/16 - Reanimator (feat. Yves Tumor).mp3
+163:Joji/Nectar/17 - Like You Do.mp3
+164:Joji/Nectar/18 - Your Man.mp3
+165:Khalid/Khalid - Young Dumb & Broke.mp3
+166:Khalid/Free Spirit/01 - Intro.mp3
+167:Khalid/Free Spirit/02 - Bad Luck.mp3
+168:Khalid/Free Spirit/03 - My Bad.mp3
+169:Khalid/Free Spirit/04 - Better.mp3
+170:Khalid/Free Spirit/05 - Talk.mp3
+171:Khalid/Free Spirit/06 - Right Back.mp3
+172:Khalid/Free Spirit/07 - Don't Pretend.mp3
+173:Khalid/Free Spirit/08 - Paradise.mp3
+174:Khalid/Free Spirit/09 - Hundred.mp3
+175:Khalid/Free Spirit/10 - Outta My Head.mp3
+176:Khalid/Free Spirit/11 - Free Spirit.mp3
+177:Khalid/Free Spirit/12 - Twenty One.mp3
+178:Khalid/Free Spirit/13 - Bluffin'.mp3
+179:Khalid/Free Spirit/14 - Self.mp3
+180:Khalid/Free Spirit/15 - Alive.mp3
+181:Khalid/Free Spirit/16 - Heaven.mp3
+182:Khalid/Free Spirit/17 - Saturday Nights.mp3
+183:Kimbra/Kimbra - Top of the World.mp3
+184:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
+185:Lil Nas X/Lil Nas X - Old Town Road (Remix).mp3
+186:Logic/Logic - Homicide (feat. Eminem).mp3
+187:LUND/LUND - Broken.mp3
+188:Nach/Almanauta/01 - Grande.mp3
+189:Nach/Almanauta/02 - Los Dos Lados Del Telón.mp3
+190:Nach/Almanauta/03 - Antártida.mp3
+191:Nach/Almanauta/04 - Rap Bruto.mp3
+192:Nach/Almanauta/05 - Art Killer.mp3
+193:Nach/Almanauta/06 - Almanauta.mp3
+194:Nach/Almanauta/07 - Éxodo.mp3
+195:Nach/Almanauta/08 - Todo O Nada.mp3
+196:Nach/Almanauta/09 - Los Zurdos Mueren Antes.mp3
+197:Nach/Almanauta/10 - Un Momento Clave En El Planeta.mp3
+198:Nach/Almanauta/11 - Mi Gran Amor.mp3
+199:Nach/Almanauta/12 - Vida Real.mp3
+200:Nach/Almanauta/13 - Héroes Comprometidos.mp3
+201:Nach/Almanauta/14 - Espero Que Comprendas.mp3
+202:Nach/Almanauta/15 - Cuando Ya No Esté.mp3
+203:True Damage/True Damage - Giants.mp3
 playlist_end
