@@ -142,6 +142,12 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+"Deoplete 
+Plug 'wellle/tmux-complete.vim'
+Plug 'fszymanski/deoplete-emoji'
+Plug 'Shougo/neco-syntax'
+
 "Installed Plugins
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
@@ -175,6 +181,18 @@ Plug 'rust-lang/rust.vim'
 " Initialize plugin system
 call plug#end()
 
+"Tmux-complete
+let g:tmuxcomplete#trigger = ''
+
+"Deoplete-emoji
+call deoplete#custom#source('emoji', 'filetypes', ['markdown', 'vimwiki', "org"])
+call deoplete#custom#source('emoji', 'converters', ['converter_emoi']) 
+
+"UltiSnips
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 "Haskell 
 let g:haskell_classic_highlighting = 1
 
@@ -182,14 +200,11 @@ let g:haskell_classic_highlighting = 1
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<C-S-space>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 "Deoplete
 call deoplete#custom#option('auto_complete_delay', 150,)
 let g:deoplete#enable_at_startup = 1
+"inoremap <silent><expr><tab> pumvisible() ? '\<c-n>' : '\<tab>'
+"inoremap <silent><expr><s-tab> pumvisible() ? '\<c-p>' : '\<s-tab>'
 
 "Colorscheme config
 colorscheme gruvbox
