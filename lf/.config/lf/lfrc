@@ -1,5 +1,10 @@
 # Basic Conf
-set   shell      zsh
+set globsearch   on
+set shell        zsh
+set color256     on
+set incsearch    on
+set drawbox      on
+set truncatechar "~"
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -106,13 +111,13 @@ cmd mkdir ${{
 # Mappings 
 ## Remove some defaults 
 map m
-map n 
 map "'"
 map '""'
 map d
 map c
 map e
 map gs
+map r
 
 ## Custom Mappings
 map   .         set      hidden!
@@ -123,7 +128,10 @@ map   p         paste
 map   <enter>   open
 map   md        mkdir
 map   A         rename
+map   r         reload
 map   R         source ~/.config/lf/lfrc
+map   n         search-next
+map   N         search-prev
 
 ### File Openers 
 map ee  $$EDITOR      "$f"
