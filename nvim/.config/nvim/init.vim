@@ -82,6 +82,8 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 "autocmd FileType py setlocal omnifunc=pythoncomplete#Complete
 
+autocmd FileType md set ft=markdown
+
 "Vim-Markdown folding disable
 let g:vim_markdown_folding_disable = 1
 
