@@ -179,6 +179,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'mboughaba/i3config.vim'
 Plug 'akiomik/git-gutter-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'ziglang/zig.vim'
 
 " Initialize plugin system
 call plug#end()
