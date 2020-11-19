@@ -331,7 +331,8 @@ exec --no-startup-id mpDris2 &
 exec --no-startup-id dunst
 exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
 #exec --no-startup-id $HOME/.scripts/natscroll
-exec --no-startup-id ibus-daemon -drx
+#exec --no-startup-id ibus-daemon -drx
+exec --no-startup-id fcitx &
 exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id /usr/lib/kdeconnectd &
 exec --no-startup-id mpd &
