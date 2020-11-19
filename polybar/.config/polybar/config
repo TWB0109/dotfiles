@@ -65,7 +65,7 @@ font-2 = NotoSansMono Nerd Font:pixelsize=10;1
 
 modules-left = bspwm i3 dwm
 modules-center = calendar date 
-modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan xkeyboard 
+modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan fcitx 
 tray-position = right
 ;tray-margin = 0
 tray-background = ${glob.background} 
@@ -90,14 +90,24 @@ format = <label>
 label = %title%
 label-maxlen =50
 
+[module/fcitx]
+type = custom/script
+exec = polybar-fcitx-watch
+tail = true
+interval = 0
+format-prefix = "⌨  "
+format-foreground = ${glob.light-green}
+format-padding = ${glob.padding}
+
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num 
 
 label-indicator-padding = ${glob.padding}
 label-indicator-margin = 1
+label-layout =
 ;format-background = ${glob.light-green}
-format-prefix = "⌨  "
+;format-prefix = "⌨  "
 format-foreground = ${glob.light-green}
 format-padding = ${glob.padding}
 
