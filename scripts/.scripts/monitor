@@ -1,7 +1,7 @@
 #!/bin/bash
 
-in="eDP-1"
-ex="DP-2"
+in="eDP1"
+ex="DP2"
 
 case "$1" in
     "in") xrandr --output "$ex" --off --output "$in" --auto                                           ;;
