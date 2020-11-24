@@ -180,6 +180,8 @@ Plug 'mboughaba/i3config.vim'
 Plug 'akiomik/git-gutter-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'dhruvasagar/vim-zoom'
 
 " Initialize plugin system
 call plug#end()
