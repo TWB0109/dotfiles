@@ -16,7 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.gem/ruby/2.7.0/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.scripts:$HOME/.gem/ruby/2.7.0/bin:$HOME/.cabal/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/brandon/.oh-my-zsh"
@@ -226,4 +226,6 @@ LATEXDIR='/home/brandon/Documentos/LaTeX/'
 android='/run/user/1000/544ba225466efb1c/primary'
 
 setopt extended_glob
-if [ -e /home/brandon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/brandon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Starship
+eval "$(starship init zsh)"
