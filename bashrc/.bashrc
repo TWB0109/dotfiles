@@ -203,3 +203,5 @@ export XIM_PROGRAM=/usr/bin/ibus-daemon
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source /home/brandon/.config/broot/launcher/bash/br
+
+eval "$(starship init bash)"
