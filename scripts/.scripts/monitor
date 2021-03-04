@@ -1,15 +1,15 @@
 #!/bin/bash
 
 in="eDP1"
-ex="DP2"
+ex="DP1"
 
 case "$1" in
-    "in") xrandr --output "$ex" --off --output "$in" --auto                                           ;;
-    "ex") xrandr --output "$in" --off --output "$ex" --auto                                           ;;
-    "extrar") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900  --right-of "$in" ;;
-    "extral") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --left-of "$in"   ;;
-    "extrau") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --above "$in"     ;;
-    "extrad") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --below "$in"     ;;
-    "duplicate") xrandr --output "$in" --primary --auto --output "$ex" --same-as "$in"                ;;
-    *) echo "Option is not valid"                                                                     ;;
+    "in") xrandr --output "$ex" --off --output "$in" --auto && nitrogen --restore                                           ;;
+    "ex") xrandr --output "$in" --off --output "$ex" --auto && nitrogen --restore                                           ;;
+    "extrar") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900  --right-of "$in" && nitrogen --restore ;;
+    "extral") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --left-of "$in" && nitrogen --restore   ;;
+    "extrau") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --above "$in" && nitrogen --restore     ;;
+    "extrad") xrandr --output "$in" --primary --auto --output "$ex" --mode 1440x900 --below "$in" && nitrogen --restore     ;;
+    "duplicate") xrandr --output "$in" --primary --auto --output "$ex" --same-as "$in" && nitrogen --restore                ;;
+    *) echo "Option is not valid"                                                                                           ;;
 esac
