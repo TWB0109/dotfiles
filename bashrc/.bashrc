@@ -105,14 +105,12 @@ if ${use_color} ; then
 
   #Vim-Like
   alias q='exit'
-  alias v='vim'
+  alias v='nvim'
   alias lsd='du -h | sort -n -r'
-  alias brc='vim ~/.bashrc'
-  alias vrc='vim ~/.vimrc'
+  alias brc='nvim ~/.bashrc'
+  alias vrc='nvim ~/.vimrc'
   alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
   
- LATEXDIR='/home/brandon/Documentos/LaTeX/'
-
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -146,6 +144,8 @@ shopt -s expand_aliases
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
+
+set -o vi
 
 #
 # # ex - archive extractor
@@ -192,16 +192,14 @@ neofetch
 
 export XDG_MUSIC_DIR=~/music/
 
-export EDITOR=vim
-export TERMINAL=termite
+export EDITOR=nvim
+export TERMINAL=alacritty
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-export XIM_PROGRAM=/usr/bin/ibus-daemon
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export XIM_PROGRAM=/usr/bin/fcitx
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-source /home/brandon/.config/broot/launcher/bash/br
 
 eval "$(starship init bash)"
