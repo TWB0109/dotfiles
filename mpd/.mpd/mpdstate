@@ -1,9 +1,9 @@
-sw_volume: 98
+sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 154
-time: 44.622000
+state: play
+current: 118
+time: 111.965000
 random: 1
 repeat: 0
 single: 0
@@ -22,199 +22,203 @@ playlist_begin
 7:Agust D/D-2/08 - Honsool.mp3
 8:Agust D/D-2/09 - Interlude _ Set me free.mp3
 9:Agust D/D-2/10 - Dear my friend (feat. Kim Jong Wan of NELL).mp3
-10:BLACKPINK/BLACKPINK - As If It's Your Last.mp3
-11:BLACKPINK/BLACKPINK - How You Like That.mp3
-12:BLACKPINK/BLACKPINK - Kill This Love.mp3
-13:BLACKPINK/BLACKPINK - WHISTLE.mp3
-14:Bobby/Bobby - RISERemix ft. BOBBY of iKON.mp3
-15:Bobby/Bobby - RUNAWAY.mp3
-16:BTS/BTS - Dynamite.mp3
-17:Cö Shu Nie/Cö Shu Nie - asphyxia.mp3
-18:Coalamode/Coalamode. - Nanairo Symphony.mp3
-19:Crush/Crush - Beautiful.mp3
-20:Crush/Crush - Lay Your Head on Me.mp3
-21:Eric Nam/Eric Nam - Perhaps Love.mp3
-22:Goose House/Goose House - Hikarunara.mp3
-23:GOT7/GOT7 - You Calling My Name.mp3
-24:HAIL/HAIL 헤일 - 8%.mp3
-25:KDA/KDA - POP STARS (feat. Jaira Burns).mp3
-26:KDA/ALL OUT/1 - THE BADDEST (feat. Bea Miller & League of Legends).mp3
-27:KDA/ALL OUT/2 - MORE (feat. Lexie Liu, League of Legends, Jaira Burns & Seraphine).mp3
-28:KDA/ALL OUT/3 - VILLAIN (feat. Kim Petras & League of Legends).mp3
-29:KDA/ALL OUT/4 - DRUM GO DUM (feat. Aluna & League of Legends).mp3
-30:KDA/ALL OUT/5 - I'LL SHOW YOU (feat. Annika Wells & League of Legends).mp3
-31:LiSA/LiSA - Crossing Field.mp3
-32:LOONA/LOOΠΔ - Heart Attack (츄).mp3
-33:RADWIMPS/Your Name/01 - Dream lantern.mp3
-34:RADWIMPS/Your Name/02 - School road.mp3
-35:RADWIMPS/Your Name/03 - Itomori high school.mp3
-36:RADWIMPS/Your Name/04 - First view of tokyo.mp3
-37:RADWIMPS/Your Name/05 - Cafe at last.mp3
-38:RADWIMPS/Your Name/06 - Theme of Ms. Okudera.mp3
-39:RADWIMPS/Your Name/07 - Unusual changes of two.mp3
-40:RADWIMPS/Your Name/08 - Zenzenzense - movie ver.mp3
-41:RADWIMPS/Your Name/09 - Goshintai.mp3
-42:RADWIMPS/Your Name/10 - Date.mp3
-43:RADWIMPS/Your Name/11 - Autumn festival.mp3
-44:RADWIMPS/Your Name/12 - Evoking memories.mp3
-45:RADWIMPS/Your Name/13 - Visit to Hida.mp3
-46:RADWIMPS/Your Name/14 - Disappeared town.mp3
-47:RADWIMPS/Your Name/15 - Library.mp3
-48:RADWIMPS/Your Name/16 - The night inn.mp3
-49:RADWIMPS/Your Name/17 - Again to Goshintai.mp3
-50:RADWIMPS/Your Name/18 - Kuchikamizake trip.mp3
-51:RADWIMPS/Your Name/19 - Council of war.mp3
-52:RADWIMPS/Your Name/20 - Persuading mayor.mp3
-53:RADWIMPS/Your Name/21 - Theme of Mitsuha.mp3
-54:RADWIMPS/Your Name/22 - Unseen two.mp3
-55:RADWIMPS/Your Name/23 - Katawaredoki.mp3
-56:RADWIMPS/Your Name/24 - Sparkle - movie ver.mp3
-57:RADWIMPS/Your Name/25 - Date 2.mp3
-58:RADWIMPS/Your Name/26 - Nandemonaiya - movie edit.mp3
-59:RADWIMPS/Your Name/27 - Nandemonaiya - movie ver.mp3
-60:Rainych/Rainych - Say So (Japanese Version).mp3
-61:True Damage/True Damage - Giants.mp3
-62:Kana Hanazawa/Kana Hanazawa - Renai Circulation.mp3
-63:Kisum/Kisum - Say Hi (feat. Woody).mp3
-64:Zion.T/Zion.T - Hello Tutorial (feat. SEULGI).mp3
-65:TWICE/TWICE - Feel Special.mp3
-66:TWICE/TWICE - OXYGEN.mp3
-67:Agust D/D-2/01 - Moonlight.mp3
-68:Agust D/D-2/02 - Daechwita.mp3
-69:Agust D/D-2/03 - What do you think_.mp3
-70:Agust D/D-2/04 - Strange.mp3
-71:Agust D/D-2/05 - 28.mp3
-72:Agust D/D-2/06 - Burn It.mp3
-73:Agust D/D-2/07 - People.mp3
-74:Agust D/D-2/08 - Honsool.mp3
-75:Agust D/D-2/09 - Interlude _ Set me free.mp3
-76:Agust D/D-2/10 - Dear my friend (feat. Kim Jong Wan of NELL).mp3
-77:Atlas/Atlas - you're my world.mp3
-78:blackbear/ANONYMOUS/01 - PINK ROLEX.mp3
-79:blackbear/ANONYMOUS/02 - HATE MY GUTS.mp3
-80:blackbear/ANONYMOUS/03 - DRUG DEALER.mp3
-81:blackbear/ANONYMOUS/04 - SWEAR TO GOD.mp3
-82:blackbear/ANONYMOUS/05 - MAKE A MESS.mp3
-83:blackbear/ANONYMOUS/06 - SICK OF IT ALL.mp3
-84:blackbear/ANONYMOUS/07 - CHANGES.mp3
-85:blackbear/ANONYMOUS/08 - HIGH1X.mp3
-86:blackbear/ANONYMOUS/09 - DOWN.mp3
-87:blackbear/ANONYMOUS/10 - BURNT AF.mp3
-88:blackbear/ANONYMOUS/11 - HEARTBROKEN.mp3
-89:blackbear/ANONYMOUS/12 - 1 SIDED LOVE.mp3
-90:blackbear/ANONYMOUS/13 - LOSING YOU.mp3
-91:blackbear/ANONYMOUS/14 - ITS ALL GONNA BURN.mp3
-92:blackbear/ANONYMOUS/15 - DEAD BALLOONS.mp3
-93:blackbear/ANONYMOUS/16 - TOO CLOSE.mp3
-94:blackbear/ANONYMOUS/17 - DEAD TO ME.mp3
-95:blackbear/ANONYMOUS/18 - NYLA.mp3
-96:Canserbero/Muerte/01 - C'est La Mort.mp3
-97:Canserbero/Muerte/02 - Es Épico.mp3
-98:Canserbero/Muerte/03 - Ser Vero.mp3
-99:Canserbero/Muerte/04 - En el Valle de las Sombras.mp3
-100:Canserbero/Muerte/05 - Maquiavélico.mp3
-101:Canserbero/Muerte/06 - Mundo de Piedra.mp3
-102:Canserbero/Muerte/07 - Sin Mercy.mp3
-103:Canserbero/Muerte/08 - Un Día en el Barrio.mp3
-104:Canserbero/Muerte/09 - Llovía.mp3
-105:Canserbero/Muerte/10 - Y en un Espejo Vi.mp3
-106:Canserbero/Muerte/11 - La Hora del Juicio.mp3
-107:Canserbero/Muerte/12 - El Primer Trago.mp3
-108:Canserbero/Muerte/13 - De Mi Muerte.mp3
-109:Canserbero/Muerte/14 - Jeremías 17-5.mp3
-110:Canserbero/Vida/01 - Prólogo.mp3
-111:Canserbero/Vida/02 - Mucho Gusto.mp3
-112:Canserbero/Vida/03 - Clima Tropical.mp3
-113:Canserbero/Vida/04 - Vida.mp3
-114:Canserbero/Vida/05 - Aceptas.mp3
-115:Canserbero/Vida/06 - Martillos y Ruedas.mp3
-116:Canserbero/Vida/07 - Hace Falta Soñar.mp3
-117:Canserbero/Vida/08 - Americanos.mp3
-118:Canserbero/Vida/09 - Interludio K219.mp3
-119:Canserbero/Vida/10 - Pensando en Ti.mp3
-120:Canserbero/Vida/11 - Y la Felicidad Qué.mp3
-121:Canserbero/Vida/12 - No Justice.mp3
-122:Canserbero/Vida/13 - Únetenos.mp3
-123:Canserbero/Vida/14 - Quién Eres.mp3
-124:Canserbero/Vida/15 - Perdiendo la Fe.mp3
-125:Canserbero/Vida/16 - Ley del Hielo.mp3
-126:Canserbero/Vida/17 - Epílogo.mp3
-127:Coolio/Gangsta's Paradise/01 - That's How It Is (Skit).mp3
-128:Coolio/Gangsta's Paradise/02 - Geto Highlites.mp3
-129:Coolio/Gangsta's Paradise/03 - Gangsta's Paradise.mp3
-130:Coolio/Gangsta's Paradise/04 - Too Hot.mp3
-131:Coolio/Gangsta's Paradise/05 - Cruisin'.mp3
-132:Coolio/Gangsta's Paradise/06 - Exercise Yo Game.mp3
-133:Coolio/Gangsta's Paradise/07 - 1-2-3-4 (Sumpin' New).mp3
-134:Coolio/Gangsta's Paradise/08 - Smilin'.mp3
-135:Coolio/Gangsta's Paradise/09 - Fucc Coolio (Skit).mp3
-136:Coolio/Gangsta's Paradise/10 - Kinda High, Kinda Drunk.mp3
-137:Coolio/Gangsta's Paradise/11 - For My Sistas.mp3
-138:Coolio/Gangsta's Paradise/12 - Is This Me.mp3
-139:Coolio/Gangsta's Paradise/13 - A Thing Going On.mp3
-140:Coolio/Gangsta's Paradise/14 - Bright as the Sun.mp3
-141:Coolio/Gangsta's Paradise/15 - Recoup This.mp3
-142:Coolio/Gangsta's Paradise/16 - The Revolution.mp3
-143:Coolio/Gangsta's Paradise/17 - Get Up Get Down.mp3
-144:Cuco/Cuco - CR-V.mp3
-145:Cuco/Cuco - Dontmakemefallinlove.mp3
-146:Cuco/Cuco - Drown.mp3
-147:Cuco/Cuco - Lo Que Siento.mp3
-148:Joji/Nectar/01 - Ew.mp3
-149:Joji/Nectar/02 - MODUS.mp3
-150:Joji/Nectar/03 - Tick Tock.mp3
-151:Joji/Nectar/04 - Daylight.mp3
-152:Joji/Nectar/05 - Upgrade.mp3
-153:Joji/Nectar/06 - Gimme Love.mp3
-154:Joji/Nectar/07 - Run.mp3
-155:Joji/Nectar/08 - Sanctuary.mp3
-156:Joji/Nectar/09 - High Hopes (feat. Omar Apollo).mp3
-157:Joji/Nectar/10 - NITROUS.mp3
-158:Joji/Nectar/11 - Pretty Boy (feat. Lil Yachty).mp3
-159:Joji/Nectar/12 - Normal People (feat. rei brown).mp3
-160:Joji/Nectar/13 - Afterthought.mp3
-161:Joji/Nectar/14 - Mr. Hollywood.mp3
-162:Joji/Nectar/15 - 777.mp3
-163:Joji/Nectar/16 - Reanimator (feat. Yves Tumor).mp3
-164:Joji/Nectar/17 - Like You Do.mp3
-165:Joji/Nectar/18 - Your Man.mp3
-166:Khalid/Khalid - Young Dumb & Broke.mp3
-167:Khalid/Free Spirit/01 - Intro.mp3
-168:Khalid/Free Spirit/02 - Bad Luck.mp3
-169:Khalid/Free Spirit/03 - My Bad.mp3
-170:Khalid/Free Spirit/04 - Better.mp3
-171:Khalid/Free Spirit/05 - Talk.mp3
-172:Khalid/Free Spirit/06 - Right Back.mp3
-173:Khalid/Free Spirit/07 - Don't Pretend.mp3
-174:Khalid/Free Spirit/08 - Paradise.mp3
-175:Khalid/Free Spirit/09 - Hundred.mp3
-176:Khalid/Free Spirit/10 - Outta My Head.mp3
-177:Khalid/Free Spirit/11 - Free Spirit.mp3
-178:Khalid/Free Spirit/12 - Twenty One.mp3
-179:Khalid/Free Spirit/13 - Bluffin'.mp3
-180:Khalid/Free Spirit/14 - Self.mp3
-181:Khalid/Free Spirit/15 - Alive.mp3
-182:Khalid/Free Spirit/16 - Heaven.mp3
-183:Khalid/Free Spirit/17 - Saturday Nights.mp3
-184:Kimbra/Kimbra - Top of the World.mp3
-185:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
-186:Lil Nas X/Lil Nas X - Old Town Road (Remix).mp3
-187:Logic/Logic - Homicide (feat. Eminem).mp3
-188:LUND/LUND - Broken.mp3
-189:Nach/Almanauta/01 - Grande.mp3
-190:Nach/Almanauta/02 - Los Dos Lados Del Telón.mp3
-191:Nach/Almanauta/03 - Antártida.mp3
-192:Nach/Almanauta/04 - Rap Bruto.mp3
-193:Nach/Almanauta/05 - Art Killer.mp3
-194:Nach/Almanauta/06 - Almanauta.mp3
-195:Nach/Almanauta/07 - Éxodo.mp3
-196:Nach/Almanauta/08 - Todo O Nada.mp3
-197:Nach/Almanauta/09 - Los Zurdos Mueren Antes.mp3
-198:Nach/Almanauta/10 - Un Momento Clave En El Planeta.mp3
-199:Nach/Almanauta/11 - Mi Gran Amor.mp3
-200:Nach/Almanauta/12 - Vida Real.mp3
-201:Nach/Almanauta/13 - Héroes Comprometidos.mp3
-202:Nach/Almanauta/14 - Espero Que Comprendas.mp3
-203:Nach/Almanauta/15 - Cuando Ya No Esté.mp3
-204:True Damage/True Damage - Giants.mp3
+10:Atlas/Atlas - you're my world.mp3
+11:blackbear/ANONYMOUS/01 - PINK ROLEX.mp3
+12:blackbear/ANONYMOUS/02 - HATE MY GUTS.mp3
+13:blackbear/ANONYMOUS/03 - DRUG DEALER.mp3
+14:blackbear/ANONYMOUS/04 - SWEAR TO GOD.mp3
+15:blackbear/ANONYMOUS/05 - MAKE A MESS.mp3
+16:blackbear/ANONYMOUS/06 - SICK OF IT ALL.mp3
+17:blackbear/ANONYMOUS/07 - CHANGES.mp3
+18:blackbear/ANONYMOUS/08 - HIGH1X.mp3
+19:blackbear/ANONYMOUS/09 - DOWN.mp3
+20:blackbear/ANONYMOUS/10 - BURNT AF.mp3
+21:blackbear/ANONYMOUS/11 - HEARTBROKEN.mp3
+22:blackbear/ANONYMOUS/12 - 1 SIDED LOVE.mp3
+23:blackbear/ANONYMOUS/13 - LOSING YOU.mp3
+24:blackbear/ANONYMOUS/14 - ITS ALL GONNA BURN.mp3
+25:blackbear/ANONYMOUS/15 - DEAD BALLOONS.mp3
+26:blackbear/ANONYMOUS/16 - TOO CLOSE.mp3
+27:blackbear/ANONYMOUS/17 - DEAD TO ME.mp3
+28:blackbear/ANONYMOUS/18 - NYLA.mp3
+29:Canserbero/Muerte/01 - C'est La Mort.mp3
+30:Canserbero/Muerte/02 - Es Épico.mp3
+31:Canserbero/Muerte/03 - Ser Vero.mp3
+32:Canserbero/Muerte/04 - En el Valle de las Sombras.mp3
+33:Canserbero/Muerte/05 - Maquiavélico.mp3
+34:Canserbero/Muerte/06 - Mundo de Piedra.mp3
+35:Canserbero/Muerte/07 - Sin Mercy.mp3
+36:Canserbero/Muerte/08 - Un Día en el Barrio.mp3
+37:Canserbero/Muerte/09 - Llovía.mp3
+38:Canserbero/Muerte/10 - Y en un Espejo Vi.mp3
+39:Canserbero/Muerte/11 - La Hora del Juicio.mp3
+40:Canserbero/Muerte/12 - El Primer Trago.mp3
+41:Canserbero/Muerte/13 - De Mi Muerte.mp3
+42:Canserbero/Muerte/14 - Jeremías 17-5.mp3
+43:Canserbero/Vida/01 - Prólogo.mp3
+44:Canserbero/Vida/02 - Mucho Gusto.mp3
+45:Canserbero/Vida/03 - Clima Tropical.mp3
+46:Canserbero/Vida/04 - Vida.mp3
+47:Canserbero/Vida/05 - Aceptas.mp3
+48:Canserbero/Vida/06 - Martillos y Ruedas.mp3
+49:Canserbero/Vida/07 - Hace Falta Soñar.mp3
+50:Canserbero/Vida/08 - Americanos.mp3
+51:Canserbero/Vida/09 - Interludio K219.mp3
+52:Canserbero/Vida/10 - Pensando en Ti.mp3
+53:Canserbero/Vida/11 - Y la Felicidad Qué.mp3
+54:Canserbero/Vida/12 - No Justice.mp3
+55:Canserbero/Vida/13 - Únetenos.mp3
+56:Canserbero/Vida/14 - Quién Eres.mp3
+57:Canserbero/Vida/15 - Perdiendo la Fe.mp3
+58:Canserbero/Vida/16 - Ley del Hielo.mp3
+59:Canserbero/Vida/17 - Epílogo.mp3
+60:Coolio/Gangsta's Paradise/01 - That's How It Is (Skit).mp3
+61:Coolio/Gangsta's Paradise/02 - Geto Highlites.mp3
+62:Coolio/Gangsta's Paradise/03 - Gangsta's Paradise.mp3
+63:Coolio/Gangsta's Paradise/04 - Too Hot.mp3
+64:Coolio/Gangsta's Paradise/05 - Cruisin'.mp3
+65:Coolio/Gangsta's Paradise/06 - Exercise Yo Game.mp3
+66:Coolio/Gangsta's Paradise/07 - 1-2-3-4 (Sumpin' New).mp3
+67:Coolio/Gangsta's Paradise/08 - Smilin'.mp3
+68:Coolio/Gangsta's Paradise/09 - Fucc Coolio (Skit).mp3
+69:Coolio/Gangsta's Paradise/10 - Kinda High, Kinda Drunk.mp3
+70:Coolio/Gangsta's Paradise/11 - For My Sistas.mp3
+71:Coolio/Gangsta's Paradise/12 - Is This Me.mp3
+72:Coolio/Gangsta's Paradise/13 - A Thing Going On.mp3
+73:Coolio/Gangsta's Paradise/14 - Bright as the Sun.mp3
+74:Coolio/Gangsta's Paradise/15 - Recoup This.mp3
+75:Coolio/Gangsta's Paradise/16 - The Revolution.mp3
+76:Coolio/Gangsta's Paradise/17 - Get Up Get Down.mp3
+77:Cuco/Cuco - CR-V.mp3
+78:Cuco/Cuco - Dontmakemefallinlove.mp3
+79:Cuco/Cuco - Drown.mp3
+80:Cuco/Cuco - Lo Que Siento.mp3
+81:Joji/Nectar/01 - Ew.mp3
+82:Joji/Nectar/02 - MODUS.mp3
+83:Joji/Nectar/03 - Tick Tock.mp3
+84:Joji/Nectar/04 - Daylight.mp3
+85:Joji/Nectar/05 - Upgrade.mp3
+86:Joji/Nectar/06 - Gimme Love.mp3
+87:Joji/Nectar/07 - Run.mp3
+88:Joji/Nectar/08 - Sanctuary.mp3
+89:Joji/Nectar/09 - High Hopes (feat. Omar Apollo).mp3
+90:Joji/Nectar/10 - NITROUS.mp3
+91:Joji/Nectar/11 - Pretty Boy (feat. Lil Yachty).mp3
+92:Joji/Nectar/12 - Normal People (feat. rei brown).mp3
+93:Joji/Nectar/13 - Afterthought.mp3
+94:Joji/Nectar/14 - Mr. Hollywood.mp3
+95:Joji/Nectar/15 - 777.mp3
+96:Joji/Nectar/16 - Reanimator (feat. Yves Tumor).mp3
+97:Joji/Nectar/17 - Like You Do.mp3
+98:Joji/Nectar/18 - Your Man.mp3
+99:Khalid/Khalid - Young Dumb & Broke.mp3
+100:Khalid/Free Spirit/01 - Intro.mp3
+101:Khalid/Free Spirit/02 - Bad Luck.mp3
+102:Khalid/Free Spirit/03 - My Bad.mp3
+103:Khalid/Free Spirit/04 - Better.mp3
+104:Khalid/Free Spirit/05 - Talk.mp3
+105:Khalid/Free Spirit/06 - Right Back.mp3
+106:Khalid/Free Spirit/07 - Don't Pretend.mp3
+107:Khalid/Free Spirit/08 - Paradise.mp3
+108:Khalid/Free Spirit/09 - Hundred.mp3
+109:Khalid/Free Spirit/10 - Outta My Head.mp3
+110:Khalid/Free Spirit/11 - Free Spirit.mp3
+111:Khalid/Free Spirit/12 - Twenty One.mp3
+112:Khalid/Free Spirit/13 - Bluffin'.mp3
+113:Khalid/Free Spirit/14 - Self.mp3
+114:Khalid/Free Spirit/15 - Alive.mp3
+115:Khalid/Free Spirit/16 - Heaven.mp3
+116:Khalid/Free Spirit/17 - Saturday Nights.mp3
+117:Kimbra/Kimbra - Top of the World.mp3
+118:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
+119:Lil Nas X/Lil Nas X - Old Town Road (Remix).mp3
+120:Logic/Logic - Homicide (feat. Eminem).mp3
+121:LUND/LUND - Broken.mp3
+122:Nach/Almanauta/01 - Grande.mp3
+123:Nach/Almanauta/02 - Los Dos Lados Del Telón.mp3
+124:Nach/Almanauta/03 - Antártida.mp3
+125:Nach/Almanauta/04 - Rap Bruto.mp3
+126:Nach/Almanauta/05 - Art Killer.mp3
+127:Nach/Almanauta/06 - Almanauta.mp3
+128:Nach/Almanauta/07 - Éxodo.mp3
+129:Nach/Almanauta/08 - Todo O Nada.mp3
+130:Nach/Almanauta/09 - Los Zurdos Mueren Antes.mp3
+131:Nach/Almanauta/10 - Un Momento Clave En El Planeta.mp3
+132:Nach/Almanauta/11 - Mi Gran Amor.mp3
+133:Nach/Almanauta/12 - Vida Real.mp3
+134:Nach/Almanauta/13 - Héroes Comprometidos.mp3
+135:Nach/Almanauta/14 - Espero Que Comprendas.mp3
+136:Nach/Almanauta/15 - Cuando Ya No Esté.mp3
+137:True Damage/True Damage - Giants.mp3
+138:Khalid/Khalid - Young Dumb & Broke.mp3
+139:Kimbra/Kimbra - Top of the World.mp3
+140:Kyle/Kyle - iSpy (feat. Lil Yachty).mp3
+141:Atlas/Atlas - you're my world.mp3
+142:Agust D/D-2/01 - Moonlight.mp3
+143:Agust D/D-2/02 - Daechwita.mp3
+144:Agust D/D-2/03 - What do you think_.mp3
+145:Agust D/D-2/04 - Strange.mp3
+146:Agust D/D-2/05 - 28.mp3
+147:Agust D/D-2/06 - Burn It.mp3
+148:Agust D/D-2/07 - People.mp3
+149:Agust D/D-2/08 - Honsool.mp3
+150:Agust D/D-2/09 - Interlude _ Set me free.mp3
+151:Agust D/D-2/10 - Dear my friend (feat. Kim Jong Wan of NELL).mp3
+152:BLACKPINK/BLACKPINK - As If It's Your Last.mp3
+153:BLACKPINK/BLACKPINK - How You Like That.mp3
+154:BLACKPINK/BLACKPINK - Kill This Love.mp3
+155:BLACKPINK/BLACKPINK - WHISTLE.mp3
+156:Bobby/Bobby - RISERemix ft. BOBBY of iKON.mp3
+157:Bobby/Bobby - RUNAWAY.mp3
+158:BTS/BTS - Dynamite.mp3
+159:Cö Shu Nie/Cö Shu Nie - asphyxia.mp3
+160:Coalamode/Coalamode. - Nanairo Symphony.mp3
+161:Crush/Crush - Beautiful.mp3
+162:Crush/Crush - Lay Your Head on Me.mp3
+163:Eric Nam/Eric Nam - Perhaps Love.mp3
+164:Goose House/Goose House - Hikarunara.mp3
+165:GOT7/GOT7 - You Calling My Name.mp3
+166:HAIL/HAIL 헤일 - 8%.mp3
+167:KDA/KDA - POP STARS (feat. Jaira Burns).mp3
+168:KDA/ALL OUT/1 - THE BADDEST (feat. Bea Miller & League of Legends).mp3
+169:KDA/ALL OUT/2 - MORE (feat. Lexie Liu, League of Legends, Jaira Burns & Seraphine).mp3
+170:KDA/ALL OUT/3 - VILLAIN (feat. Kim Petras & League of Legends).mp3
+171:KDA/ALL OUT/4 - DRUM GO DUM (feat. Aluna & League of Legends).mp3
+172:KDA/ALL OUT/5 - I'LL SHOW YOU (feat. Annika Wells & League of Legends).mp3
+173:LiSA/LiSA - Crossing Field.mp3
+174:LOONA/LOOΠΔ - Heart Attack (츄).mp3
+175:RADWIMPS/Your Name/01 - Dream lantern.mp3
+176:RADWIMPS/Your Name/02 - School road.mp3
+177:RADWIMPS/Your Name/03 - Itomori high school.mp3
+178:RADWIMPS/Your Name/04 - First view of tokyo.mp3
+179:RADWIMPS/Your Name/05 - Cafe at last.mp3
+180:RADWIMPS/Your Name/06 - Theme of Ms. Okudera.mp3
+181:RADWIMPS/Your Name/07 - Unusual changes of two.mp3
+182:RADWIMPS/Your Name/08 - Zenzenzense - movie ver.mp3
+183:RADWIMPS/Your Name/09 - Goshintai.mp3
+184:RADWIMPS/Your Name/10 - Date.mp3
+185:RADWIMPS/Your Name/11 - Autumn festival.mp3
+186:RADWIMPS/Your Name/12 - Evoking memories.mp3
+187:RADWIMPS/Your Name/13 - Visit to Hida.mp3
+188:RADWIMPS/Your Name/14 - Disappeared town.mp3
+189:RADWIMPS/Your Name/15 - Library.mp3
+190:RADWIMPS/Your Name/16 - The night inn.mp3
+191:RADWIMPS/Your Name/17 - Again to Goshintai.mp3
+192:RADWIMPS/Your Name/18 - Kuchikamizake trip.mp3
+193:RADWIMPS/Your Name/19 - Council of war.mp3
+194:RADWIMPS/Your Name/20 - Persuading mayor.mp3
+195:RADWIMPS/Your Name/21 - Theme of Mitsuha.mp3
+196:RADWIMPS/Your Name/22 - Unseen two.mp3
+197:RADWIMPS/Your Name/23 - Katawaredoki.mp3
+198:RADWIMPS/Your Name/24 - Sparkle - movie ver.mp3
+199:RADWIMPS/Your Name/25 - Date 2.mp3
+200:RADWIMPS/Your Name/26 - Nandemonaiya - movie edit.mp3
+201:RADWIMPS/Your Name/27 - Nandemonaiya - movie ver.mp3
+202:Rainych/Rainych - Say So (Japanese Version).mp3
+203:True Damage/True Damage - Giants.mp3
+204:Kana Hanazawa/Kana Hanazawa - Renai Circulation.mp3
+205:Kisum/Kisum - Say Hi (feat. Woody).mp3
+206:Zion.T/Zion.T - Hello Tutorial (feat. SEULGI).mp3
+207:TWICE/TWICE - Feel Special.mp3
+208:TWICE/TWICE - OXYGEN.mp3
 playlist_end
