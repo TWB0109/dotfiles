@@ -53,10 +53,6 @@ let mapleader = ','
 let g:user_emmet_leader_key = ','
 
 "Mappings
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-L>
 nnoremap <C-N> :NERDTreeToggle <CR><CR>
 inoremap ii <ESC>
 :inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
