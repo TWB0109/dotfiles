@@ -106,6 +106,7 @@ if ${use_color} ; then
   #Vim-Like
   alias q='exit'
   alias v='nvim'
+  alias vim='nvim'
   alias lsd='du -h | sort -n -r'
   alias brc='nvim ~/.bashrc'
   alias vrc='nvim ~/.vimrc'

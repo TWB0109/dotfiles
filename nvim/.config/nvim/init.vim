@@ -19,7 +19,6 @@ set splitright
 set laststatus=2
 set shortmess+=A
 set completeopt=longest,menuone
-set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F10>
 
 if has("nvim")
@@ -129,22 +128,9 @@ call plug#begin('~/.config/nvim/autoload')
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-"Deoplete 
-Plug 'wellle/tmux-complete.vim'
-Plug 'fszymanski/deoplete-emoji'
-Plug 'Shougo/neco-syntax'
 
 "Installed Plugins
 Plug 'junegunn/goyo.vim'
@@ -173,11 +159,12 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'preservim/nerdcommenter'
 Plug 'mboughaba/i3config.vim'
-Plug 'akiomik/git-gutter-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
-Plug 'neovim/nvim-lspconfig'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Initialize plugin system
 call plug#end()
@@ -185,27 +172,12 @@ call plug#end()
 "Tmux-complete
 let g:tmuxcomplete#trigger = ''
 
-"Deoplete-emoji
-call deoplete#custom#source('emoji', 'filetypes', ['markdown', 'vimwiki', "org"])
-call deoplete#custom#source('emoji', 'converters', ['converter_emoi']) 
-
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<TAB>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 "Haskell 
 let g:haskell_classic_highlighting = 1
 
 "lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
-
-"Deoplete
-call deoplete#custom#option('auto_complete_delay', 150,)
-let g:deoplete#enable_at_startup = 1
-"inoremap <silent><expr><tab> pumvisible() ? '\<c-n>' : '\<tab>'
-"inoremap <silent><expr><s-tab> pumvisible() ? '\<c-p>' : '\<s-tab>'
 
 "Colorscheme config
 colorscheme gruvbox
@@ -215,3 +187,6 @@ highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
 highlight VertSplit ctermbg=0
+
+"Source config files
+source $HOME/.config/nvim/plug-config/coc.vim
