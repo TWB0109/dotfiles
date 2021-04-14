@@ -1,3 +1,7 @@
+" Initial mapping
+nnoremap <silent> <C-N> :Fern %:h -drawer -toggle<CR><CR>
+
+" Init 
 function! s:init_fern() abort
   " Define NERDTree like mappings
   nmap <buffer> o <Plug>(fern-action-open:edit)
@@ -23,6 +27,7 @@ function! s:init_fern() abort
   nmap <buffer> q :<C-u>quit<CR>
 endfunction
 
+" Init
 augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
@@ -30,4 +35,5 @@ augroup fern-custom
   autocmd FileType fern set signcolumn=no
 augroup END
 
+" Set the render to Nerdfonts
 let g:fern#renderer = "nerdfont"
