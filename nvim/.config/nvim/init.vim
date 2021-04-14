@@ -9,7 +9,7 @@
 """"""""""""""""""""""""""""""""
 "Basics 
 set nu
-set signcolumn=auto
+set scl=auto
 set cursorline
 set encoding=utf-8
 set showcmd
@@ -17,7 +17,6 @@ set nopaste
 set nocompatible
 set splitbelow
 set splitright
-set laststatus=2
 set shortmess+=A
 set completeopt=longest,menuone
 set pastetoggle=<F10>
