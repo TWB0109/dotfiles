@@ -52,7 +52,7 @@ let mapleader = ','
 let g:user_emmet_leader_key = ','
 
 "Mappings
-nnoremap <C-N> :NERDTreeToggle <CR><CR>
+nnoremap <C-N> :Fern %:h -drawer -toggle<CR><CR>
 inoremap ii <ESC>
 :inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap tt :tabf
@@ -165,6 +165,10 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -179,6 +183,13 @@ let g:haskell_classic_highlighting = 1
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 
+"FixCursorHold.nvim
+let g:cursorhold_updatetime = 100
+
+"Source config files
+source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/fern.vim
+
 "Colorscheme config
 colorscheme gruvbox
 set background=dark
@@ -187,6 +198,3 @@ highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
 highlight VertSplit ctermbg=0
-
-"Source config files
-source $HOME/.config/nvim/plug-config/coc.vim
