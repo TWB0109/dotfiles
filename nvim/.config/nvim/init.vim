@@ -169,6 +169,7 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'josa42/vim-lightline-coc'
 
 " Initialize plugin system
 call plug#end()
@@ -179,14 +180,11 @@ let g:tmuxcomplete#trigger = ''
 "Haskell 
 let g:haskell_classic_highlighting = 1
 
-"lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
-
 "FixCursorHold.nvim
 let g:cursorhold_updatetime = 100
 
 "Source config files
+source $HOME/.config/nvim/plug-config/lightline.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fern.vim
 
