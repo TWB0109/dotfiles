@@ -10,3 +10,10 @@ call lightline#coc#register()
 
 " Set gruvbox colorscheme
 let g:lightline.colorscheme = 'gruvbox'
+
+" Misc
+set laststatus=2
+set noshowmode
+if !has('gui_running')
+  set t_Co=256
+endif
