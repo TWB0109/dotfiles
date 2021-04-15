@@ -173,6 +173,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'mhinz/vim-startify'
 
 " Initialize plugin system
 call plug#end()
@@ -194,7 +195,7 @@ source $HOME/.config/nvim/plug-config/fern.vim
 "Colorscheme config
 colorscheme gruvbox
 set background=dark
-set fillchars+=vert:\ ▏
+set fillchars+=vert:\▏
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
