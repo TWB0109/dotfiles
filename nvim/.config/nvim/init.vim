@@ -173,7 +173,6 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mhinz/vim-startify'
 
 " Initialize plugin system
 call plug#end()
