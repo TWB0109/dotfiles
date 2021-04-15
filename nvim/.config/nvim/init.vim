@@ -20,6 +20,7 @@ set splitright
 set shortmess+=A
 set completeopt=longest,menuone
 set pastetoggle=<F10>
+set mouse=a
 
 if has("nvim")
     set shell=/bin/bash
@@ -193,7 +194,7 @@ source $HOME/.config/nvim/plug-config/fern.vim
 "Colorscheme config
 colorscheme gruvbox
 set background=dark
-set fillchars+=vert:\▏
+set fillchars+=vert:\ ▏
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
