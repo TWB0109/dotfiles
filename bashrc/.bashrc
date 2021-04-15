@@ -176,7 +176,7 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-export PATH="/home/brandon/.local/bin:/home/brandon/.scripts:$PATH"
+export PATH="/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:$PATH"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -201,6 +201,7 @@ export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export XIM_PROGRAM=/usr/bin/fcitx
 
+export NPM_CONFIG_PREFIX=~/.npm-global
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(starship init bash)"
