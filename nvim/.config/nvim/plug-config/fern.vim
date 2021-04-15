@@ -33,7 +33,7 @@ augroup fern-custom
   autocmd FileType fern call s:init_fern()
   autocmd FileType fern set nonu
   autocmd FileType fern set signcolumn=no
-  autocmd VimEnter * ++nested Fern %:h -drawer -toggle -keep 
+  autocmd VimEnter * ++nested Fern %:h -drawer -toggle 
 augroup END
 
 " Set the render to Nerdfonts
