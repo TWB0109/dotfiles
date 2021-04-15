@@ -1,5 +1,5 @@
 " Initial mapping
-nnoremap <silent> <C-N> :Fern %:h -drawer -toggle<CR><CR>
+nnoremap <silent> <C-N> :Fern %:h -drawer -toggle -keep<CR><CR>
 
 " Init 
 function! s:init_fern() abort
