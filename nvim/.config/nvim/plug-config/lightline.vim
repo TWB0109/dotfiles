@@ -1,6 +1,3 @@
-" Define branch command
-command! FugitiveHead echo fugitive#head(6)
-
 " Bar layout
 let g:lightline = {
   \   'active': {
