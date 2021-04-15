@@ -193,9 +193,10 @@ source $HOME/.config/nvim/plug-config/fern.vim
 "Colorscheme config
 colorscheme gruvbox
 set background=dark
-set fillchars+=vert:\ 
+set fillchars+=vert:\▏
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
+highlight VertSplit ctermfg=7
 highlight VertSplit ctermbg=0
 highlight EndOfBuffer ctermfg=0 ctermbg=0
