@@ -109,7 +109,7 @@ if ${use_color} ; then
   alias vim='nvim'
   alias lsd='du -h | sort -n -r'
   alias brc='nvim ~/.bashrc'
-  alias vrc='nvim ~/.vimrc'
+  alias vrc='nvim ~/.config/nvim/init.vim'
   alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
   
 else

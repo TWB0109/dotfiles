@@ -1,8 +1,13 @@
+" Define branch command
+command! FugitiveHead echo fugitive#head(6)
+
 " Bar layout
 let g:lightline = {
   \   'active': {
-  \   'left': [[ 'mode', 'paste' ], [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
-  \   }
+  \   'left': [[ 'mode', 'paste' ],
+  \            [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ],
+  \            [ 'coc_status' ]]
+  \   },
   \ }
 
 " Register compoments
