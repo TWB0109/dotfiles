@@ -54,7 +54,7 @@ let g:user_emmet_leader_key = ','
 
 "Mappings
 inoremap ii <ESC>
-:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap tt :tabf
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 nmap tn :tabn <CR><CR>
