@@ -9,6 +9,7 @@
 """"""""""""""""""""""""""""""""
 "Basics 
 set nu
+set rnu
 set scl=auto
 set cursorline
 set encoding=utf-8
@@ -59,7 +60,6 @@ nnoremap tt :tabf
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 nmap tn :tabn <CR><CR>
 nmap tp :tabp <CR><CR>
-nnoremap <C-b> :set rnu! <CR><CR>
 map <leader>C :w! \| !pancomp <C-R>%<C-R>
 map <leader>bd :bd <CR><CR>
 map <leader>bn :bn <CR><CR>
