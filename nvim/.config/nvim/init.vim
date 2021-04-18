@@ -71,6 +71,10 @@ endif
 
 " Neovim Terminal
 autocmd TermOpen * setlocal nonumber nornu signcolumn=no
+autocmd TermOpen * startinsert
+
+nnoremap <silent> ts :sp term://bash <CR><CR>
+nnoremap <silent> tv :vs term://bash <CR><CR>
 
 "Abbrevs
 iabbrev *** • 
