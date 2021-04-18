@@ -69,6 +69,9 @@ if has("nvim")
     tnoremap <Esc> <C-\><C-n>
 endif
 
+" Neovim Terminal
+autocmd TermOpen * setlocal nonumber norelativenumber
+
 "Abbrevs
 iabbrev *** • 
 iabbrev TTTTT `
