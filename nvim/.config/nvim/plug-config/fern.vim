@@ -31,9 +31,7 @@ endfunction
 augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
-  autocmd FileType fern set nonu
-  autocmd Filetype fern set rnu!
-  autocmd FileType fern set signcolumn=no
+  autocmd FileType fern setlocal nonu nornu signcolumn=no
   autocmd VimEnter * ++nested Fern %:h -drawer -toggle 
 augroup END
 
