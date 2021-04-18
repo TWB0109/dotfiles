@@ -73,8 +73,12 @@ endif
 autocmd TermOpen * setlocal nonumber nornu signcolumn=no
 autocmd TermOpen * startinsert
 
-nnoremap <silent> ts :sp term://bash <CR><CR>
-nnoremap <silent> tv :vs term://bash <CR><CR>
+nnoremap <silent> ts :sp term://bash <CR>
+nnoremap <silent> tsp :sp term://python <CR>
+nnoremap <silent> tsn :sp term://node <CR>
+nnoremap <silent> tv :vs term://bash <CR>
+nnoremap <silent> tvp :sp term://python <CR>
+nnoremap <silent> tvn :sp term://node <CR>
 
 "Abbrevs
 iabbrev *** • 
