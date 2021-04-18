@@ -70,15 +70,18 @@ if has("nvim")
 endif
 
 " Neovim Terminal
-autocmd TermOpen * setlocal nonumber nornu signcolumn=no
-autocmd TermOpen * startinsert
+augroup nterminal-custom
+    autocmd! *
+    autocmd TermOpen * setlocal nonumber nornu signcolumn=no
+    autocmd TermOpen * startinsert
+augroup END
 
 nnoremap <silent> ts :sp term://bash <CR>
 nnoremap <silent> tsp :sp term://python <CR>
 nnoremap <silent> tsn :sp term://node <CR>
 nnoremap <silent> tv :vs term://bash <CR>
-nnoremap <silent> tvp :sp term://python <CR>
-nnoremap <silent> tvn :sp term://node <CR>
+nnoremap <silent> tvp :vs term://python <CR>
+nnoremap <silent> tvn :vs term://node <CR>
 
 "Abbrevs
 iabbrev *** • 
