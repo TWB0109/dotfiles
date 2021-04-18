@@ -70,7 +70,7 @@ if has("nvim")
 endif
 
 " Neovim Terminal
-autocmd TermOpen * setlocal nonumber norelativenumber
+autocmd TermOpen * setlocal nonumber nornu signcolumn=no
 
 "Abbrevs
 iabbrev *** • 
