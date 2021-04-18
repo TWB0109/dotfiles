@@ -187,6 +187,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'jpalardy/vim-slime'
 
 " Initialize plugin system
 call plug#end()
@@ -204,6 +205,7 @@ let g:cursorhold_updatetime = 100
 source $HOME/.config/nvim/plug-config/lightline.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fern.vim
+source $HOME/.config/nvim/plug-config/slime.vim
 
 "Colorscheme config
 colorscheme gruvbox
