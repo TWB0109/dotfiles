@@ -188,6 +188,7 @@ Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'jpalardy/vim-slime'
+Plug 'chrisbra/unicode.vim'
 
 " Initialize plugin system
 call plug#end()
