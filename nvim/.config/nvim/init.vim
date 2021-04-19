@@ -24,7 +24,7 @@ set pastetoggle=<F10>
 set mouse=a
 
 if has("nvim")
-    set shell=/bin/bash
+    set shell=/bin/zsh
 endif
 
 "Indent 
@@ -76,10 +76,10 @@ augroup nterminal-custom
     autocmd TermOpen * startinsert
 augroup END
 
-nnoremap <silent> ts :sp term://bash <CR>
+nnoremap <silent> ts :sp term://zsh <CR>
 nnoremap <silent> tsp :sp term://python <CR>
 nnoremap <silent> tsn :sp term://node <CR>
-nnoremap <silent> tv :vs term://bash <CR>
+nnoremap <silent> tv :vs term://zsh <CR>
 nnoremap <silent> tvp :vs term://python <CR>
 nnoremap <silent> tvn :vs term://node <CR>
 
