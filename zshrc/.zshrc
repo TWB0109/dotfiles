@@ -41,7 +41,7 @@ export PAGER=less
 export NPM_CONFIG_PREFIX=~/.npm-global
 
 # Aliases
-alias vim="nvim"
+alias vim="$EDITOR"
 alias c="clear"
 alias :q="exit"
 alias Syu="sudo pacman -Syu"
