@@ -211,9 +211,18 @@ source $HOME/.config/nvim/plug-config/slime.vim
 colorscheme gruvbox
 set background=dark
 set fillchars+=vert:\▏
+set termguicolors
+
+" Gui colors
+highlight Normal guibg=none
+highlight LineNr guibg=#665c54 gui=bold guifg=#A8A8A8
+highlight CursorLineNr guifg=#b8bb26 gui=bold
+highlight VertSplit guifg=#d5c4a1 guibg=#32302f
+highlight EndOfBuffer guifg=#32302f guibg=#32302f 
+
+" Terminal Colors
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
-highlight VertSplit ctermfg=7
-highlight VertSplit ctermbg=0
+highlight VertSplit ctermfg=7 ctermbg=0
 highlight EndOfBuffer ctermfg=0 ctermbg=0
