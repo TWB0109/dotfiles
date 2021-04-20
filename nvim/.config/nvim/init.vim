@@ -15,6 +15,7 @@ set cursorline
 set encoding=utf-8
 set showcmd
 set nopaste
+set nowrap
 set nocompatible
 set splitbelow
 set splitright
@@ -152,7 +153,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'chrisbra/Colorizer'
+Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
