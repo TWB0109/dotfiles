@@ -12,7 +12,7 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 # Export the PATH variable
-export PATH="/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:$PATH"
+export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:$PATH
 
 # Enable fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -30,15 +30,15 @@ source ~/.cache/wal/colors-tty.sh
 neofetch
 
 # Environment Variables
-export XDG_MUSIC_DIR='~/music/'
+export XDG_MUSIC_DIR=~/music/
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='nvim'
+    export EDITOR=nvim
 else
-    export EDITOR='nvim'
+    export EDITOR=nvim
 fi
-export TERMINAL='alacritty'
-export PAGER='less'
-export NPM_CONFIG_PREFIX='~/.npm-global'
+export TERMINAL=alacritty
+export PAGER=less
+export NPM_CONFIG_PREFIX=~/.npm-global
 
 # Aliases
 alias vim="nvim"
