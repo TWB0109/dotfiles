@@ -212,7 +212,9 @@ source $HOME/.config/nvim/plug-config/slime.vim
 colorscheme gruvbox
 set background=dark
 set fillchars+=vert:\▏
-set termguicolors
+if (has('termguicolors'))
+    set termguicolors
+endif
 
 " Gui colors
 highlight Normal guibg=none
