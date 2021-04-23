@@ -158,7 +158,7 @@ Plug 'alvan/vim-closetag'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
-Plug 'turbio/bracey.vim'
+Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'vim-scripts/loremipsum'
 Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
