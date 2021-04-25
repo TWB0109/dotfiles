@@ -70,19 +70,25 @@ if has("nvim")
     tnoremap <Esc> <C-\><C-n>
 endif
 
-" Neovim Terminal
-augroup nterminal-custom
-    autocmd! *
-    autocmd TermOpen * setlocal nonumber nornu signcolumn=no
-    autocmd TermOpen * startinsert
-augroup END
-
+" Diverse terminals
 nnoremap <silent> ts :sp term://zsh <CR>
 nnoremap <silent> tsp :sp term://python <CR>
 nnoremap <silent> tsn :sp term://node <CR>
 nnoremap <silent> tv :vs term://zsh <CR>
 nnoremap <silent> tvp :vs term://python <CR>
 nnoremap <silent> tvn :vs term://node <CR>
+
+" Fugitive
+nnoremap <silent> <leader>gs :G<CR>
+nnoremap <silent> <leader>gp :G push<CR>
+nnoremap <silent> <leader>gc :G commit<CR>
+
+" Neovim Terminal
+augroup nterminal-custom
+    autocmd! *
+    autocmd TermOpen * setlocal nonumber nornu signcolumn=no
+    autocmd TermOpen * startinsert
+augroup END
 
 "Abbrevs
 iabbrev *** • 
