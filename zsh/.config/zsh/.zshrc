@@ -1,5 +1,5 @@
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/brandon/.zshrc'
+zstyle :compinstall filename '$HOME/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
