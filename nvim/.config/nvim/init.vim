@@ -128,6 +128,7 @@ let g:elite_mode=1
 
 "Vimwiki
 let g:vimwiki_autowriteall=1
+    let g:vimwiki_ext2syntax = {}
 
 "Elite mode def
 if get(g:, 'elite_mode')
@@ -176,8 +177,8 @@ Plug 'vim-python/python-syntax'
 Plug 'donRaphaco/neotex', { 'for': 'tex'  }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'vimwiki/vimwiki'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax' 
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'preservim/nerdcommenter'
 Plug 'mboughaba/i3config.vim'
 Plug 'rust-lang/rust.vim'
