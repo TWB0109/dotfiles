@@ -126,10 +126,6 @@ let g:fzf_command_prefix = 'F'
 "Elite mode
 let g:elite_mode=1
 
-"Vimwiki
-let g:vimwiki_autowriteall=1
-    let g:vimwiki_ext2syntax = {}
-
 "Elite mode def
 if get(g:, 'elite_mode')
     nnoremap <Up>    :resize +2<CR>
@@ -214,6 +210,7 @@ source $HOME/.config/nvim/plug-config/lightline.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fern.vim
 source $HOME/.config/nvim/plug-config/slime.vim
+source $HOME/.config/nvim/plug-config/vimwiki.vim
 
 "Colorscheme config
 colorscheme gruvbox
