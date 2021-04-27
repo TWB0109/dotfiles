@@ -63,8 +63,9 @@ alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.config/zsh/.zshrc"
 alias vrc="vim ~/.config/nvim/init.vim"
 
-# Enable syntax highlighting
+# Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Enable the starship prompt
 eval $(starship init zsh)
