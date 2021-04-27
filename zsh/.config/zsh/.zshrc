@@ -60,7 +60,7 @@ function password () {
 
 # Laziness
 alias vw="vim +:VimwikiIndex"
-alias zrc="vim ~/.zshrc"
+alias zrc="vim ~/.config/zsh/.zshrc"
 alias vrc="vim ~/.config/nvim/init.vim"
 
 # Enable syntax highlighting
