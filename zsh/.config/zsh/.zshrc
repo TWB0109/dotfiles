@@ -65,7 +65,8 @@ alias vrc="vim ~/.config/nvim/init.vim"
 
 # Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ^ disabled for me, too resource heavy
 
 # Enable the starship prompt
 eval $(starship init zsh)
