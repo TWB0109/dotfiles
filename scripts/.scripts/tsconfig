@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+echo '{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "strict": "true", 
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended"
+}' >> tsconfig.json
