@@ -144,41 +144,34 @@ endif
 call plug#begin('~/.config/nvim/autoload')
 
 "Plug Defaults
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "Installed Plugins
-Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
-Plug 'othree/csscomplete.vim'
-Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'vim-scripts/loremipsum'
 Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'neovimhaskell/haskell-vim'
+"Plug 'neovimhaskell/haskell-vim'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'vim-python/python-syntax'
-Plug 'donRaphaco/neotex', { 'for': 'tex'  }
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+"Plug 'donRaphaco/neotex', { 'for': 'tex'  }
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'vimwiki/vimwiki'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'preservim/nerdcommenter'
-Plug 'mboughaba/i3config.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'ziglang/zig.vim'
+"Plug 'mboughaba/i3config.vim'
+"Plug 'rust-lang/rust.vim'
+"Plug 'ziglang/zig.vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'SirVer/ultisnips'
