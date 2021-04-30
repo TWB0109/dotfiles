@@ -57,15 +57,15 @@ let g:user_emmet_leader_key = ','
 "Mappings
 inoremap ii <ESC>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nnoremap tt :tabf
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
-nmap tn :tabn <CR><CR>
-nmap tp :tabp <CR><CR>
 map <leader>C :w! \| !pancomp <C-R>%<C-R>
 map <leader>bd :bd <CR><CR>
 map <leader>bn :bn <CR><CR>
 map <leader>bp :bp <CR><CR>
 map <leader>bf :FBuffers <CR>
+map <leader>tt :tabf
+map <leader>tn :tabn <CR><CR>
+map <leader>tp :tabp <CR><CR>
 if has("nvim")
     tnoremap <Esc> <C-\><C-n>
 endif
