@@ -23,7 +23,7 @@ set shortmess+=A
 set completeopt=longest,menuone
 set pastetoggle=<F10>
 set mouse=a
-set incommand=nosplit
+set inccommand=nosplit
 
 if has("nvim")
     set shell=/bin/zsh
