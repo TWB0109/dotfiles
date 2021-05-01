@@ -27,6 +27,18 @@ source ~/.cache/wal/colors-tty.sh
 # BLING
 neofetch
 
+# ENV VARIABLES
+export XDG_CONFIG_HOME=$HOME/.config
+
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR=nvim
+else
+    export EDITOR=nvim 
+fi
+export TERMINAL=alacritty
+export PAGER=less
+export NPM_CONFIG_PREFIX=~/.npm-global
+
 # Aliases
 alias vim="nvim"
 alias c="clear"
