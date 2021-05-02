@@ -197,3 +197,16 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+let g:coc_global_extensions = [
+    \   'coc-vimlsp',
+    \   'coc-snippets',
+    \   'coc-html',
+    \   'coc-emmet',
+    \   'coc-tsserver',
+    \   'coc-sh',
+    \   'coc-python',
+    \   'coc-jedi',
+    \   'coc-json',
+    \   'coc-css'
+    \ ]
