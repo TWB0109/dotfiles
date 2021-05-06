@@ -35,7 +35,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
     export EDITOR=nvim 
 fi
-export TERMINAL=alacritty
+#export TERMINAL=alacritty
+export TERMINAL=st
 export PAGER=less
 export NPM_CONFIG_PREFIX=~/.npm-global
 
