@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/brandon/src/suckless/dwm'
 let g:netrw_dirhist_4='/home/brandon/src/suckless'
 let g:netrw_dirhist_3='/home/brandon/dwm'
 let g:netrw_dirhist_2='/home/brandon/src/web/start-page/styles'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/etc'
 let g:netrw_dirhist_8='/home/brandon/dotfiles/nvim/.config/nvim/plug-config'
 let g:netrw_dirhist_7='/home/brandon/dotfiles/nvim/.config/nvim'
 let g:netrw_dirhist_6='/home/brandon/dotfiles/nvim/.config/nvim/plug-config'
-let g:netrw_dirhist_5='/home/brandon/dotfiles/nvim/.config/nvim'
