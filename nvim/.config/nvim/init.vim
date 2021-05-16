@@ -186,6 +186,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'jpalardy/vim-slime'
 Plug 'chrisbra/unicode.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'baskerville/vim-sxhkdrc'
 
 " Initialize plugin system
 call plug#end()
