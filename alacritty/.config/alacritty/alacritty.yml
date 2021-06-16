@@ -15,8 +15,8 @@ env:
 # Window Configuration
 window:
   padding:
-    x: 20
-    y: 20
+    x: 5
+    y: 5
   dynamic_padding: false
 
   dimensions:
@@ -46,7 +46,7 @@ font:
     family: Hack
     style: Italic
   use_thin_strokes: true
-  size: 9
+  size: 10
 
 # Live config reload (changes require restart)
 live_config_reload: true
