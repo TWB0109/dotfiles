@@ -1,0 +1,5 @@
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+    amixer -q set Master {toggle,10%+,10%-}
+
+XF86Audio{Play,Prev,Next,Stop}
+    playerctl {play-pause,previous,next,stop}
