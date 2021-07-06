@@ -188,6 +188,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'chrisbra/unicode.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'baskerville/vim-sxhkdrc'
+Plug 'habamax/vim-godot'
 
 " Initialize plugin system
 call plug#end()
