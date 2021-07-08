@@ -3,3 +3,18 @@ XF86Audio{Mute,RaiseVolume,LowerVolume}
 
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
+
+super + o; o
+    playerctl play-pause
+
+super + o; i
+    playerctl previous
+
+super + o; p
+    playerctl next
+
+{Print, alt + Print, ctrl + Print}
+    {gnome-screenshot &,gnome-screenshot -i,gnome-screenshot -a}
+
+super + Escape 
+    pkill -USR1 -x sxhkd
