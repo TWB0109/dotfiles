@@ -1,0 +1,12 @@
+#!/bin/sh
+
+isPaused=$(dunstctl is-paused)
+
+if [ $isPaused == false ];
+then
+    notify-send "Not Disturbing" 
+    sleep 5s
+    dunstctl set-paused toggle
+else
+    dunstctl set-paused toggle && notify-send "Disturbing" 
+fi
