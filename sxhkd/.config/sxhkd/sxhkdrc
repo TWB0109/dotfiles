@@ -1,3 +1,4 @@
+# Reload config file for sxhkd
 super + Escape 
     pkill -USR1 -x sxhkd
 
@@ -19,5 +20,6 @@ XF86Audio{Play,Prev,Next,Stop}
 {Print, alt + Print, ctrl + Print}
     {gnome-screenshot &,gnome-screenshot -i,gnome-screenshot -a}
 
+# Toggle Do Not Disturb
 super + n
     sh ~/.scripts/dnd
