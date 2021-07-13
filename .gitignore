@@ -1,3 +1,5 @@
 nvim/.config/nvim/autoload
 nvim/.config/nvim/.netrwhist
 zsh/.config/zsh/.zcompdump
+mpd/.mpd/mpd.pid
+mpd/.mpd/mpdstate

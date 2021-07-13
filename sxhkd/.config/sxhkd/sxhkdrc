@@ -3,13 +3,16 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 super + o; o
-    playerctl play-pause
+    mpc toggle
 
 super + o; i
-    playerctl previous
+    mpc prev
 
 super + o; p
-    playerctl next
+    mpc next
+
+super + o; z
+    mpc random
 
 XF86Audio{Mute,RaiseVolume,LowerVolume}
     amixer -q set Master {toggle,10%+,10%-}
@@ -23,3 +26,7 @@ XF86Audio{Play,Prev,Next,Stop}
 # Toggle Do Not Disturb
 super + n
     sh ~/.scripts/dnd
+
+# Open nmtui
+super +  shift + n
+    alacritty --title "nmtui" -e nmtui
