@@ -14,6 +14,9 @@ super + o; p
 super + o; z
     mpc random
 
+super + o; s
+    mpc stop
+
 XF86Audio{Mute,RaiseVolume,LowerVolume}
     amixer -q set Master {toggle,10%+,10%-}
 
