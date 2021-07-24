@@ -28,7 +28,7 @@ window:
   title: Alacritty
   startup_mode: Windowed
 
-  background_opacity: 1
+background_opacity: 1
 
 # Scrolling configuration
 scrolling:
