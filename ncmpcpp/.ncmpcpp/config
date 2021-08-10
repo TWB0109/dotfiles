@@ -13,7 +13,7 @@ visualizer_in_stereo = "yes"
 visualizer_type = "wave"
 visualizer_output_name = "my_fifo"
 visualizer_look = "●┃"
-visualizer_color = "default"
+visualizer_color = "green, red, yellow, blue, magenta, cyan"
 
 [header]
 header_visibility = "no"
@@ -50,3 +50,4 @@ main_window_color = "default"
 centered_cursor = "yes"
 enable_window_title = "yes"
 external_editor = "vim"
+autocenter_mode = "yes"
