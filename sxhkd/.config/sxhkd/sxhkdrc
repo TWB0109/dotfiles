@@ -23,8 +23,11 @@ XF86Audio{Mute,RaiseVolume,LowerVolume}
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
+#{Print, alt + Print, ctrl + Print}
+    #{gnome-screenshot &,gnome-screenshot -i,gnome-screenshot -a}
+
 {Print, alt + Print, ctrl + Print}
-    {gnome-screenshot &,gnome-screenshot -i,gnome-screenshot -a}
+    {spectacle -mb &,spectacle -g,spectacle -r}
 
 # Toggle Do Not Disturb
 super + n
