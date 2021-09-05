@@ -6,8 +6,10 @@ set favoritepages=
 set favoritepages+=www.dramacool9.co
 set favoritepages+=youtube.com
 set favoritepages+=reddit.com
+set favoritepages+=https://reddit.com/r/unixporn
 set firefoxmode=always
 set guinavbar=oninput
+set guitabbar=never
 set search=https://search.brave.com/search?q=%s
 set searchwords=
 set searchwords+=yt~youtube.com/results?search_query=%s
