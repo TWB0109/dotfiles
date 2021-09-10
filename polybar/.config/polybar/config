@@ -65,8 +65,8 @@ font-1 = unifont:fontformat=truetype:pixelsize=9:antialias=false;0
 font-2 = SauceCodePro Nerd Font:pixelsize=9;1
 
 modules-left = bspwm i3 dwm
-modules-center = 
-modules-right =  memory mpd pulseaudio eth date 
+modules-center = mpd 
+modules-right =  memory pulseaudio eth date 
 tray-position = right
 ;tray-margin = 0
 tray-background = ${glob.background} 
