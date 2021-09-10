@@ -26,6 +26,7 @@ primary    = ${xrdb: color7}
 red         = ${xrdb: color9}
 green       = ${xrdb: color2}
 yellow      = ${xrdb: color3}
+orange      = #fe8019
 light-blue  = ${xrdb: color4}
 light-pink  = ${xrdb: color5}
 light-green = ${xrdb: color6}
@@ -35,7 +36,7 @@ padding     = 2
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 23
+height = 15
 override-redirect = false
 ;offset-x = 25%
 ;offset-y = 0%
@@ -60,12 +61,12 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = fixed:pixelsize=9:weight=bold:antialias=true;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSansMono Nerd Font:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:pixelsize=9:antialias=false;0
+font-2 = SauceCodePro Nerd Font:pixelsize=9;1
 
 modules-left = bspwm i3 dwm
-modules-center = calendar date 
-modules-right = caffeine DoNotDisturb backlight-acpi pulseaudio wlan fcitx 
+modules-center = 
+modules-right =  memory mpd pulseaudio eth calendar date 
 tray-position = right
 ;tray-margin = 0
 tray-background = ${glob.background} 
@@ -75,11 +76,11 @@ tray-background = ${glob.background}
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -233,8 +234,14 @@ label-urgent-padding = ${glob.padding}
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 format-online-prefix = "♫ "
-format-online-foreground = ${glob.foreground}
+format-online-foreground = ${glob.light-pink}
 format-online-padding = ${glob.padding}
+
+icon-prev-foreground = ${glob.light-pink}
+icon-stop-foreground = ${glob.light-pink}
+icon-play-foreground = ${glob.light-pink}
+icon-pause-foreground = ${glob.light-pink}
+icon-next-foreground = ${glob.light-pink}
 
 icon-prev = 玲
 icon-stop = 栗
@@ -244,7 +251,7 @@ icon-next = 怜
 
 label-song-maxlen = 0
 label-song-ellipsis = true
-label-song-foreground = ${glob.foreground}
+label-song-foreground = ${glob.light-pink}
 label-song-padding = 1
 
 [module/xbacklight]
@@ -263,11 +270,11 @@ card = intel_backlight
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = enp5s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected =  "%{A1:networkmanager_dmenu:}直 %essid%%{A}"
+label-connected =  "%{A1:alacritty -e nmtui:}直 %essid%%{A}"
 
 ;label-connected-background = ${glob.light-blue}
 label-connected-foreground = ${glob.light-blue}
@@ -282,17 +289,22 @@ label-disconnected-padding = ${glob.padding}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp5s0
 interval = 3.0
 
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${glob.foreground-alt}
-label-connected = %local_ip%
+format-connected = <label-connected>
+label-connected =  "%{A1:alacritty -e nmtui:}直   connected %{A}"
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${glob.foreground-alt}
+;label-connected-background = ${glob.light-blue}
+label-connected-foreground = ${glob.light-blue}
+label-connected-padding = ${glob.padding}
+
+format-disconnected = <label-disconnected>
+label-disconnected = 睊%ifname% disconnected
+
+;label-disconnected-background = ${glob.light-blue}
+label-disconnected-foreground = #665C54
+label-disconnected-padding = ${glob.padding}
 
 [module/date]
 type = internal/date
@@ -307,7 +319,7 @@ time = %I:%M
 ;format-prefix = 
 ;format-prefix-padding = 1
 format-padding = ${glob.padding}
-format-foreground = ${glob.foreground}
+format-foreground = ${glob.light-green}
 
 label = %date%  |  %time% 
 
@@ -315,9 +327,9 @@ label = %date%  |  %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> 
-label-volume =墳 %percentage%%
+label-volume =墳  %percentage%%
 
-label-volume-foreground = ${glob.yellow}
+label-volume-foreground = ${glob.red}
 ;label-volume-background = ${glob.yellow}
 label-volume-padding = 2
 
@@ -360,16 +372,36 @@ format-full-foreground = ${glob.background}
 type = custom/text
 content = 
 
-content-foreground = ${glob.foreground}
+content-foreground = ${glob.light-green}
 ;content-padding = ${glob.padding}
 
 click-left = gsimplecal 
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+format = <label> <bar-used>
+format-padding = ${glob.padding}
+
+label =    %gb_used%/%gb_free%
+label-foreground = #fabd2f
+
+bar-used-indicator =
+bar-used-width = 10
+bar-used-foreground-0 = #b8bb26
+bar-used-foreground-1 = #8ec07c
+bar-used-foreground-2 = #fabd2f
+bar-used-foreground-3 = #fb4934
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #665c54
 
 [module/DoNotDisturb]
 type = custom/text
 content = "DND"
 
-content-foreground = ${glob.light-pink}
+content-foreground = ${glob.red}
 ;content-background = ${glob.light-pink}
 content-padding = ${glob.padding}
 content-margin = 0
