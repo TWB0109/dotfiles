@@ -6,7 +6,7 @@ nitrogen --restore
 xrdb ~/.Xresources
 $HOME/.scripts/natscroll
 #$HOME/.config/bspwm/lemonbar | lemonbar -g x18++ -f fixed:size=10:style=bold:antialias=true  -B \#32302f -F \#FBF1c7 -p &
-polybar example
+polybar example &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom -cf --vsync &
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc-bspwm &
