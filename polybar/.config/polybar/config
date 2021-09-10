@@ -47,7 +47,7 @@ background = ${glob.background}
 foreground = ${glob.foreground}
 underline = ${glob.underline}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
 border-size = 4
@@ -66,7 +66,7 @@ font-2 = SauceCodePro Nerd Font:pixelsize=9;1
 
 modules-left = bspwm i3 dwm
 modules-center = 
-modules-right =  memory mpd pulseaudio eth calendar date 
+modules-right =  memory mpd pulseaudio eth date 
 tray-position = right
 ;tray-margin = 0
 tray-background = ${glob.background} 
@@ -120,9 +120,11 @@ type = internal/bspwm
 
 format = <label-state>
 
-label-focused-foreground = #b8bb26
-label-separator          = "  "
-
+label-focused-foreground  = ${glob.green}
+label-occupied-foreground = ${glob.light-green}
+label-urgent-foreground   = ${glob.red}
+label-empty-foreground    = #665c54
+label-separator          = " "
 
 ; Only show workspaces defined on the same output as the bar
 ; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
@@ -321,7 +323,7 @@ time = %I:%M
 format-padding = ${glob.padding}
 format-foreground = ${glob.light-green}
 
-label = %date%  |  %time% 
+label = "%{A1:gsimplecal:}   %date%  |  %time% %{A}"
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -367,15 +369,6 @@ label-full =  Full
 format-full-padding = ${glob.padding}
 format-full-background = ${glob.light-pink}
 format-full-foreground = ${glob.background}
-
-[module/calendar]
-type = custom/text
-content = 
-
-content-foreground = ${glob.light-green}
-;content-padding = ${glob.padding}
-
-click-left = gsimplecal 
 
 [module/memory]
 type = internal/memory
