@@ -140,14 +140,26 @@ super + o; z
 super + o; s
     mpc stop
 
+super + shift + o; o
+    playerctl play-pause
+
+super + shift + o; i
+    playerctl previous
+
+super + shift + o; p
+    playerctl next
+
 XF86Audio{Mute,RaiseVolume,LowerVolume}
     amixer -q set Master {toggle,10%+,10%-}
+
+super + v; {m,k,j}
+    amixer -q set Master {toggle,5%+,5%-}
 
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
-{Print, alt + Print, ctrl + Print}
-    {gnome-screenshot &,gnome-screenshot -i,gnome-screenshot -a}
+{super + p, super + shift + p, super + alt + p}
+    {spectacle -mb &,spectacle -g,spectacle -r}
 
 # Toggle Do Not Disturb
 super + n
@@ -156,3 +168,11 @@ super + n
 # Open nmtui
 super +  shift + n
     alacritty --title "nmtui" -e nmtui
+
+# Toggle keyboard distribution between us and latam
+ctrl + space
+    setxkbmap -query | grep -q "layout:\s\+us" && setxkbmap -layout latam || setxkbmap -layout us
+
+# Lock the scren
+super + x 
+    slock
