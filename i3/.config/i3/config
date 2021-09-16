@@ -189,7 +189,7 @@ mode "$mode_gaps_outer" {
 bindsym $mod+x mode "$mode_system"
 set $mode_system (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (x)shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id betterlockscreen -l dimblur --off 5, mode "default"
+    bindsym l exec --no-startup-id slock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym s exec --no-startup-id betterlockscreen -s, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -292,8 +292,8 @@ new_float none
 
 			      # GAPS CONFIGURATION
 
-#gaps inner  5
-gaps outer  15
+gaps inner  5
+gaps outer  10
 
 # Activate smart borders (always)
 smart_borders on 
@@ -327,20 +327,9 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends --vsync --xrender-sync-fence
-exec --no-startup-id mpDris2 &
 exec --no-startup-id dunst
-exec --no-startup-id notify-send "Welcome, Brandon, Have a good time."
-#exec --no-startup-id $HOME/.scripts/natscroll
-#exec --no-startup-id ibus-daemon -drx
-exec --no-startup-id fcitx &
 exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id /usr/lib/kdeconnectd &
-exec --no-startup-id mpd &
-exec --no-startup-id xss-lock --transfer-sleep-lock -- "betterlockscreen -l dimblur" --nofork &
-exec --no-startup-id $HOME/.scripts/autolock &
-exec --no-startup-id $HOME/.scripts/aarchupstartup.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id xobd &
 
 #vim: filetype=i3config
 #vim:ft=i3config
