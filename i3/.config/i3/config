@@ -49,20 +49,7 @@ bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run -p "RUN" -h 31
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+ctrl+s exec --no-startup-id rofi -show search -modi search:rofi-web-search -i -p "Search: "
-bindsym $mod+ctrl+a exec --no-startup-id rofi -show run
-bindsym $mod+ shift+w exec --no-startup-id rofi -show window
-# Open Surf Web Browser
-bindsym $mod+Shift+s exec --no-startup-id tabbed -r 2 surf -pe x '~/.surf/web/homepage.html'
-
-# Launch a dmenu kdeconnect wrapper
-bindsym $mod+ctrl+k exec --no-startup-id $HOME/.scripts/dkde
-# Launch a dmenu nmcli wrapper
-bindsym $mod+ctrl+n exec --no-startup-id networkmanager_dmenu
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -p "RUN"
 
 # Open last copied url in vlc
 bindsym $mod+y exec --no-startup-id $HOME/.scripts/yvlc
@@ -249,12 +236,37 @@ bindsym $mod+minus scratchpad show
 
 # Mpc music mode 
 bindsym $mod+o mode "$mode_mpc"
-set $mode_mpc (i)prev, (o)play/pause, (p)next, (z)random
+set $mode_mpc (i)prev, (o)play/pause, (p)next, (z)random, (s)stop
 mode "$mode_mpc" {
     bindsym i exec --no-startup-id mpc prev, mode "default"
     bindsym o exec --no-startup-id mpc toggle, mode "default"
     bindsym p exec --no-startup-id mpc next, mode "default"
+    bindsym s exec --no-startup-id mpc stop, mode "default"
     bindsym z exec --no-startup-id mpc random && notify-send "Random" "$(mpc status | sed -n "3p" | awk '{print $6}')", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "$mode_music"
+set $mode_music (i)prev, (o)play/pause, (p)next
+
+mode "$mode_music" {
+    bindsym i exec --no-startup-id playerctl previous, mode "default"
+    bindsym o exec --no-startup-id playerctl play-pause, mode "default"
+    bindsym p exec --no-startup-id playerctl next, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+n mode "$mode_volume"
+set $mode_volume (k)up, (j)down, (m)toggle
+
+mode "$mode_volume" {
+    bindsym k exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%, mode "default"
+    bindsym j exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%, mode "default"
+    bindsym m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
