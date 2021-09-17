@@ -304,8 +304,8 @@ new_float none
 
 			      # GAPS CONFIGURATION
 
-gaps inner  5
-gaps outer  10
+gaps inner  10
+gaps outer  5
 
 # Activate smart borders (always)
 smart_borders on 
