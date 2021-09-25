@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#!/bin/bash
+
+title=" Time and Date"
+text="$(date +%a) $(date +%d), $(date +%b) $(date +%Y) | $(date +%I:%M)"
+
+notify-send "$title" "$text"
