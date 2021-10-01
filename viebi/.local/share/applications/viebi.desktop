@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vieb (Incognito)
+Exec=/usr/bin/vieb --erwic=/home/brandon/.config/Vieb/incognito/incognito.json --datafolder=/home/brandon/.config/Vieb/incognito/data
+Terminal=false
+Type=Application
+Icon=/home/brandon/.config/Vieb/incognito/incognito.png
+Comment=Vieb Incognito Mode
+Categories=Network;WebBrowser;

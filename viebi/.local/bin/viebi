@@ -1,0 +1,3 @@
+#!/bin/bash
+vieb --erwic=$HOME/.config/Vieb/incognito/incognito.json --datafolder=$HOME/.config/Vieb/incognito/data
+
