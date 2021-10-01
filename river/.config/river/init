@@ -11,8 +11,8 @@
 # Use the "logo" key as the primary modifier
 mod="Mod4"
 
-# Mod+Shift+Return to start an instance of alacritty
-riverctl map normal $mod+Shift Return spawn alacritty
+# Mod+Shift+Return to start an instance of foot
+riverctl map normal $mod+Shift Return spawn footclient
 
 # Mod+Shift+D to start an instance of bemenu
 riverctl map normal $mod+Shift D spawn 'bemenu-run --tb \#b8bb26 --tf \#32302f --fb \#32302f --ff \#fbf1c7 --nb \#32302f --nf \#fbf1c7 --hb \#32302f --hf \#b8bb26 --sb \#b8bb26 --sf \#32302f -p "RUN"'
@@ -29,8 +29,11 @@ riverctl map normal $mod+Control D spawn '$HOME/.scripts/timedate'
 # Display current volume level
 riverctl map normal $mod+Control v spawn '$HOME/.scripts/volume'
 
-# Mod+E to exit river
+# Mod+Shift+Q to exit river
 riverctl map normal $mod+Shift Q exit
+
+# Mod+Tab to focus the last viewed tag
+riverctl map normal $mod Tab focus-previous-tags
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -200,4 +203,6 @@ riverctl default-layout rivertile
 
 swaybg -i ~/pix/wallpapers/mountains.png -m fill &
 mako &
+$HOME/.config/eww/eww.sh &
+foot -s &
 exec rivertile -main-ratio 0.50
