@@ -16,6 +16,7 @@ set searchwords+=yt~youtube.com/results?search_query=%s
 set searchwords+=bv~https://search.brave.com/?q=%s
 set searchwords+=ddg~https://duckduckgo.com/?kae=g&q=%s
 set searchwords+=gh~https://github.com/search?q=%s
+set searchwords+=aw~https://wiki.archlinux.org/title/%s
 set searchwords+=g~https://www.google.com/search?q=%s
 set splitbelow
 set splitright
