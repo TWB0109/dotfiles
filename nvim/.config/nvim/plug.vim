@@ -52,6 +52,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'elkowar/yuck.vim'
 Plug 'habamax/vim-godot'
+Plug 'tridactyl/vim-tridactyl'
 
 " Initialize plugin system
 call plug#end()
