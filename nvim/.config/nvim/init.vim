@@ -24,6 +24,7 @@ set completeopt=longest,menuone
 set pastetoggle=<F10>
 set mouse=a
 set inccommand=nosplit
+set guifont=SauceCodePro\ Nerd\ Font\ Mono:h14
 
 if has("nvim")
     set shell=/bin/zsh
@@ -163,7 +164,7 @@ if (has('termguicolors'))
 endif
 
 " Gui colors
-highlight Normal guibg=none
+highlight Normal guibg=#32302f
 highlight LineNr guibg=#665c54 gui=bold guifg=#A8A8A8
 highlight CursorLineNr guifg=#b8bb26 gui=bold
 highlight VertSplit guifg=#d5c4a1 guibg=#32302f
@@ -175,3 +176,7 @@ highlight LineNr ctermbg=8 cterm=bold ctermfg=gray
 highlight CursorLineNr ctermfg=2 cterm=bold
 highlight VertSplit ctermfg=7 ctermbg=0
 highlight EndOfBuffer ctermfg=0 ctermbg=0
+
+"Neovide
+let g:neovide_cursor_antialiasing=v:true
+let g:neovide_refresh_rate=60
