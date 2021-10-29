@@ -66,7 +66,7 @@ font-2 = SauceCodePro Nerd Font:pixelsize=9;1
 
 modules-left = bspwm i3 dwm
 modules-center = mpd 
-modules-right =  memory pulseaudio eth date 
+modules-right =  memory pulseaudio eth xkeyboard date 
 tray-position = right
 ;tray-margin = 0
 tray-background = ${glob.background} 
@@ -106,10 +106,11 @@ blacklist-0 = num
 
 label-indicator-padding = ${glob.padding}
 label-indicator-margin = 1
-label-layout =
+label-layout = %layout%
 ;format-background = ${glob.light-green}
-;format-prefix = "⌨  "
-format-foreground = ${glob.light-green}
+format = <label-indicator> <label-layout>
+format-prefix = "⌨  "
+format-foreground = ${glob.orange}
 format-padding = ${glob.padding}
 
 label-indicator-on-capslock =
