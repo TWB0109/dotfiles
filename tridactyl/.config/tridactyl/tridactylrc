@@ -1,0 +1,26 @@
+" General Settings
+set configversion 2.0
+set searchurls.yt  https://youtube.com/results?search_query=%s
+set searchurls.bv  https://search.brave.com/search?q=%s
+set searchurls.ddg https://duckduckgo.com/?kae=g&q=%s
+set searchurls.gh  https://github.com/search?q=%s
+set searchurls.aw  https://wiki.archlinux.org/title/%s
+set searchurls.g   https://google.com/search?q=%s
+
+" Binds
+bind K tabprev
+bind J tabnext
+bind e fillcmdline open
+bind E fillcmdline tabopen
+
+unbind ;W
+bind ;W hint -wp
+
+unbind <C-e>
+bind <C-e> fillcmdline winopen -private
+
+" Colorscheme
+colors --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/master/base16-gruvbox-dark-soft.css gruvbox
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
