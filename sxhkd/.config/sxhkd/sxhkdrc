@@ -49,6 +49,10 @@ super + n
 super +  shift + n
     alacritty --title "nmtui" -e nmtui
 
+# Emacsclient
+super + e
+    emacsclient -c
+
 # Toggle keyboard distribution between us and latam
 ctrl + space
     setxkbmap -query | grep -q "layout:\s\+us" && setxkbmap -layout latam || setxkbmap -layout us

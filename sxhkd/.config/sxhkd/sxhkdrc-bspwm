@@ -9,6 +9,10 @@ super + shift + d
 super + d
 	rofi -show drun
 
+# emacsclient
+super + e
+    emacsclient -c
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
