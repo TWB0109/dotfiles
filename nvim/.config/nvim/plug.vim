@@ -21,7 +21,9 @@ Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'vim-scripts/loremipsum'
 Plug 'somini/vim-autoclose'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'Natur3-Boy/dracula-for-lightline'
 "Plug 'neovimhaskell/haskell-vim'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
