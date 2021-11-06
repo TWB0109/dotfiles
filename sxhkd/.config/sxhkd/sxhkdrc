@@ -49,9 +49,9 @@ super + n
 super +  shift + n
     alacritty --title "nmtui" -e nmtui
 
-# Emacsclient
-super + e
-    emacsclient -c
+# Emacs
+super + e; {e,d,v,s}
+    {emacsclient -c,emacsclient -c --eval '(dired nil)',emacsclient -c --eval '(+vterm/here nil)',emacsclient -c --eval '(eshell)'
 
 # Toggle keyboard distribution between us and latam
 ctrl + space

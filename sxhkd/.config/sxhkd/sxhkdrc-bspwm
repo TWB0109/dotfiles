@@ -9,9 +9,9 @@ super + shift + d
 super + d
 	rofi -show drun
 
-# emacsclient
-super + e
-    emacsclient -c
+# Emacs
+super + e; {e,d,v,s}
+    {emacsclient -c,emacsclient -c --eval '(dired nil)',emacsclient -c --eval '(+vterm/here nil)',emacsclient -c --eval '(eshell)'
 
 # make sxhkd reload its configuration files:
 super + Escape
