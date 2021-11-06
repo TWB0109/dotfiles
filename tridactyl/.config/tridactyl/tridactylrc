@@ -21,6 +21,7 @@ unbind <C-e>
 bind <C-e> fillcmdline winopen -private
 
 " Colorscheme
+"colors --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/master/base16-dracula.css dracula
 colors --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/master/base16-gruvbox-dark-soft.css gruvbox
 
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
