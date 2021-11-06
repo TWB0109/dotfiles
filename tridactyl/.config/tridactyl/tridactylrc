@@ -6,6 +6,7 @@ set searchurls.ddg https://duckduckgo.com/?kae=g&q=%s
 set searchurls.gh  https://github.com/search?q=%s
 set searchurls.aw  https://wiki.archlinux.org/title/%s
 set searchurls.g   https://google.com/search?q=%s
+set editorcmd emacsclient -c
 
 " Binds
 bind K tabprev
