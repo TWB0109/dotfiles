@@ -1,0 +1,53 @@
+[CompactMode]
+FontWeight=50
+
+[Desktop Entry]
+DefaultProfile=Gruv.profile
+
+[DetailsMode]
+FontWeight=50
+
+[General]
+Version=201
+ViewPropsTimestamp=2021,7,21,21,2,41.459
+
+[IconsMode]
+FontWeight=50
+PreviewSize=48
+
+[KPropertiesDialog]
+DisplayPort-0 Height 1440x900=453
+DisplayPort-0 Width 1440x900=410
+
+[MainWindow]
+DP-1 Height 1440x900=597
+DP-1 Width 1440x900=1055
+DisplayPort-0 Height 1440x900=645
+DisplayPort-0 Width 1440x900=986
+DisplayPort-0 XPosition 1440x900=146
+DisplayPort-0 YPosition 1440x900=184
+MenuBar=Disabled
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC0AAACV/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAuAAAAZgAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAACVwAAAF0BAAADAAAAAQAAALgAAAMZ/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAC4AAAMZAAAACgEAAAMAAAADAAAFoAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAFoAAAAAoBAAADAAADJQAAAlcAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+ConfirmDelete=true
+
+[Open-with settings]
+CompletionMode=1
+History=sxiv,neo
+
+[PreviewSettings]
+Plugins=exrthumbnail,windowsimagethumbnail,fontthumbnail,ebookthumbnail,audiothumbnail,directorythumbnail,appimagethumbnail,comicbookthumbnail,imagethumbnail,svgthumbnail,windowsexethumbnail,cursorthumbnail,djvuthumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail
+
+[Search]
+Location=Everywhere
+
+[SettingsDialog]
+DisplayPort-0 Height 1440x900=440
+DisplayPort-0 Width 1440x900=589
+
+[ViewPropertiesDialog]
+DisplayPort-0 Height 1440x900=306
+DisplayPort-0 Width 1440x900=375

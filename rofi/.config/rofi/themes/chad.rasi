@@ -1,0 +1,95 @@
+configuration{
+    modi: "drun";
+    lines: 5;
+    font: "Montserrat 12";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    display-drun: "  ";
+    location: 0;
+    separator-style: "solid";
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+@theme "/dev/null"
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+* {
+    dark-black: #1e2122;
+    bg-col:  #32302f;
+    border-col: #b8bb26;
+    selected-col: #665c54;
+    blue: #83a598;
+    fg-col: #d5c4a1;
+    fg-col2: #b8bb26;
+    width: 600;
+}
+
+window {
+    padding: 20px;
+    height: 360px;
+    border: 2px;
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 0.5em;
+}
+
+mainbox {
+    padding: 5px;
+    border-radius: 13px;
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @fg-col2;
+    padding: 5px 5px 0px;
+    text-color: @bg-col;
+    border-radius: 3px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    columns: 2;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @selected-col;
+    border-radius: 0.2em;
+    text-color: @fg-col2;
+}
