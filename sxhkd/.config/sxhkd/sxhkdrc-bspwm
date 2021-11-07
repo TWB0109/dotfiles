@@ -4,7 +4,7 @@ super + shift + Return
 
 # program launcher
 super + shift + d
-	dmenu_run
+	dmenu_run -p "RUN:"
 
 super + d
 	rofi -show drun
