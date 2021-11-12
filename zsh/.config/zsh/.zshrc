@@ -24,9 +24,6 @@ cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added
 source ~/.cache/wal/colors-tty.sh
 
-# BLING
-neofetch
-
 # ENV VARIABLES
 export XDG_CONFIG_HOME=$HOME/.config
 export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:$PATH
