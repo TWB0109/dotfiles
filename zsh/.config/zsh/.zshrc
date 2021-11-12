@@ -29,7 +29,7 @@ neofetch
 
 # ENV VARIABLES
 export XDG_CONFIG_HOME=$HOME/.config
-export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:$PATH
+export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:$PATH
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR=nvim
@@ -53,6 +53,13 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
+
+# xbps related alias
+alias xi="sudo xbps-install -S"
+alias xq="xbps-query -Rs"
+alias xs="sudo xbps-install -Su"
+alias xr="sudo xbps-remove -R"
+alias xrr="sudo xbps-remove"
 
 # Functions
 function password () {

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/brandon/src/dwm'
 let g:netrw_dirhist_4='/home/brandon/dotfiles/polybar/.config/polybar'
 let g:netrw_dirhist_3='/home/brandon/dotfiles/polybar/.config'
 let g:netrw_dirhist_2='/home/brandon/dotfiles/polybar'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/var/lib/flatpak/app/com.spotify.Client/current/active/fi
 let g:netrw_dirhist_8='/var/lib/flatpak/app/com.spotify.Client/current/active'
 let g:netrw_dirhist_7='/var/lib/flatpak/app/com.spotify.Client/current'
 let g:netrw_dirhist_6='/usr/local/bin'
-let g:netrw_dirhist_5='/home/brandon/src/suckless/dwm'

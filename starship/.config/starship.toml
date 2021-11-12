@@ -11,6 +11,55 @@
 # Don't Print a new line at the start of the prompt 
 add_newline = false  
 
+format = """
+\\[$username[@](bold green)$hostname\\] $directory$git_branch$git_commit$git_state$git_metrics$git_status$\
+package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$character"""
+
+[username]
+style_root  = "bold red"
+style_user  = "bold yellow"
+format      = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format   = "[$hostname]($style)"
+style    = "bold red"
+
 # Single line 
 [line_break]
 disabled = true

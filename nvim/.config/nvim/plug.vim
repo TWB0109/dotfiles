@@ -55,6 +55,7 @@ Plug 'baskerville/vim-sxhkdrc'
 Plug 'elkowar/yuck.vim'
 Plug 'habamax/vim-godot'
 Plug 'tridactyl/vim-tridactyl'
+Plug 'LnL7/vim-nix'
 
 " Initialize plugin system
 call plug#end()

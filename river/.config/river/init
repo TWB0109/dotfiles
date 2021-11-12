@@ -203,6 +203,6 @@ riverctl default-layout rivertile
 
 swaybg -i ~/pix/wallpapers/mountains.png -m fill &
 mako &
-$HOME/.config/eww/eww.sh &
+#$HOME/.config/eww/eww.sh &
 foot -s &
 exec rivertile -main-ratio 0.50
