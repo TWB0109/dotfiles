@@ -50,6 +50,7 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
+alias spt="spotify-tui"
 
 # xbps related alias
 alias xi="sudo xbps-install -S"
