@@ -1,0 +1,3 @@
+#!/bin/bash
+song=$(playerctl metadata --player=spotifyd --format "Title: {{ xesam:title }}\nArtist: {{ xesam:artist }}\nAlbum: {{ xesam:album }}")
+notify-send "Now Playing" "$song"
