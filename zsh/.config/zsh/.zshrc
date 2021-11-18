@@ -50,7 +50,6 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
-alias spt="spotify-tui"
 
 # xbps related alias
 alias xi="sudo xbps-install -S"
@@ -60,9 +59,24 @@ alias xr="sudo xbps-remove -R"
 alias xrr="sudo xbps-remove"
 
 # Functions
-function password () {
+function pget () {
     session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
     bw get password $1 --session $session | xclip -selection c 
+    echo -e "\e[30;1;41mThe password was copied to your clipboard.\e[0m\n\e[30;1;43mThe clipboard will be cleared in 10 seconds\e[0m"
+    sleep 10s
+    xclip -i -selection c < /dev/null
+    bw lock --quiet
+    echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
+}
+
+function eget() {
+    session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
+    bw get username $1 --session $session | xclip -selection c
+    echo -e "\e[30;1;41mThe username was copied to your clipboard.\e[0m\n\e[30;1;43mThe clipboard will be cleared in 10 seconds\e[0m"
+    sleep 10s
+    xclip -i -selection c < /dev/null
+    bw lock --quiet
+    echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
 }
 
 # Laziness
