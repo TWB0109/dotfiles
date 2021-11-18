@@ -22,7 +22,7 @@ window:
 
   dimensions:
     columns: 86
-    lines:   29
+    lines: 29
 
   decorations: full
   title: Alacritty
@@ -38,13 +38,13 @@ scrolling:
 
 # Font configuration
 font:
-  normal: 
+  normal:
     family: Sauce Code Pro Nerd Font Mono
     style: Regular
-  bold: 
-    family: Sauce Code Pro Nerd Font Mono 
+  bold:
+    family: Sauce Code Pro Nerd Font Mono
     style: Bold
-  italic: 
+  italic:
     family: Hack
     style: Italic
   use_thin_strokes: true
@@ -54,7 +54,7 @@ font:
 live_config_reload: true
 
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+- {mouse: Middle, action: PasteSelection}
 
 mouse:
   # Click settings
@@ -62,8 +62,8 @@ mouse:
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
   # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  double_click: {threshold: 300}
+  triple_click: {threshold: 300}
 
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
@@ -85,30 +85,30 @@ colors:
   primary:
     # hard contrast: background = '#1d2021'
     # soft contrast: background = '#32302f'
-    background: '#32302f'
-    foreground: '#d5c4a1'
+    background: '#282828'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black:   '#32302f'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#d5c4a1'
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b16286'
+    cyan: '#689d6a'
+    white: '#a89984'
 
   # Bright colors
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
     magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#fbf1c7'
+    cyan: '#8ec07c'
+    white: '#ebdbb2'
 
   indexed_colors: []
 
