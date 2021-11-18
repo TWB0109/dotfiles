@@ -154,6 +154,14 @@ riverctl map vol None S spawn 'pamixer -t'
 riverctl map vol None Return enter-mode normal
 riverctl map vol None Esc enter-mode normal
 
+riverctl declare-mode grim
+riverctl map normal $mod P enter-mode grim
+
+riverctl map grim None S spawn 'grimshot --notify save screen'
+riverctl map grim None A spawn 'grimshot --notify save area'
+
+riverctl map grim None Return enter-mode normal
+riverctl map grim None Esc enter-mode normal
 
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
@@ -201,8 +209,11 @@ riverctl csd-filter-add "gedit"
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 
-swaybg -i ~/pix/wallpapers/mountains.png -m fill &
+swaybg -i ~/pix/wallpapers/succulent.png -m fill &
 mako &
 #$HOME/.config/eww/eww.sh &
 foot -s &
+export GTK_THEME=vimix-dark-ruby
+gsettings set org.gnome.desktop.interface gtk-theme "vimix-dark-ruby"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
 exec rivertile -main-ratio 0.50
