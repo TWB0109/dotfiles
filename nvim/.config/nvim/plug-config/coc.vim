@@ -164,7 +164,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_start_at_startup = v:false
+let g:coc_start_at_startup = v:true
 
 " Snippets
 " Use <C-l> for trigger snippet expand.
