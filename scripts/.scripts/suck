@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rf config.h
+[[ -e patches.h ]] && rm -rf patches.h
+sudo make install
