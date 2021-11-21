@@ -165,7 +165,7 @@ super + v; {m,k,j}
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
-{super + p, super + shift + p, super + alt + p}
+super + p; {s,g,r}
     {spectacle -mb &,spectacle -g,spectacle -r}
 
 # Toggle Do Not Disturb
