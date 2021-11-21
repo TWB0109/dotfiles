@@ -47,6 +47,7 @@ $vlang\
 $vagrant\
 $zig\
 $nix_shell\
+$jobs\
 $character"""
 
 [username]
@@ -80,6 +81,10 @@ style             = "bold cyan"
 truncation_symbol = "... "
 read_only         = " 🔒"
 read_only_style   = "red"
+
+[jobs]
+number_threshold = 2
+symbol_threshold = 1
 
 # Langs
 [conda]
