@@ -52,11 +52,11 @@ alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
 
 # xbps related alias
-alias xi="sudo xbps-install -S"
-alias xq="xbps-query -Rs"
-alias xs="sudo xbps-install -Su"
-alias xr="sudo xbps-remove -R"
-alias xrr="sudo xbps-remove"
+#alias xi="sudo xbps-install -S"
+#alias xq="xbps-query -Rs"
+#alias xs="sudo xbps-install -Su"
+#alias xr="sudo xbps-remove -R"
+#alias xrr="sudo xbps-remove"
 
 # Functions
 function pget () {
