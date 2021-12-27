@@ -82,6 +82,8 @@ function eget() {
 function sxw() {
     wallpaper=$(nsxiv -o ~/pix/wallpapers)
     nitrogen --set-scaled $wallpaper
+
+    touch ~/.sxw && chmod +x ~/.sxw && echo "nitrogen --set-scaled $wallpaper" > ~/.sxw
 }
 
 # Laziness
