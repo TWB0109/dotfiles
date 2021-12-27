@@ -79,6 +79,11 @@ function eget() {
     echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
 }
 
+function sxw() {
+    wallpaper=$(nsxiv -o ~/pix/wallpapers)
+    nitrogen --set-scaled $wallpaper
+}
+
 # Laziness
 alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.config/zsh/.zshrc"
