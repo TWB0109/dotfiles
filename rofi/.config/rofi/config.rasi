@@ -1,3 +1,3 @@
 configuration {
-	theme: "~/.config/rofi/themes/chad.rasi";
 }
+@theme "~/.config/rofi/themes/chad.rasi"
