@@ -1,0 +1,40 @@
+use_nerdfont = true
+notify = true
+gapless = true
+volnorm = true
+flip_status_indicators = true
+
+[keybindings]
+# Movement
+"1" = "focus queue"
+"2" = "focus library"
+"3" = "focus search"
+"F1" = "focus queue"
+"F2" = "focus library"
+"F3" = "focus search"
+"G" = "move bottom"
+"g" = "move top"
+"q" = "back"
+"Q" = "quit"
+
+# Queue Manipulation
+"J" = "shift down 1"
+"K" = "shift up 1"
+
+[theme]
+#background = "#181818"
+primary = "#fcf1c7"
+secondary = "#DCDCDC"
+title = "#1ED760"
+playing = "#1ED760"
+playing_selected = "#1ED760"
+playing_bg = "#181818"
+highlight = "#1DB954"
+highlight_bg = "#1f1f1f"
+error = "#FFE4E4"
+error_bg = "#A50000"
+statusbar = "#000000"
+statusbar_progress = "#00AC4C"
+statusbar_bg = "#00AC4C"
+cmdline = "#CBFFDE"
+cmdline_bg = "#444444"
