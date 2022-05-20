@@ -1,9 +1,13 @@
 require 'paq' {
     "morhetz/gruvbox";
     {"dracula/vim", as="dracula"};
-    "beauwilliams/statusline.lua";
-    "kyazdani42/nvim-tree.lua";
     "kyazdani42/nvim-web-devicons";
+
+    -- Statusline
+    "beauwilliams/statusline.lua";
+
+    -- Nvim-Tree
+    "kyazdani42/nvim-tree.lua";
 
     -- LSP Support
     'VonHeikemen/lsp-zero.nvim';
