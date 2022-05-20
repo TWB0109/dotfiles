@@ -37,6 +37,9 @@ require 'paq' {
 
     -- Neogit
     "TimUntersberger/neogit";
+
+    -- Tabbar
+    "romgrk/barbar.nvim";
 }
 
 -- Statusline
