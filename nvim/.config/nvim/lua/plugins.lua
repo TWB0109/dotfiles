@@ -39,7 +39,9 @@ require 'paq' {
     {"folke/which-key.nvim", run=require("which-key").setup {}};
 
     -- Neogit
-    "TimUntersberger/neogit";
+    {"TimUntersberger/neogit", run=require("neogit").setup {
+        disable_insert_on_commit = false
+    }};
 
     -- Tabbar
     "romgrk/barbar.nvim";
