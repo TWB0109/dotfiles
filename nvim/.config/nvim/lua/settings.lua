@@ -32,3 +32,6 @@ let.elite_mode = true
 
 -- Colorscheme
 let.colorscheme = "gruvbox"
+
+-- Statusline
+set.laststatus = 3
