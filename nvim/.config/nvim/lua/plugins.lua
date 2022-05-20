@@ -40,6 +40,9 @@ require 'paq' {
 
     -- Tabbar
     "romgrk/barbar.nvim";
+
+    -- Autopairs
+    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup {}};
 }
 
 -- Statusline
