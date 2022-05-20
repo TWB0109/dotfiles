@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local let = vim.g
-noremap = { noremap = true } 
+local noremap = { noremap = true }
 
 -- Map The Leader Key
 let.mapleader = ","
@@ -13,6 +13,9 @@ map('n', '<leader>bn', ':bnext<cr>', noremap)
 map('n', '<leader>bp', ':bprev<cr>', noremap)
 map('n', '<leader>bd', ':bd<cr>', noremap)
 map('n', '<leader>bl', ':Telescope buffers<cr>', noremap)
+
+-- Disable hlsearch
+map('n', '<Return>', ':nohlsearch<cr>', noremap)
 
 -- Find files
 map('n', '<leader>ff', ':Telescope find_files<cr>', noremap)
@@ -35,3 +38,6 @@ end
 
 -- Nvim-Tree
 map('n', '<C-N>', ':NvimTreeToggle<CR>', noremap)
+
+-- Neogit
+map('n', '<leader>gs', ":lua require('neogit').open( {kind = \"split\"} ) <CR>", noremap)
