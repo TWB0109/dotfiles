@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local let = vim.g
-local noremap = { noremap = true }
+local noremap = { noremap = true, silent = true }
 
 -- Map The Leader Key
 let.mapleader = ","
@@ -8,11 +8,39 @@ let.mapleader = ","
 -- ii = <ESC>
 map('i', 'ii', '<ESC>', { noremap = true })
 
--- Buffer Mappings
-map('n', '<leader>bn', ':bnext<cr>', noremap)
-map('n', '<leader>bp', ':bprev<cr>', noremap)
-map('n', '<leader>bd', ':bd<cr>', noremap)
-map('n', '<leader>bl', ':Telescope buffers<cr>', noremap)
+--------------------------------
+
+-- Tab mappings
+
+---- Move to previous/next
+map('n', '<A-,>', ':BufferPrevious<cr>', noremap)
+map('n', '<A-.>', ':BufferNext<cr>', noremap)
+
+---- Re-order to previous/next
+map('n', '<A-<>', ':BufferMovePrevious<cr>', noremap)
+map('n', '<A->>', ':BufferMoveNext<cr>', noremap)
+
+---- Goto buffer in position...
+map('n', '<A-1>', ':BufferGoto 1<cr>', noremap)
+map('n', '<A-2>', ':BufferGoto 2<cr>', noremap)
+map('n', '<A-3>', ':BufferGoto 3<cr>', noremap)
+map('n', '<A-4>', ':BufferGoto 4<cr>', noremap)
+map('n', '<A-5>', ':BufferGoto 5<cr>', noremap)
+map('n', '<A-6>', ':BufferGoto 6<cr>', noremap)
+map('n', '<A-7>', ':BufferGoto 7<cr>', noremap)
+map('n', '<A-8>', ':BufferGoto 8<cr>', noremap)
+map('n', '<A-9>', ':BufferGoto 9<cr>', noremap)
+
+---- Pin/Unping buffer
+map('n', '<A-p>', ':BufferPin<cr>', noremap)
+
+---- Close buffer
+map('n', '<A-w>', ':BufferClose<cr>', noremap)
+
+---- Magic Buffer-picking mode
+map('n', '<A-s>', ':BufferPick<cr>', noremap)
+
+--------------------------------
 
 -- Disable hlsearch
 map('n', '<Return>', ':nohlsearch<cr>', noremap)
