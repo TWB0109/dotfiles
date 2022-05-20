@@ -26,6 +26,9 @@ require 'paq' {
     'L3MON4D3/LuaSnip';
     'rafamadriz/friendly-snippets';
 
+    -- Emmet-vim
+    'mattn/emmet-vim';
+
     -- Telescope
     "nvim-lua/plenary.nvim";
     "BurntSushi/ripgrep";
