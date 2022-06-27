@@ -3,3 +3,5 @@
 	name = Brandon
 [init]
 	defaultBranch = main
+[color]
+	ui = auto
