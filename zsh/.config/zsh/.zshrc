@@ -26,7 +26,7 @@ source ~/.cache/wal/colors-tty.sh
 
 # ENV VARIABLES
 export XDG_CONFIG_HOME=$HOME/.config
-export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.npm-global/bin:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:$PATH
+export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:$PATH
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR=nvim
@@ -35,9 +35,13 @@ else
 fi
 
 #export TERMINAL=st
+#export NPM_CONFIG_PREFIX=~/.npm-global
 export TERMINAL=alacritty
 export PAGER=less
-export NPM_CONFIG_PREFIX=~/.npm-global
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 
 # Aliases
 alias vim="nvim"
@@ -80,7 +84,7 @@ function eget() {
 }
 
 function sxw() {
-    wallpaper=$(nsxiv -o ~/pix/wallpapers)
+    wallpaper=$(nsxiv -o ~/.local/share/backgrounds/)
     nitrogen --set-scaled $wallpaper
 
     touch ~/.sxw && chmod +x ~/.sxw && echo "nitrogen --set-scaled $wallpaper" > ~/.sxw

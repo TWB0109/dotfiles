@@ -48,6 +48,9 @@ require 'paq' {
 
     -- Autopairs
     {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup {}};
+
+    -- Kmonad
+    "kmonad/kmonad-vim";
 }
 
 -- Statusline

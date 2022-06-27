@@ -21,10 +21,10 @@ window:
   dynamic_padding: false
 
   dimensions:
-    columns: 86
-    lines: 29
+    columns: 100
+    lines: 39
 
-  decorations: None
+  decorations: Full
   title: Alacritty
   startup_mode: Windowed
 
