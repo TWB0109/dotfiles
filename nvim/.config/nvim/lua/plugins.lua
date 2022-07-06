@@ -128,12 +128,11 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Emmet-vim
-local let = vim.g
 
-let.user_emmet_leader_key="<leader>"
-let.user_emmet_mode="a"
+Let.user_emmet_leader_key="<leader>"
+Let.user_emmet_mode="a"
 
-let.user_emmet_install_global= 0
+Let.user_emmet_install_global= 0
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     pattern = {"*.html", "*.css"},
     command = "EmmetInstall"

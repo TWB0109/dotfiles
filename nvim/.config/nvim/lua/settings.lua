@@ -1,37 +1,37 @@
-local set = vim.opt
-local let = vim.g
-local o   = vim.o
-local bo  = vim.bo
-local wo  = vim.wo
+-- local set = vim.opt
+-- local let = vim.g
+-- local o   = vim.o
+-- local bo  = vim.bo
+-- local wo  = vim.wo
 
 -- Basics
-set.nu  = true
-set.rnu = true
-set.cursorline = true
-set.showcmd = true
-set.wrap = false
-set.compatible = false
-set.splitbelow = true
-set.splitright = true
-set.termguicolors = true
-set.pastetoggle = "<F10>"
-set.mouse = "a"
-set.shell = "/bin/zsh"
-set.scl = "auto"
-set.encoding = "utf-8"
+Set.nu  = true
+Set.rnu = true
+Set.cursorline = true
+Set.showcmd = true
+Set.wrap = false
+Set.compatible = false
+Set.splitbelow = true
+Set.splitright = true
+Set.termguicolors = true
+Set.pastetoggle = "<F10>"
+Set.mouse = "a"
+Set.shell = "/bin/zsh"
+Set.scl = "auto"
+Set.encoding = "utf-8"
 
 -- Indentation
-set.expandtab  = true
-set.cindent    = true
-set.autoindent = true
-set.tabstop    = 4
-set.shiftwidth = 4
+Set.expandtab  = true
+Set.cindent    = true
+Set.autoindent = true
+Set.tabstop    = 4
+Set.shiftwidth = 4
 
 -- Elite Mode
-let.elite_mode = true
+Let.elite_mode = true
 
 -- Colorscheme
-let.colorscheme = "gruvbox"
+Let.colorscheme = "gruvbox"
 
 -- Statusline
-set.laststatus = 3
+Set.laststatus = 3

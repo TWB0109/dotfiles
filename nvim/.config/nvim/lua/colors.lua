@@ -1,14 +1,7 @@
-local cmd = vim.cmd
-local set = vim.opt
-local let = vim.g
-local o   = vim.o
-local bo  = vim.bo
-local wo  = vim.wo
-
 -- Configure colorscheme colors
 --
-if (let.colorscheme == "gruvbox") then
-    cmd([[
+if (Let.colorscheme == "gruvbox") then
+    Cmd([[
         colorscheme gruvbox
 
         highlight Normal guibg=#32302f
@@ -18,8 +11,8 @@ if (let.colorscheme == "gruvbox") then
         highlight EndOfBuffer guifg=#32302f guibg=#32302f
     ]])
 
-elseif (let.colorscheme == "dracula") then
-    cmd([[
+elseif (Let.colorscheme == "dracula") then
+    Cmd([[
         colorscheme dracula
 
         highlight Normal guibg=#282a36
