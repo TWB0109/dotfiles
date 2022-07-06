@@ -36,7 +36,7 @@ require 'paq' {
     "nvim-telescope/telescope.nvim";
 
     -- Which-key
-    {"folke/which-key.nvim", run=require("which-key").setup {}};
+    {"folke/which-key.nvim", run=require("which-key").setup{}};
 
     -- Neogit
     {"TimUntersberger/neogit", run=require("neogit").setup {
@@ -47,10 +47,13 @@ require 'paq' {
     "romgrk/barbar.nvim";
 
     -- Autopairs
-    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup {}};
+    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup{}};
 
     -- Kmonad
     "kmonad/kmonad-vim";
+
+    -- Nvim-comment
+    {"terrortylor/nvim-comment", run=require("nvim_comment").setup()};
 }
 
 -- Statusline
@@ -123,3 +126,15 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+-- Emmet-vim
+local let = vim.g
+
+let.user_emmet_leader_key="<leader>"
+let.user_emmet_mode="a"
+
+let.user_emmet_install_global= 0
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*.html", "*.css"},
+    command = "EmmetInstall"
+})
