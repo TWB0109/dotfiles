@@ -63,7 +63,7 @@ statusline.tabline = false
 -- Nvim-Tree
 require'nvim-tree'.setup {
   update_cwd = false,
-  reload_on_bufenter = false,
+  reload_on_bufenter = true,
   open_on_setup_file = true,
   view = {
     width = 30,
