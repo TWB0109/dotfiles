@@ -1,5 +1,5 @@
 use_nerdfont = true
-notify = true
+notify = false
 gapless = true
 volnorm = true
 flip_status_indicators = true
