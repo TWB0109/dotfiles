@@ -52,6 +52,9 @@ require 'paq' {
     -- Kmonad
     "kmonad/kmonad-vim";
 
+    -- Sxhkdrc
+    "kovetskiy/sxhkd-vim";
+
     -- Nvim-comment
     {"terrortylor/nvim-comment", run=require("nvim_comment").setup()};
 }
@@ -77,6 +80,8 @@ require'nvim-tree'.setup {
     mappings = {
       custom_only = false,
       list = {
+          { key = "g.", action = "cd"},
+          { key = "g..", action = "dir_up"}
       },
     },
   },
