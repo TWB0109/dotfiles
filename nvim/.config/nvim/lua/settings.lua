@@ -35,3 +35,6 @@ Let.colorscheme = "gruvbox"
 
 -- Statusline
 Set.laststatus = 3
+
+-- Cmdheight
+Set.cmdheight = 2
