@@ -20,5 +20,5 @@ Cmd = vim.cmd
 -- Import the main configuration files
 require('settings') -- see lua/settings.lua
 require('mappings') -- see lua/mappings.lua
-require('plugins')  -- see lua/plugins.lua
 require('colors')  -- see lua/plugins.lua
+require('plugins')  -- see lua/plugins.lua
