@@ -22,3 +22,8 @@ elseif (Let.colorscheme == "dracula") then
         highlight EndOfBuffer guifg=#282a36 guibg=#282a36 
     ]])
 end
+
+-- Customizing Lualine
+Gruvbox_material_dark = require("lualine.themes.gruvbox")
+Gruvbox_material_dark.command.a.bg = "#83a598"
+Gruvbox_material_dark.insert.a.bg  = "#b8bb26"
