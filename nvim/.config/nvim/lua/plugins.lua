@@ -1,10 +1,18 @@
 require 'paq' {
+    "savq/paq-nvim";
     "morhetz/gruvbox";
     {"dracula/vim", as="dracula"};
     "kyazdani42/nvim-web-devicons";
 
-    -- Statusline
-    "beauwilliams/statusline.lua";
+    -- Lualine
+    {"nvim-lualine/lualine.nvim", run=require('lualine').setup{
+        options = {
+            component_separators = { left = '', right = ''},
+            section_separators   = { left = '', right = ''},
+            globalstatus         = true,
+            theme = Gruvbox_material_dark,
+        },
+    }};
 
     -- Nvim-Tree
     "kyazdani42/nvim-tree.lua";
@@ -36,7 +44,7 @@ require 'paq' {
     "nvim-telescope/telescope.nvim";
 
     -- Which-key
-    {"folke/which-key.nvim", run=require("which-key").setup{}};
+    {"folke/which-key.nvim", run=require("which-key").setup()};
 
     -- Neogit
     {"TimUntersberger/neogit", run=require("neogit").setup {
@@ -47,7 +55,7 @@ require 'paq' {
     "romgrk/barbar.nvim";
 
     -- Autopairs
-    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup{}};
+    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup()};
 
     -- Kmonad
     "kmonad/kmonad-vim";
@@ -57,11 +65,15 @@ require 'paq' {
 
     -- Nvim-comment
     {"terrortylor/nvim-comment", run=require("nvim_comment").setup()};
-}
 
--- Statusline
-local statusline = require('statusline')
-statusline.tabline = false
+    -- Nvim-colorizer
+    {"norcalli/nvim-colorizer.lua", run=require("colorizer").setup()};
+
+    -- Toggleterm
+    {"akinsho/toggleterm.nvim", run=require("toggleterm").setup{
+        open_mapping = [[<c-\>]],
+    }};
+}
 
 -- Nvim-Tree
 require'nvim-tree'.setup {
