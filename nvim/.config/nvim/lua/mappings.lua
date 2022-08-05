@@ -65,5 +65,8 @@ end
 -- Nvim-Tree
 Map('n', '<C-N>', ':NvimTreeToggle<CR>', noremap)
 
+-- File finder
+Map('n', '<C-f>', ':Telescope find_files<CR>', noremap)
+
 -- Neogit
 Map('n', '<leader>gs', ":lua require('neogit').open( {kind = \"split\"} ) <CR>", noremap)

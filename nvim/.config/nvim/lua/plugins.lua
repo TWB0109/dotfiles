@@ -73,6 +73,9 @@ require 'paq' {
     {"akinsho/toggleterm.nvim", run=require("toggleterm").setup{
         open_mapping = [[<c-\>]],
     }};
+
+    -- Yuck
+    "elkowar/yuck.vim";
 }
 
 -- Nvim-Tree
