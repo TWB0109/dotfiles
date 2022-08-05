@@ -79,7 +79,7 @@ require 'paq' {
 require'nvim-tree'.setup {
   update_cwd = false,
   reload_on_bufenter = true,
-  open_on_setup_file = true,
+  open_on_setup_file = false,
   view = {
     width = 30,
     height = 30,
