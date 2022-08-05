@@ -1,82 +1,97 @@
-require 'paq' {
-    "savq/paq-nvim";
-    "morhetz/gruvbox";
-    {"dracula/vim", as="dracula"};
-    "kyazdani42/nvim-web-devicons";
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+	vim.cmd [[packadd packer.nvim]]
+end
 
-    -- Lualine
-    {"nvim-lualine/lualine.nvim", run=require('lualine').setup{
-        options = {
-            component_separators = { left = '', right = ''},
-            section_separators   = { left = '', right = ''},
-            globalstatus         = true,
-            theme = Gruvbox_material_dark,
-        },
-    }};
 
-    -- Nvim-Tree
-    "kyazdani42/nvim-tree.lua";
+require('packer').startup(function(use)
+
+	-- Let packer manage itself
+	use 'wbthomason/packer.nvim'
+
+	use 'morhetz/gruvbox'
+	use {'dracula/vim', as = "dracula"}
+    use 'kyazdani42/nvim-web-devicons'
+
+	-- Lualine
+	use {'nvim-lualine/lualine.nvim', run=require('lualine').setup{
+		options = {
+			component_separators = { left = '', right = ''},
+			section_separators   = { left = '', right = ''},
+			globalstatus         = true,
+			theme = Gruvbox_material_dark,
+        }
+    }}
+
+	-- Nvim-tree
+	use 'kyazdani42/nvim-tree.lua'
 
     -- LSP Support
-    'VonHeikemen/lsp-zero.nvim';
-    'neovim/nvim-lspconfig';
-    'williamboman/nvim-lsp-installer';
+    use 'VonHeikemen/lsp-zero.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
 
     -- Autocompletion
-    'hrsh7th/nvim-cmp';
-    'hrsh7th/cmp-buffer';
-    'hrsh7th/cmp-path';
-    'saadparwaiz1/cmp_luasnip';
-    'hrsh7th/cmp-nvim-lsp';
-    'hrsh7th/cmp-nvim-lua';
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
 
     -- Snippets
-    'L3MON4D3/LuaSnip';
-    'rafamadriz/friendly-snippets';
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
 
     -- Emmet-vim
-    'mattn/emmet-vim';
+    use 'mattn/emmet-vim'
 
     -- Telescope
-    "nvim-lua/plenary.nvim";
-    "BurntSushi/ripgrep";
-    "nvim-treesitter/nvim-treesitter";
-    "nvim-telescope/telescope.nvim";
+    use 'nvim-lua/plenary.nvim'
+    use 'BurntSushi/ripgrep'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-telescope/telescope.nvim'
 
     -- Which-key
-    {"folke/which-key.nvim", run=require("which-key").setup()};
+    use {'folke/which-key.nvim', run=require('which-key').setup()}
 
     -- Neogit
-    {"TimUntersberger/neogit", run=require("neogit").setup {
+    use {'TimUntersberger/neogit', run=require('neogit').setup{
         disable_insert_on_commit = false
-    }};
+    }}
 
     -- Tabbar
-    "romgrk/barbar.nvim";
+    use 'romgrk/barbar.nvim'
 
     -- Autopairs
-    {"windwp/nvim-autopairs", run=require("nvim-autopairs").setup()};
+    use {'windwp/nvim-autopairs', run=require('nvim-autopairs').setup()}
 
     -- Kmonad
-    "kmonad/kmonad-vim";
+    use 'kmonad/kmonad-vim'
 
     -- Sxhkdrc
-    "kovetskiy/sxhkd-vim";
+    use 'kovetskiy/sxhkd-vim'
 
     -- Nvim-comment
-    {"terrortylor/nvim-comment", run=require("nvim_comment").setup()};
+    use {'terrortylor/nvim-comment', run=require('nvim_comment').setup()}
 
     -- Nvim-colorizer
-    {"norcalli/nvim-colorizer.lua", run=require("colorizer").setup()};
+    use {'norcalli/nvim-colorizer.lua', run=require('colorizer').setup()}
 
     -- Toggleterm
-    {"akinsho/toggleterm.nvim", run=require("toggleterm").setup{
+    use {'akinsho/toggleterm.nvim', run=require('toggleterm').setup{
         open_mapping = [[<c-\>]],
-    }};
+    }}
 
     -- Yuck
-    "elkowar/yuck.vim";
-}
+    use 'elkowar/yuck.vim'
+
+	if packer_bootstrap then
+    	require('packer').sync()
+  	end
+end)
 
 -- Nvim-Tree
 require'nvim-tree'.setup {
