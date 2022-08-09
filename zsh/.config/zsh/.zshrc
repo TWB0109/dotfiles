@@ -29,7 +29,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.9/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:~/.local/share/neovim/bin:$PATH
 
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR=nvim
+    export EDITOR=vim
 else
     export EDITOR=nvim 
 fi
