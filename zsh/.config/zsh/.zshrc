@@ -16,13 +16,13 @@ bindkey -M viins 'ii' vi-cmd-mode
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Import colorscheme from wal asynchronously
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks for terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added
-source ~/.cache/wal/colors-tty.sh
+# source ~/.cache/wal/colors-tty.sh
 
 # ENV VARIABLES
 export XDG_CONFIG_HOME=$HOME/.config

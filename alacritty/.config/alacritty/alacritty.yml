@@ -16,15 +16,15 @@ env:
 # Window Configuration
 window:
   padding:
-    x: 5
-    y: 5
+    x: 10
+    y: 10
   dynamic_padding: false
 
   dimensions:
     columns: 100
     lines: 39
 
-  decorations: Full
+  decorations: None
   title: Alacritty
   startup_mode: Windowed
 
@@ -84,12 +84,12 @@ colors:
   primary:
     # hard contrast: background = '#1d2021'
     # soft contrast: background = '#32302f'
-    background: '#282828'
+    background: '#32302f'
     foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black: '#282828'
+    black: '#3c3836'
     red: '#cc241d'
     green: '#98971a'
     yellow: '#d79921'
@@ -107,7 +107,7 @@ colors:
     blue: '#83a598'
     magenta: '#d3869b'
     cyan: '#8ec07c'
-    white: '#ebdbb2'
+    white: '#fbf1c7'
 
   indexed_colors: []
 
