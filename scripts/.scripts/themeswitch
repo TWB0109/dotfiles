@@ -2,7 +2,6 @@
 
 theme=$1
 kittyconf=~/.config/kitty/kitty.conf
-hxconf=~/.config/helix/config.toml
 
 if [ $theme == "dark" ]; then
   sed -i 's/GruvboxLightSoft.conf/GruvboxDarkSoft.conf/g' $kittyconf && kill -s USR1 $(pgrep kitty)

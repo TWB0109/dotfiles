@@ -11,7 +11,7 @@ Set.splitright = true
 Set.termguicolors = true
 Set.pastetoggle = "<F10>"
 Set.mouse = "a"
-Set.shell = "/bin/zsh/"
+Set.shell = "zsh"
 Set.scl = "auto"
 Set.encoding = "utf-8"
 
