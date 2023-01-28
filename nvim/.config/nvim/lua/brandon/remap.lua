@@ -1,8 +1,7 @@
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
-vim.keymap.set('n', 'ii', '<ESC>')
-vim.keymap.set('n', '<ESC>', '<C-\\><C-n>')
+vim.keymap.set('t', '<ESC>', '<C-\\><C-n>')
 
 vim.keymap.set('n', '<Up>', ':resize +2<CR>')
 vim.keymap.set('n', '<Down>', ':resize -2<CR>')
@@ -20,3 +19,5 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
+
+vim.keymap.set("n", "<leader>=", "=G")
