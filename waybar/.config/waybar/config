@@ -78,5 +78,8 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "sway/workspaces": {
+        "enable-bar-scroll": true
     }
 }
