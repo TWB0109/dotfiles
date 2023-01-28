@@ -53,7 +53,7 @@ alias chall="chmod +x *"
 alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
-alias sxiv="nsxiv -a"
+alias sxiv="sxiv -a"
 
 # xbps related alias
 #alias xi="sudo xbps-install -S"
