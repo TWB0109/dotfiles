@@ -76,5 +76,6 @@ return require('packer').startup(function(use)
             vim.g.user_emmet_leader_key = '<c-,>'
         end
     }
+    use 'dstein64/vim-startuptime'
 
 end)
