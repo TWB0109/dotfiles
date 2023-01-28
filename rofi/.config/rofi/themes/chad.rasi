@@ -1,7 +1,7 @@
 configuration{
     modi: "drun";
     lines: 5;
-    font: "Montserrat 12";
+    font: "monospace 12";
     show-icons: true;
     icon-theme: "Papirus-Dark";
     terminal: "alacritty";
