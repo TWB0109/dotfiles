@@ -29,7 +29,7 @@ set $ws5 5:game
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/brandon/.local/share/backgrounds/sleepyplant.png fill
+output * bg /home/brandon/.local/share/backgrounds/succulent.png fill
 #
 # Example configuration:
 #
@@ -266,12 +266,12 @@ bar {
 #    status_command while date +'%a, %b %d %Y | %H:%M'; do sleep 60; done
 #
 #    colors {
-#        statusline #ebdbb2
-#        background #282828
-#        inactive_workspace #282828 #282828 #b8bb26
-#        focused_workspace #b8bb26 #b8bb26 #282828
-#        active_workspace #282828 #282828 #8ec07c
-#        binding_mode #fb4934 #fb4934 #282828
+#        statusline #3c3836
+#        background #f2e5bc
+#        inactive_workspace #f2e5bc #f2e5bc #79740e
+#        focused_workspace #79740e #79740e #f2e5bc
+#        active_workspace #f2e5bc #f2e5bc #427b58
+#        binding_mode #9d0006 #9d0006 #f2e5bc
 #    }
     swaybar_command waybar
 }
@@ -291,9 +291,9 @@ gaps outer 5
 default_border normal 4
 titlebar_border_thickness 0
 title_align center
-client.focused #b8bb26 #b8bb26 #282828 #8ec07c
-client.focused_inactive #689d6a #689d6a #282828 #8ec07c
-client.unfocused #282828 #282828 #b8bb26 #8ec07c
+client.focused #79740e #79740e #f2e5bc #427b58
+client.focused_inactive #689d6a #689d6a #f2e5bc #427b58
+client.unfocused #f2e5bc #f2e5bc #79740e #427b58
 
 #
 # Autostart

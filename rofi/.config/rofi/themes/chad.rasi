@@ -43,28 +43,28 @@ window {
     padding: 20px;
     height: 360px;
     border: 2px;
-    border-color: @gruvboxDark-border-col;
-    background-color: @gruvboxDark-bg-col;
+    border-color: @gruvboxLight-border-col;
+    background-color: @gruvboxLight-bg-col;
     border-radius: 0.5em;
 }
 
 mainbox {
     padding: 5px;
     border-radius: 13px;
-    background-color: @gruvboxDark-bg-col;
+    background-color: @gruvboxLight-bg-col;
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: @gruvboxDark-bg-col;
+    background-color: @gruvboxLight-bg-col;
     border-radius: 5px;
     padding: 2px;
 }
 
 prompt {
-    background-color: @gruvboxDark-selected-col;
+    background-color: @gruvboxLight-selected-col;
     padding: 5px 5px 0px;
-    text-color: @gruvboxDark-bg-col;
+    text-color: @gruvboxLight-bg-col;
     border-radius: 3px;
 }
 
@@ -75,21 +75,21 @@ textbox-prompt-colon {
 
 entry {
     padding: 6px;
-    text-color: @gruvboxDark-fg-col;
-    background-color: @gruvboxDark-bg-col;
+    text-color: @gruvboxLight-fg-col;
+    background-color: @gruvboxLight-bg-col;
 }
 
 listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     columns: 2;
-    background-color: @gruvboxDark-bg-col;
+    background-color: @gruvboxLight-bg-col;
 }
 
 element {
     padding: 5px;
-    background-color: @gruvboxDark-bg-col;
-    text-color: @gruvboxDark-fg-col  ;
+    background-color: @gruvboxLight-bg-col;
+    text-color: @gruvboxLight-fg-col  ;
 }
 
 element-icon {
@@ -97,7 +97,7 @@ element-icon {
 }
 
 element selected {
-    background-color:  @gruvboxDark-selected-col;
+    background-color:  @gruvboxLight-selected-col;
     border-radius: 0.2em;
-    text-color: @gruvboxDark-bg-col;
+    text-color: @gruvboxLight-bg-col;
 }
