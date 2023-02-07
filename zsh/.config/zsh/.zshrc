@@ -94,6 +94,7 @@ function sxw() {
 alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.config/zsh/.zshrc"
 alias vrc="vim ~/.config/nvim/init.vim"
+alias py="python"
 
 # Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
