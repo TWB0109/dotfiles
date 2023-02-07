@@ -84,4 +84,16 @@ return require('packer').startup(function(use)
             require"startup".setup()
         end
     }
+    use {
+        'aspeddro/pandoc.nvim',
+        config = function()
+            require'pandoc'.setup()
+        end
+    }
+    use 'vim-pandoc/vim-pandoc'
+    use 'vim-pandoc/vim-pandoc-syntax'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 end)
