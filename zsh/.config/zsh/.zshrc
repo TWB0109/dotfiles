@@ -8,6 +8,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 bindkey -v
 bindkey -M viins 'ii' vi-cmd-mode
 # End of lines configured by zsh-newuser-install
