@@ -4,3 +4,4 @@ zsh/.config/zsh/.zcompdump
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 ncmpcpp/.ncmpcpp/lyrics
+nvim/.config/nvim/plugin/packer_compiled.lua
