@@ -96,6 +96,7 @@ alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.config/zsh/.zshrc"
 alias vrc="vim ~/.config/nvim/init.vim"
 alias py="python"
+alias lsblk="lsblk -e7"
 
 # Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
