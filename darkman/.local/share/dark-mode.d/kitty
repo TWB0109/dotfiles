@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-kittyconf=~/.config/kitty/kitty.conf
-
-sed -i 's/GruvboxLightSoft.conf/GruvboxDarkSoft.conf/g' $kittyconf && kill -s USR1 $(pgrep kitty)

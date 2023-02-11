@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-roficonf=~/.config/rofi/themes/chad.rasi
-
-sed -i 's/\@gruvboxDark/\@gruvboxLight/g' $roficonf

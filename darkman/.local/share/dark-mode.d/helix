@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-hxconf="~/.config/helix/config.toml"
-
-sed -i 's/gruvbox_light/gruvbox_dark_hard/g' $hxconf

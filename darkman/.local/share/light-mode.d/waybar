@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-
-waybarconf=~/.config/waybar/style.css
-
-sed -i 's/\@gruvboxDark/\@gruvboxLight/g' $waybarconf
-swaymsg reload
