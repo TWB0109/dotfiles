@@ -58,7 +58,7 @@ for_window [class="Spotify"] inhibit_idle open
 # Read `man 5 sway-input` for more information about this section.
 input type:keyboard {
     xkb_layout us,latam
-    xkb_options grp:ctrl_space_toggle
+    xkb_options grp:ctrl_space_toggle,caps:swapescape
 }
 
 #
