@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+alacrittyconf=~/.config/alacritty/alacritty.yml
+
+sed -i 's/\*dark/\*light/g' $alacrittyconf 
