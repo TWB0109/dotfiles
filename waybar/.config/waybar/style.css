@@ -27,8 +27,8 @@
 }
 
 window#waybar {
-    background-color: @gruvboxLight-background;
-    color: @gruvboxLight-foreground;
+    background-color: @gruvboxDark-background;
+    color: @gruvboxDark-foreground;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,41 +39,41 @@ button {
 }
 
 button:hover {
-    background-color: @gruvboxLight-green;
-    color: @gruvboxLight-background
+    background-color: @gruvboxDark-green;
+    color: @gruvboxDark-background
 }
 
 #workspaces button {
     padding: 0px 5px;
-    color: @gruvboxLight-green;
+    color: @gruvboxDark-green;
     margin: 5px
 }
 
 #workspaces button:hover {
-    background-color: @gruvboxLight-green;
-    color: @gruvboxLight-background
+    background-color: @gruvboxDark-green;
+    color: @gruvboxDark-background
 }
 
 #workspaces button.focused {
-    background-color: @gruvboxLight-green;
-    color: @gruvboxLight-background
+    background-color: @gruvboxDark-green;
+    color: @gruvboxDark-background
 }
 
 #mode {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-red;
-    color: @gruvboxLight-background;
+    background-color: @gruvboxDark-red;
+    color: @gruvboxDark-background;
 }
 
 #tray menu {
-    color: @gruvboxLight-green;
-    background-color: @gruvboxLight-background
+    color: @gruvboxDark-green;
+    background-color: @gruvboxDark-background
 }
 
 #tray menu > *:hover {
-    color: @gruvboxLight-background;
-    background-color: @gruvboxLight-green;
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-green;
 }
 
 #language {
@@ -82,13 +82,13 @@ button:hover {
 }
 
 #language.us {
-    color: @gruvboxLight-background;
-    background-color: @gruvboxLight-green;
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-green;
 }
 
 #language.latam {
-    color: @gruvboxLight-background;
-    background-color: @gruvboxLight-red;
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-red;
 }
 
 #clock {
@@ -99,36 +99,36 @@ button:hover {
 #wireplumber {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxLight-background;
-    background-color: @gruvboxLight-aqua;
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-aqua;
 }
 
 #memory {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxLight-background;
-    background-color: @gruvboxLight-blue;
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-blue;
 }
 
 #custom-darkman {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-foreground;
-    color: @gruvboxLight-background;
+    background-color: @gruvboxDark-foreground;
+    color: @gruvboxDark-background;
 }
 
 #idle_inhibitor.activated {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-green;
-    color: @gruvboxLight-background;
+    background-color: @gruvboxDark-green;
+    color: @gruvboxDark-background;
 }
 
 #idle_inhibitor.deactivated {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-red;
-    color: @gruvboxLight-background;
+    background-color: @gruvboxDark-red;
+    color: @gruvboxDark-background;
 }
 
 #mpris {

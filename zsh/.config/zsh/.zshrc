@@ -91,6 +91,14 @@ function sxw() {
     touch ~/.sxw && chmod +x ~/.sxw && echo "nitrogen --set-scaled $wallpaper" > ~/.sxw
 }
 
+function giftowebm () {
+    ffmpeg -i "${1}.gif" -c vp9 -b:v 0 -crf 40 "${1}.webm"
+}
+
+function mp4towebm () {
+    ffmpeg  -i "${1}.mp4"  -lossless 1  "${1}.webm"
+}
+
 # Laziness
 alias vw="vim +:VimwikiIndex"
 alias zrc="vim ~/.config/zsh/.zshrc"
