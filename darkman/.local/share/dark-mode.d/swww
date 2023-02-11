@@ -1,4 +1,3 @@
 #!/usr/bin/bash
 
-
-swww img ~/Videos/Hanabi/trainstation.gif
+~/.local/bin/swww img ~/Videos/Hanabi/trainstation.gif --transition-type wipe --transition-angle 30 --transition-step 90
