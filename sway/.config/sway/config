@@ -187,17 +187,20 @@ bindsym $mod+b mode "brightness (k=up, j=down, x=max, h=half, m=min, Esc=exit, R
 # Volume:
 #
 
-mode "volume (k=up, j=down, x=max, h=half, t=toggle, Esc=exit, Ret=exit)" {
+mode "audio (k=up, j=down, x=max, h=half, t=toggle, i=play/pause, u=prev, o=next, Esc=exit, Ret=exit)" {
     bindsym k exec pactl -- set-sink-volume 0 +10%
     bindsym j exec pactl -- set-sink-volume 0 -10%
     bindsym x exec pactl -- set-sink-volume 0 100%
     bindsym h exec pactl -- set-sink-volume 0 50%
     bindsym t exec pactl -- set-sink-mute 0 toggle
+    bindsym i exec playerctl play-pause
+    bindsym u exec playerctl previous
+    bindsym o exec playerctl next
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
-bindsym $mod+m mode "volume (k=up, j=down, x=max, h=half, t=toggle, Esc=exit, Ret=exit)"
+bindsym $mod+m mode "audio (k=up, j=down, x=max, h=half, t=toggle, i=play/pause, u=prev, o=next, Esc=exit, Ret=exit)"
 
 #
 # Screenshots:
@@ -300,5 +303,7 @@ client.unfocused #282828 #282828 #b8bb26 #8ec07c
 #
 
 exec wlsunset -S 05:30 -s 17:40
+exec swww init
+exec swww img ~/Videos/Hanabi/pokewoods.gif
 
 include /etc/sway/config.d/*
