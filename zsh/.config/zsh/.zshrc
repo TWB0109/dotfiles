@@ -27,7 +27,9 @@ bindkey -M viins 'ii' vi-cmd-mode
 
 # ENV VARIABLES
 export XDG_CONFIG_HOME=$HOME/.config
-export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.*/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:~/.local/share/neovim/bin:$PATH
+export LUA_PATH='/home/leafo/.luarocks/share/lua/5.1/?.lua;/home/leafo/.luarocks/share/lua/5.1/?/init.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;;./?.lua;/usr/lib/lua/5.1/?.lua;/usr/lib/lua/5.1/?/init.lua'
+export LUA_CPATH='/home/leafo/.luarocks/lib/lua/5.1/?.so;/usr/lib/lua/5.1/?.so;;./?.so;/usr/lib/lua/5.1/loadall.so'
+export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.*/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:~/.local/share/neovim/bin:~/.luarocks/bin/:$PATH
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR=vim
