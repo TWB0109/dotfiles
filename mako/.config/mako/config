@@ -8,8 +8,8 @@ height=110
 border-size=2
 max-icon-size=128
 text-alignment=center
-background-color=#32302f
-text-color=#fbf1c7
+background-color=#282828
+text-color=#f2e5bc
 
 [urgency=low]
 border-color=#8ec07c
@@ -19,3 +19,6 @@ border-color=#b8bb26
 
 [urgency=high]
 border-color=#fb4934
+
+[mode=do-not-disturb]
+invisible=1
