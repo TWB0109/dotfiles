@@ -117,3 +117,5 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable the starship prompt
 eval $(starship init zsh)
+
+[ -f "/home/brandon/.ghcup/env" ] && source "/home/brandon/.ghcup/env" # ghcup-env
