@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+
     use {
         'norcalli/nvim-colorizer.lua',
         config = function()
@@ -76,7 +77,9 @@ return require('packer').startup(function(use)
             vim.g.user_emmet_leader_key = '<c-,>'
         end
     }
+
     use 'dstein64/vim-startuptime'
+
     use {
         "startup-nvim/startup.nvim",
         requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
@@ -84,14 +87,24 @@ return require('packer').startup(function(use)
             require"startup".setup()
         end
     }
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
         end
     }
+    use{
+        "giusgad/pets.nvim",
+        requires = {"edluffy/hologram.nvim", "MunifTanjim/nui.nvim"},
+        config = function()
+            require("pets").setup()
+        end
+    }
+
 end)
