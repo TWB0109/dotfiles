@@ -99,12 +99,16 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
-    use{
+    use {
         "giusgad/pets.nvim",
         requires = {"edluffy/hologram.nvim", "MunifTanjim/nui.nvim"},
         config = function()
             require("pets").setup()
         end
     }
-
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup()
+        end
+    }
 end)
