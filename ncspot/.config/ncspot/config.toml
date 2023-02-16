@@ -21,25 +21,6 @@ flip_status_indicators = true
 "J" = "shift down 1"
 "K" = "shift up 1"
 
-# [theme]
-# background = "#32302FFF"
-# primary = "#EBDBB2"
-# secondary = "#DCDCDC"
-# title = "#B8BB26"
-# playing = "#B8BB26"
-# playing_selected = "#B8BB26"
-# playing_bg = "#1D2021"
-# highlight = "#8EC07C"
-# highlight_bg = "#282828"
-# error = "#D3869B"
-# error_bg = "#FB4934" 
-# statusbar = "#000000"
-# statusbar_progress = "#B8BB26"
-# statusbar_bg = "#B8BB26"
-# cmdline = "light white"
-# cmdline_bg = "black"
-# search_match = "light blue"
-
 [track_format]
 left = "%artists | %title"
 center = "%album"
