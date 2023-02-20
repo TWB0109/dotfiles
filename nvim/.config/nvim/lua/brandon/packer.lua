@@ -90,7 +90,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
     use {
@@ -99,6 +99,7 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
+
     use {
         "giusgad/pets.nvim",
         requires = {"edluffy/hologram.nvim", "MunifTanjim/nui.nvim"},
@@ -106,9 +107,20 @@ return require('packer').startup(function(use)
             require("pets").setup()
         end
     }
+
     use {
         'numToStr/Comment.nvim',
-        config = function() require('Comment').setup()
+        config = function()
+            require('Comment').setup()
         end
     }
+
+    use {
+        'stevearc/oil.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function()
+            require('oil').setup()
+        end
+    }
+
 end)
