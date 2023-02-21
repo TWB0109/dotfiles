@@ -122,5 +122,13 @@ return require('packer').startup(function(use)
             require('oil').setup()
         end
     }
+    use {
+        "nvim-neorg/neorg",
+        config = function()
+            require('neorg').setup {}
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    }
 
 end)

@@ -33,4 +33,6 @@ Set.scrolloff = 8
 Set.isfname:append("@-@")
 Set.colorcolumn = "80"
 
+Set.conceallevel = 1
+
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
