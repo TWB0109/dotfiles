@@ -1,4 +1,5 @@
 Set = vim.opt
+Let = vim.g
 
 Set.nu = true
 Set.rnu = true
@@ -31,3 +32,5 @@ Set.cmdheight = 2
 Set.scrolloff = 8
 Set.isfname:append("@-@")
 Set.colorcolumn = "80"
+
+Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
