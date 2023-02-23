@@ -122,6 +122,7 @@ return require('packer').startup(function(use)
             require('oil').setup()
         end
     }
+
     use {
         "nvim-neorg/neorg",
         config = function()
@@ -131,4 +132,5 @@ return require('packer').startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
+    use 'jbyuki/nabla.nvim'
 end)
