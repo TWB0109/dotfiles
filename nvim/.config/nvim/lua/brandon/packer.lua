@@ -133,4 +133,15 @@ return require('packer').startup(function(use)
     }
 
     use 'jbyuki/nabla.nvim'
+
+    use{
+        "folke/noice.nvim",
+        config = function()
+            require("noice").setup()
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    }
 end)
