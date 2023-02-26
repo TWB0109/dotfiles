@@ -48,7 +48,7 @@ export NVM_DIR="$HOME/.config/nvm"
 
 
 # Aliases
-alias vim="nvim"
+# alias vim="nvim"
 alias c="clear"
 alias :q="exit"
 alias Syu="sudo pacman -Syu"
@@ -100,6 +100,15 @@ function giftowebm () {
 
 function mp4towebm () {
     ffmpeg  -i "${1}.mp4"  -lossless 1  "${1}.webm"
+}
+
+function vim () {
+    if [ $# -eq 0 ]
+    then
+        nvim .
+    else
+        nvim $@
+    fi
 }
 
 # Laziness
