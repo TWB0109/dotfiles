@@ -103,6 +103,13 @@ function mp4towebm () {
 }
 
 function vim () {
+    # "$#" means the amount of arguments given to the function
+    # "$@" means all of the arguments given to the function
+    # example in py:
+    #     arr = ["1", "2", "N"]
+    #     $# = print(len(arr))
+    #     $@ = print(arr)
+    
     [[ $# -eq 0 ]] && nvim . || nvim $@
 }
 
