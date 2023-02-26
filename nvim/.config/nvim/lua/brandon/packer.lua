@@ -80,13 +80,13 @@ return require('packer').startup(function(use)
 
     use 'dstein64/vim-startuptime'
 
-    use {
+    --[[ use {
         "startup-nvim/startup.nvim",
         requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         config = function()
             require"startup".setup()
         end
-    }
+    } ]]
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -100,13 +100,13 @@ return require('packer').startup(function(use)
         end
     }
 
-    use {
+    --[[ use {
         "giusgad/pets.nvim",
         requires = {"edluffy/hologram.nvim", "MunifTanjim/nui.nvim"},
         config = function()
             require("pets").setup()
         end
-    }
+    } ]]
 
     use {
         'numToStr/Comment.nvim',
@@ -144,4 +144,7 @@ return require('packer').startup(function(use)
             "rcarriga/nvim-notify",
         }
     }
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end}
 end)
