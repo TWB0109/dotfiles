@@ -34,5 +34,6 @@ Set.isfname:append("@-@")
 Set.colorcolumn = "80"
 
 Set.conceallevel = 1
+Set.hidden = true
 
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
