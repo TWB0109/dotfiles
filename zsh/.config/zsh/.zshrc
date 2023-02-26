@@ -103,12 +103,7 @@ function mp4towebm () {
 }
 
 function vim () {
-    if [ $# -eq 0 ]
-    then
-        nvim .
-    else
-        nvim $@
-    fi
+    [[ $# -eq 0 ]] && nvim . || nvim $@
 }
 
 # Laziness
