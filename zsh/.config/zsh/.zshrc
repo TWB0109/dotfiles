@@ -69,20 +69,24 @@ alias sxiv="sxiv -a"
 # Functions
 function pget () {
     session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-    bw get password $1 --session $session | xclip -selection c 
+    # bw get password $1 --session $session | xclip -selection c # for x
+    bw get password $1 --session $session | wl-copy # for wayland
     echo -e "\e[30;1;41mThe password was copied to your clipboard.\e[0m\n\e[30;1;43mThe clipboard will be cleared in 10 seconds\e[0m"
     sleep 10s
-    xclip -i -selection c < /dev/null
+    # xclip -i -selection c < /dev/null # for x 
+    wl-copy -c #for wayland
     bw lock --quiet
     echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
 }
 
 function eget() {
     session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-    bw get username $1 --session $session | xclip -selection c
+    # bw get username $1 --session $session | xclip -selection c # for x
+    bw get username $1 --session $session | wl-copy # for wayland
     echo -e "\e[30;1;41mThe username was copied to your clipboard.\e[0m\n\e[30;1;43mThe clipboard will be cleared in 10 seconds\e[0m"
     sleep 10s
-    xclip -i -selection c < /dev/null
+    # xclip -i -selection c < /dev/null #for x
+    wl-copy -c # for wayland
     bw lock --quiet
     echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
 }
