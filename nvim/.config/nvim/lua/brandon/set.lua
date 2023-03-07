@@ -37,3 +37,4 @@ Set.conceallevel = 1
 Set.hidden = true
 
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
+Let.gruvbox_invert_selection = 0
