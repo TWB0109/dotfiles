@@ -124,6 +124,7 @@ alias vrc="vim ~/.config/nvim/init.vim"
 alias py="python"
 alias lsblk="lsblk -e7"
 alias open="xdg-open"
+alias btw="distrobox enter btw" # Open an Arch container
 
 # Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
