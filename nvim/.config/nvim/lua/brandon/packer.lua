@@ -124,32 +124,38 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "nvim-neorg/neorg",
+        'nvim-neorg/neorg',
         config = function()
             require('neorg').setup {}
         end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
+        run = ':Neorg sync-parsers',
+        requires = 'nvim-lua/plenary.nvim',
     }
 
     use 'jbyuki/nabla.nvim'
 
     use{
-        "folke/noice.nvim",
+        'folke/noice.nvim',
         config = function()
-            require("noice").setup()
+            require('noice').setup()
         end,
         requires = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify',
         }
     }
 
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
+    use {'akinsho/toggleterm.nvim', tag = '*', config = function()
+        require('toggleterm').setup()
     end}
 
-    use "folke/neodev.nvim"
+    use 'folke/neodev.nvim'
     use 'vim-pandoc/vim-pandoc'
     use 'vim-pandoc/vim-pandoc-syntax'
+    use {
+        'folke/zen-mode.nvim',
+        config = function()
+            require('zen-mode').setup{}
+        end
+    }
 end)
