@@ -13,30 +13,54 @@ endglobal
 
 
 snippet template "Basic template" b
-\documentclass[a4paper]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{textcomp}
-\usepackage[dutch]{babel}
-\usepackage{amsmath, amssymb}
-
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{document}
-	$0
+\title{$0}
+\author{\IEEEauthorblockN{$1}
+\IEEEauthorblockA{\textit{$2} \\
+\textit{$3}\\
+$4, $5\\
+$6}}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+\section{Theoretical Framework}
+
+\section{Methodological Framework}
+
+\section{Result Analysis}
+
+\section{Recommendations and conclusions}
+
+\section{References}
+
+\begin{thebibliography}{00}
+    \bibitem{b1} x
+    \bibitem{b2} x
+    \bibitem{b3} x
+    \bibitem{b4} x
+    \bibitem{b5} x
+        \
+\end{thebibliography}
+
 \end{document}
 endsnippet
 
