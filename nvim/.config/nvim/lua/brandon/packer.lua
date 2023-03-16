@@ -45,6 +45,36 @@ return require('packer').startup(function(use)
     }
 
     use {
+        'sirver/ultisnips',
+        config = function ()
+            vim.g.UltiSnipsExpandTrigger = '<tab>'
+            vim.g.UltiSnipsExpandTrigger = '<tab>'
+            vim.g.UltiSnipsExpandTrigger = '<tab>'
+        end,
+        ft = 'tex'
+    }
+
+    use {
+        'lervag/vimtex',
+        config = function ()
+            vim.g.tex_flavor = 'latex'
+            vim.g.vimtex_view_method = 'zathura'
+            vim.g.vimtex_quickfix_mode = 0
+        end,
+        ft = 'tex'
+    }
+
+    use {
+        'KeitaNakamura/tex-conceal.vim',
+        config = function ()
+            vim.opt.conceallevel = 1
+            vim.g.tex_conceal = 'abdmg'
+            vim.cmd([[hi Conceal ctermbg=none]])
+        end,
+        ft = 'tex'
+    }
+
+    use {
         "folke/which-key.nvim",
         config = function()
             vim.o.timeout = true
