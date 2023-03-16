@@ -119,6 +119,7 @@ function vim () {
 
 # Laziness
 alias vw="vim +:VimwikiIndex"
+alias no="vim +':Neorg index'"
 alias zrc="vim ~/.config/zsh/.zshrc"
 alias vrc="vim ~/.config/nvim/init.vim"
 alias py="python"
