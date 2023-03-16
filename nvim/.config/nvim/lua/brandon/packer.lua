@@ -150,4 +150,6 @@ return require('packer').startup(function(use)
     end}
 
     use "folke/neodev.nvim"
+    use 'vim-pandoc/vim-pandoc'
+    use 'vim-pandoc/vim-pandoc-syntax'
 end)
