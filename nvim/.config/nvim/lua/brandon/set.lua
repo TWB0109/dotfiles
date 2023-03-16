@@ -31,10 +31,13 @@ Set.cmdheight = 2
 
 Set.scrolloff = 8
 Set.isfname:append("@-@")
-Set.colorcolumn = "80"
+Set.colorcolumn = ""
 
 Set.conceallevel = 1
 Set.hidden = true
+
+Set.ignorecase = true
+Set.smartcase = true
 
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
 Let.gruvbox_invert_selection = 0
