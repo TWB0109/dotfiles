@@ -164,4 +164,16 @@ return require('packer').startup(function(use)
             require('zen-mode').setup{}
         end
     }
+
+    use {
+        "iurimateus/luasnip-latex-snippets.nvim",
+        -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
+        -- using treesitter.
+        requires = { "L3MON4D3/LuaSnip", "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require'luasnip-latex-snippets'.setup({ use_treesitter = true})
+            -- or setup({ use_treesitter = true })
+        end,
+        ft = "tex",
+    }
 end)
