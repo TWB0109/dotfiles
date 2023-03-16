@@ -44,18 +44,9 @@ return require('packer').startup(function(use)
         }
     }
 
-    use {
-        'sirver/ultisnips',
-        ft = 'tex'
-    }
 
     use {
         'lervag/vimtex',
-        ft = 'tex'
-    }
-
-    use {
-        'KeitaNakamura/tex-conceal.vim',
         ft = 'tex'
     }
 
