@@ -166,14 +166,24 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "iurimateus/luasnip-latex-snippets.nvim",
-        -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
+        'iurimateus/luasnip-latex-snippets.nvim',
+        -- replace 'lervag/vimtex' with 'nvim-treesitter/nvim-treesitter' if you're
         -- using treesitter.
-        requires = { "L3MON4D3/LuaSnip", "nvim-treesitter/nvim-treesitter" },
+        requires = { 'L3MON4D3/LuaSnip', 'nvim-treesitter/nvim-treesitter' },
         config = function()
             require'luasnip-latex-snippets'.setup({ use_treesitter = true})
             -- or setup({ use_treesitter = true })
         end,
-        ft = "tex",
+        ft = 'tex',
+    }
+    use {
+        'cljoly/telescope-repo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+        },
+        config = function()
+            require'telescope'.load_extension'repo'
+        end
     }
 end)
