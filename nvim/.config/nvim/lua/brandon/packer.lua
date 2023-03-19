@@ -84,7 +84,8 @@ return require('packer').startup(function(use)
         'mattn/emmet-vim',
         setup = function()
             vim.g.user_emmet_leader_key = '<c-,>'
-        end
+        end,
+        ft = {'html', 'css', 'scss'}
     }
 
     use 'dstein64/vim-startuptime'
@@ -133,7 +134,10 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim',
     }
 
-    use 'jbyuki/nabla.nvim'
+    use {
+        'jbyuki/nabla.nvim',
+        ft = {'md', "tex", "norg", "org"}
+    }
 
     use{
         'folke/noice.nvim',
@@ -152,7 +156,10 @@ return require('packer').startup(function(use)
 
     use 'folke/neodev.nvim'
 
-    use 'vim-pandoc/vim-pandoc'
+    use {
+        'vim-pandoc/vim-pandoc',
+        ft = 'md'
+    }
 
     use 'vim-pandoc/vim-pandoc-syntax'
 
