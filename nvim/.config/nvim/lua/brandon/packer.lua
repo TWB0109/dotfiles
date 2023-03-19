@@ -4,8 +4,11 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
     use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}}
+
     use 'ThePrimeagen/harpoon'
+
     use 'tpope/vim-fugitive'
 
     use {
@@ -106,14 +109,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    --[[ use {
-        "giusgad/pets.nvim",
-        requires = {"edluffy/hologram.nvim", "MunifTanjim/nui.nvim"},
-        config = function()
-            require("pets").setup()
-        end
-    } ]]
-
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -156,8 +151,11 @@ return require('packer').startup(function(use)
     end}
 
     use 'folke/neodev.nvim'
+
     use 'vim-pandoc/vim-pandoc'
+
     use 'vim-pandoc/vim-pandoc-syntax'
+
     use {
         'folke/zen-mode.nvim',
         config = function()
@@ -176,6 +174,7 @@ return require('packer').startup(function(use)
         end,
         ft = 'tex',
     }
+
     use {
         'cljoly/telescope-repo.nvim',
         requires = {
@@ -184,6 +183,13 @@ return require('packer').startup(function(use)
         },
         config = function()
             require'telescope'.load_extension'repo'
+        end
+    }
+
+    use {
+        "folke/twilight.nvim",
+        config = function()
+            require("twilight").setup{}
         end
     }
 end)
