@@ -1,7 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '  '
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, {desc = "Opens Netrw"})
-
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
