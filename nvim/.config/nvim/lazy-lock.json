@@ -29,7 +29,7 @@
   "nvim-notify": { "branch": "master", "commit": "02047199e2752223c77c624160f720ca227944a9" },
   "nvim-tetris": { "branch": "master", "commit": "d17c99fb527ada98ffb0212ffc87ccda6fd4f7d9" },
   "nvim-treesitter": { "branch": "master", "commit": "379305aa7f55e810950cde24a82789681478df04" },
-  "nvim-web-devicons": { "branch": "master", "commit": "074e13f21f52bb45d654069bdadbcb6d7c2b65d0" },
+  "nvim-web-devicons": { "branch": "master", "commit": "95b1e300699be8eb6b5be1758a9d4d69fe93cc7f" },
   "oil.nvim": { "branch": "master", "commit": "4b05ebdf202bf61ce240f40558822fe5564d02ea" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "telescope-repo.nvim": { "branch": "master", "commit": "d069994f0571366ca2a80f0fb464bb80fd63569d" },
