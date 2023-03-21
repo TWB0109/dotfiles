@@ -199,4 +199,6 @@ return require('packer').startup(function(use)
             require("twilight").setup{}
         end
     }
+
+    use 'alec-gibson/nvim-tetris'
 end)
