@@ -9,4 +9,4 @@
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "sway"]
 	path = sway
-	url = git@github.com-twb0109:TWB0109/sway
+	url = https://github.com/TWB0109/sway
