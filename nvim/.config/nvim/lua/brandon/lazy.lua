@@ -35,7 +35,8 @@ return require('lazy').setup({
                 -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
                 -- Instead of true it can also be a list of languages
-                additional_vim_regex_highlighting = false, },
+                additional_vim_regex_highlighting = false,
+            },
         }
     },
 
@@ -188,53 +189,53 @@ return require('lazy').setup({
         dependencies = { 'kyazdani42/nvim-web-devicons' },
         config = function()
             require('lualine').setup {
-              options = {
-                icons_enabled = true,
-                theme = 'auto',
-                component_separators = { left = '', right = ''},
-                section_separators = { left = '', right = ''},
-                disabled_filetypes = {
-                  statusline = {},
-                  winbar = {},
-                },
-                ignore_focus = {},
-                always_divide_middle = true,
-                globalstatus = false,
-                refresh = {
-                  statusline = 1000,
-                  tabline = 1000,
-                  winbar = 1000,
-                }
-              },
-              sections = {
-                lualine_a = {'mode'},
-                lualine_b = {'branch', 'diff', 'diagnostics'},
-                lualine_c = {'filename'},
-                lualine_x = {
-                    'encoding',
-                    'fileformat',
-                    'filetype',
-                    {
-                        require("noice").api.statusline.mode.get,
-                        cond = require("noice").api.statusline.mode.has,
-                        color = { fg = "red" }
+                options = {
+                    icons_enabled = true,
+                    theme = 'auto',
+                    component_separators = { left = '', right = ''},
+                    section_separators = { left = '', right = ''},
+                    disabled_filetypes = {
+                        statusline = {},
+                        winbar = {},
+                    },
+                    ignore_focus = {},
+                    always_divide_middle = true,
+                    globalstatus = false,
+                    refresh = {
+                        statusline = 1000,
+                        tabline = 1000,
+                        winbar = 1000,
                     }
                 },
-                lualine_y = {'progress'},
-                lualine_z = {'location'}
-              },
-              inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {'filename'},
-                lualine_x = {'location'},
-                lualine_y = {},
-                lualine_z = {}
-              },
-              tabline = {},
-              winbar = {},
-              inactive_winbar = {},
-              extensions = {}
+                sections = {
+                    lualine_a = {'mode'},
+                    lualine_b = {'branch', 'diff', 'diagnostics'},
+                    lualine_c = {'filename'},
+                    lualine_x = {
+                        'encoding',
+                        'fileformat',
+                        'filetype',
+                        {
+                            require("noice").api.statusline.mode.get,
+                            cond = require("noice").api.statusline.mode.has,
+                            color = { fg = "red" }
+                        }
+                    },
+                    lualine_y = {'progress'},
+                    lualine_z = {'location'}
+                },
+                inactive_sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_c = {'filename'},
+                    lualine_x = {'location'},
+                    lualine_y = {},
+                    lualine_z = {}
+                },
+                tabline = {},
+                winbar = {},
+                inactive_winbar = {},
+                extensions = {}
             }
         end
     },
@@ -278,15 +279,15 @@ return require('lazy').setup({
                 ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
                 ["core.export"] = {},
                 ["core.norg.dirman"] = { -- Manages Neorg workspaces
-                config = {
-                    workspaces = {
-                        notes = "~/notes",
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                        default_workspace = "notes",
                     },
-                    default_workspace = "notes",
                 },
             },
-        },
-    }
+        }
     },
 
     {
@@ -451,4 +452,16 @@ return require('lazy').setup({
     },
 
     'alec-gibson/nvim-tetris',
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {
+            char = "│",
+            filetype_exlude = { "help", "Trouble", "lazy", "oil" },
+            show_trailing_blankline_indent = false,
+            show_current_context = true,
+            show_current_context_start = true
+        }
+    }
 })
