@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+cd ~/Applications/
+
+./$(ls -d1 * | bemenu -i)
