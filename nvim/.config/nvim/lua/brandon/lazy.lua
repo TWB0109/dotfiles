@@ -14,25 +14,73 @@ vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        build = ':TSUpdate',
+        main = "nvim-treesitter.configs",
+        opts = {
+            -- A list of parser names, or "all"
+            ensure_installed = { "norg", "help", "javascript", "typescript", "html", "css", "c", "lua", "rust" },
+
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = false,
+
+            -- Automatically install missing parsers when entering buffer
+            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+            auto_install = true,
+
+            highlight = {
+                -- `false` will disable the whole extension
+                enable = true,
+
+                -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+                -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+                -- Using this option may slow down your editor, and you may see some duplicate highlights.
+                -- Instead of true it can also be a list of languages
+                additional_vim_regex_highlighting = false, },
+        }
     },
 
-    'ThePrimeagen/harpoon',
+    {
+        'ThePrimeagen/harpoon',
+        config = function()
+            local mark = require("harpoon.mark")
+            local ui = require("harpoon.ui")
 
-    'tpope/vim-fugitive',
+            vim.keymap.set("n", "<leader>a", mark.add_file)
+            vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+
+            vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+            vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+            vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+            vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
+        end
+    },
+
+    {
+        'tpope/vim-fugitive',
+        config = function()
+            vim.keymap.set("n", "<leader>gs", vim.cmd.Git, {desc = "Open fuGITive status"})
+            vim.keymap.set("n", "<leader>gp", '<CMD>Git push<CR>', {desc = "Push commits"})
+        end
+    },
 
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
+        dependencies = { {'nvim-lua/plenary.nvim'} },
+        init = function()
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Open a fuzzy file picker"})
+            vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {desc = "Open a fuzzy recent file picker"})
+            vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = "Open a fuzzy buffer picker"})
+            vim.keymap.set('n', '<C-p>', builtin.git_files, {desc = "Open a git repo fuzzy file picker"})
+            vim.keymap.set('n', '<leader>lg', builtin.live_grep, {desc = "Open a fuzzy live grep"})
+        end
     },
 
     {
         'morhetz/gruvbox',
         name = 'gruvbox',
-        build = {
-            ':colorscheme gruvbox'
-        }
+        init = function() vim.cmd.colorscheme('gruvbox') end
     },
 
     {
@@ -54,13 +102,45 @@ return require('lazy').setup({
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
-        }
+        },
+        config = function()
+            local lsp = require('lsp-zero')
+            lsp.preset('recommended')
+
+            lsp.setup()
+
+            lsp.ensure_installed({
+                'tsserver',
+                'eslint',
+                'sumneko_lua',
+                'rust_analyzer',
+            })
+
+            lsp.on_attach(function(client, bufnr)
+                local opts = {buffer = bufnr, remap = false}
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+                vim.keymap.set("n", "K",  function() vim.lsp.buf.hover() end, opts)
+                vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+                vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+                vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+                vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+                vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+                vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+                vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+                vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.signature_help() end, opts)
+            end)
+        end
     },
 
 
     {
         'lervag/vimtex',
-        ft = 'tex'
+        ft = 'tex',
+        init = function()
+            vim.g.tex_flavor = 'latex'
+            vim.g.vimtex_view_method = 'zathura'
+            vim.g.vimtex_quickfix_mode = 0
+        end
     },
 
     {
@@ -76,7 +156,16 @@ return require('lazy').setup({
 
     {
         "windwp/nvim-autopairs",
-        config = true
+        config = true,
+        init = function()
+            -- If you want insert `(` after select function or method item
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            local cmp = require('cmp')
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
+        end
     },
 
     {
@@ -96,7 +185,58 @@ return require('lazy').setup({
 
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons' }
+        dependencies = { 'kyazdani42/nvim-web-devicons' },
+        config = function()
+            require('lualine').setup {
+              options = {
+                icons_enabled = true,
+                theme = 'auto',
+                component_separators = { left = '', right = ''},
+                section_separators = { left = '', right = ''},
+                disabled_filetypes = {
+                  statusline = {},
+                  winbar = {},
+                },
+                ignore_focus = {},
+                always_divide_middle = true,
+                globalstatus = false,
+                refresh = {
+                  statusline = 1000,
+                  tabline = 1000,
+                  winbar = 1000,
+                }
+              },
+              sections = {
+                lualine_a = {'mode'},
+                lualine_b = {'branch', 'diff', 'diagnostics'},
+                lualine_c = {'filename'},
+                lualine_x = {
+                    'encoding',
+                    'fileformat',
+                    'filetype',
+                    {
+                        require("noice").api.statusline.mode.get,
+                        cond = require("noice").api.statusline.mode.has,
+                        color = { fg = "red" }
+                    }
+                },
+                lualine_y = {'progress'},
+                lualine_z = {'location'}
+              },
+              inactive_sections = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {'filename'},
+                lualine_x = {'location'},
+                lualine_y = {},
+                lualine_z = {}
+              },
+              tabline = {},
+              winbar = {},
+              inactive_winbar = {},
+              extensions = {}
+            }
+        end
     },
 
     {
@@ -112,37 +252,94 @@ return require('lazy').setup({
     {
         'stevearc/oil.nvim',
         dependencies = { 'kyazdani42/nvim-web-devicons' },
-        config = true,
+        opts = {
+            columns = {
+                "icon",
+                "permissions",
+                "size",
+                "mtime",
+            }
+        },
         init = function()
             vim.g.loaded_netrwPlugin = 1
             vim.g.loaded_netrw = 1
+            vim.keymap.set('n', '<leader>pv', vim.cmd.Oil, {desc = "Open Oil in a buffer"})
+            vim.keymap.set('n', '<leader>pV', '<cmd>Oil --float<CR>', {desc = "Open Oil in a floating window"})
         end
     },
 
     {
         'nvim-neorg/neorg',
-        config = true,
         build = ':Neorg sync-parsers',
         dependencies = 'nvim-lua/plenary.nvim',
+        opts = {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.export"] = {},
+                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                config = {
+                    workspaces = {
+                        notes = "~/notes",
+                    },
+                    default_workspace = "notes",
+                },
+            },
+        },
+    }
     },
 
     {
         'jbyuki/nabla.nvim',
-        ft = {'md', "tex", "norg", "org"}
+        ft = {'md', "tex", "norg", "org"},
+        config = function()
+            vim.keymap.set('n', '<leader>nr', function() require("nabla").popup() end, {desc = "Open Nabla Math popup"})
+            vim.keymap.set('n', '<leader>nv', function() require("nabla").enable_virt() end, {desc = "Refresh Nabla Math virt line render"})
+        end
     },
 
     {
         'folke/noice.nvim',
-        config = true,
         dependencies = {
             'MunifTanjim/nui.nvim',
             'rcarriga/nvim-notify',
+        },
+        opts = {
+            lsp = {
+                -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+                override = {
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                    ["vim.lsp.util.stylize_markdown"] = true,
+                    ["cmp.entry.get_documentation"] = true,
+                },
+            },
+            -- you can enable a preset for easier configuration
+            presets = {
+                bottom_search = true, -- use a classic bottom cmdline for search
+                command_palette = true, -- position the cmdline and popupmenu together
+                long_message_to_split = true, -- long messages will be sent to a split
+                inc_rename = false, -- enables an input dialog for inc-rename.nvim
+                lsp_doc_border = false, -- add a border to hover docs and signature help
+            },
         }
     },
 
     {
         'akinsho/toggleterm.nvim', version = '*',
-        config = true
+        opts = {
+            open_mapping = [[<c-\>]],
+            shade_terminals = false,
+            highlights = {
+                Normal = {
+                    guibg = vim.cmd[[
+                    set bg
+                    ]]
+                },
+                NormalFloat = {
+                    link = "Normal"
+                }
+            }
+        }
     },
 
     'folke/neodev.nvim',
@@ -156,7 +353,36 @@ return require('lazy').setup({
 
     {
         'folke/zen-mode.nvim',
-        config = true
+        opts = {
+            window = {
+                options = {
+                    signcolumn = "no",
+                    number = false,
+                    relativenumber = false,
+                    cursorline = false,
+                    cursorcolumn = false,
+                    foldcolumn = "0",
+                    list = false
+                }
+            },
+            plugins = {
+                options = {
+                    enabled = true,
+                    ruler = false,
+                    showcmd = false,
+                },
+                gitsigns = {enabled = false},
+                kitty = {
+                    enabled = true,
+                    font = "+4"
+                },
+                alacritty = {
+                    enabled = true,
+                    font = "14"
+                }
+            }
+
+        }
     },
 
     {
