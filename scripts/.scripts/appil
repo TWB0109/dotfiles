@@ -2,4 +2,4 @@
 
 cd ~/Applications/
 
-./$(ls -d1 * | bemenu -i)
+./$(ls -d1 * | rofi -dmenu)

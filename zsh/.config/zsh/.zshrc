@@ -126,6 +126,8 @@ alias py="python"
 alias lsblk="lsblk -e7"
 alias open="xdg-open"
 alias btw="distrobox enter btw" # Open an Arch container
+alias ewbuntu="distrobox enter ewbuntu" # Open an Arch container
+alias upgrade="sudo dnf upgrade;flatpak upgrade;nvim --headless '+Lazy! sync' +qa"
 
 # Plugins
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
