@@ -73,7 +73,7 @@ return require('lazy').setup({
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         dependencies = { {'nvim-lua/plenary.nvim'} },
-        init = function()
+        config = function()
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Open a fuzzy file picker"})
             vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {desc = "Open a fuzzy recent file picker"})
@@ -86,7 +86,7 @@ return require('lazy').setup({
     {
         'morhetz/gruvbox',
         name = 'gruvbox',
-        init = function() vim.cmd.colorscheme('gruvbox') end
+        config = function() vim.cmd.colorscheme('gruvbox') end
     },
 
     {
@@ -142,7 +142,7 @@ return require('lazy').setup({
     {
         'lervag/vimtex',
         ft = 'tex',
-        init = function()
+        config = function()
             vim.g.tex_flavor = 'latex'
             vim.g.vimtex_view_method = 'zathura'
             vim.g.vimtex_quickfix_mode = 0
