@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -18,7 +18,7 @@ return require('lazy').setup({
         main = "nvim-treesitter.configs",
         opts = {
             -- A list of parser names, or "all"
-            ensure_installed = { "norg", "help", "javascript", "typescript", "html", "css", "c", "lua", "rust" },
+            ensure_installed = { "norg", "help", "javascript", "typescript", "html", "css", "c", "lua", "rust", "python" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -59,27 +59,27 @@ return require('lazy').setup({
     {
         'tpope/vim-fugitive',
         config = function()
-            vim.keymap.set("n", "<leader>gs", vim.cmd.Git, {desc = "Open fuGITive status"})
-            vim.keymap.set("n", "<leader>gp", '<CMD>Git push<CR>', {desc = "Push commits"})
+            vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open fuGITive status" })
+            vim.keymap.set("n", "<leader>gp", '<CMD>Git push<CR>', { desc = "Push commits" })
         end,
         cmd = 'Git',
         keys = {
             { '<leader>gs', vim.cmd.Git, desc = 'Open fuGITive status' },
-            { '<leader>gs', '<CMD>Git push<CR>', desc = "Push commits"}
+            { '<leader>gs', '<CMD>Git push<CR>', desc = "Push commits" }
         }
     },
 
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim'} },
+        dependencies = { { 'nvim-lua/plenary.nvim' } },
         config = function()
             local builtin = require('telescope.builtin')
-            vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Open a fuzzy file picker"})
-            vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {desc = "Open a fuzzy recent file picker"})
-            vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = "Open a fuzzy buffer picker"})
-            vim.keymap.set('n', '<C-p>', builtin.git_files, {desc = "Open a git repo fuzzy file picker"})
-            vim.keymap.set('n', '<leader>lg', builtin.live_grep, {desc = "Open a fuzzy live grep"})
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Open a fuzzy file picker" })
+            vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Open a fuzzy recent file picker" })
+            vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Open a fuzzy buffer picker" })
+            vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Open a git repo fuzzy file picker" })
+            vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = "Open a fuzzy live grep" })
         end
     },
 
@@ -93,21 +93,21 @@ return require('lazy').setup({
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         },
         config = function()
             local lsp = require('lsp-zero')
@@ -120,12 +120,13 @@ return require('lazy').setup({
                 'eslint',
                 'sumneko_lua',
                 'rust_analyzer',
+                'python-lsp-server',
             })
 
             lsp.on_attach(function(client, bufnr)
-                local opts = {buffer = bufnr, remap = false}
+                local opts = { buffer = bufnr, remap = false }
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-                vim.keymap.set("n", "K",  function() vim.lsp.buf.hover() end, opts)
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
                 vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
                 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
                 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
@@ -133,6 +134,7 @@ return require('lazy').setup({
                 vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
                 vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+                vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
                 vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.signature_help() end, opts)
             end)
         end
@@ -184,7 +186,7 @@ return require('lazy').setup({
         init = function()
             vim.g.user_emmet_leader_key = '<c-,>'
         end,
-        ft = {'html', 'css', 'scss'}
+        ft = { 'html', 'css', 'scss' }
     },
 
     'dstein64/vim-startuptime',
@@ -197,8 +199,8 @@ return require('lazy').setup({
                 options = {
                     icons_enabled = true,
                     theme = 'auto',
-                    component_separators = { left = '', right = ''},
-                    section_separators = { left = '', right = ''},
+                    component_separators = { left = '', right = '' },
+                    section_separators = { left = '', right = '' },
                     disabled_filetypes = {
                         statusline = {},
                         winbar = {},
@@ -213,9 +215,9 @@ return require('lazy').setup({
                     }
                 },
                 sections = {
-                    lualine_a = {'mode'},
-                    lualine_b = {'branch', 'diff', 'diagnostics'},
-                    lualine_c = {'filename'},
+                    lualine_a = { 'mode' },
+                    lualine_b = { 'branch', 'diff', 'diagnostics' },
+                    lualine_c = { 'filename' },
                     lualine_x = {
                         'encoding',
                         'fileformat',
@@ -226,14 +228,14 @@ return require('lazy').setup({
                             color = { fg = "red" }
                         }
                     },
-                    lualine_y = {'progress'},
-                    lualine_z = {'location'}
+                    lualine_y = { 'progress' },
+                    lualine_z = { 'location' }
                 },
                 inactive_sections = {
                     lualine_a = {},
                     lualine_b = {},
-                    lualine_c = {'filename'},
-                    lualine_x = {'location'},
+                    lualine_c = { 'filename' },
+                    lualine_x = { 'location' },
                     lualine_y = {},
                     lualine_z = {}
                 },
@@ -269,17 +271,18 @@ return require('lazy').setup({
         init = function()
             vim.g.loaded_netrwPlugin = 1
             vim.g.loaded_netrw = 1
-            vim.keymap.set('n', '<leader>pv', vim.cmd.Oil, {desc = "Open Oil in a buffer"})
-            vim.keymap.set('n', '<leader>pV', '<cmd>Oil --float<CR>', {desc = "Open Oil in a floating window"})
+            vim.keymap.set('n', '<leader>pv', vim.cmd.Oil, { desc = "Open Oil in a buffer" })
+            vim.keymap.set('n', '<leader>pV', '<cmd>Oil --float<CR>', { desc = "Open Oil in a floating window" })
         end
     },
 
     {
         'jbyuki/nabla.nvim',
-        ft = {'md', "tex", "norg", "org"},
+        ft = { 'md', "tex", "norg", "org" },
         config = function()
-            vim.keymap.set('n', '<leader>nr', function() require("nabla").popup() end, {desc = "Open Nabla Math popup"})
-            vim.keymap.set('n', '<leader>nv', function() require("nabla").enable_virt() end, {desc = "Refresh Nabla Math virt line render"})
+            vim.keymap.set('n', '<leader>nr', function() require("nabla").popup() end, { desc = "Open Nabla Math popup" })
+            vim.keymap.set('n', '<leader>nv', function() require("nabla").enable_virt() end,
+                { desc = "Refresh Nabla Math virt line render" })
         end
     },
 
@@ -356,7 +359,7 @@ return require('lazy').setup({
             shade_terminals = false,
             highlights = {
                 Normal = {
-                    guibg = vim.cmd[[
+                    guibg = vim.cmd [[
                     set bg
                     ]]
                 },
@@ -396,7 +399,7 @@ return require('lazy').setup({
                     ruler = false,
                     showcmd = false,
                 },
-                gitsigns = {enabled = false},
+                gitsigns = { enabled = false },
                 kitty = {
                     enabled = true,
                     font = "+4"
@@ -426,7 +429,7 @@ return require('lazy').setup({
             'nvim-telescope/telescope.nvim',
         },
         config = function()
-            require'telescope'.load_extension'repo'
+            require 'telescope'.load_extension 'repo'
         end
     },
 
