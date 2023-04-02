@@ -41,6 +41,11 @@ return require('lazy').setup({
     },
 
     {
+        'nvim-treesitter/nvim-treesitter-context',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' }
+    },
+
+    {
         'ThePrimeagen/harpoon',
         config = function()
             local mark = require("harpoon.mark")
