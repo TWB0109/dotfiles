@@ -5,3 +5,4 @@ mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 ncmpcpp/.ncmpcpp/lyrics
 nvim/.config/nvim/plugin/packer_compiled.lua
+ncspot/.config/ncspot/userstate.cbor
