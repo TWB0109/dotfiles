@@ -88,10 +88,30 @@ return require('lazy').setup({
         end
     },
 
-    {
+    --[[ {
         'morhetz/gruvbox',
         name = 'gruvbox',
-        config = function() vim.cmd.colorscheme('gruvbox') end
+        config = function() 
+            vim.cmd.colorscheme('gruvbox') 
+            Let.gruvbox_invert_selection = 0
+        end
+    }, ]]
+
+    {
+        'sainnhe/gruvbox-material',
+        config = function()
+            vim.g.gruvbox_material_better_performance = 1
+            vim.g.gruvbox_material_background = "soft"
+            vim.g.gruvbox_material_foreground = "original"
+            vim.g.gruvbox_material_statusline_style = "original"
+            vim.g.gruvbox_material_enable_bold = 1
+            vim.g.gruvbox_material_dim_inactive_windows = 1
+            vim.g.gruvbox_material_show_eob = 0
+            vim.g.gruvbox_material_diagnostic_text_highlight = 1
+            vim.g.gruvbox_material_diagnostic_line_highlight = 1
+            vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+            vim.cmd.colorscheme('gruvbox-material')
+        end
     },
 
     {
@@ -212,7 +232,7 @@ return require('lazy').setup({
                     },
                     ignore_focus = {},
                     always_divide_middle = true,
-                    globalstatus = false,
+                    globalstatus = true,
                     refresh = {
                         statusline = 1000,
                         tabline = 1000,
