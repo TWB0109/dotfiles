@@ -40,7 +40,6 @@ Set.ignorecase = true
 Set.smartcase = true
 
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
-Let.gruvbox_invert_selection = 0
 
 Let.mapleader = ' '
 Let.maplocalleader = '  '
