@@ -18,7 +18,7 @@ return require('lazy').setup({
         main = "nvim-treesitter.configs",
         opts = {
             -- A list of parser names, or "all"
-            ensure_installed = { "norg", "help", "javascript", "typescript", "html", "css", "c", "lua", "rust", "python" },
+            ensure_installed = { "norg", "vimdoc", "javascript", "typescript", "html", "css", "c", "lua", "rust", "python" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
