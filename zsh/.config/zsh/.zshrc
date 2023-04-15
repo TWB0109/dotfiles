@@ -40,7 +40,7 @@ fi
 #export TERMINAL=st
 #export NPM_CONFIG_PREFIX=~/.npm-global
 export TERMINAL=kitty
-export TERM=xterm-256color
+export TERM=kitty
 export PAGER=less
 
 export NVM_DIR="$HOME/.config/nvm"
