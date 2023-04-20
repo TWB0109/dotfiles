@@ -116,10 +116,16 @@ return require('lazy').setup({
 
     {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
+            {
+                'williamboman/mason.nvim',
+                build = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end
+            },
             { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
@@ -136,6 +142,7 @@ return require('lazy').setup({
         },
         config = function()
             local lsp = require('lsp-zero')
+            local cmp = require('cmp')
             lsp.preset('recommended')
 
             lsp.setup()
@@ -162,6 +169,21 @@ return require('lazy').setup({
                 vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
                 vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.signature_help() end, opts)
             end)
+            cmp.setup({
+                mapping = {
+                    ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    ["<C-n>"] = cmp.mapping.select_next_item(),
+                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-u>"] = cmp.mapping.scroll_docs(4),
+                    ["<M-Space>"] = cmp.mapping.complete(),
+                    ["<CR>"] = cmp.mapping.confirm({
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = true
+                    }),
+                    ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" })
+                }
+            })
         end
     },
 
