@@ -43,3 +43,5 @@ Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
 
 Let.mapleader = ' '
 Let.maplocalleader = '  '
+
+Let.pyindent_open_paren = Set.shiftwidth
