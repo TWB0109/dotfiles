@@ -182,7 +182,7 @@ schemes:
       - { index: 248, color: '#bdae93' }
       - { index: 250, color: '#d5c4a1' }
 
-colors: *dark
+colors: *light
 
 # Key bindings
 #
