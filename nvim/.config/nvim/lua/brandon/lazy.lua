@@ -115,6 +115,11 @@ return require('lazy').setup({
     },
 
     {
+        'mfussenegger/nvim-jdtls',
+        ft = 'java',
+    },
+
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         dependencies = {
