@@ -29,7 +29,7 @@ bindkey -M viins 'ii' vi-cmd-mode
 export XDG_CONFIG_HOME=$HOME/.config
 export LUA_PATH='/home/leafo/.luarocks/share/lua/5.1/?.lua;/home/leafo/.luarocks/share/lua/5.1/?/init.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;;./?.lua;/usr/lib/lua/5.1/?.lua;/usr/lib/lua/5.1/?/init.lua'
 export LUA_CPATH='/home/leafo/.luarocks/lib/lua/5.1/?.so;/usr/lib/lua/5.1/?.so;;./?.so;/usr/lib/lua/5.1/loadall.so'
-export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.*/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:~/.local/share/neovim/bin:~/.luarocks/bin/:$PATH
+export PATH=/home/brandon/.local/bin:/home/brandon/.scripts:~/.config/nvm/versions/node/*/lib/node_modules:~/.emacs.d/bin:~/.local/lib/python3.*/site-packages:~/.cargo/bin:~/.ghcup/bin:~/.cabal/bin:/var/lib/snapd/snap/bin:~/Applications:~/.local/share/flatpak/exports/bin:~/.nimble/bin:~/.local/share/neovim/bin:~/.luarocks/bin/:~/go/bin/:$PATH
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR=vim
@@ -58,6 +58,7 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
+alias pop="source ~/.config/pop/pop; pop"
 
 # xbps related alias
 #alias xi="sudo xbps-install -S"
@@ -77,6 +78,21 @@ function pget () {
     wl-copy -c #for wayland
     bw lock --quiet
     echo -e "\e[30;1;42mYour clipboard has been cleared and your vault locked\e[0m"
+}
+
+function ppipe () {
+    session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
+    bw get password $1 --session $session
+    bw lock --quiet
+}
+
+function vimail (){
+    if [[ $# -eq 0 ]]; then 
+        echo "Usage: vimail [destination] \"[subject]\""
+        return 
+    else
+        pop -b "$(vipe)" -t "$1" -s $2
+    fi
 }
 
 function eget() {

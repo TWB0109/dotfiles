@@ -124,7 +124,16 @@ return require('lazy').setup({
         branch = 'v2.x',
         dependencies = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
+            {
+                'neovim/nvim-lspconfig',
+                config = function()
+                    require'lspconfig'.typst_lsp.setup{
+                        settings = {
+                            exportPdf = "OnType"
+                        }
+                    }
+                end
+            },
             {
                 'williamboman/mason.nvim',
                 build = function()
