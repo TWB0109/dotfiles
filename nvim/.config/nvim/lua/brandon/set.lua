@@ -38,6 +38,8 @@ Set.hidden = true
 Set.ignorecase = true
 Set.smartcase = true
 
+Set.swapfile = false
+
 Let.markdown_fenced_languages = {'python', 'bash', 'cpp'}
 
 Let.mapleader = ' '
