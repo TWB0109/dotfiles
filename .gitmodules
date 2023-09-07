@@ -7,6 +7,3 @@
 [submodule "zsh/.config/zsh/zsh-autosuggestions"]
 	path = zsh/.config/zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "sway"]
-	path = sway
-	url = https://github.com/TWB0109/sway
