@@ -10,7 +10,6 @@ Set.compatible = false
 Set.splitbelow = true
 Set.splitright = true
 Set.termguicolors = true
-Set.pastetoggle = "<F10>"
 Set.mouse = "a"
 Set.shell = "zsh"
 Set.scl = "auto"

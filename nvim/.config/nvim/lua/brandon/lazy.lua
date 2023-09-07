@@ -18,7 +18,7 @@ return require('lazy').setup({
         main = "nvim-treesitter.configs",
         opts = {
             -- A list of parser names, or "all"
-            ensure_installed = { "norg", "vimdoc", "javascript", "typescript", "html", "css", "c", "lua", "rust", "python" },
+            ensure_installed = { "vimdoc", "javascript", "typescript", "html", "css", "c", "lua", "rust", "python" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -126,13 +126,6 @@ return require('lazy').setup({
             -- LSP Support
             {
                 'neovim/nvim-lspconfig',
-                config = function()
-                    require'lspconfig'.typst_lsp.setup{
-                        settings = {
-                            exportPdf = "OnType"
-                        }
-                    }
-                end
             },
             {
                 'williamboman/mason.nvim',
@@ -167,7 +160,14 @@ return require('lazy').setup({
                 'sumneko_lua',
                 'rust_analyzer',
                 'python-lsp-server',
+                'typst_lsp'
             })
+
+            require'lspconfig'.typst_lsp.setup{
+                settings = {
+                    exportPdf = "OnType"
+                }
+            }
 
             lsp.on_attach(function(client, bufnr)
                 local opts = { buffer = bufnr, remap = false }
@@ -183,6 +183,7 @@ return require('lazy').setup({
                 vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
                 vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.signature_help() end, opts)
             end)
+
             cmp.setup({
                 mapping = {
                     ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -339,7 +340,7 @@ return require('lazy').setup({
 
     {
         'jbyuki/nabla.nvim',
-        ft = { 'md', "tex", "norg", "org" },
+        ft = { 'md', "tex", "org" },
         config = function()
             vim.keymap.set('n', '<leader>nr', function() require("nabla").popup() end, { desc = "Open Nabla Math popup" })
             vim.keymap.set('n', '<leader>nv', function() require("nabla").enable_virt() end,
@@ -502,15 +503,19 @@ return require('lazy').setup({
     'alec-gibson/nvim-tetris',
 
     {
-        "lukas-reineke/indent-blankline.nvim",
-        event = { "BufReadPost", "BufNewFile" },
+        'lukas-reineke/indent-blankline.nvim',
+        event = { 'BufReadPost', 'BufNewFile' },
         opts = {
-            char = "│",
-            filetype_exlude = { "help", "Trouble", "lazy", "oil" },
+            char = '│',
+            filetype_exlude = { 'help', 'Trouble', 'lazy', 'oil' },
             show_trailing_blankline_indent = false,
             show_current_context = true,
             show_current_context_start = true
         }
+    },
+    {
+        'kaarmu/typst.vim',
+        ft = 'typst',
     },
     {
         'vimwiki/vimwiki',

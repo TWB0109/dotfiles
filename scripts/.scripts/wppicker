@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+image=$(vimiv ~/.local/share/backgrounds/* --command "enter thumbnail" --output "%")
+
+swww img $image
