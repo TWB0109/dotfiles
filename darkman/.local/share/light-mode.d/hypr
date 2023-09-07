@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+hyprconfig=~/.config/hypr/hyprland.conf
+
+# Change window border colors
+sed -i 's/b8bb26/98971a/g' $hyprconfig 
+sed -i 's/83a598/076678/g' $hyprconfig 
+
+sed -i 's/282828/f2e5bc/g' $hyprconfig

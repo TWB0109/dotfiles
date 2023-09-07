@@ -1,0 +1,151 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "cpu", "memory", "custom/ddcutil", "wireplumber",
+        "keyboard-state", "hyprland/language", "idle_inhibitor", "clock", "tray"
+    ],
+    "modules-center": ["mpris"],
+    "height": 10,
+    "bar_id": "bar-0",
+    "ipc": true,
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "mpris": {
+        "format":        "{player_icon}:      {status_icon}   <b>{artist} | {title}</b>",
+        "format-paused": "{player_icon}:      {status_icon}   {artist} | {title}",
+        "player-icons": {
+            "default": "🎵",
+            "spotify": ""
+        },
+        "status-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "ignored-players": ["firefox"]
+    },
+    "hyprland/language": {
+        "format": "{short} {variant}",
+        "on-click": "hyprctl switchxkblayout 0.01-mechanical-keyboard next"
+    },
+    "clock": {
+        "format": " {:%a, %b %d, %Y | %R}",
+        "format-alt": " {:%H:%M} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click-right": "gnome-calendar",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "wireplumber": {
+        "format": " {icon} {volume}%",
+        "format-muted": " Muted",
+        "on-click": "pactl -- set-sink-volume 0 -10%",
+        "on-click-middle": "pactl -- set-sink-mute 0 toggle",
+        "on-click-right": "pactl -- set-sink-volume 0 +10%",
+        "format-icons": ["", "", ""]
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.1f}G/{total:0.1f}G"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/darkman": {
+        "exec": "~/.config/waybar/scripts/darkman.sh",
+        "on-click": "darkman toggle;hyprctl reload",
+        "format": "{}",
+        "interval": 10,
+        "tooltip": false
+    },
+    "custom/mako": {
+        "exec": "~/.config/waybar/scripts/mako.sh",
+        "on-click": "~/.config/waybar/scripts/makoAction.sh",
+        "format": "{}",
+        "interval": 6000,
+        "signal": 1,
+        "tooltip": false
+    },
+    "custom/ddcutil": {
+        "exec": "~/.config/waybar/scripts/ddc.sh",
+        "on-click": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 - 5; pkill -RTMIN+2 waybar",
+        "on-click-right": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 + 5; pkill -RTMIN+2 waybar",
+        "format": " {}%",
+        "interval": 6000,
+        "signal": 2,
+        "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip-format-deactivated": "Caffeine is {status}",
+        "tooltip-format-activated": "Caffeine is {status}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰈹",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "󰊴",
+            "special": "7u7"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "gamemode": {
+        "format": "{glyph}",
+        "format-alt": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
+    },
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": {
+            "numlock": "Num {icon}",
+            "capslock": "Caps {icon}"                                                                                                                                                       
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "custom/audio_idle_inhibitor": {
+        "format": "{icon}",
+        "exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+        "exec-if": "which sway-audio-idle-inhibit",
+        "return-type": "json",
+        "format-icons": {
+            "output": "",
+            "input": "",
+            "output-input": "  ",
+            "none": ""
+        }
+    }
+}

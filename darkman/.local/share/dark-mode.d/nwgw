@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+nwgscript=~/.config/nwg-wrapper/date.sh
+nwgstyle=~/.config/nwg-wrapper/style.css
+
+sed 's/f2e5bc/282828/g' -i $nwgscript
+sed 's/f2e5bc/282828/g' -i $nwgstyle
+sed 's/79740e/b8bb26/g' -i $nwgscript
+sed 's/79740e/b8bb26/g' -i $nwgstyle
+
+killall nwg-wrapper
+if [[ $XDG_CURRENT_DESKTOP = "sway" ]]
+then
+    swaymsg exec 'nwg-wrapper -s date.sh -r 60000 -p right -j center -a start -mt 20 -mr 20 -sr 20 -i'
+else
+    riverctl spawn 'nwg-wrapper -s date.sh -r 60000 -p right -j center -a start -mt 20 -mr 20 -sr 20'
+fi

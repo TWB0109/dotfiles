@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+hxconf="${HOME}/.config/helix/config.toml"
+
+sed -i 's/theme = ".*"/theme = "gruvbox"/' $hxconf
+pkill hx -SIGUSR1

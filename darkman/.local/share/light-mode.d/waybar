@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+waybarconf=~/.config/waybar/style.css
+hyprconf=~/.config/waybar/hyprstyle.css
+
+sed -i 's/\@gruvboxDark/\@gruvboxLight/g' $waybarconf
+sed -i 's/\@gruvboxDark/\@gruvboxLight/g' $hyprconf
+
+killall -SIGUSR2 waybar

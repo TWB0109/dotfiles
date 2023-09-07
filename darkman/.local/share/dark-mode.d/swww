@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+# swww img ~/.local/share/backgrounds/sleepyplant.png --transition-type wipe --transition-angle 30 --transition-step 90
+swww img /usr/share/hyprland/wall_anime2_8K.png --transition-type wipe --transition-angle 30 --transition-step 90

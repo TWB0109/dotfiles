@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+makoconfig=~/.config/mako/config
+
+sed -i 's/background-color=#282828/background-color=#f2e5bc/g' $makoconfig
+sed -i 's/text-color=#f2e5bc/text-color=#3c3836/g' $makoconfig
+sed -i 's/border-color=#8ec07c/border-color=#427b58/g' $makoconfig
+sed -i 's/border-color=#b8bb26/border-color=#79740e/g' $makoconfig
+sed -i 's/border-color=#fb4934/border-color=#9d0006/g' $makoconfig
+
+makoctl reload

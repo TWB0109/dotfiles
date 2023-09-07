@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+swayconfig=~/.config/sway/config
+
+# Change statusline colors
+sed -i 's/statusline \#ebdbb2/statusline #3c3836/g' $swayconfig 
+sed -i 's/background \#282828/background #f2e5bc/g' $swayconfig 
+sed -i 's/inactive_workspace \#282828 \#282828 \#b8bb26/inactive_workspace \#f2e5bc \#f2e5bc \#79740e/g' $swayconfig 
+sed -i 's/focused_workspace \#b8bb26 \#b8bb26 \#282828/focused_workspace \#79740e \#79740e \#f2e5bc/g' $swayconfig 
+sed -i 's/active_workspace \#282828 \#282828 \#8ec07c/active_workspace \#f2e5bc \#f2e5bc \#427b58/g' $swayconfig 
+sed -i 's/binding_mode \#fb4934 \#fb4934 \#282828/binding_mode \#9d0006 \#9d0006 \#f2e5bc/g' $swayconfig 
+
+# Change window border colors
+sed -i 's/client\.focused \#b8bb26 \#b8bb26 \#282828 \#8ec07c/client\.focused \#79740e \#79740e \#f2e5bc \#427b58/g' $swayconfig
+sed -i 's/client\.focused_inactive \#689d6a \#689d6a \#282828 \#8ec07c/client\.focused_inactive \#689d6a \#689d6a \#f2e5bc \#427b58/g' $swayconfig
+sed -i 's/client\.unfocused \#282828 \#282828 \#b8bb26 \#8ec07c/client\.unfocused \#f2e5bc \#f2e5bc \#79740e \#427b58/g' $swayconfig
+
+# Change wallpaper
+sed -i 's/sleepyplant/succulent/g' $swayconfig
+sed -i 's/trainstation/pokewoods/g' $swayconfig
+swaymsg reload
