@@ -52,13 +52,14 @@ export NVM_DIR="$HOME/.config/nvm"
 alias c="clear"
 alias :q="exit"
 alias Syu="sudo pacman -Syu"
-alias ls="exa --color=always --group-directories-first --icons"
+alias ls="eza --color=always --group-directories-first --icons"
 alias chall="chmod +x *"
 alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"
 alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
 alias pop="source ~/.config/pop/pop; pop"
+alias hx="helix"
 
 # xbps related alias
 #alias xi="sudo xbps-install -S"
@@ -154,3 +155,4 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval $(starship init zsh)
 
 [ -f "/home/brandon/.ghcup/env" ] && source "/home/brandon/.ghcup/env" # ghcup-env
+export PATH=$PATH:/home/brandon/.spicetify
