@@ -27,8 +27,8 @@
 }
 
 window#waybar {
-    background-color: @gruvboxDark-background;
-    color: @gruvboxDark-foreground;
+    background-color: @gruvboxLight-background;
+    color: @gruvboxLight-foreground;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,41 +39,41 @@ button {
 }
 
 button:hover {
-    background-color: @gruvboxDark-green;
-    color: @gruvboxDark-background
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
 }
 
 #workspaces button {
     padding: 0px 5px;
-    color: @gruvboxDark-green;
+    color: @gruvboxLight-green;
     margin: 5px
 }
 
 #workspaces button:hover {
-    background-color: @gruvboxDark-green;
-    color: @gruvboxDark-background
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
 }
 
 #workspaces button.focused {
-    background-color: @gruvboxDark-green;
-    color: @gruvboxDark-background
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
 }
 
 #mode {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxDark-red;
-    color: @gruvboxDark-background;
+    background-color: @gruvboxLight-red;
+    color: @gruvboxLight-background;
 }
 
 #tray menu {
-    color: @gruvboxDark-green;
-    background-color: @gruvboxDark-background
+    color: @gruvboxLight-green;
+    background-color: @gruvboxLight-background
 }
 
 #tray menu > *:hover {
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-green;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
 }
 
 #language {
@@ -82,13 +82,13 @@ button:hover {
 }
 
 #language.us {
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-green;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
 }
 
 #language.latam {
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-red;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-red;
 }
 
 #clock {
@@ -99,57 +99,57 @@ button:hover {
 #wireplumber {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-aqua;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-aqua;
 }
 
 #memory {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-blue;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-blue;
 }
 
 #cpu {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-blue;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-blue;
 }
 
 #custom-darkman {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxDark-foreground;
-    color: @gruvboxDark-background;
+    background-color: @gruvboxLight-foreground;
+    color: @gruvboxLight-background;
 }
 
 #custom-mako {
     margin: 5px;
     padding: 0px 5px;
-    background-color:@gruvboxDark-yellow;
-    color: @gruvboxDark-background;
+    background-color:@gruvboxLight-yellow;
+    color: @gruvboxLight-background;
 }
 
 #custom-ddcutil {
     margin: 5px;
     padding: 0px 5px;
-    color: @gruvboxDark-background;
-    background-color: @gruvboxDark-purple;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-purple;
 }
 
 #idle_inhibitor.activated {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxDark-green;
-    color: @gruvboxDark-background;
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background;
 }
 
 #idle_inhibitor.deactivated {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxDark-red;
-    color: @gruvboxDark-background;
+    background-color: @gruvboxLight-red;
+    color: @gruvboxLight-background;
 }
 
 #mpris {

@@ -1,0 +1,4 @@
+[portal]
+DBusName=org.freedesktop.impl.portal.desktop.darkman
+Interfaces=org.freedesktop.impl.portal.Settings
+UseIn=sway;Hyprland

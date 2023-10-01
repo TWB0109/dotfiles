@@ -21,7 +21,7 @@ set $term kitty
 set $menu rofi -show drun
 set $dmenu rofi -show run
 set $appil /home/brandon/.scripts/appil
-set $swaylock swaylock -flk -i ~/Videos/Hanabi/trainstation.gif --bs-hl-color fb4934 --caps-lock-bs-hl-color fb4934 --caps-lock-key-hl-color b8bb26 --inside-color 32302f --inside-clear-color fabd2f --inside-caps-lock-color fb4934 --inside-ver-color 83a598 --inside-wrong-color fb4934 --key-hl-color b8bb26 --line-color 282828 --ring-color 32302f --ring-clear-color fabd2f --ring-caps-lock-color fb4934 --ring-ver-color 83a598 --ring-wrong-color fb4934 --text-color fbf1c7 --text-clear-color 282828 --text-caps-lock-color 282828 --text-ver-color 282828 --text-wrong-color 282828 --indicator-idle-visible --font "mono"
+set $swaylock swaylock -flk -i ~/Videos/Hanabi/pokewoods.gif --bs-hl-color fb4934 --caps-lock-bs-hl-color fb4934 --caps-lock-key-hl-color b8bb26 --inside-color 32302f --inside-clear-color fabd2f --inside-caps-lock-color fb4934 --inside-ver-color 83a598 --inside-wrong-color fb4934 --key-hl-color b8bb26 --line-color 282828 --ring-color 32302f --ring-clear-color fabd2f --ring-caps-lock-color fb4934 --ring-ver-color 83a598 --ring-wrong-color fb4934 --text-color fbf1c7 --text-clear-color 282828 --text-caps-lock-color 282828 --text-ver-color 282828 --text-wrong-color 282828 --indicator-idle-visible --font "mono"
 set $ws1 1:www
 set $ws2 2:media
 set $ws3 3:prod
@@ -31,7 +31,7 @@ set $ws5 5:game
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/brandon/.local/share/backgrounds/sleepyplant.png fill
+output * bg /home/brandon/.local/share/backgrounds/succulent.png fill
 #
 # Example configuration:
 #
@@ -294,12 +294,12 @@ bar {
 #    status_command while date +'%a, %b %d %Y | %H:%M'; do sleep 60; done
 #
 #    colors {
-#        statusline #ebdbb2
-#        background #282828
-#        inactive_workspace #282828 #282828 #b8bb26
-#        focused_workspace #b8bb26 #b8bb26 #282828
-#        active_workspace #282828 #282828 #8ec07c
-#        binding_mode #fb4934 #fb4934 #282828
+#        statusline #3c3836
+#        background #f2e5bc
+#        inactive_workspace #f2e5bc #f2e5bc #79740e
+#        focused_workspace #79740e #79740e #f2e5bc
+#        active_workspace #f2e5bc #f2e5bc #427b58
+#        binding_mode #9d0006 #9d0006 #f2e5bc
 #    }
     swaybar_command waybar
 }
@@ -319,9 +319,9 @@ gaps outer 2
 default_border normal 0
 titlebar_border_thickness 0
 title_align center
-client.focused #b8bb26 #b8bb26 #282828 #8ec07c
-client.focused_inactive #689d6a #689d6a #282828 #8ec07c
-client.unfocused #282828 #282828 #b8bb26 #8ec07c
+client.focused #79740e #79740e #f2e5bc #427b58
+client.focused_inactive #689d6a #689d6a #f2e5bc #427b58
+client.unfocused #f2e5bc #f2e5bc #79740e #427b58
 
 #
 # Autostart
@@ -329,7 +329,7 @@ client.unfocused #282828 #282828 #b8bb26 #8ec07c
 
 exec wlsunset -S 05:30 -s 17:40
 exec swww init
-exec swww img ~/Videos/Hanabi/trainstation.gif
+exec swww img ~/Videos/Hanabi/pokewoods.gif
 exec --no-startup-id fcitx -d
 exec easyeffects --gapplication-service
 exec /usr/libexec/xfce-polkit
