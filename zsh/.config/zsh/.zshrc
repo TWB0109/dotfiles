@@ -51,7 +51,6 @@ export NVM_DIR="$HOME/.config/nvm"
 # alias vim="nvim"
 alias c="clear"
 alias :q="exit"
-alias Syu="sudo pacman -Syu"
 alias ls="eza --color=always --group-directories-first --icons"
 alias chall="chmod +x *"
 alias grep="grep --colour=auto"
@@ -60,6 +59,10 @@ alias fgrep="fgrep --colour=auto"
 alias sxiv="sxiv -a"
 alias pop="source ~/.config/pop/pop; pop"
 alias hx="helix"
+alias update="sudo zypper dup;flatpak update;bob use nightly"
+
+# Pacman related aliases
+# alias Syu="sudo pacman -Syu"
 
 # xbps related alias
 #alias xi="sudo xbps-install -S"
