@@ -75,7 +75,7 @@ return require('lazy').setup({
     },
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
         -- or                            , branch = '0.1.x',
         dependencies = { { 'nvim-lua/plenary.nvim' } },
         config = function()
@@ -504,14 +504,18 @@ return require('lazy').setup({
 
     {
         'lukas-reineke/indent-blankline.nvim',
-        event = { 'BufReadPost', 'BufNewFile' },
+        main = "ibl",
+        config = true,
         opts = {
-            char = '│',
-            filetype_exlude = { 'help', 'Trouble', 'lazy', 'oil' },
-            show_trailing_blankline_indent = false,
-            show_current_context = true,
-            show_current_context_start = true
-        }
+            scope = {
+                enabled = true,
+                show_start = true,
+                show_end = true,
+                injected_languages = true,
+                highlight = { "Function", "Label" },
+                priority = 500,
+            },
+        },
     },
     {
         'kaarmu/typst.vim',
