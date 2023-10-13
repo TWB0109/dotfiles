@@ -1,21 +1,21 @@
 window {
-    background-color: #f2e5bc; 
+    background-color: #282828; 
     font-family: mono;
     border-width: 1px;
-    border-color: #79740e;
+    border-color: #b8bb26;
     padding: 10px;
 }
 
 #box-outer {
     /* Define attributes of the box surrounding icons here */
-    background-color: #f2e5bc; 
+    background-color: #282828; 
     border-width: 1px;
-    border-color: #79740e;
+    border-color: #b8bb26;
 }
 
 #box-inner {
-    background-color: #f2e5bc;
+    background-color: #282828;
     padding: 10px;
     border-width: 1px;
-    border-color: #79740e;
+    border-color: #b8bb26;
 }
