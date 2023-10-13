@@ -29,5 +29,5 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 
-vim.keymap.set("n", "<leader>=", "=G", {desc = "Properly indents the whole file"})
+vim.keymap.set("n", "<leader>=", "gg=G", {desc = "Properly indents the whole file"})
 vim.keymap.set("i", "<C-BS>", "<C-W>", {desc = "Ciw"})
