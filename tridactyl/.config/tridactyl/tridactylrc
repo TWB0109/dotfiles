@@ -5,8 +5,8 @@ set searchurls.bv  https://search.brave.com/search?q=%s
 set searchurls.ddg https://duckduckgo.com/?kae=g&q=%s
 set searchurls.gh  https://github.com/search?q=%s
 set searchurls.aw  https://wiki.archlinux.org/title/%s
+set searchurls.fh  https://flathub.org/apps/search?q=%
 set searchurls.g   https://google.com/search?q=%s
-set editorcmd gnome-terminal -e 'hx %f'
 " set smoothscroll true
 
 " Binds

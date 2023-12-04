@@ -1,9 +1,8 @@
 # Basic Conf
-set globsearch   on
+set globsearch   true
 set shell        zsh
-set color256     on
-set incsearch    on
-set drawbox      on
+set incsearch    true
+set drawbox      true
 set truncatechar "~"
 
 # set '-eu' options for shell commands

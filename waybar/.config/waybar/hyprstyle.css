@@ -5,7 +5,7 @@
 @define-color gruvboxDark-blue #83a598;
 @define-color gruvboxDark-purple #d3869b;
 @define-color gruvboxDark-aqua #8ec07c;
-@define-color gruvboxDark-background rgba(40, 40, 40, 0.7);
+@define-color gruvboxDark-background rgba(40, 40, 40, 0.70);
 @define-color gruvboxDark-foreground #fbf1c7;
 
 @define-color gruvboxLight-red #9d0006;
@@ -14,7 +14,7 @@
 @define-color gruvboxLight-blue #076678;
 @define-color gruvboxLight-purple #8f3f71;
 @define-color gruvboxLight-aqua #427b58;
-@define-color gruvboxLight-background rgba(242, 229, 188, 0.7);
+@define-color gruvboxLight-background rgba(242, 229, 188, 0.70);
 @define-color gruvboxLight-foreground #3c3836;
 
 @define-color spotify-foreground #1DB954;

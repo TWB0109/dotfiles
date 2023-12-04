@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
-swww img ~/.local/share/backgrounds/keyboards.png --transition-type wipe --transition-angle 30 --transition-step 90
+# swww img ~/.local/share/backgrounds/keyboards.png --transition-type wipe --transition-angle 30 --transition-step 90
+swww img ~/.local/share/backgrounds/greenwoods.jpg --transition-type wipe --transition-angle 30 --transition-step 90
