@@ -90,15 +90,6 @@ function ppipe () {
     bw lock --quiet
 }
 
-function vimail (){
-    if [[ $# -eq 0 ]]; then 
-        echo "Usage: vimail [destination] \"[subject]\""
-        return 
-    else
-        pop -b "$(vipe)" -t "$1" -s $2
-    fi
-}
-
 function eget() {
     session=$(bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
     # bw get username $1 --session $session | xclip -selection c # for x
@@ -155,7 +146,7 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ^ disabled for me, too resource heavy
 
 # Enable the starship prompt
-eval $(starship init zsh)
+eval "$(starship init zsh)"
 
 [ -f "/home/brandon/.ghcup/env" ] && source "/home/brandon/.ghcup/env" # ghcup-env
 export PATH=$PATH:/home/brandon/.spicetify
