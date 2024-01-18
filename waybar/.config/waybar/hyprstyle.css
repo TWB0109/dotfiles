@@ -178,3 +178,42 @@ button:hover {
     padding: 0px 5px;
 }
 
+#network {
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.disabled {
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-red;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.disconnected {
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-yellow;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.linked {
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-green;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.ethernet {
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-green;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.wifi {
+    color: @gruvboxDark-background;
+    background-color: @gruvboxDark-green;
+    margin: 5px;
+    padding: 0px 5px;
+}

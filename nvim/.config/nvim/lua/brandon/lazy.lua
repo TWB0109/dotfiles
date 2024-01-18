@@ -450,38 +450,38 @@ return require('lazy').setup({
         'kaarmu/typst.vim',
         ft = 'typst',
     },
-    {
-        'vimwiki/vimwiki',
-        init = function()
-            vim.opt.compatible = false
-            vim.cmd('filetype plugin on')
-            vim.cmd('syntax on')
-            vim.cmd([[
-                let vimwiki_public = {}
-                let vimwiki_public.path = '~/vimwiki-public'
-                let vimwiki_public.path_html = '~/vimwiki-public-html'
-                let vimwiki_public.template_path = '~/vimwiki-public/templates'
-                let vimwiki_public.template_default = 'default'
-                let vimwiki_public.template_ext = '.tpl'
-                let vimwiki_public.syntax = 'markdown'
-                let vimwiki_public.ext = '.md'
-                let vimwiki_public.name = 'public'
-                let vimwiki_public.custom_wiki2html = 'vimwiki_markdown' " pip install vimwiki-markdown
-
-                let vimwiki_private = {}
-                let vimwiki_private.path = '~/vimwiki-private'
-                let vimwiki_private.path_html = '~/vimwiki-private-html'
-                let vimwiki_private.template_path = '~/vimwiki-private/templates'
-                let vimwiki_private.template_default = 'default'
-                let vimwiki_private.template_ext = '.tpl'
-                let vimwiki_private.syntax = 'markdown'
-                let vimwiki_private.ext = '.md'
-                let vimwiki_private.name = 'private'
-                let vimwiki_private.custom_wiki2html = 'vimwiki_markdown' " pip install vimwiki-markdown
-
-                let g:vimwiki_list = [vimwiki_private, vimwiki_public]
-            ]])
-            vim.g.vimwiki_global_ext = 0
-        end
-    }
+    -- {
+    --     'vimwiki/vimwiki',
+    --     init = function()
+    --         vim.opt.compatible = false
+    --         vim.cmd('filetype plugin on')
+    --         vim.cmd('syntax on')
+    --         vim.cmd([[
+    --             let vimwiki_public = {}
+    --             let vimwiki_public.path = '~/vimwiki-public'
+    --             let vimwiki_public.path_html = '~/vimwiki-public-html'
+    --             let vimwiki_public.template_path = '~/vimwiki-public/templates'
+    --             let vimwiki_public.template_default = 'default'
+    --             let vimwiki_public.template_ext = '.tpl'
+    --             let vimwiki_public.syntax = 'markdown'
+    --             let vimwiki_public.ext = '.md'
+    --             let vimwiki_public.name = 'public'
+    --             let vimwiki_public.custom_wiki2html = 'vimwiki_markdown' " pip install vimwiki-markdown
+    --
+    --             let vimwiki_private = {}
+    --             let vimwiki_private.path = '~/vimwiki-private'
+    --             let vimwiki_private.path_html = '~/vimwiki-private-html'
+    --             let vimwiki_private.template_path = '~/vimwiki-private/templates'
+    --             let vimwiki_private.template_default = 'default'
+    --             let vimwiki_private.template_ext = '.tpl'
+    --             let vimwiki_private.syntax = 'markdown'
+    --             let vimwiki_private.ext = '.md'
+    --             let vimwiki_private.name = 'private'
+    --             let vimwiki_private.custom_wiki2html = 'vimwiki_markdown' " pip install vimwiki-markdown
+    --
+    --             let g:vimwiki_list = [vimwiki_private, vimwiki_public]
+    --         ]])
+    --         vim.g.vimwiki_global_ext = 0
+    --     end
+    -- }
 })

@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "cpu", "memory", "custom/ddcutil", "wireplumber",
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
         "keyboard-state", "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
@@ -13,8 +13,8 @@
         "spacing": 10
     },
     "mpris": {
-        "format":        "{player_icon}:      {status_icon}   <b>{artist} | {title}</b>",
-        "format-paused": "{player_icon}:      {status_icon}   {artist} | {title}",
+        "format":        "{player_icon}:      {status_icon}   <b>{title} | {artist}</b>",
+        "format-paused": "{player_icon}:      {status_icon}   {title} | {artist}",
         "player-icons": {
             "default": "🎵",
             "spotify": ""
@@ -147,5 +147,17 @@
             "output-input": "  ",
             "none": ""
         }
+    },
+    "network": {
+        "interface": "wlp9s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     }
 }

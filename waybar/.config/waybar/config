@@ -16,8 +16,8 @@
         "spacing": 10
     },
     "mpris": {
-        "format":        "{player_icon}:      {status_icon}   <b>{artist} | {title}</b>",
-        "format-paused": "{player_icon}:      {status_icon}   {artist} | {title}",
+        "format":        "{player_icon}:      {status_icon}   <b>{title} | {artist}</b>",
+        "format-paused": "{player_icon}:      {status_icon}   {title} | {artist}",
         "player-icons": {
             "default": "🎵",
             "spotify": ""
