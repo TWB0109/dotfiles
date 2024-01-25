@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-riverctl background-color 0xf2e5bc
-riverctl border-color-focused 0x79740e
-riverctl border-color-unfocused 0xf2e5bc

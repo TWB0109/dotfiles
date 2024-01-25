@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-
-hyprctl hyprpaper wallpaper "HDMI-A-1,~/.local/share/backgrounds/keyboards.png"
