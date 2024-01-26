@@ -324,7 +324,7 @@
       layer = "overlay";
       maxIconSize = 128;
       textColor = "#f2e5bc";
-      font = "fixed 10";
+      font = "SauceCodePro NFM 10";
     };
 
     gtk = {
