@@ -389,8 +389,8 @@
       };
       envFile = {
         text = ''
-	  $env.PROMPT_INDICATOR_VI_INSERT = {|| " [I] > "}
-	  $env.PROMPT_INDICATOR_VI_NORMAL = {|| " [N] > "}
+	  $env.PROMPT_INDICATOR_VI_INSERT = {|| $"(ansi green_bold) [I] > (ansi reset)"}
+	  $env.PROMPT_INDICATOR_VI_NORMAL = {|| $"(ansi red_bold) [N] > (ansi reset)"}
 	  $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.scripts')
 	  $env.SSH_AUTH_SOCK = $"($env.XDG_RUNTIME_DIR)/ssh-agent.socket"
 	'';
@@ -446,6 +446,8 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
