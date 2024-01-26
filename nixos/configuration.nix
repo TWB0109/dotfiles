@@ -118,10 +118,10 @@
 	fcitx5
 	swayidle
 	sway-audio-idle-inhibit
-	waybar
 	stow
 	pavucontrol
 	neovim
+	webcord
     ];
 
     # Enable Nushell
