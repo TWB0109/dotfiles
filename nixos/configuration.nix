@@ -399,16 +399,17 @@
       };
       shellAliases = {
         vim = "nvim";
+	":q" = "exit";
       };
       environmentVariables = {
         EDITOR = "nvim";
       };
     };
 
-    programs.carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
+    # programs.carapace = {
+    #   enable = true;
+    #   enableNushellIntegration = true;
+    # };
 
     programs.ssh = {
       enable = true;
