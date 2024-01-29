@@ -73,9 +73,9 @@
       };
       
       "drop_shadow" = true;
-      "shadow_range" = 15;
-      "shadow_render_power" = 2;
-      "col.shadow" = "rgba(b8bb26ff)";
+      "shadow_range" = 10;
+      "shadow_render_power" = 3;
+      "col.shadow" = "rgba(000000ff)";
       "col.shadow_inactive" = "rgba(000000ee)";
 
       "inactive_opacity" = 0.90;
