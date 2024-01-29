@@ -306,6 +306,8 @@
 
   # Nixvim
   programs.nixvim = {
+    enable = true;
+    enableMan = true;
     options = {
       number = true;
       relativenumber = true;
@@ -315,7 +317,7 @@
       splitbelow = true;
       splitright = true;
       mouse = "a";
-      shell = "nushell";
+      shell = "nu";
       scl = "auto";
       
       expandtab = true;
@@ -339,29 +341,54 @@
     };
     globals = {
       markdown_fenced_languages = "{ 'python', 'bash', 'cpp' }";
-      mapleader = "' '";
-      maplocalleader = "'  '";
+      mapleader = " ";
+      gruvbox_terminal_colors = true;
+      gruvbox_italic_keywords = false;
+      gruvbox_transparent = true;
     };
-    enable = true;
-    enableMan = true;
     plugins = {
-      lualine.enable = true;
+      lualine = {
+        enable = true;
+        globalstatus = true;
+        componentSeparators = {
+          left = "";
+          right = "";
+        };
+        sectionSeparators = {
+          left = "";
+          right = "";
+        };
+      };
       oil.enable = true;
+      lsp.enable = true;
+      treesitter.enable = true;
     };
-    colorschemes.gruvbox = {
-      enable = true;
-      bold = true;
-      contrastDark = "medium";
-      contrastLight = "medium";
-      improvedStrings = false;
-      invertSelection = false;
-      italicizeStrings = false;
-      italics = true;
-      trueColor = true;
-      transparentBg = true;
-      undercurl = true;
-      underline = true;
-    };
+    extraPlugins = with pkgs.vimPlugins; [
+      gruvbox-flat-nvim
+    ];
+
+    keymaps = [
+      {
+        key = "<leader>pv";
+        action = "<cmd>Oil<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<leader>pV";
+        action = "<cmd>Oil --float<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+        };
+      }
+    ];
+
+    extraConfigLua = ''
+      vim.cmd.colorscheme('gruvbox-flat')
+    '';
   };
 
   # Nix

@@ -214,7 +214,7 @@
     defaultTimeout = 5000;
     extraConfig = 
     ''
-     [urgency=low]
+    [urgency=low]
     border-color=#8ec07c
     
     [urgency=normal]
