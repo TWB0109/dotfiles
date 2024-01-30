@@ -105,6 +105,7 @@
      polkit_gnome
      gnome-text-editor
      bash
+     appimage-run
   ];
 
   fonts.packages = with pkgs; [
@@ -362,9 +363,37 @@
       oil.enable = true;
       lsp.enable = true;
       treesitter.enable = true;
+      fugitive.enable = true;
+      which-key.enable = true;
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = {
+            action = "find_files";
+            desc = "Open a fuzzy file picker";
+          };
+          "<leader>fr" = {
+            action = "oldfiles";
+            desc = "Open a fuzzy recent file picker";
+          };
+          "<leader>fb" = {
+            action = "buffers";
+            desc = "Open a fuzzy buffer picker";
+          };
+          "<C-p>" = {
+            action = "git_files";
+            desc = "Open a git repo fuzzy file picker";
+          };
+          "<leader>lg" = {
+            action = "live_grep";
+            desc = "Open a fuzzy live grep";
+          };
+        };
+      };
     };
     extraPlugins = with pkgs.vimPlugins; [
       gruvbox-flat-nvim
+      nvim-nu
     ];
 
     keymaps = [
@@ -379,6 +408,22 @@
       {
         key = "<leader>pV";
         action = "<cmd>Oil --float<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<leader>gs";
+        action = "<cmd>Git<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<leader>gp";
+        action = "<cmd>Git push<CR>";
         mode = "n";
         options = {
           silent = true;
