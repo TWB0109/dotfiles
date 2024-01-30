@@ -29,6 +29,7 @@
     gamemode
     trash-cli
     cider
+    bitwarden-cli
   ];
 
   home.stateVersion = "24.05";
@@ -283,29 +284,10 @@
   programs.nushell = {
     enable = true;
     configFile = {
-      text = ''
-        $env.config = {
-          edit_mode: vi
-          completions: {
-            algorithm: "fuzzy"
-          }
-          rm: {
-            always_trash: true
-          }
-        }
-        def vim [ file: string = "." ] {
-          if $file == "." { nvim . } else { nvim $file }
-        }
-      '';
+      source = nushell/config.nu;
     };
     envFile = {
-      text = ''
-        $env.PROMPT_INDICATOR_VI_INSERT = {|| $"(ansi green_bold) [I] > (ansi reset)"}
-        $env.PROMPT_INDICATOR_VI_NORMAL = {|| $"(ansi red_bold) [N] > (ansi reset)"}
-        $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.scripts')
-        $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
-        $env.SSH_AUTH_SOCK = $"($env.XDG_RUNTIME_DIR)/ssh-agent.socket"
-      '';
+      source = nushell/env.nu;
     };
     shellAliases = {
       ":q" = "exit";
