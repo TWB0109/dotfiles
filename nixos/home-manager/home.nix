@@ -136,7 +136,6 @@
     ];
     exec-once = [
       "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
-      "~/dotfiles/nixos/scripts/sidle"
       "wpaperd"
     ];
   };
