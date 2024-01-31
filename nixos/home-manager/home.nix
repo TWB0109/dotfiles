@@ -284,10 +284,10 @@
   programs.nushell = {
     enable = true;
     configFile = {
-      source = nushell/config.nu;
+      source = ../nushell/config.nu;
     };
     envFile = {
-      source = nushell/env.nu;
+      source = ../nushell/env.nu;
     };
     shellAliases = {
       ":q" = "exit";
