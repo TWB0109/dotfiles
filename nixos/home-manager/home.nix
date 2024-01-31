@@ -18,7 +18,6 @@
     gnome.gnome-calculator
     xdg-user-dirs
     floorp 
-    swww
     fcitx5
     swayidle
     sway-audio-idle-inhibit
@@ -135,9 +134,9 @@
       "$mod, mouse:273, resizewindow"
     ];
     exec-once = [
-      "~/.config/hypr/sidle"
-      "swww init"
       "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
+      "~/dotfiles/nixos/scripts/sidle"
+      "hyprpaper"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = 
@@ -333,5 +332,25 @@
        background_opacity = "0.9";
     };
     theme = "Gruvbox Dark";
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      show-keyboard-layout = true;
+      indicator-caps-lock = true;
+      color = "282828";
+      font = "SauceCodePro NFM";
+    };
+  };
+
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      HDMI-A-1 = {
+        path = "~/dotfiles/nixos/wallpapers";
+        duration = "30m";
+      };
+    };
   };
 }
