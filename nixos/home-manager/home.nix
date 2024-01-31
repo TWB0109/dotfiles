@@ -19,7 +19,6 @@
     xdg-user-dirs
     floorp 
     fcitx5
-    swayidle
     sway-audio-idle-inhibit
     stow
     pavucontrol
@@ -137,6 +136,7 @@
     exec-once = [
       "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
       "wpaperd"
+      "sway-audio-idle-inhibit"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = 
@@ -342,6 +342,24 @@
       color = "282828";
       font = "SauceCodePro NFM";
     };
+  };
+
+  services.swayidle = {
+    enable = true;
+    events = [
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fF"; }
+    ];
+    timeouts = [
+      { 
+        timeout = 300;
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
+      }
+      { 
+        timeout = 600;
+        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+      }
+    ];
   };
 
   programs.wpaperd = {
