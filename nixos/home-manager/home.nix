@@ -29,6 +29,7 @@
     trash-cli
     cider
     bitwarden-cli
+    ripgrep
   ];
 
   home.stateVersion = "24.05";
@@ -136,7 +137,7 @@
     exec-once = [
       "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
       "~/dotfiles/nixos/scripts/sidle"
-      "hyprpaper"
+      "wpaperd"
     ];
   };
   wayland.windowManager.hyprland.extraConfig = 
