@@ -552,4 +552,21 @@
     };
   };
 
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+    settings = {
+      log = {
+        enable = false;
+      };
+      manager = {
+        sort_by = "alphabetical";
+        sort_reverse = true;
+        sort_dir_first = true;
+        linemode = "size";
+        show_symlink = true;
+      };
+    };
+  };
+
 }

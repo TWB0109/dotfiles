@@ -106,6 +106,7 @@
      gnome-text-editor
      bash
      appimage-run
+     loupe
   ];
 
   fonts.packages = with pkgs; [
