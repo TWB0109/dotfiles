@@ -353,9 +353,9 @@
       "wireplumber" = {
         format = "{icon} {volume}%";
         format-muted = " Muted";
-        on-click = "pamixer -d 10";
-        on-click-middle = "pamixer --toggle-mute";
-        on-click-right = "pamixer -i 10";
+        on-click = "${pkgs.pamixer}/bin/pamixer -d 10";
+        on-click-middle = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
+        on-click-right = "${pkgs.pamixer}/bin/pamixer -i 10";
         format-icons = [ "" "" "" ];
       };
 
