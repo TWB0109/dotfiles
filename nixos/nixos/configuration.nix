@@ -79,7 +79,7 @@
   users.users.brandon = {
     isNormalUser = true;
     description = "Brandon S";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     shell = pkgs.nushell;
     packages = with pkgs; [
     ];
@@ -112,6 +112,7 @@
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     noto-fonts-cjk-serif
     noto-fonts-cjk-sans
+    font-awesome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

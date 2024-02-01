@@ -280,6 +280,186 @@
     };
   };
 
+  programs.waybar = {
+    enable = true;
+    settings = [{
+      layer = "top";
+      position = "top";
+      height = 10;
+      output = [ "HDMI-A-1" ];
+      ipc = true;
+      modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+      modules-center = [ "mpris" ];
+      modules-right = [ 
+        "custom/audio_idle_inhibitor"
+        "custom/mako"
+        "gamemode" 
+        "network"
+        "cpu" 
+        "memory" 
+        "wireplumber"
+        "keyboard-state"
+        "hyprland/language"
+        "idle_inhibitor"
+        "clock"
+        "tray"
+      ];
+
+      "tray" = {
+        icon_size = 21;
+        spacing = 10;
+      };
+
+      "mpris" = {
+        format = "{player_icon}: {status_icon} <b>{title} | {artist}</b>";
+        format-paused = "{player_icon}: {status_icon} {title} | {artist}";
+        player-icons = {
+          default = "🎵";
+          spotify = "";
+        };
+        status-icons = {
+          paused = "";
+          plaaying = "";
+        };
+        ignored-players = [ "firefox" ];
+      };
+
+      "hyprland/language" = {
+        format = "{short} {variant}";
+        on-click = "${pkgs.hyprland}/bin/hyprctl switchxkblayout 0.01-mechanical-keyboard next";
+      };
+
+      "clock" = {
+        format = " {:%a, %b %d, %Y | %R}";
+        format-alt = " {:%H:%M} ";
+        tooltip-format = "<tt><small>{calendar}</small></tt>";
+        on-click-right = "gnome-calendar";
+        calendar = {
+          mode = "year";
+          mode-mon-col = 3;
+          weeks-pos = "right";
+          on-scroll = 1;
+          on-click-right = "mode";
+          format = {
+            months   = "<span color='#ffead3'><b>{}</b></span>";
+            days     = "<span color='#ecc6d9'><b>{}</b></span>";
+            weeks    = "<span color='#99ffdd'><b>W{}</b></span>";
+            weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+            today    = "<span color='#ff6699'><b><u>{}</u></b></span>";
+          };
+        };
+      };
+
+      "wireplumber" = {
+        format = "{icon} {volume}%";
+        format-muted = " Muted";
+        on-click = "pamixer -d 10";
+        on-click-middle = "pamixer --toggle-mute";
+        on-click-right = "pamixer -i 10";
+        format-icons = [ "" "" "" ];
+      };
+
+      "memory" = {
+        interval = 30;
+        format = " {used:0.1f}G/{total:0.1f}G";
+      };
+
+      "cpu" = {
+        interval = 10;
+        format = " {}%";
+        max-length = 10;
+      };
+
+      "idle_inhibitor" = {
+        format = "{icon}";
+        tooltip-format-deactivated = "Caffeine is {status}";
+        tooltip-format-activated = "Caffeine is {status}";
+        format-icons = {
+          activated = "";
+          deactivated = "";
+        };
+      };
+
+      "hyprland/workspaces" = {
+        format = "{icon}";
+        format-icons = {
+          "1" = "󰈹";
+          "2" = "";
+          "3" = "";
+          "4" = "";
+          "5" = "󰊴";
+        };
+        on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
+        on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
+      };
+
+      "gamemode" = {
+        format = "{glyph}";
+        format-alt = "{glyph} {count}";
+        glyph = "";
+        hide-not-running = true;
+        use-icon = true;
+        icon-name = "input-gaming-symbolic";
+        icon-spacing = 4;
+        icon-size = 20;
+        tooltip = true;
+        tooltip-format = "Games running: {count}";
+      };
+
+      "keyboard-state" = {
+        numlock = false;
+        capslock = false;
+        format = {
+          numlock = "Num {icon}";
+          capslock = "Caps {icon}";
+        };
+        format-icons = {
+          locked =  "";
+          unlocked =  "";
+        };
+      };
+
+      "network" = {
+        interface = "wlp9s0";
+        format = "{ifname}";
+        format-wifi = "{essid} ({signalStrength}%) ";
+        format-ethernet = "{ipaddr}/{cidr} 󰊗";
+        format-disconnected = "";
+        tooltip-format = "{ifname} via {gwaddr} 󰊗";
+        tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+        tooltip-format-ethernet = "{ifname} ";
+        tooltip-format-disconnected = "Disconnected";
+        max-length = 50;
+      };
+
+      "custom/audio_idle_inhibitor" = {
+        format = "{icon}";
+        exec = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit --dry-print-both-waybar";
+        exec-if = "which sway-audio-idle-inhibit";
+        return-type = "json";
+        format-icons = {
+          output = "";
+          input = "";
+          output-input = "  ";
+          none = "";
+        };
+      };
+
+      "custom/mako" =  {
+        exec = "~/dotfiles/nixos/scripts/waybar/mako.sh";
+        on-click = "~/dotfiles/nixos/scripts/waybar/makoAction.sh";
+        format = "{}";
+        interval = 6000;
+        signal = 1;
+        tooltip = false;
+      };
+    }];
+    style = ../styles/waybar/style.css;
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target"; };
+  };
+
   programs.nushell = {
     enable = true;
     configFile = {
@@ -371,4 +551,5 @@
       };
     };
   };
+
 }
