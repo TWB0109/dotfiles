@@ -255,14 +255,16 @@
   services.darkman = {
     enable = true;
     darkModeScripts = {
-      gtk-theme = ''
-        ${pkgs.dconf}/bin/dconf write \
+      gtk-theme = pkgs.writeScript "gtk-theme-dark" ''
+        #!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#dconf --command bash
+        dconf write \
         /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
       '';
     };
     lightModeScripts = {
-      gtk-theme = ''
-        ${pkgs.dconf}/bin/dconf write \
+      gtk-theme = pkgs.writeScript "gtk-theme-light" ''
+        #!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#dconf --command bash
+        dconf write \
         /org/gnome/desktop/interface/color-scheme "'prefer-light'"
       '';
     };

@@ -1,3 +1,0 @@
-#!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#hello nixpkgs#cowsay --command bash
-
-hello | cowsay
