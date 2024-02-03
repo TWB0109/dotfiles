@@ -4,7 +4,17 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  makoStatus = pkgs.writeShellScriptBin "makoStatus" ''
+    state=$(makoctl mode)
+    [[ $state == "default" ]] && echo "" || echo ""
+  '';
+  makoAction = pkgs.writeShellScriptBin "makoAction" ''
+    [[ $(makoctl mode) == "default" ]] && makoctl mode -s do-not-disturb || makoctl mode -s default
+    pkill -RTMIN+1 waybar
+  '';
+
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration-desktop-onSDD.nix
@@ -99,16 +109,19 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
   environment.systemPackages = with pkgs; [
-     vim
-     kitty
-     gnome.gnome-tweaks
-     git
-     polkit_gnome
-     gnome-text-editor
-     bash
-     appimage-run
-     loupe
+    vim
+    kitty
+    gnome.gnome-tweaks
+    git
+    polkit_gnome
+    gnome-text-editor
+    bash
+    appimage-run
+    loupe
+    makoStatus
+    makoAction
   ];
 
   fonts.packages = with pkgs; [

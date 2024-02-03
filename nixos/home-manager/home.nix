@@ -448,10 +448,10 @@
       };
 
       "custom/mako" =  {
-        exec = "~/dotfiles/nixos/scripts/waybar/mako.sh";
-        on-click = "~/dotfiles/nixos/scripts/waybar/makoAction.sh";
+        exec = "makoStatus";
+        on-click = "makoAction";
         format = "{}";
-        interval = 6000;
+        interval = 10;
         signal = 1;
         tooltip = false;
       };
