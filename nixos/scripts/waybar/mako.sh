@@ -1,4 +1,4 @@
-#!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#mako --command bash
+#!/bin/sh 
 
 state=$(makoctl mode)
 
