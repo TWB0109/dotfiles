@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
-{
+let
+  makoStatus = pkgs.writeShellScriptBin "makoStatus" ''
+    state=$(makoctl mode)
+    [[ $state == "default" ]] && echo "" || echo ""
+  '';
+  makoAction = pkgs.writeShellScriptBin "makoAction" ''
+    [[ $(makoctl mode) == "default" ]] && makoctl mode -s do-not-disturb || makoctl mode -s default
+    pkill -RTMIN+1 waybar
+  '';
+
+in {
   home.username = "brandon";
 
   home.packages = with pkgs; [
