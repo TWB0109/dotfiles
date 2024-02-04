@@ -110,8 +110,6 @@
     bash
     appimage-run
     loupe
-    makoStatus
-    makoAction
   ];
 
   fonts.packages = with pkgs; [

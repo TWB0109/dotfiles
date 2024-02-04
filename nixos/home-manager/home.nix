@@ -39,6 +39,8 @@ in {
     cider
     bitwarden-cli
     ripgrep
+    makoStatus
+    makoAction
   ];
 
   home.stateVersion = "24.05";
@@ -469,7 +471,8 @@ in {
     style = ../styles/waybar/style.css;
     systemd = {
       enable = true;
-      target = "hyprland-session.target"; };
+      target = "hyprland-session.target"; 
+    };
   };
 
   programs.nushell = {
