@@ -459,8 +459,8 @@
   security.pam.services.swaylock = {};
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 9000 ];
+  networking.firewall.allowedUDPPorts = [ 9000 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

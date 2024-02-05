@@ -103,7 +103,7 @@ in {
     };
     windowrulev2 = [
       "idleinhibit,fullscreen:0"
-      "workspace special, silent,class:(WebCord)"
+      "workspace special:discord, silent,class:(WebCord)"
       "workspace 2, silent,class:(Spotify)"
       "workspace 2, silent,class:(Cider)"
       "workspace 5, silent,class:(steam)"
@@ -141,8 +141,8 @@ in {
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"
       "$mod, tab, focusCurrentOrLast"
-      "$mod SHIFT, minus, movetoworkspace, special"
-      "$mod, minus, togglespecialworkspace"
+      "$mod SHIFT, minus, movetoworkspace, special:default"
+      "$mod, minus, togglespecialworkspace, default"
     ];
     bindm = [
       "$mod, mouse:272, movewindow"
@@ -219,6 +219,33 @@ in {
     bind=,escape,submap,reset
 
     submap = reset
+
+    #
+    # Scratchpads
+    #
+
+    bind = $mod,S,submap,scratchpads(P,D,1,2,3)
+    submap = scratchpads(P,D,1,2,3)
+
+    bind = SHIFT,P,movetoworkspace,special:private
+    bind = ,P,togglespecialworkspace,private
+
+    bind = SHIFT,D,movetoworkspace,special:discord
+    bind = ,D,togglespecialworkspace,discord
+
+    bind = SHIFT,1,movetoworkspace,special:default1
+    bind = ,1,togglespecialworkspace,default1
+
+    bind = SHIFT,2,movetoworkspace,special:default2
+    bind = ,2,togglespecialworkspace,default2
+
+    bind = SHIFT,3,movetoworkspace,special:default3
+    bind = ,3,togglespecialworkspace,default3
+
+    bind = ,escape,submap,reset
+
+    submap = reset
+
   '';
 
   services.mako = {
