@@ -41,10 +41,13 @@ in {
     ripgrep
     makoStatus
     makoAction
+    itch
   ];
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
+
+  programs.zathura.enable = true;
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
