@@ -29,7 +29,7 @@ in {
       enable = true;
       source = ../styles/waybar/style-light.css;
     };
-    "${config.xdg.configHome}/waybar/stylel-dark.css" = {
+    "${config.xdg.configHome}/waybar/style-dark.css" = {
       enable = true;
       source = ../styles/waybar/style-dark.css;
     };
