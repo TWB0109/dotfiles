@@ -9,6 +9,18 @@ let
     [[ $(makoctl mode) == "default" ]] && makoctl mode -s do-not-disturb || makoctl mode -s default
     pkill -RTMIN+1 waybar
   '';
+  hprop = pkgs.writeShellScriptBin "hprop" ''
+    # Credits to https://github.com/magicmonty on https://gist.github.com/crispyricepc/f313386043395ff06570e02af2d9a8e0?permalink_comment_id=4559283#gistcomment-4559283
+    TREE=$(hyprctl clients -j | jq -r '.[] | select(.hidden==false and .mapped==true)')
+    SELECTION=$(echo $TREE | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp)
+
+    X=$(echo $SELECTION | awk -F'[, x]' '{print $1}')
+    Y=$(echo $SELECTION | awk -F'[, x]' '{print $2}')
+    W=$(echo $SELECTION | awk -F'[, x]' '{print $3}')
+    H=$(echo $SELECTION | awk -F'[, x]' '{print $4}')
+
+    echo $TREE | jq -r --argjson x $X --argjson y $Y --argjson w $W --argjson h $H '. | select(.at[0]==$x and .at[1]==$y and .size[0]==$w and.size[1]==$h)'
+  '';
 
 in {
   home.username = "brandon";
@@ -42,6 +54,7 @@ in {
     makoStatus
     makoAction
     itch
+    hprop
   ];
 
   home.stateVersion = "24.05";
@@ -160,8 +173,8 @@ in {
     # Resize:
     #
     
-    bind = $mod, R, submap, resize
-    submap = resize
+    bind = $mod, R, submap, resize(H, J, K, L)
+    submap = resize(H, J, K, L)
     
     binde = , L, resizeactive, 10 0
     binde = , H, resizeactive, -10 0
@@ -177,8 +190,8 @@ in {
     # Screenshots:
     #
     
-    bind = $mod, P, submap, scopy
-    submap = scopy
+    bind = $mod, P, submap, scopy(A, S, O, R, W)
+    submap = scopy(A, S, O, R, W)
     
     bind=,A,exec,grimshot --notify copy active
     bind=,S,exec,grimshot --notify copy screen
@@ -189,8 +202,8 @@ in {
     
     submap=reset
     
-    bind = $mod SHIFT, P, submap, ssave
-    submap = ssave
+    bind = $mod SHIFT, P, submap, ssave(A, S, O, R, W)
+    submap = ssave(A, S, O, R, W)
     
     bind=,A,exec,grimshot --notify save active
     bind=,S,exec,grimshot --notify save screen
@@ -205,8 +218,8 @@ in {
     # Volume:
     #
     
-    bind = $mod, M, submap, media
-    submap = media
+    bind = $mod, M, submap, media(K, J, X, H, T, I, U, O)
+    submap = media(K, J, X, H, T, I, U, O)
     
     binde=,K,exec,pamixer -i 10
     binde=,J,exec,pamixer -d 10
@@ -294,29 +307,9 @@ in {
     };
   };
 
-  services.darkman = {
-    enable = true;
-    darkModeScripts = {
-      gtk-theme = pkgs.writeScript "gtk-theme-dark" ''
-        #!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#dconf --command bash
-        dconf write \
-        /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-      '';
-    };
-    lightModeScripts = {
-      gtk-theme = pkgs.writeScript "gtk-theme-light" ''
-        #!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#dconf --command bash
-        dconf write \
-        /org/gnome/desktop/interface/color-scheme "'prefer-light'"
-      '';
-    };
-    settings = {
-      usegeoclue = true;
-    };
-  };
-
   services.gammastep = {
     enable = true;
+    tray = true;
     provider = "geoclue2";
     temperature = {
       day = 6500;
@@ -613,5 +606,7 @@ in {
       };
     };
   };
+
+  services.blueman-applet.enable = true;
 
 }
