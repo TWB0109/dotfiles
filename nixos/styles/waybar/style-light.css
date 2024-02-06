@@ -50,7 +50,7 @@ button:hover {
     color: @gruvboxLight-background
 }
 
-#mode {
+#submap {
     margin: 5px;
     padding: 0px 5px;
     background-color: @gruvboxLight-red;

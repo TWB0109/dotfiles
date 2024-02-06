@@ -19,6 +19,7 @@ def create_left_prompt [] {
 $env.PROMPT_INDICATOR_VI_INSERT = {|| $"(ansi green_bold) [I] (ansi light_blue)~> (ansi reset)"}
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| $"(ansi blue_bold) [N] (ansi light_blue)~> (ansi reset)"}
 $env.PROMPT_COMMAND = {|| create_left_prompt }
+$env.LS_COLORS = (vivid generate gruvbox-dark | str trim)
+$env.SSH_AUTH_SOCK = $"($env.XDG_RUNTIME_DIR)/ssh-agent.socket"
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.scripts')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
-$env.SSH_AUTH_SOCK = $"($env.XDG_RUNTIME_DIR)/ssh-agent.socket"

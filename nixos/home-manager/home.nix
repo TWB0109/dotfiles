@@ -21,6 +21,16 @@ let
 
     echo $TREE | jq -r --argjson x $X --argjson y $Y --argjson w $W --argjson h $H '. | select(.at[0]==$x and .at[1]==$y and .size[0]==$w and.size[1]==$h)'
   '';
+  changeTheme = pkgs.writeShellScriptBin "changeTheme" ''
+    if [ $(dconf read /org/gnome/desktop/interface/color-scheme) = "'prefer-light'" ]; then
+      dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+      hyprctl --batch "keyword general:col.inactive_border rgba(282828ff) rgba(282828ff) ; keyword general:col.active_border rgba(b8bb26ff) rgba(b8bb26ff)"
+    else
+      dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+      hyprctl --batch "keyword general:col.inactive_border rgba(f2e5bcff) rgba(f2e5bcff) ; keyword general:col.active_border rgba(98971aff) rgba(98971aff)"
+    fi
+  '';
+  terminal = "wezterm";
 
 in {
   home.username = "brandon";
@@ -62,9 +72,12 @@ in {
     bitwarden-cli
     ripgrep
     itch
+    vivid
+    # writeShellScript bins:
     hprop
     makoStatus
     makoAction
+    changeTheme
   ];
 
   home.stateVersion = "24.05";
@@ -117,7 +130,7 @@ in {
       "col.shadow" = "rgba(000000ff)";
       "col.shadow_inactive" = "rgba(000000ee)";
 
-      "inactive_opacity" = 0.90;
+      "inactive_opacity" = 1;
       "active_opacity" = 1;
     };
     master = {
@@ -133,7 +146,7 @@ in {
     ];
     layerrule = [ "blur, waybar" ];
     bind = [
-      "$mod SHIFT, RETURN, exec, kitty"
+      "$mod SHIFT, RETURN, exec, ${terminal}"
       "$mod SHIFT, C, exec, ~/.scripts/closesteam"
       "$mod SHIFT, period, exec, ~/.scripts/rofiemoji"
       "$mod SHIFT, Q, exit,"
@@ -547,7 +560,7 @@ in {
   };
 
   programs.kitty = {
-    enable = true;
+    enable = false;
     font = {
       name = "SauceCodePro NFM";
       size = 10.0;
@@ -570,6 +583,52 @@ in {
       color = "282828";
       font = "SauceCodePro NFM";
     };
+  };
+
+  programs.wezterm = {
+    enable = true;
+    extraConfig = ''
+      local wezterm = require 'wezterm'
+      local config = wezterm.config_builder()
+
+      function scheme_for_appearance(appearance)
+        if appearance:find 'Dark' then
+          return 'Gruvbox dark, medium (base16)'
+        else
+          return 'Gruvbox light, medium (base16)'
+        end
+      end
+
+      wezterm.on('window-config-reloaded', function(window, pane)
+        local overrides = window:get_config_overrides() or {}
+        local appearance = window:get_appearance()
+        local scheme = scheme_for_appearance(appearance)
+        if overrides.color_scheme ~= scheme then
+          overrides.color_scheme = scheme
+          window:set_config_overrides(overrides)
+        end
+      end)
+
+      config.font = wezterm.font 'SauceCodePro NFM'
+      config.font_size = 10.0
+      config.freetype_load_target = "Light"
+      config.freetype_render_target = "HorizontalLcd"
+      config.hide_tab_bar_if_only_one_tab = true
+      config.hide_mouse_cursor_when_typing = false
+      config.audible_bell = "Disabled"
+      config.visual_bell = {
+        fade_in_function = 'EaseIn',
+        fade_in_duration_ms = 150,
+        fade_out_function = 'EaseOut',
+        fade_out_duration_ms = 150,
+      }
+      config.colors = {
+        visual_bell = '#202020',
+      }
+      config.window_background_opacity = 0.9
+
+      return config
+    '';
   };
 
   services.swayidle = {
