@@ -1,0 +1,196 @@
+@define-color gruvboxLight-red #9d0006;
+@define-color gruvboxLight-green #79740e;
+@define-color gruvboxLight-yellow #b57614;
+@define-color gruvboxLight-blue #076678;
+@define-color gruvboxLight-purple #8f3f71;
+@define-color gruvboxLight-aqua #427b58;
+@define-color gruvboxLight-background rgba(242, 229, 188, 0.70);
+@define-color gruvboxLight-foreground #3c3836;
+
+@define-color spotify-foreground #1DB954;
+
+* {
+    font-family: "SauceCodePro NFM", "Font Awesome 6 Free Regular";
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @gruvboxLight-background;
+    color: @gruvboxLight-foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    color: @gruvboxLight-green;
+    margin: 5px
+}
+
+#workspaces button:hover {
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
+}
+
+#workspaces button.active {
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background
+}
+
+#mode {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxLight-red;
+    color: @gruvboxLight-background;
+}
+
+#tray menu {
+    color: @gruvboxLight-green;
+    background-color: @gruvboxLight-background
+}
+
+#tray menu > *:hover {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+}
+
+#language {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+}
+
+#clock {
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#wireplumber {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-aqua;
+}
+
+#memory {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-blue;
+}
+
+#cpu {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-blue;
+}
+
+#custom-mako {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color:@gruvboxLight-yellow;
+    color: @gruvboxLight-background;
+}
+
+#custom-audio_idle_inhibitor {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color:@gruvboxLight-yellow;
+    color: @gruvboxLight-background;
+}
+
+#idle_inhibitor.activated {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxLight-green;
+    color: @gruvboxLight-background;
+}
+
+#idle_inhibitor.deactivated {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxLight-red;
+    color: @gruvboxLight-background;
+}
+
+#mpris {
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#mpris.spotify {
+    color: @spotify-foreground;
+}
+
+#keyboard-state {
+    color: @gruvboxLight-background;
+}
+
+#keyboard-state label {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#keyboard-state label.locked {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-red;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network {
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.disabled {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-red;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.disconnected {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-yellow;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.linked {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.ethernet {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+#network.wifi {
+    color: @gruvboxLight-background;
+    background-color: @gruvboxLight-green;
+    margin: 5px;
+    padding: 0px 5px;
+}

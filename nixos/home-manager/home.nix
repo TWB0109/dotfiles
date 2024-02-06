@@ -24,6 +24,16 @@ let
 
 in {
   home.username = "brandon";
+  home.file = {
+    "${config.xdg.configHome}/waybar/style-light.css" = {
+      enable = true;
+      source = ../styles/waybar/style-light.css;
+    };
+    "${config.xdg.configHome}/waybar/stylel-dark.css" = {
+      enable = true;
+      source = ../styles/waybar/style-dark.css;
+    };
+  };
 
   home.packages = with pkgs; [
     sway-contrib.grimshot
@@ -51,10 +61,10 @@ in {
     cider
     bitwarden-cli
     ripgrep
-    makoStatus
-    makoAction
     itch
     hprop
+    makoStatus
+    makoAction
   ];
 
   home.stateVersion = "24.05";
@@ -491,7 +501,7 @@ in {
         tooltip = false;
       };
     }];
-    style = ../styles/waybar/style.css;
+    #style = ../styles/waybar/style.css;
     systemd = {
       enable = true;
       target = "hyprland-session.target"; 
