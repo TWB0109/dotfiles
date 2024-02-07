@@ -68,7 +68,6 @@ in {
     heroic
     gamemode
     trash-cli
-    cider
     bitwarden-cli
     ripgrep
     itch
