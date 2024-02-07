@@ -110,6 +110,7 @@
     bash
     appimage-run
     loupe
+    bluetuith
   ];
 
   fonts.packages = with pkgs; [
