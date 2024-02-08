@@ -6,6 +6,7 @@ $env.config = {
   rm: {
     always_trash: true
   }
+  show_banner: false,
 }
 
 def vim [ file: string = "." ] {

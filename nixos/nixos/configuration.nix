@@ -55,7 +55,10 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.epson_201207w ];
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -118,6 +121,7 @@
     noto-fonts-cjk-serif
     noto-fonts-cjk-sans
     font-awesome
+    babelstone-han
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

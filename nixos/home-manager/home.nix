@@ -60,7 +60,6 @@ in {
     gnome.gnome-calculator
     xdg-user-dirs
     floorp 
-    fcitx5
     sway-audio-idle-inhibit
     stow
     pavucontrol
@@ -79,10 +78,32 @@ in {
     changeTheme
   ];
 
-  home.stateVersion = "24.05";
-  programs.home-manager.enable = true;
+  i18n.inputMethod = { 
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ 
+      fcitx5-hangul
+      fcitx5-rime
+      fcitx5-material-color
+    ];
+  };
 
-  programs.zathura.enable = true;
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
+    };
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+    font = {
+      package = pkgs.cantarell-fonts;
+      name = "Cantarell";
+      size = 11;
+    };
+  };
+
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
@@ -312,23 +333,6 @@ in {
     font = "SauceCodePro NFM 10";
   };
 
-  gtk = {
-    enable = true;
-    theme = {
-      package = pkgs.adw-gtk3;
-      name = "adw-gtk3-dark";
-    };
-    iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-    font = {
-      package = pkgs.cantarell-fonts;
-      name = "Cantarell";
-      size = 11;
-    };
-  };
-
   services.gammastep = {
     enable = true;
     tray = true;
@@ -336,6 +340,35 @@ in {
     temperature = {
       day = 6500;
       night = 4000;
+    };
+  };
+
+  programs.zathura.enable = true;
+
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      HDMI-A-1 = {
+        path = "~/dotfiles/nixos/wallpapers";
+        duration = "30m";
+      };
+    };
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+    settings = {
+      log = {
+        enable = false;
+      };
+      manager = {
+        sort_by = "alphabetical";
+        sort_reverse = true;
+        sort_dir_first = true;
+        linemode = "size";
+        show_symlink = true;
+      };
     };
   };
 
@@ -648,33 +681,9 @@ in {
     ];
   };
 
-  programs.wpaperd = {
-    enable = true;
-    settings = {
-      HDMI-A-1 = {
-        path = "~/dotfiles/nixos/wallpapers";
-        duration = "30m";
-      };
-    };
-  };
-
-  programs.yazi = {
-    enable = true;
-    enableNushellIntegration = true;
-    settings = {
-      log = {
-        enable = false;
-      };
-      manager = {
-        sort_by = "alphabetical";
-        sort_reverse = true;
-        sort_dir_first = true;
-        linemode = "size";
-        show_symlink = true;
-      };
-    };
-  };
-
   services.blueman-applet.enable = true;
+
+  home.stateVersion = "24.05";
+  programs.home-manager.enable = true;
 
 }
