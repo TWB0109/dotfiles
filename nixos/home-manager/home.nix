@@ -1,35 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  makoStatus = pkgs.writeShellScriptBin "makoStatus" ''
-    state=$(makoctl mode)
-    [[ $state == "default" ]] && echo "" || echo ""
-  '';
-  makoAction = pkgs.writeShellScriptBin "makoAction" ''
-    [[ $(makoctl mode) == "default" ]] && makoctl mode -s do-not-disturb || makoctl mode -s default
-    pkill -RTMIN+1 waybar
-  '';
-  hprop = pkgs.writeShellScriptBin "hprop" ''
-    # Credits to https://github.com/magicmonty on https://gist.github.com/crispyricepc/f313386043395ff06570e02af2d9a8e0?permalink_comment_id=4559283#gistcomment-4559283
-    TREE=$(hyprctl clients -j | jq -r '.[] | select(.hidden==false and .mapped==true)')
-    SELECTION=$(echo $TREE | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp)
-
-    X=$(echo $SELECTION | awk -F'[, x]' '{print $1}')
-    Y=$(echo $SELECTION | awk -F'[, x]' '{print $2}')
-    W=$(echo $SELECTION | awk -F'[, x]' '{print $3}')
-    H=$(echo $SELECTION | awk -F'[, x]' '{print $4}')
-
-    echo $TREE | jq -r --argjson x $X --argjson y $Y --argjson w $W --argjson h $H '. | select(.at[0]==$x and .at[1]==$y and .size[0]==$w and.size[1]==$h)'
-  '';
-  changeTheme = pkgs.writeShellScriptBin "changeTheme" ''
-    if [ $(dconf read /org/gnome/desktop/interface/color-scheme) = "'prefer-light'" ]; then
-      dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-      hyprctl --batch "keyword general:col.inactive_border rgba(282828ff) rgba(282828ff) ; keyword general:col.active_border rgba(b8bb26ff) rgba(b8bb26ff)"
-    else
-      dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
-      hyprctl --batch "keyword general:col.inactive_border rgba(f2e5bcff) rgba(f2e5bcff) ; keyword general:col.active_border rgba(98971aff) rgba(98971aff)"
-    fi
-  '';
+  makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
+  makoAction = pkgs.writeShellScriptBin "makoAction" ../scripts/makoAction;
+  hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
+  changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
   terminal = "wezterm";
 
 in {
@@ -71,6 +46,7 @@ in {
     ripgrep
     itch
     vivid
+    ani-cli
     # writeShellScript bins:
     hprop
     makoStatus
