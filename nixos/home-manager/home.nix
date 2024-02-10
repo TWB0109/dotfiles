@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
@@ -6,6 +6,7 @@ let
   appil = pkgs.writeShellScriptBin "appil" ../scripts/appil;
   hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
   changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
+  cider2 = import ../appimages/cider.nix { inherit lib pkgs config; };
 in {
   imports = [ ../hypr/hyprland.nix ];
 
@@ -52,6 +53,7 @@ in {
     itch
     vivid
     ani-cli
+    cider2
     # writeShellScript bins:
     hprop
     makoStatus
