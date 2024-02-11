@@ -25,6 +25,50 @@ in {
     terminal = "wezterm";
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    associations.added = {
+      "x-scheme-handler/http"= [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/https" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/chrome" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "text/html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-htm" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-shtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/xhtml+xml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-xhtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-xht" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/pdf" = "org.pwmt.zathura.desktop";
+      "text/plain" = "org.gnome.evolution-data-server.OAuth2-handler.desktop";
+      "image/png" = "org.gnome.Loupe.desktop";
+      "image/jpeg" = "org.gnome.Loupe.desktop";
+      "image/jpg" = "org.gnome.Loupe.desktop";
+      "image/gif" = "org.gnome.Loupe.desktop";
+      "application/epub+zip" = "com.github.johnfactotum.Foliate.desktop";
+      "video/mp4" = "io.github.celluloid_player.Celluloid.desktop";
+      "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
+    };
+    defaultApplications = {
+      "x-scheme-handler/http" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/https" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/chrome" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "text/html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-htm" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-shtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/xhtml+xml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-xhtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "application/x-extension-xht" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "image/png" = "org.gnome.Loupe.desktop";
+      "image/jpeg" = "org.gnome.Loupe.desktop";
+      "image/jpg" = "org.gnome.Loupe.desktop";
+      "image/gif" = "org.gnome.Loupe.desktop";
+      "application/epub+zip" = "com.github.johnfactotum.Foliate.desktop";
+      "video/mp4" = "io.github.celluloid_player.Celluloid.desktop";
+      "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
+    };
+  };
+
   home.packages = with pkgs; [
     sway-contrib.grimshot
     pamixer
@@ -52,6 +96,7 @@ in {
     itch
     vivid
     ani-cli
+    adw-gtk3
     # writeShellScript bins:
     hprop
     makoStatus
@@ -71,8 +116,7 @@ in {
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.adw-gtk3;
-      name = "adw-gtk3-dark";
+      name = "adw-gtk3";
     };
     iconTheme = {
       package = pkgs.gnome.adwaita-icon-theme;
