@@ -97,6 +97,36 @@ in {
     vivid
     ani-cli
     adw-gtk3
+    spot
+    dialect
+    foliate
+    komikku
+    gnome-decoder
+    google-chrome
+    stremio
+    fragments
+    mission-center
+    anki-bin
+    protonup-qt
+    pcsx2
+    airshipper
+    piper
+    epiphany
+    gnome-podcasts
+    gnome.cheese
+    gnome-solanum
+    gnome.gnome-sound-recorder
+    citations
+    pika-backup
+    gnome.gnome-font-viewer
+    video-trimmer
+    apostrophe
+    retroarch
+    cavalier
+    pitivi
+    telegram-desktop
+    zotero
+    celluloid
     # writeShellScript bins:
     hprop
     makoStatus
