@@ -7,7 +7,6 @@
       monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" ];
       misc = {
         "vrr" = 1;
-        "force_hypr_chan" = true;
       };
       general = {
         "gaps_in" = 5;

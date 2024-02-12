@@ -268,7 +268,6 @@ in {
           paused = "";
           plaaying = "";
         };
-        ignored-players = [ "firefox" ];
       };
 
       "hyprland/language" = {
