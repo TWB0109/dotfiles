@@ -92,7 +92,7 @@
   users.users.brandon = {
     isNormalUser = true;
     description = "Brandon S";
-    extraGroups = [ "networkmanager" "wheel" "input" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "scanner" "lp" "libvirtd" ];
     shell = pkgs.nushell;
     packages = with pkgs; [
     ];
@@ -471,9 +471,13 @@
   # PAM
   security.pam.services.swaylock = {};
 
+  # Virtualisation
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 9000 ];
-  networking.firewall.allowedUDPPorts = [ 9000 ];
+  # networking.firewall.allowedTCPPorts = [ 9000 ];
+  # networking.firewall.allowedUDPPorts = [ 9000 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

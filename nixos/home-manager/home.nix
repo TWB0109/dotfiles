@@ -3,7 +3,7 @@
 let
   makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
   makoAction = pkgs.writeShellScriptBin "makoAction" ../scripts/makoAction;
-  appil = pkgs.writeShellScriptBin "appImageLaunch" ../scripts/appil;
+  appil = pkgs.writeShellScriptBin "appil" ../scripts/appil;
   hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
   changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
 in {
@@ -23,6 +23,13 @@ in {
 
   home.sessionVariables = {
     terminal = "wezterm";
+  };
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
   };
 
   xdg.mimeApps = {
@@ -132,6 +139,7 @@ in {
     makoStatus
     makoAction
     changeTheme
+    appil
   ];
 
   i18n.inputMethod = { 

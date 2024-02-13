@@ -70,7 +70,7 @@
         "$mod, SPACE, movefocus, mode_toggle"
         "$mod SHIFT, D, exec, rofi -show drun"
         "$mod CONTROL, D, exec, rofi -show run"
-        "$mod ALT, D, exec, appImageLaunch"
+        "$mod ALT, D, exec, appil"
         "$mod, Q, exec, hyprctl reload && killall -SIGUSR2 waybar"
         "$mod, K, layoutmsg, cycleprev"
         "$mod, J, layoutmsg, cyclenext"
