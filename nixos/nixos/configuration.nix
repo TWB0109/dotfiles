@@ -44,10 +44,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
   
   # Configure keymap in X11
   services.xserver = {
@@ -101,7 +99,7 @@
   };
 
   # Enable Hyprland
-  programs.hyprland.enable = false;
+  programs.hyprland.enable = true;
   programs.dconf.enable = true;
 
   # Hint Electron apps to use wayland:
