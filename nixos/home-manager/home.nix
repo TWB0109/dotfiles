@@ -3,7 +3,7 @@
 let
   makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
   makoAction = pkgs.writeShellScriptBin "makoAction" ../scripts/makoAction;
-  appil = pkgs.writeShellScriptBin "appil" ../scripts/appil;
+  appil = pkgs.writeShellScriptBin "appImageLaunch" ../scripts/appil;
   hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
   changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
 in {

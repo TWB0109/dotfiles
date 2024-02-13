@@ -1,2 +1,3 @@
-cd ~/Applications/
+pushd ~/Applications/
 appimage-run $(ls -d1 * | rofi -dmenu)
+popd
