@@ -1,9 +1,11 @@
 if [ $(dconf read /org/gnome/desktop/interface/color-scheme) = "'prefer-light'" ]; then
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/freedesktop/appearance/color-scheme "'Dark'"
+  swww img ~/dotfiles/nixos/wallpapers/leaves2.png --transition-type wipe --transition-angle 30 --transition-step 90
   hyprctl --batch "keyword general:col.inactive_border rgba(282828ff) rgba(282828ff) ; keyword general:col.active_border rgba(b8bb26ff) rgba(b8bb26ff)"
 else
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
   dconf write /org/freedesktop/appearance/color-scheme "'Light'"
+  swww img ~/dotfiles/nixos/wallpapers/flowers.png --transition-type wipe --transition-angle 30 --transition-step 90
   hyprctl --batch "keyword general:col.inactive_border rgba(f2e5bcff) rgba(f2e5bcff) ; keyword general:col.active_border rgba(98971aff) rgba(98971aff)"
 fi

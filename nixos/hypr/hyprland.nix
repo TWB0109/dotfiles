@@ -101,7 +101,7 @@
       ];
       exec-once = [
         "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
-        "wpaperd"
+        "waypaper --restore"
         "sway-audio-idle-inhibit"
       ];
     };

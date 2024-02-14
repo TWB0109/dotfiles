@@ -25,6 +25,13 @@ in {
     terminal = "wezterm";
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.apple-cursor;
+    name = "macOs-BigSur";
+    size = 16;
+  };
+
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = [ "qemu:///system" ];
@@ -134,6 +141,8 @@ in {
     telegram-desktop
     zotero
     celluloid
+    swww
+    waypaper
     # writeShellScript bins:
     hprop
     makoStatus
@@ -148,6 +157,7 @@ in {
       fcitx5-hangul
       fcitx5-rime
       fcitx5-material-color
+      fcitx5-mozc
     ];
   };
 
@@ -164,6 +174,11 @@ in {
       package = pkgs.cantarell-fonts;
       name = "Cantarell";
       size = 11;
+    };
+    cursorTheme = {
+      package = pkgs.apple-cursor;
+      name = "macOS-BigSur";
+      size = 16;
     };
   };
 
@@ -209,7 +224,7 @@ in {
   programs.zathura.enable = true;
 
   programs.wpaperd = {
-    enable = true;
+    enable = false;
     settings = {
       HDMI-A-1 = {
         path = "~/dotfiles/nixos/wallpapers";
