@@ -180,6 +180,12 @@ in {
       name = "macOS-BigSur";
       size = 16;
     };
+    gtk3.extraConfig = {
+      gtk-decoration-layout = "menu:close";
+    };
+    gtk4.extraConfig = {
+      gtk-decoration-layout = ":close";
+    };
   };
 
   services.mako = {
