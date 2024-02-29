@@ -149,6 +149,7 @@ in {
     makoAction
     changeTheme
     appil
+    helix
   ];
 
   i18n.inputMethod = { 
@@ -450,6 +451,13 @@ in {
     environmentVariables = {
       EDITOR = "nvim";
     };
+  };
+
+  programs.zoxide = {
+    enableNushellIntegration = true;
+    options = [
+      "--no-aliases"
+    ];
   };
 
   # programs.carapace = {
