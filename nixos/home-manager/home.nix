@@ -454,10 +454,8 @@ in {
   };
 
   programs.zoxide = {
+    enable = true;
     enableNushellIntegration = true;
-    options = [
-      "--no-aliases"
-    ];
   };
 
   # programs.carapace = {
