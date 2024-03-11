@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }: 
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }: 
 
   let
     system = "x86_64-linux";
@@ -25,7 +25,7 @@
       nixos = lib.nixosSystem {
         inherit system;
 	      modules = [
-	        ./nixos/configuration.nix
+          ./nixos/configuration.nix
 	        home-manager.nixosModules.home-manager
 	        {
 	          home-manager.useGlobalPkgs = true;
