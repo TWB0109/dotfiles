@@ -13,7 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname. networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -156,10 +156,6 @@
 
   # Enable geoclue
   services.geoclue2.enable = true;
-
-  # Enable Automatic Upgrades
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
 
   # Enable bluetooth
   hardware.bluetooth = {
@@ -469,7 +465,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 7d";
     };
   };
 
