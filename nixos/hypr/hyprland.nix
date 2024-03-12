@@ -1,10 +1,13 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mod" = "SUPER";
-      monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" ];
+      monitor = ["HDMI-A-1,1920x1080@75,0x0,1"];
       misc = {
         "vrr" = 1;
       };
@@ -59,7 +62,7 @@
         "workspace 2, silent,class:(Cider)"
         "workspace 5, silent,class:(steam)"
       ];
-      layerrule = [ "blur, waybar" ];
+      layerrule = ["blur, waybar"];
       bind = [
         "$mod SHIFT, RETURN, exec, ${config.home.sessionVariables.terminal}"
         "$mod SHIFT, C, exec, ~/.scripts/closesteam"
@@ -105,8 +108,7 @@
         "sway-audio-idle-inhibit"
       ];
     };
-    extraConfig = 
-      ''
+    extraConfig = ''
       #
       # Resize:
       #
@@ -119,7 +121,7 @@
       binde = , K, resizeactive, 0 -10
       binde = , J, resizeactive, 0 10
 
-      bind=,escape,submap,reset 
+      bind=,escape,submap,reset
 
       submap=reset
 
@@ -162,7 +164,7 @@
       binde=,J,exec,pamixer -d 10
       bind= ,X,exec,pamixer --set-volume 100
       bind= ,H,exec,pamixer --set-volume 50
-      bind= ,T,exec,pamixer --toggle-mute 
+      bind= ,T,exec,pamixer --toggle-mute
       bind= ,I,exec,playerctl play-pause
       bind= ,U,exec,playerctl previous
       bind= ,O,exec,playerctl next
@@ -196,6 +198,6 @@
 
       submap = reset
 
-      '';
+    '';
   };
 }

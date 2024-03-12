@@ -1,13 +1,16 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
   makoAction = pkgs.writeShellScriptBin "makoAction" ../scripts/makoAction;
   appil = pkgs.writeShellScriptBin "appil" ../scripts/appil;
   hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
   changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
 in {
-  imports = [ ../hypr/hyprland.nix ];
+  imports = [../hypr/hyprland.nix];
 
   home.username = "brandon";
   home.file = {
@@ -34,24 +37,24 @@ in {
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" ];
-      uris = [ "qemu:///system" ];
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 
   xdg.mimeApps = {
     enable = true;
     associations.added = {
-      "x-scheme-handler/http"= [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "x-scheme-handler/https" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "x-scheme-handler/chrome" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "text/html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-htm" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-shtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/xhtml+xml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-xhtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-xht" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/http" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "x-scheme-handler/https" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "x-scheme-handler/chrome" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "text/html" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-htm" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-html" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-shtml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/xhtml+xml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-xhtml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-xht" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
       "application/pdf" = "org.pwmt.zathura.desktop";
       "text/plain" = "org.gnome.evolution-data-server.OAuth2-handler.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
@@ -63,16 +66,16 @@ in {
       "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
     };
     defaultApplications = {
-      "x-scheme-handler/http" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "x-scheme-handler/https" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "x-scheme-handler/chrome" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "text/html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-htm" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-html" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-shtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/xhtml+xml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-xhtml" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
-      "application/x-extension-xht" = [ "floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome" ];
+      "x-scheme-handler/http" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "x-scheme-handler/https" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "x-scheme-handler/chrome" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "text/html" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-htm" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-html" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-shtml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/xhtml+xml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-xhtml" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
+      "application/x-extension-xht" = ["floorp.desktop" "org.gnome.Epiphany.desktop" "com.vivaldi.Vivaldi.desktop" "com.google.Chrome"];
       "image/png" = "org.gnome.Loupe.desktop";
       "image/jpeg" = "org.gnome.Loupe.desktop";
       "image/jpg" = "org.gnome.Loupe.desktop";
@@ -97,7 +100,7 @@ in {
     gnome.gnome-calendar
     gnome.gnome-calculator
     xdg-user-dirs
-    floorp 
+    floorp
     sway-audio-idle-inhibit
     stow
     pavucontrol
@@ -152,9 +155,9 @@ in {
     helix
   ];
 
-  i18n.inputMethod = { 
+  i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ 
+    fcitx5.addons = with pkgs; [
       fcitx5-hangul
       fcitx5-rime
       fcitx5-material-color
@@ -196,19 +199,18 @@ in {
     borderColor = "#b8bb26";
     borderSize = 2;
     defaultTimeout = 5000;
-    extraConfig = 
-    ''
-    [urgency=low]
-    border-color=#8ec07c
-    
-    [urgency=normal]
-    border-color=#b8bb26
+    extraConfig = ''
+      [urgency=low]
+      border-color=#8ec07c
 
-    [urgency=high]
-    border-color=#fb4934
+      [urgency=normal]
+      border-color=#b8bb26
 
-    [mode=do-not-disturb]
-    invisible=1
+      [urgency=high]
+      border-color=#fb4934
+
+      [mode=do-not-disturb]
+      invisible=1
     '';
     height = 110;
     width = 310;
@@ -259,181 +261,183 @@ in {
 
   programs.waybar = {
     enable = true;
-    settings = [{
-      layer = "top";
-      position = "top";
-      height = 10;
-      output = [ "HDMI-A-1" ];
-      ipc = true;
-      modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
-      modules-center = [ "mpris" ];
-      modules-right = [ 
-        "custom/audio_idle_inhibitor"
-        "custom/mako"
-        "gamemode" 
-        "network"
-        "cpu" 
-        "memory" 
-        "wireplumber"
-        "keyboard-state"
-        "hyprland/language"
-        "idle_inhibitor"
-        "clock"
-        "tray"
-      ];
+    settings = [
+      {
+        layer = "top";
+        position = "top";
+        height = 10;
+        output = ["HDMI-A-1"];
+        ipc = true;
+        modules-left = ["hyprland/workspaces" "hyprland/submap"];
+        modules-center = ["mpris"];
+        modules-right = [
+          "custom/audio_idle_inhibitor"
+          "custom/mako"
+          "gamemode"
+          "network"
+          "cpu"
+          "memory"
+          "wireplumber"
+          "keyboard-state"
+          "hyprland/language"
+          "idle_inhibitor"
+          "clock"
+          "tray"
+        ];
 
-      "tray" = {
-        icon_size = 21;
-        spacing = 10;
-      };
-
-      "mpris" = {
-        format = "{player_icon}: {status_icon} <b>{title} | {artist}</b>";
-        format-paused = "{player_icon}: {status_icon} {title} | {artist}";
-        player-icons = {
-          default = "🎵";
-          spotify = "";
+        "tray" = {
+          icon_size = 21;
+          spacing = 10;
         };
-        status-icons = {
-          paused = "";
-          plaaying = "";
-        };
-      };
 
-      "hyprland/language" = {
-        format = "{short} {variant}";
-        on-click = "${pkgs.hyprland}/bin/hyprctl switchxkblayout 0.01-mechanical-keyboard next";
-      };
-
-      "clock" = {
-        format = " {:%a, %b %d, %Y | %R}";
-        format-alt = " {:%H:%M} ";
-        tooltip-format = "<tt><small>{calendar}</small></tt>";
-        on-click-right = "gnome-calendar";
-        calendar = {
-          mode = "year";
-          mode-mon-col = 3;
-          weeks-pos = "right";
-          on-scroll = 1;
-          on-click-right = "mode";
-          format = {
-            months   = "<span color='#ffead3'><b>{}</b></span>";
-            days     = "<span color='#ecc6d9'><b>{}</b></span>";
-            weeks    = "<span color='#99ffdd'><b>W{}</b></span>";
-            weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-            today    = "<span color='#ff6699'><b><u>{}</u></b></span>";
+        "mpris" = {
+          format = "{player_icon}: {status_icon} <b>{title} | {artist}</b>";
+          format-paused = "{player_icon}: {status_icon} {title} | {artist}";
+          player-icons = {
+            default = "🎵";
+            spotify = "";
+          };
+          status-icons = {
+            paused = "";
+            plaaying = "";
           };
         };
-      };
 
-      "wireplumber" = {
-        format = "{icon} {volume}%";
-        format-muted = " Muted";
-        on-click = "${pkgs.pamixer}/bin/pamixer -d 10";
-        on-click-middle = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
-        on-click-right = "${pkgs.pamixer}/bin/pamixer -i 10";
-        format-icons = [ "" "" "" ];
-      };
-
-      "memory" = {
-        interval = 30;
-        format = " {used:0.1f}G/{total:0.1f}G";
-      };
-
-      "cpu" = {
-        interval = 10;
-        format = " {}%";
-        max-length = 10;
-      };
-
-      "idle_inhibitor" = {
-        format = "{icon}";
-        tooltip-format-deactivated = "Caffeine is {status}";
-        tooltip-format-activated = "Caffeine is {status}";
-        format-icons = {
-          activated = "";
-          deactivated = "";
+        "hyprland/language" = {
+          format = "{short} {variant}";
+          on-click = "${pkgs.hyprland}/bin/hyprctl switchxkblayout 0.01-mechanical-keyboard next";
         };
-      };
 
-      "hyprland/workspaces" = {
-        format = "{icon}";
-        format-icons = {
-          "1" = "󰈹";
-          "2" = "";
-          "3" = "";
-          "4" = "";
-          "5" = "󰊴";
+        "clock" = {
+          format = " {:%a, %b %d, %Y | %R}";
+          format-alt = " {:%H:%M} ";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          on-click-right = "gnome-calendar";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            on-click-right = "mode";
+            format = {
+              months = "<span color='#ffead3'><b>{}</b></span>";
+              days = "<span color='#ecc6d9'><b>{}</b></span>";
+              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+          };
         };
-        on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
-        on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
-      };
 
-      "gamemode" = {
-        format = "{glyph}";
-        format-alt = "{glyph} {count}";
-        glyph = "";
-        hide-not-running = true;
-        use-icon = true;
-        icon-name = "input-gaming-symbolic";
-        icon-spacing = 4;
-        icon-size = 20;
-        tooltip = true;
-        tooltip-format = "Games running: {count}";
-      };
-
-      "keyboard-state" = {
-        numlock = false;
-        capslock = false;
-        format = {
-          numlock = "Num {icon}";
-          capslock = "Caps {icon}";
+        "wireplumber" = {
+          format = "{icon} {volume}%";
+          format-muted = " Muted";
+          on-click = "${pkgs.pamixer}/bin/pamixer -d 10";
+          on-click-middle = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
+          on-click-right = "${pkgs.pamixer}/bin/pamixer -i 10";
+          format-icons = ["" "" ""];
         };
-        format-icons = {
-          locked =  "";
-          unlocked =  "";
+
+        "memory" = {
+          interval = 30;
+          format = " {used:0.1f}G/{total:0.1f}G";
         };
-      };
 
-      "network" = {
-        interface = "wlp9s0";
-        format = "{ifname}";
-        format-wifi = "{essid} ({signalStrength}%) ";
-        format-ethernet = "{ipaddr}/{cidr} 󰊗";
-        format-disconnected = "";
-        tooltip-format = "{ifname} via {gwaddr} 󰊗";
-        tooltip-format-wifi = "{essid} ({signalStrength}%) ";
-        tooltip-format-ethernet = "{ifname} ";
-        tooltip-format-disconnected = "Disconnected";
-        max-length = 50;
-      };
-
-      "custom/audio_idle_inhibitor" = {
-        format = "{icon}";
-        exec = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit --dry-print-both-waybar";
-        exec-if = "which sway-audio-idle-inhibit";
-        return-type = "json";
-        format-icons = {
-          output = "";
-          input = "";
-          output-input = "  ";
-          none = "";
+        "cpu" = {
+          interval = 10;
+          format = " {}%";
+          max-length = 10;
         };
-      };
 
-      "custom/mako" =  {
-        exec = "makoStatus";
-        on-click = "makoAction";
-        format = "{}";
-        interval = 10;
-        signal = 1;
-        tooltip = false;
-      };
-    }];
+        "idle_inhibitor" = {
+          format = "{icon}";
+          tooltip-format-deactivated = "Caffeine is {status}";
+          tooltip-format-activated = "Caffeine is {status}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
+
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "1" = "󰈹";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "󰊴";
+          };
+          on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
+          on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
+        };
+
+        "gamemode" = {
+          format = "{glyph}";
+          format-alt = "{glyph} {count}";
+          glyph = "";
+          hide-not-running = true;
+          use-icon = true;
+          icon-name = "input-gaming-symbolic";
+          icon-spacing = 4;
+          icon-size = 20;
+          tooltip = true;
+          tooltip-format = "Games running: {count}";
+        };
+
+        "keyboard-state" = {
+          numlock = false;
+          capslock = false;
+          format = {
+            numlock = "Num {icon}";
+            capslock = "Caps {icon}";
+          };
+          format-icons = {
+            locked = "";
+            unlocked = "";
+          };
+        };
+
+        "network" = {
+          interface = "wlp9s0";
+          format = "{ifname}";
+          format-wifi = "{essid} ({signalStrength}%) ";
+          format-ethernet = "{ipaddr}/{cidr} 󰊗";
+          format-disconnected = "";
+          tooltip-format = "{ifname} via {gwaddr} 󰊗";
+          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+          tooltip-format-ethernet = "{ifname} ";
+          tooltip-format-disconnected = "Disconnected";
+          max-length = 50;
+        };
+
+        "custom/audio_idle_inhibitor" = {
+          format = "{icon}";
+          exec = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit --dry-print-both-waybar";
+          exec-if = "which sway-audio-idle-inhibit";
+          return-type = "json";
+          format-icons = {
+            output = "";
+            input = "";
+            output-input = "  ";
+            none = "";
+          };
+        };
+
+        "custom/mako" = {
+          exec = "makoStatus";
+          on-click = "makoAction";
+          format = "{}";
+          interval = 10;
+          signal = 1;
+          tooltip = false;
+        };
+      }
+    ];
     #style = ../styles/waybar/style.css;
     systemd = {
       enable = true;
-      target = "hyprland-session.target"; 
+      target = "hyprland-session.target";
     };
   };
 
@@ -467,16 +471,16 @@ in {
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-       "github.com-twb0109" = {
-         hostname = "github.com";
-         user = "git";
-         identityFile = "~/.ssh/twb0109_ed25519";
-       };
-       "github.com-bsp0109" = {
-         hostname = "github.com";
-         user = "git";
-         identityFile = "~/.ssh/bsp0109_ed25519";
-       };
+      "github.com-twb0109" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/twb0109_ed25519";
+      };
+      "github.com-bsp0109" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/bsp0109_ed25519";
+      };
     };
   };
 
@@ -487,11 +491,11 @@ in {
       size = 10.0;
     };
     settings = {
-       font_family =      "SauceCodePro NFM";
-       bold_font =        "SauceCodePro NFM Bold";
-       italic_font =      "SauceCodePro NFM Italic";
-       bold_italic_font = "SauceCodePro NFM Bold Italic";
-       background_opacity = "0.9";
+      font_family = "SauceCodePro NFM";
+      bold_font = "SauceCodePro NFM Bold";
+      italic_font = "SauceCodePro NFM Italic";
+      bold_italic_font = "SauceCodePro NFM Bold Italic";
+      background_opacity = "0.9";
     };
     theme = "Gruvbox Dark";
   };
@@ -555,14 +559,17 @@ in {
   services.swayidle = {
     enable = true;
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fF"; }
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
+      }
     ];
     timeouts = [
-      { 
+      {
         timeout = 300;
         command = "${pkgs.swaylock}/bin/swaylock -fF";
       }
-      { 
+      {
         timeout = 600;
         command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
         resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
@@ -574,5 +581,4 @@ in {
 
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
-
 }

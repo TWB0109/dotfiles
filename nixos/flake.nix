@@ -10,30 +10,33 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }: 
-
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nixvim,
+    ...
+  }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = { allowUnfree = true; };
+      config = {allowUnfree = true;};
     };
     lib = nixpkgs.lib;
-
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-	      modules = [
+        modules = [
           ./nixos/configuration.nix
-	        home-manager.nixosModules.home-manager
-	        {
-	          home-manager.useGlobalPkgs = true;
-	          home-manager.useUserPackages = true;
-	          home-manager.users.brandon = import ./home-manager/home.nix;
-	        }
-	        nixvim.nixosModules.nixvim
-	      ];
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.brandon = import ./home-manager/home.nix;
+          }
+          nixvim.nixosModules.nixvim
+        ];
       };
     };
   };

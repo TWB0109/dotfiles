@@ -234,7 +234,7 @@
   # Running generic binaries
 
   programs.nix-ld = {
-    enable = false;
+    enable = true;
     libraries = with pkgs; [
       stdenv.cc.cc
       openssl
