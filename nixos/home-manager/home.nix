@@ -25,7 +25,7 @@ in {
   };
 
   home.sessionVariables = {
-    terminal = "wezterm";
+    terminal = "kitty";
   };
 
   home.pointerCursor = {
@@ -110,7 +110,6 @@ in {
     trash-cli
     bitwarden-cli
     ripgrep
-    itch
     vivid
     ani-cli
     adw-gtk3
@@ -146,13 +145,15 @@ in {
     celluloid
     swww
     waypaper
+    blender
+    crunchy-cli
+    ffmpeg
     # writeShellScript bins:
     hprop
     makoStatus
     makoAction
     changeTheme
     appil
-    helix
   ];
 
   i18n.inputMethod = {
@@ -456,6 +457,62 @@ in {
       EDITOR = "nvim";
     };
   };
+  
+  programs.helix = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nodePackages.bash-language-server
+      clang-tools
+      vscode-langservers-extracted
+      haskellPackages.haskell-language-server
+      nodePackages.typescript-language-server
+      lua-language-server
+      marksman
+      nil
+      python312Packages.python-lsp-server
+      rust-analyzer
+      typst-lsp
+    ];
+    settings = {
+      theme = "gruvbox";
+      editor = {
+        line-number = "relative";
+        bufferline = "always";
+        scrolloff = 8;
+        cursorline = true;
+        color-modes = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        statusline = {
+          left = [ "mode" "spinner" "version-control" ];
+          center = [ "file-name" ];
+          right = [ "diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type" ];
+          separator = "│";
+          mode = {
+            normal = "NORMAL";
+            insert = "INSERT";
+            select = "SELECT";
+          };
+        };
+        auto-pairs = {
+          "("  = ")";
+          "{"  = "}";
+          "["  = "]";
+          "\"" = "\"";
+          "`"  = "`";
+          "<"  = ">";
+        };
+        indent-guides = {
+          render = true;
+          character = "▏";
+          skip-levels = 1;
+        };
+      };
+    };
+  };
 
   programs.zoxide = {
     enable = true;
@@ -485,7 +542,7 @@ in {
   };
 
   programs.kitty = {
-    enable = false;
+    enable = true;
     font = {
       name = "SauceCodePro NFM";
       size = 10.0;
@@ -496,6 +553,7 @@ in {
       italic_font = "SauceCodePro NFM Italic";
       bold_italic_font = "SauceCodePro NFM Bold Italic";
       background_opacity = "0.9";
+      allow_remote_control = "yes";
     };
     theme = "Gruvbox Dark";
   };
@@ -511,7 +569,7 @@ in {
   };
 
   programs.wezterm = {
-    enable = true;
+    enable = false;
     extraConfig = ''
       local wezterm = require 'wezterm'
       local config = wezterm.config_builder()

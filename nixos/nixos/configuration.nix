@@ -122,6 +122,9 @@
     appimage-run
     loupe
     bluetuith
+    wayvnc
+    fd
+    gcc
   ];
 
   fonts.packages = with pkgs; [
@@ -393,23 +396,33 @@
         keymaps = {
           "<leader>ff" = {
             action = "find_files";
-            desc = "Open a fuzzy file picker";
+            options = {
+              desc = "Open a fuzzy file picker";
+            };
           };
           "<leader>fr" = {
             action = "oldfiles";
-            desc = "Open a fuzzy recent file picker";
+            options = {
+              desc = "Open a fuzzy recent file picker";
+            };
           };
           "<leader>fb" = {
             action = "buffers";
-            desc = "Open a fuzzy buffer picker";
+            options = {
+              desc = "Open a fuzzy buffer picker";
+            };
           };
           "<C-p>" = {
             action = "git_files";
-            desc = "Open a git repo fuzzy file picker";
+            options = {
+              desc = "Open a git repo fuzzy file picker";
+            };
           };
           "<leader>lg" = {
             action = "live_grep";
-            desc = "Open a fuzzy live grep";
+            options = {
+              desc = "Open a fuzzy live grep";
+            };
           };
         };
       };
