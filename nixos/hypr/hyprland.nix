@@ -58,6 +58,7 @@
       windowrulev2 = [
         "idleinhibit,fullscreen:0"
         "workspace special:discord, silent,class:(WebCord)"
+        "workspace special:discord, silent,class:(vesktop)"
         "workspace 2, silent,class:(Spotify)"
         "workspace 2, silent,class:(Cider)"
         "workspace 5, silent,class:(steam)"
