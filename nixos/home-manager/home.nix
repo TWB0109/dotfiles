@@ -105,6 +105,7 @@ in {
     stow
     pavucontrol
     webcord
+    vesktop
     heroic
     gamemode
     trash-cli
@@ -148,6 +149,7 @@ in {
     blender
     crunchy-cli
     ffmpeg
+    bottles
     # writeShellScript bins:
     hprop
     makoStatus

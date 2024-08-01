@@ -487,6 +487,7 @@
 
   # Virtualisation
   virtualisation.libvirtd.enable = true;
+  virtualisation.waydroid.enable = true;
   programs.virt-manager.enable = true;
 
   # Open ports in the firewall.
