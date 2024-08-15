@@ -152,6 +152,7 @@ in {
     ffmpeg
     bottles
     localsend
+    clipse
     # writeShellScript bins:
     hprop
     makoStatus

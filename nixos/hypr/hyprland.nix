@@ -62,6 +62,8 @@
         "workspace 2, silent,class:(Spotify)"
         "workspace 2, silent,class:(Cider)"
         "workspace 5, silent,class:(steam)"
+        "float,class:(clipse)"
+        "size 622 652,class:(clipse)"
       ];
       layerrule = ["blur, waybar"];
       bind = [
@@ -98,6 +100,8 @@
         "$mod, tab, focusCurrentOrLast"
         "$mod SHIFT, minus, movetoworkspace, special:default"
         "$mod, minus, togglespecialworkspace, default"
+        "$mod, V, exec, kitty --class 'clipse' clipse"
+        "$mod SHIFT, V, exec, clipse -clear"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -113,6 +117,8 @@
         "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
         "waypaper --restore"
         "sway-audio-idle-inhibit"
+        "clipse -listen"
+        "localsend_app"
       ];
     };
     extraConfig = ''
