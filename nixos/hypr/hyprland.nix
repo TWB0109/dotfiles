@@ -52,7 +52,7 @@
         "active_opacity" = 1;
       };
       master = {
-        "new_is_master" = true;
+        # "new_is_master" = true;
         "mfact" = 0.50;
       };
       windowrulev2 = [

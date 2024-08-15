@@ -113,7 +113,7 @@
   environment.systemPackages = with pkgs; [
     vim
     kitty
-    gnome.gnome-tweaks
+    gnome-tweaks
     git
     polkit_gnome
     gnome-text-editor
@@ -490,8 +490,16 @@
   programs.virt-manager.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ 9000 ];
-  # networking.firewall.allowedUDPPorts = [ 9000 ];
+  networking.firewall.allowedTCPPorts = [ 
+    # Localsend
+    53317
+  ];
+
+  networking.firewall.allowedUDPPorts = [ 
+    # Localsend
+    53317 
+  ];
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

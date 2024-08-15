@@ -96,9 +96,9 @@ in {
     jq
     libnotify
     rofi-wayland
-    gnome.nautilus
-    gnome.gnome-calendar
-    gnome.gnome-calculator
+    nautilus
+    gnome-calendar
+    gnome-calculator
     xdg-user-dirs
     floorp
     sway-audio-idle-inhibit
@@ -107,6 +107,7 @@ in {
     webcord
     vesktop
     heroic
+    lutris
     gamemode
     trash-cli
     bitwarden-cli
@@ -130,12 +131,12 @@ in {
     piper
     epiphany
     gnome-podcasts
-    gnome.cheese
+    cheese
     gnome-solanum
     gnome.gnome-sound-recorder
     citations
     pika-backup
-    gnome.gnome-font-viewer
+    gnome-font-viewer
     video-trimmer
     apostrophe
     retroarch
@@ -150,6 +151,7 @@ in {
     crunchy-cli
     ffmpeg
     bottles
+    localsend
     # writeShellScript bins:
     hprop
     makoStatus
@@ -174,7 +176,7 @@ in {
       name = "adw-gtk3";
     };
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
     font = {
@@ -473,7 +475,7 @@ in {
       nil
       python312Packages.python-lsp-server
       rust-analyzer
-      typst-lsp
+      # typst-lsp
     ];
     settings = {
       theme = "gruvbox";
