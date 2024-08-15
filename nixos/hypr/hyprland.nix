@@ -103,6 +103,12 @@
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
+      env = [
+        "HYPRCURSOR_THEME,Bibata-Modern-Classic"
+        "HYPRCURSOR_SIZE,16"
+        "XCURSOR_THEME,Bibata-Modern-Classic"
+        "XCURSOR_SIZE,16"
+      ];
       exec-once = [
         "ssh-agent -D -a /run/user/1000/ssh-agent.socket"
         "waypaper --restore"

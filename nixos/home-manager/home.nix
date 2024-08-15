@@ -30,8 +30,8 @@ in {
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.apple-cursor;
-    name = "macOs-BigSur";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 16;
   };
 
@@ -185,8 +185,8 @@ in {
       size = 11;
     };
     cursorTheme = {
-      package = pkgs.apple-cursor;
-      name = "macOS-BigSur";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
       size = 16;
     };
     gtk3.extraConfig = {
