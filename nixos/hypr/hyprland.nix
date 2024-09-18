@@ -109,9 +109,9 @@
       ];
       env = [
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
-        "HYPRCURSOR_SIZE,16"
+        "HYPRCURSOR_SIZE,24"
         "XCURSOR_THEME,Bibata-Modern-Classic"
-        "XCURSOR_SIZE,16"
+        "XCURSOR_SIZE,24"
       ];
       exec-once = [
         "ssh-agent -D -a /run/user/1000/ssh-agent.socket"

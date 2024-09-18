@@ -33,6 +33,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.brandon = import ./home-manager/home.nix;
           }
           nixvim.nixosModules.nixvim

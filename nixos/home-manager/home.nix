@@ -9,6 +9,7 @@
   appil = pkgs.writeShellScriptBin "appil" ../scripts/appil;
   hprop = pkgs.writeShellScriptBin "hprop" ../scripts/hprop;
   changeTheme = pkgs.writeShellScriptBin "changeTheme" ../scripts/changeTheme;
+  onResume = pkgs.writeShellScriptBin "onResume" ../scripts/onResume;
 in {
   imports = [../hypr/hyprland.nix];
 
@@ -22,6 +23,11 @@ in {
       enable = true;
       source = ../styles/waybar/style-dark.css;
     };
+    "${config.xdg.dataHome}/backgrounds" = {
+      enable = true;
+      recursive = true;
+      source = ../wallpapers;
+    }; 
   };
 
   home.sessionVariables = {
@@ -32,7 +38,7 @@ in {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size = 24;
   };
 
   dconf.settings = {
@@ -153,12 +159,14 @@ in {
     bottles
     localsend
     clipse
+    obsidian
     # writeShellScript bins:
     hprop
     makoStatus
     makoAction
     changeTheme
     appil
+    onResume
   ];
 
   i18n.inputMethod = {
@@ -188,7 +196,7 @@ in {
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
-      size = 16;
+      size = 24;
     };
     gtk3.extraConfig = {
       gtk-decoration-layout = "menu:close";
@@ -459,7 +467,7 @@ in {
       ":q" = "exit";
     };
     environmentVariables = {
-      EDITOR = "nvim";
+      EDITOR = "'nvim'";
     };
   };
   
@@ -564,7 +572,7 @@ in {
   };
 
   programs.swaylock = {
-    enable = true;
+    enable = false;
     settings = {
       show-keyboard-layout = true;
       indicator-caps-lock = true;
@@ -620,7 +628,7 @@ in {
   };
 
   services.swayidle = {
-    enable = true;
+    enable = false;
     events = [
       {
         event = "before-sleep";
@@ -638,6 +646,105 @@ in {
         resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       }
     ];
+  };
+
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        lock_cmd = "hyprlock";
+      };
+
+      listener = [
+        {
+          timeout = 180;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 300;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume  = "onResume"; # This is an ugly workaround for hyprlock crashing waiting for it to be fixed, onResume is defined at the top.
+        }
+      ];
+    };
+  };
+
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      general = {
+        disable_loading_bar = true;
+        hide_cursor = true;
+      };
+
+      background = [
+        {
+          path = "$HOME/.local/share/backgrounds/leaves.png";
+          blur_size = 2;
+          blur_passes = 2;
+          # color = "rgba(282828ff)";
+        }
+      ];
+
+      label = [
+        # Layout
+        {
+          text = "Layout: $LAYOUT";
+          color = "rgba(fbf1c7ff)";
+          font_size = 10;
+          font_family = "SauceCodePro NFM";
+          position = "30, -30";
+          halign = "left";
+          valign = "top";
+        }
+
+        # Time
+        {
+          text = "$TIME";
+          color = "rgba(fbf1c7ff)";
+          font_size = 90;
+          font_family = "SauceCodePro NFM";
+          position = "-30, 0";
+          halign = "right";
+          valign = "top";
+        }
+
+      ];
+
+      image = [
+        {
+          path = "$HOME/.local/share/backgrounds/highvern.jpg";
+          size = 100;
+          border_color = "rgba(b8bb26ff)";
+          position = "0, 75";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+
+      input-field = [
+        {
+          size = "300, 60";
+          position = "0, -47";
+          outline_thickness = 4;
+          dots_size = 0.2;
+          dots_center = true;
+          outer_color = "rgba(b8bb26ff)";
+          inner_color = "rgba(282828ff)";
+          font_color  = "rgba(fbf1c7ff)";
+          fade_on_empty = false;
+          placeholder_text = '' <span foreground="##fbf1c7"><i>󰌾 Logged in as </i><span foreground="##b8bb26">$USER</span></span> '';
+          hide_input = false;
+          check_color = "rgba(8ec07cff)";
+          fail_color  = "rgba(fb4934ff)";
+          fail_text   = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+          capslock_color = "rgba(fabd2fff)";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+    };
   };
 
   services.blueman-applet.enable = true;

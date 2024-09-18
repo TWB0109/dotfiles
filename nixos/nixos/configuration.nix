@@ -482,7 +482,7 @@
   };
 
   # PAM
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {};
 
   # Virtualisation
   virtualisation.libvirtd.enable = true;
@@ -493,11 +493,14 @@
   networking.firewall.allowedTCPPorts = [ 
     # Localsend
     53317
+    # Wayvnc
+    5900
   ];
 
   networking.firewall.allowedUDPPorts = [ 
     # Localsend
     53317 
+    5900
   ];
 
   # Or disable the firewall altogether.
