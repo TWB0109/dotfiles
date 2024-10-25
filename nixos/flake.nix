@@ -4,19 +4,21 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ignis.url = "github:linkfrg/ignis";
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    nixvim,
+    ignis,
+    # nixvim,
     ...
-  }: let
+  }@inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -26,17 +28,19 @@
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         inherit system;
         modules = [
           ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.users.brandon = import ./home-manager/home.nix;
           }
-          nixvim.nixosModules.nixvim
+          # nixvim.nixosModules.nixvim
         ];
       };
     };

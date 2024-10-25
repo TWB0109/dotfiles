@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -237,239 +237,149 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-      stdenv.cc.cc
-      openssl
-      xorg.libXcomposite
-      xorg.libXtst
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libX11
-      xorg.libXfixes
-      libGL
-      libva
-      pipewire
-      xorg.libxcb
-      xorg.libXdamage
-      xorg.libxshmfence
-      xorg.libXxf86vm
-      libelf
-      
-      # Required
-      glib
-      gtk2
-      bzip2
-      
-      # Without these it silently fails
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXrender
-      xorg.libXScrnSaver
-      xorg.libXi
-      xorg.libSM
-      xorg.libICE
-      gnome2.GConf
-      nspr
-      nss
-      cups
-      libcap
-      SDL2
-      libusb1
-      dbus-glib
-      ffmpeg
-      # Only libraries are needed from those two
-      libudev0-shim
-      
-      # Verified games requirements
-      xorg.libXt
-      xorg.libXmu
-      libogg
-      libvorbis
-      SDL
-      SDL2_image
-      glew110
-      libidn
-      tbb
-      
-      # Other things from runtime
-      flac
-      freeglut
-      libjpeg
-      libpng
-      libpng12
-      libsamplerate
-      libmikmod
-      libtheora
-      libtiff
-      pixman
-      speex
-      SDL_image
-      SDL_ttf
-      SDL_mixer
-      SDL2_ttf
-      SDL2_mixer
-      libappindicator-gtk2
-      libdbusmenu-gtk2
-      libindicator-gtk2
-      libcaca
-      libcanberra
-      libgcrypt
-      libvpx
-      librsvg
-      xorg.libXft
-      libvdpau
-      gnome2.pango
-      cairo
-      atk
-      gdk-pixbuf
-      fontconfig
-      freetype
-      dbus
-      alsaLib
-      expat
-    ];
+    libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
   };
 
-  # Nixvim
-  programs.nixvim = {
-    enable = true;
-    enableMan = true;
-    options = {
-      number = true;
-      relativenumber = true;
-      cursorline = true;
-      showcmd = true;
-      wrap = false;
-      splitbelow = true;
-      splitright = true;
-      mouse = "a";
-      shell = "nu";
-      scl = "auto";
+  # # Nixvim
+  # programs.nixvim = {
+  #   enable = false;
+  #   enableMan = true;
+  #   options = {
+  #     number = true;
+  #     relativenumber = true;
+  #     cursorline = true;
+  #     showcmd = true;
+  #     wrap = false;
+  #     splitbelow = true;
+  #     splitright = true;
+  #     mouse = "a";
+  #     shell = "nu";
+  #     scl = "auto";
       
-      expandtab = true;
-      cindent = true;
-      autoindent = true;
-      smartindent = true;
-      shiftwidth = 2;
-      tabstop = 2;
-      softtabstop = 2;
+  #     expandtab = true;
+  #     cindent = true;
+  #     autoindent = true;
+  #     smartindent = true;
+  #     shiftwidth = 2;
+  #     tabstop = 2;
+  #     softtabstop = 2;
 
-      hlsearch = false;
-      incsearch = true;
+  #     hlsearch = false;
+  #     incsearch = true;
 
-      scrolloff = 8;
-      colorcolumn = "";
+  #     scrolloff = 8;
+  #     colorcolumn = "";
 
-      conceallevel = 1;
-      hidden = true;
+  #     conceallevel = 1;
+  #     hidden = true;
 
-      swapfile = false;
-    };
-    globals = {
-      markdown_fenced_languages = "{ 'python', 'bash', 'cpp' }";
-      mapleader = " ";
-      gruvbox_terminal_colors = true;
-      gruvbox_italic_keywords = false;
-      gruvbox_transparent = true;
-    };
-    plugins = {
-      lualine = {
-        enable = true;
-        globalstatus = true;
-        componentSeparators = {
-          left = "";
-          right = "";
-        };
-        sectionSeparators = {
-          left = "";
-          right = "";
-        };
-      };
-      oil.enable = true;
-      lsp.enable = true;
-      treesitter.enable = true;
-      fugitive.enable = true;
-      which-key.enable = true;
-      telescope = {
-        enable = true;
-        keymaps = {
-          "<leader>ff" = {
-            action = "find_files";
-            options = {
-              desc = "Open a fuzzy file picker";
-            };
-          };
-          "<leader>fr" = {
-            action = "oldfiles";
-            options = {
-              desc = "Open a fuzzy recent file picker";
-            };
-          };
-          "<leader>fb" = {
-            action = "buffers";
-            options = {
-              desc = "Open a fuzzy buffer picker";
-            };
-          };
-          "<C-p>" = {
-            action = "git_files";
-            options = {
-              desc = "Open a git repo fuzzy file picker";
-            };
-          };
-          "<leader>lg" = {
-            action = "live_grep";
-            options = {
-              desc = "Open a fuzzy live grep";
-            };
-          };
-        };
-      };
-    };
-    extraPlugins = with pkgs.vimPlugins; [
-      gruvbox-flat-nvim
-      nvim-nu
-    ];
+  #     swapfile = false;
+  #   };
+  #   globals = {
+  #     markdown_fenced_languages = "{ 'python', 'bash', 'cpp' }";
+  #     mapleader = " ";
+  #     gruvbox_terminal_colors = true;
+  #     gruvbox_italic_keywords = false;
+  #     gruvbox_transparent = true;
+  #   };
+  #   plugins = {
+  #     lualine = {
+  #       enable = true;
+  #       globalstatus = true;
+  #       componentSeparators = {
+  #         left = "";
+  #         right = "";
+  #       };
+  #       sectionSeparators = {
+  #         left = "";
+  #         right = "";
+  #       };
+  #     };
+  #     oil.enable = true;
+  #     lsp.enable = true;
+  #     treesitter.enable = true;
+  #     fugitive.enable = true;
+  #     which-key.enable = true;
+  #     telescope = {
+  #       enable = true;
+  #       keymaps = {
+  #         "<leader>ff" = {
+  #           action = "find_files";
+  #           options = {
+  #             desc = "Open a fuzzy file picker";
+  #           };
+  #         };
+  #         "<leader>fr" = {
+  #           action = "oldfiles";
+  #           options = {
+  #             desc = "Open a fuzzy recent file picker";
+  #           };
+  #         };
+  #         "<leader>fb" = {
+  #           action = "buffers";
+  #           options = {
+  #             desc = "Open a fuzzy buffer picker";
+  #           };
+  #         };
+  #         "<C-p>" = {
+  #           action = "git_files";
+  #           options = {
+  #             desc = "Open a git repo fuzzy file picker";
+  #           };
+  #         };
+  #         "<leader>lg" = {
+  #           action = "live_grep";
+  #           options = {
+  #             desc = "Open a fuzzy live grep";
+  #           };
+  #         };
+  #       };
+  #     };
+  #   };
+  #   extraPlugins = with pkgs.vimPlugins; [
+  #     gruvbox-flat-nvim
+  #     nvim-nu
+  #   ];
 
-    keymaps = [
-      {
-        key = "<leader>pv";
-        action = "<cmd>Oil<CR>";
-        mode = "n";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<leader>pV";
-        action = "<cmd>Oil --float<CR>";
-        mode = "n";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<leader>gs";
-        action = "<cmd>Git<CR>";
-        mode = "n";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<leader>gp";
-        action = "<cmd>Git push<CR>";
-        mode = "n";
-        options = {
-          silent = true;
-        };
-      }
-    ];
+  #   keymaps = [
+  #     {
+  #       key = "<leader>pv";
+  #       action = "<cmd>Oil<CR>";
+  #       mode = "n";
+  #       options = {
+  #         silent = true;
+  #       };
+  #     }
+  #     {
+  #       key = "<leader>pV";
+  #       action = "<cmd>Oil --float<CR>";
+  #       mode = "n";
+  #       options = {
+  #         silent = true;
+  #       };
+  #     }
+  #     {
+  #       key = "<leader>gs";
+  #       action = "<cmd>Git<CR>";
+  #       mode = "n";
+  #       options = {
+  #         silent = true;
+  #       };
+  #     }
+  #     {
+  #       key = "<leader>gp";
+  #       action = "<cmd>Git push<CR>";
+  #       mode = "n";
+  #       options = {
+  #         silent = true;
+  #       };
+  #     }
+  #   ];
 
-    extraConfigLua = ''
-      vim.cmd.colorscheme('gruvbox-flat')
-    '';
-  };
+  #   extraConfigLua = ''
+  #     vim.cmd.colorscheme('gruvbox-flat')
+  #   '';
+  # };
 
   # Nix
   nix = {
@@ -477,7 +387,11 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "03:45" ];
     };
   };
 
@@ -512,6 +426,19 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system = {
+    stateVersion = "23.11"; # Did you read the comment?
+    autoUpgrade = {
+      enable = true;
+      flake = inputs.self.outPath;
+      flags = [
+        "--update-input"
+        "nixpkgs"
+        "--print-build-logs"
+      ];
+      dates = "02:00";
+      randomizedDelaySec = "45min";
+    };
+  };
 
 }

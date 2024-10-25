@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: let
   makoStatus = pkgs.writeShellScriptBin "makoStatus" ../scripts/makoStatus;
@@ -22,6 +23,10 @@ in {
     "${config.xdg.configHome}/waybar/style-dark.css" = {
       enable = true;
       source = ../styles/waybar/style-dark.css;
+    };
+    "${config.xdg.configHome}/ignis/config.py" = {
+      enable = false;
+      source = ../ignis/config.py;
     };
     "${config.xdg.dataHome}/backgrounds" = {
       enable = true;
@@ -114,6 +119,7 @@ in {
     vesktop
     heroic
     lutris
+    wine
     gamemode
     trash-cli
     bitwarden-cli
@@ -160,6 +166,8 @@ in {
     localsend
     clipse
     obsidian
+    session-desktop
+    inputs.ignis.packages.${system}.ignis
     # writeShellScript bins:
     hprop
     makoStatus
