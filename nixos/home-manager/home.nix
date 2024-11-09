@@ -37,6 +37,9 @@ in {
 
   home.sessionVariables = {
     terminal = "kitty";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE  = "fcitx";
+    XMODIFIERS    = "@im=fcitx";
   };
 
   home.pointerCursor = {
@@ -136,7 +139,6 @@ in {
     stremio
     fragments
     mission-center
-    anki-bin
     protonup-qt
     pcsx2
     airshipper
@@ -165,7 +167,6 @@ in {
     bottles
     localsend
     clipse
-    obsidian
     session-desktop
     inputs.ignis.packages.${system}.ignis
     # writeShellScript bins:
@@ -315,6 +316,7 @@ in {
         "mpris" = {
           format = "{player_icon}: {status_icon} <b>{title} | {artist}</b>";
           format-paused = "{player_icon}: {status_icon} {title} | {artist}";
+          max-length = 30;
           player-icons = {
             default = "🎵";
             spotify = "";
