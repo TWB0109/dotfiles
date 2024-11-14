@@ -160,6 +160,7 @@ in {
     zotero
     celluloid
     swww
+    mpvpaper
     waypaper
     blender
     crunchy-cli

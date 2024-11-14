@@ -211,17 +211,17 @@
         after = [ "graphical-session.target" ];
         serviceConfig = {
           Type = "simple";
-  	  ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-	  Restart = "on-failure";
-	  RestartSec = 1;
-	  TimeoutStopSec = 10;
+      	  ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      	  Restart = "on-failure";
+      	  RestartSec = 1;
+      	  TimeoutStopSec = 10;
         };
       };
       mpris-proxy = {
         description = "Mpris proxy";
-	after = [ "network.target" "sound.target" ];
-	wantedBy = [ "default.target" ];
-	serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+      	after = [ "network.target" "sound.target" ];
+      	wantedBy = [ "default.target" ];
+      	serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
       };
     };
   };
