@@ -1,16 +1,13 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-right": ["custom/mako", "gamemode", "cpu", "memory", "custom/ddcutil", "wireplumber", "custom/darkman", 
-        "sway/language", "idle_inhibitor", "clock", "tray"
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
+        "keyboard-state", "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
     "height": 10,
     "bar_id": "bar-0",
     "ipc": true,
-    "sway/window": {
-        "max-length": 50
-    },
     "tray": {
         "icon-size": 21,
         "spacing": 10
@@ -28,13 +25,13 @@
         },
         "ignored-players": ["firefox"]
     },
-    "sway/language": {
+    "hyprland/language": {
         "format": "{short} {variant}",
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+        "on-click": "hyprctl switchxkblayout 0.01-mechanical-keyboard next"
     },
     "clock": {
-        "format": " {:%a, %b %d, %Y | %R}",
-        "format-alt": " {:%H:%M} ",
+        "format": "󰃭 {:%a, %b %d, %Y | %R}",
+        "format-alt": "󰥔 {:%H:%M} ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "on-click-right": "gnome-calendar",
         "calendar": {
@@ -71,7 +68,7 @@
     },
     "custom/darkman": {
         "exec": "~/.config/waybar/scripts/darkman.sh",
-        "on-click": "darkman toggle;swaymsg reload",
+        "on-click": "darkman toggle;hyprctl reload",
         "format": "{}",
         "interval": 10,
         "tooltip": false
@@ -102,8 +99,18 @@
             "deactivated": ""
         }
     },
-    "sway/workspaces": {
-        "enable-bar-scroll": true
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰈹",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "󰊴",
+            "special": "7u7"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "gamemode": {
         "format": "{glyph}",
@@ -116,5 +123,41 @@
         "icon-size": 20,
         "tooltip": true,
         "tooltip-format": "Games running: {count}"
+    },
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": {
+            "numlock": "Num {icon}",
+            "capslock": "Caps {icon}"                                                                                                                                                       
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "custom/audio_idle_inhibitor": {
+        "format": "{icon}",
+        "exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+        "exec-if": "which sway-audio-idle-inhibit",
+        "return-type": "json",
+        "format-icons": {
+            "output": "",
+            "input": "",
+            "output-input": "  ",
+            "none": ""
+        }
+    },
+    "network": {
+        "interface": "wlp9s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     }
 }
