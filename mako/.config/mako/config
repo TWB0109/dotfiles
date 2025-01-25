@@ -10,6 +10,7 @@ max-icon-size=128
 text-alignment=center
 background-color=#282828
 text-color=#f2e5bc
+on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 [urgency=low]
 border-color=#8ec07c
