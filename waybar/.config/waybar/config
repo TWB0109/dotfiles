@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
-        "keyboard-state", "hyprland/language", "idle_inhibitor", "clock", "tray"
+        "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
     "height": 10,
@@ -109,8 +109,8 @@
             "5": "󰊴",
             "special": "7u7"
         },
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
     },
     "gamemode": {
         "format": "{glyph}",
