@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako","custom/hyprshade", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
         "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
@@ -69,6 +69,13 @@
     "custom/darkman": {
         "exec": "~/.config/waybar/scripts/darkman.sh",
         "on-click": "darkman toggle;hyprctl reload",
+        "format": "{}",
+        "interval": 10,
+        "tooltip": false
+    },
+    "custom/hyprshade": {
+        "exec": "~/.config/waybar/scripts/hyprshade.sh",
+        "on-click": "hyprshade toggle blf",
         "format": "{}",
         "interval": 10,
         "tooltip": false

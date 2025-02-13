@@ -115,6 +115,14 @@ button:hover {
     border-radius: 5;
 }
 
+#custom-hyprshade {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxDark-blue;
+    color: @gruvboxDark-background;
+    border-radius: 5;
+}
+
 #custom-darkman {
     margin: 5px;
     padding: 0px 5px;
