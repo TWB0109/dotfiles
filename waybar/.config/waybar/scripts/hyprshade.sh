@@ -7,3 +7,5 @@ if [[ $shader == "blf" ]]; then
 else
     echo "󰌵"
 fi
+
+pkill -RTMIN+2 waybar

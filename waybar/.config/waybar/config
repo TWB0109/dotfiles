@@ -77,8 +77,9 @@
         "exec": "~/.config/waybar/scripts/hyprshade.sh",
         "on-click": "hyprshade toggle blf",
         "format": "{}",
-        "interval": 10,
-        "tooltip": false
+        "interval": 6000,
+        "signal": 2,
+        "tooltip": false,
     },
     "custom/mako": {
         "exec": "~/.config/waybar/scripts/mako.sh",
