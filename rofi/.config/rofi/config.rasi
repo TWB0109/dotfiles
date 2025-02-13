@@ -7,6 +7,7 @@ configuration {
     show-icons: true;
     terminal: "ghostty";
     ssh-client: "ssh";
+    run-command: "uwsm app -- {cmd}";
     ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
     combi-modes: [drun,run,window,ssh];
     matching: "normal";
