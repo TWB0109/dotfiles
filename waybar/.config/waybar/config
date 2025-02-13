@@ -169,3 +169,4 @@
         "max-length": 50
     }
 }
+vim:ft=json
