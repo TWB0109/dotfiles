@@ -1,18 +1,3 @@
-configuration{
-    modi: "drun";
-    lines: 5;
-    font: "SauceCodePro Nerd Font Mono 12";
-    show-icons: true;
-    icon-theme: "Papirus-Dark";
-    terminal: "alacritty";
-    drun-display-format: "{icon} {name}";
-    display-drun: "  ";
-    location: 0;
-    separator-style: "solid";
-    disable-history: false;
-    hide-scrollbar: true;
-}
-
 @theme "/dev/null"
 
 element-text, element-icon {
@@ -63,7 +48,7 @@ inputbar {
 
 prompt {
     background-color: @gruvboxDark-selected-col;
-    padding: 5px 5px 0px;
+    padding: 10px;
     text-color: @gruvboxDark-bg-col;
     border-radius: 3px;
 }
@@ -74,7 +59,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    padding: 6px;
+    padding: 10px;
     text-color: @gruvboxDark-fg-col;
     background-color: @gruvboxDark-bg-col;
 }

@@ -1,3 +1,34 @@
 configuration {
+    modes: [drun,window,run,ssh,calc,combi];
+    lines: 5;
+    font: "SauceCodePro Nerd Font Mono 12";
+    location: 0;
+    fixed-num-lines: true;
+    show-icons: true;
+    terminal: "ghostty";
+    ssh-client: "ssh";
+    ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+    combi-modes: [drun,run,window,ssh];
+    matching: "normal";
+    sorting-method: "normal";
+    combi-display-format: " {mode} {text}";
+    display-window: "";
+    display-run: ">";
+    display-ssh: "";
+    display-drun: "";
+    display-calc: "";
+    drun-match-fields: [name,generic,exec];
+    separator-style: "solid";
+    hide-scrollbar: true;
+    display-combi: "";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
 }
-@theme "~/.config/rofi/themes/chad.rasi"
+
+@theme "chad"
