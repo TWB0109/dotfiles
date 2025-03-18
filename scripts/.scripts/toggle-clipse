@@ -1,0 +1,11 @@
+#!/usr/bin/nu
+
+use std
+
+if (pgrep wl-paste | is-empty) {
+  clipse -listen o+e> (std null-device) 
+  notify-send "Clipse is running"
+} else {
+  clipse -kill o+e> (std null-device) 
+  notify-send "Clipse is not running"
+}

@@ -1,0 +1,11 @@
+#!/bin/env sh
+
+seconds=$(("$(rofi -dmenu -p 'Number of seconds')"))
+if [ -z "$seconds" ] || [ $seconds -eq 0 ]; then
+  exit 2
+fi
+message="$(rofi -dmenu -p 'Message')"
+if [ -z "$message" ]; then
+  exit 2
+fi
+sleep "$seconds" && notify-send "$message"

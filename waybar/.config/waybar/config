@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako","custom/hyprshade", "custom/darkman", "gamemode", "network", "cpu", "memory", "custom/ddcutil", "wireplumber",
+    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber",
         "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
-    "height": 10,
+    "height": 30,
     "bar_id": "bar-0",
     "ipc": true,
     "tray": {
@@ -23,15 +23,15 @@
             "paused": "",
             "playing": ""
         },
-        "ignored-players": ["firefox"]
+        "ignored-players": ["firefox", "floorp", "zen"]
     },
     "hyprland/language": {
         "format": "{short} {variant}",
         "on-click": "hyprctl switchxkblayout 0.01-mechanical-keyboard next"
     },
     "clock": {
-        "format": "󰃭 {:%a, %b %d, %Y | %R}",
-        "format-alt": "󰥔 {:%H:%M} ",
+        "format": "󰥔 {:%H:%M} ",
+        "format-alt": "󰃭 {:%a, %b %d, %Y | %R}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "on-click-right": "gnome-calendar",
         "calendar": {
@@ -77,15 +77,15 @@
         "exec": "~/.config/waybar/scripts/hyprshade.sh",
         "on-click": "hyprshade toggle blf",
         "format": "{}",
-        "interval": 6000,
-        "signal": 2,
+        "interval": 6000000,
+        "signal": 3,
         "tooltip": false,
     },
     "custom/mako": {
         "exec": "~/.config/waybar/scripts/mako.sh",
         "on-click": "~/.config/waybar/scripts/makoAction.sh",
         "format": "{}",
-        "interval": 6000,
+        "interval": 6000000,
         "signal": 1,
         "tooltip": false
     },
@@ -94,7 +94,7 @@
         "on-click": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 - 5; pkill -RTMIN+2 waybar",
         "on-click-right": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 + 5; pkill -RTMIN+2 waybar",
         "format": " {}%",
-        "interval": 6000,
+        "interval": 6000000,
         "signal": 2,
         "tooltip": false
     },
@@ -157,7 +157,7 @@
         }
     },
     "network": {
-        "interface": "wlp9s0",
+        "interface": "wlan0",
         "format": "{ifname}",
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -166,7 +166,18 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "max-length": 50,
+        "on-click": "ghostty --class='ghostty.impala' -e impala"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-on": "",
+        "format-off": "",
+        "format-disabled": "",
+        "format-connected": "󰂱 {num_connections} {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} | 󰁹 {device_battery_percentage}%",
+        "on-click": "ghostty --class='ghostty.bluetui' -e bluetui",
+        "on-click-right": "rofi-mixer",
     }
 }
 vim:ft=json

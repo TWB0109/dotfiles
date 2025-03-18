@@ -8,4 +8,4 @@ else
     echo "󰌵"
 fi
 
-pkill -RTMIN+2 waybar
+pkill -RTMIN+3 waybar

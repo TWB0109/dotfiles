@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+askindentsize() {
+	read -p "Indent Size > " size
+	echo "$size"
+}
+
+askindentstyle() {
+	read -p "Indent Char (space/tab) > " style
+	echo "$style"
+}
+
+indentsize=$(askindentsize)
+indentstyle=$(askindentstyle)
+
+FILE=".editorconfig"
+cat > $FILE <<- EOM
+root = true
+[*]
+indent_style = $indentstyle
+indent_size  = $indentsize
+EOM
+
+echo "you can edit .editorconfig to adjust the languages this applies to: [*{html,js,css}] would apply to those filetypes"

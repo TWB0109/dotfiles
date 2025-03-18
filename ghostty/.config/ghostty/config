@@ -13,8 +13,9 @@ keybind = ctrl+alt+k=resize_split:up,10
 keybind = ctrl+alt+l=resize_split:right,10
 
 keybind = ctrl+shift+h=goto_split:left
-keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
 
 keybind = ctrl+shift+z=toggle_split_zoom
+keybind = ctrl+enter=unbind
