@@ -13,17 +13,22 @@
         "spacing": 10
     },
     "mpris": {
-        "format":        "{player_icon}:      {status_icon}   <b>{title} | {artist}</b>",
-        "format-paused": "{player_icon}:      {status_icon}   {title} | {artist}",
+        "format":        "{player_icon} {status_icon}   <b>{title} | {artist}</b>",
+        "format-paused": "{player_icon} {status_icon}   {title} | {artist}",
         "player-icons": {
             "default": "🎵",
-            "spotify": ""
+            "spotify": "",
+            "cider": "",
         },
         "status-icons": {
             "paused": "",
             "playing": ""
         },
+<<<<<<< HEAD
         "ignored-players": ["firefox", "floorp", "zen"]
+=======
+        "ignored-players": ["firefox", "floorp"]
+>>>>>>> 037fbe527754d28a61300905f7f310611d3f60c8
     },
     "hyprland/language": {
         "format": "{short} {variant}",
@@ -137,7 +142,7 @@
         "capslock": true,
         "format": {
             "numlock": "Num {icon}",
-            "capslock": "Caps {icon}"                                                                                                                                                       
+            "capslock": "Caps {icon}"
         },
         "format-icons": {
             "locked": "",
