@@ -24,11 +24,7 @@
             "paused": "",
             "playing": ""
         },
-<<<<<<< HEAD
-        "ignored-players": ["firefox", "floorp", "zen"]
-=======
         "ignored-players": ["firefox", "floorp"]
->>>>>>> 037fbe527754d28a61300905f7f310611d3f60c8
     },
     "hyprland/language": {
         "format": "{short} {variant}",
