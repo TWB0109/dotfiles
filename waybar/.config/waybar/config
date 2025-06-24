@@ -31,7 +31,7 @@
         "on-click": "hyprctl switchxkblayout 0.01-mechanical-keyboard next"
     },
     "clock": {
-        "format": "󰥔 {:%H:%M} ",
+        "format": "󰥔 {:%H:%M}",
         "format-alt": "󰃭 {:%a, %b %d, %Y | %R}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "on-click-right": "gnome-calendar",

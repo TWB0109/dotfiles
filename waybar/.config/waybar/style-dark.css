@@ -67,7 +67,6 @@ button:hover {
 #tray menu>*:hover {
     color: @gruvboxDark-background;
     background-color: @gruvboxDark-green;
-    border-radius: 5;
 }
 
 #language {
@@ -81,8 +80,9 @@ button:hover {
 #clock {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @grubvoxDark-Background;
+    background-color: @gruvboxDark-background;
     color: @gruvboxDark-foreground;
+    border-radius: 5;
 }
 
 #wireplumber {
