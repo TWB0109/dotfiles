@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-right": ["custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber",
+    "modules-right": ["custom/pomo", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber",
         "hyprland/language", "idle_inhibitor", "clock", "tray"
     ],
     "modules-center": ["mpris"],
@@ -98,6 +98,16 @@
         "interval": 6000000,
         "signal": 2,
         "tooltip": false
+    },
+    "custom/pomo": {
+        "format": " {}",
+        "exec": "~/.cargo/bin/pomodoro-cli status --format json --time-format digital",
+        "return-type": "json",
+        "on-click": "~/.cargo/bin/pomodoro-cli start --add 5m --notify; pkill -SIGRTMIN+10 waybar",
+        "on-click-middle": "~/.cargo/bin/pomodoro-cli pause; pkill -SIGRTMIN+10 waybar",
+        "on-click-right": "~/.cargo/bin/pomodoro-cli stop; pkill -SIGRTMIN+10 waybar",
+        "interval": 1,
+        "signal": 10
     },
     "idle_inhibitor": {
         "format": "{icon}",

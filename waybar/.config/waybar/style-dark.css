@@ -149,6 +149,30 @@ button:hover {
     border-radius: 5;
 }
 
+#custom-pomo.running {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxDark-background;
+    color: @gruvboxDark-yellow;
+    border-radius: 5;
+}
+
+#custom-pomo.paused {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxDark-background;
+    color: @gruvboxDark-red;
+    border-radius: 5;
+}
+
+#custom-pomo.finished {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxDark-background;
+    color: @gruvboxDark-green;
+    border-radius: 5;
+}
+
 #idle_inhibitor.activated {
     margin: 5px;
     padding: 0px 5px;
