@@ -86,3 +86,8 @@ element selected {
     border-radius: 0.2em;
     text-color: @gruvboxDark-bg-col;
 }
+
+message {
+    background-color: @gruvboxDark-bg-col;
+    text-color: @gruvboxDark-fg-col;
+}
