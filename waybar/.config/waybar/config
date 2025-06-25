@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-right": ["custom/pomo", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber",
-        "hyprland/language", "idle_inhibitor", "clock", "tray"
+        "hyprland/language", "clock", "tray"
     ],
     "modules-center": ["mpris"],
     "height": 30,
