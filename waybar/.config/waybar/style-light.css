@@ -103,6 +103,14 @@ button:hover {
     border-radius: 5;
 }
 
+#wireplumber.muted {
+    margin: 5px;
+    padding: 0px 5px;
+    background-color: @gruvboxLight-background;
+    color: @gruvboxLight-red;
+    border-radius: 5;
+}
+
 #memory {
     margin: 5px;
     padding: 0px 5px;
@@ -119,7 +127,7 @@ button:hover {
     border-radius: 5;
 }
 
-#custom-hyprshade {
+#custom-hyprsunset {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-blue;
@@ -202,10 +210,25 @@ button:hover {
 #mpris {
     margin: 5px;
     padding: 0px 5px;
+    color: @gruvboxLight-aqua;
+    background-color: @gruvboxLight-background;
+    border-radius: 5;
 }
 
 #mpris.spotify {
+    margin: 5px;
+    padding: 0px 5px;
     color: @spotify-foreground;
+    background-color: @gruvboxLight-background;
+    border-radius: 5;
+}
+
+#mpris.cider {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxLight-red;
+    background-color: @gruvboxLight-background;
+    border-radius: 5;
 }
 
 #keyboard-state {

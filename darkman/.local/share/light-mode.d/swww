@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-swww img ~/.local/share/backgrounds/trees_from_above.jpg --transition-type wipe --transition-angle 30 --transition-step 90
+swww img ~/.local/share/backgrounds/hilltree.jpg --transition-type wipe --transition-angle 30 --transition-step 90

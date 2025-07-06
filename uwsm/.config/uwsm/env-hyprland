@@ -1,0 +1,16 @@
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CACHE_DIR=~/.cache/
+export QT_IM_MODULE=fcitx5
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_QPA_PLATFORM=wayland;xcb
+export GLFW_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export HYPRCURSOR_THEME=Bibata-Modern-Classic
+export HYPRCURSOR_SIZE=16
+export XCURSOR_THEME=Bibata-Modern-Classic
+export XCURSOR_SIZE=16
+export GDK_BACKEND=wayland

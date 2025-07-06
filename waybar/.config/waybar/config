@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-right": ["custom/pomo", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber",
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "mpris"],
+    "modules-right": ["custom/pomo", "custom/hyprsunset", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
         "hyprland/language", "clock", "tray"
     ],
-    "modules-center": ["mpris"],
+    "modules-center": [],
     "height": 30,
     "bar_id": "bar-0",
     "ipc": true,
@@ -13,8 +13,8 @@
         "spacing": 10
     },
     "mpris": {
-        "format":        "{player_icon} {status_icon}   <b>{title} | {artist}</b>",
-        "format-paused": "{player_icon} {status_icon}   {title} | {artist}",
+        "format":        "{player_icon} {status_icon} <b>{title} | {artist}</b>",
+        "format-paused": "{player_icon} {status_icon} {title} | {artist}",
         "player-icons": {
             "default": "🎵",
             "spotify": "",
@@ -50,13 +50,26 @@
             }
         }
     },
-    "wireplumber": {
-        "format": " {icon} {volume}%",
-        "format-muted": " Muted",
-        "on-click": "pactl -- set-sink-volume 0 -10%",
-        "on-click-middle": "pactl -- set-sink-mute 0 toggle",
-        "on-click-right": "pactl -- set-sink-volume 0 +10%",
-        "format-icons": ["", "", ""]
+    "wireplumber#sink": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": [
+            "󰕿",
+            "󰖀",
+            "󰕾",
+        ],
+        "on-click": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-;~/.config/mako/wp-vol.sh",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle;~/.config/mako/wp-vol.sh",
+        "on-click-right": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+;~/.config/mako/wp-vol.sh",
+        "node-type": "Audio/Sink",
+    },
+    "wireplumber#source": {
+        "format": "󰍬 {volume}%",
+        "format-muted": "󰍭",
+        "on-click": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-right": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "node-type": "Audio/Source",
     },
     "memory": {
         "interval": 30,
@@ -71,14 +84,14 @@
         "exec": "~/.config/waybar/scripts/darkman.sh",
         "on-click": "darkman toggle;hyprctl reload",
         "format": "{}",
-        "interval": 10,
+        "interval": "once",
         "tooltip": false
     },
-    "custom/hyprshade": {
-        "exec": "~/.config/waybar/scripts/hyprshade.sh",
-        "on-click": "hyprshade toggle blf",
+    "custom/hyprsunset": {
+        "exec": "~/.config/waybar/scripts/hyprsunset_status.sh",
+        "on-click": "~/.config/waybar/scripts/hyprsunset.sh",
         "format": "{}",
-        "interval": 6000000,
+        "interval": "once",
         "signal": 3,
         "tooltip": false,
     },
@@ -86,7 +99,7 @@
         "exec": "~/.config/waybar/scripts/mako.sh",
         "on-click": "~/.config/waybar/scripts/makoAction.sh",
         "format": "{}",
-        "interval": 6000000,
+        "interval": "once",
         "signal": 1,
         "tooltip": false
     },
@@ -95,7 +108,7 @@
         "on-click": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 - 5; pkill -RTMIN+2 waybar",
         "on-click-right": "ddcutil --noverify --sleep-multiplier .1 setvcp 10 + 5; pkill -RTMIN+2 waybar",
         "format": " {}%",
-        "interval": 6000000,
+        "interval": "once",
         "signal": 2,
         "tooltip": false
     },
@@ -162,8 +175,8 @@
         "return-type": "json",
         "format-icons": {
             "output": "",
-            "input": "",
-            "output-input": "  ",
+            "input": "󰍬" ,
+            "output-input": " 󰍬",
             "none": ""
         }
     },
