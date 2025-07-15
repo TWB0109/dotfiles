@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/submap", "mpris"],
+    "modules-left": ["niri/workspaces", "hyprland/workspaces", "hyprland/submap", "mpris"],
     "modules-right": ["custom/pomo", "custom/hyprsunset", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
-        "hyprland/language", "clock", "tray"
+        "niri/language", "hyprland/language", "clock", "tray"
     ],
     "modules-center": [],
     "height": 30,
@@ -29,6 +29,10 @@
     "hyprland/language": {
         "format": "{short} {variant}",
         "on-click": "hyprctl switchxkblayout 0.01-mechanical-keyboard next"
+    },
+    "niri/language": {
+        "format": "{short} {variant}",
+        "on-click": "niri msg action switch-layout 'next'"
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
@@ -143,6 +147,16 @@
         },
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "focused": "",
+            "active": "",
+            "default": "",
+        },
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
     },
     "gamemode": {
         "format": "{glyph}",
