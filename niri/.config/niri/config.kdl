@@ -21,6 +21,8 @@ input {
 
         // Enable numlock on startup, omitting this setting disables it.
         numlock
+        repeat-delay 600
+        repeat-rate 50
     }
 
     // Next sections include libinput settings.
@@ -32,8 +34,7 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
-        // accel-speed 0.2
+        natural-scroll // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
@@ -73,11 +74,27 @@ cursor {
 }
 
 overview {
-    backdrop-color "#f2e5bc"
+    backdrop-color "#282828"
 }
 
 environment {
-    DISPLAY ":0"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    MOZ_ENABLE_WAYLAND "1"
+    XDG_CACHE_DIR "~/.cache/"
+    QT_IM_MODULE "fcitx5"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    QT_QPA_PLATFORM "wayland"
+    GLFW_IM_MODULE "fcitx5"
+    XMODIFIERS "@im=fcitx5"
+    AWT_TOOLKIT "MToolkit"
+    _JAVA_AWT_WM_NONREPARENTING "1"
+    _JAVA_OPTIONS "-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+    HYPRCURSOR_THEME "Bibata-Modern-Classic"
+    HYPRCURSOR_SIZE "16"
+    XCURSOR_THEME "Bibata-Modern-Classic"
+    XCURSOR_SIZE "16"
+    GDK_BACKEND "wayland"
 }
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -121,6 +138,11 @@ output "DP-1" {
     scale 1
     transform "normal"
     position x=0 y=0
+    focus-at-startup
+    // Will become available on next release
+    // hot-corners {
+    //     top-left
+    // }
 }
 
 output "HDMI-A-1" {
@@ -129,6 +151,10 @@ output "HDMI-A-1" {
     transform "normal"
     position x=1920 y=0
     variable-refresh-rate
+    // Will become available on next release
+    // hot-corners {
+    //     top-right
+    // }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -179,8 +205,8 @@ layout {
     // `draw-border-with-background`.
 
     tab-indicator {
-        active-color "#076678"
-        inactive-color "#f2e5bc"
+        active-color "#83a598"
+        inactive-color "#282828"
         urgent-color "#fb4934"
         width 8
         gaps-between-tabs 5
@@ -202,10 +228,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#98971a"
+        active-color "#b8bb26"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#f2e5bc"
+        inactive-color "#282828"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -230,8 +256,8 @@ layout {
         // off
 
         width 4
-        active-color "#98971a"
-        inactive-color "#f2e5bc"
+        active-color "#b8bb26"
+        inactive-color "#282828"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -295,9 +321,10 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww-daemon"
+// spawn-at-startup "swww-daemon"
+spawn-at-startup "swaybg"
+spawn-sh-at-startup "waypaper --restore"
+spawn-sh-at-startup "clipse -listen"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -322,7 +349,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 2.0
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -337,6 +364,11 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+}
+
+window-rule {
+    match app-id="app.zen_browser.zen"
+    open-maximized true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -357,12 +389,17 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="ghostty.clipse"
+    open-floating true
+    open-focused true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
+window-rule {
+    match app-id=r#"^com\.discordapp\.Discord$"#
+    match app-id=r#"^Bitwarden$"#
     block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.
@@ -374,6 +411,11 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
 // Indicate screencasted windows with red colors.
@@ -418,7 +460,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "combi"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -435,6 +477,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
+    // Mod+O repeat=false { spawn-sh "niri msg action toggle-overview;pkill -SIGUSR1 waybar"; }
 
     Mod+Q { close-window; }
 
@@ -602,7 +645,7 @@ binds {
     Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    // Mod+Ctrl+C { center-visible-columns; }
 
     // Finer width adjustments.
     // This command can also:
@@ -620,8 +663,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Space       { toggle-window-floating; }
+    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -662,6 +705,11 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode" { spawn "darkman" "toggle"; }
-    Mod+E hotkey-overlay-title="Open an emoji picker" { spawn "rofimoji"; }
+    Mod+Ctrl+E hotkey-overlay-title="Open an emoji picker" { spawn "rofimoji"; }
+    Mod+E hotkey-overlay-title="Open a file manager" { spawn "nautilus"; }
     Mod+Shift+W hotkey-overlay-title="Open a window picker" { spawn "rofi" "-show" "window"; }
+
+    // Clipboard, requires [Clipse](https://github.com/savedra1/clipse)
+    Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
+    Mod+Ctrl+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "clipse -clear"; }
 }

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+clipseconf=~/.config/clipse/config.json
+
+sed -i 's/gruvbox-dark/gruvbox-light/g' $clipseconf

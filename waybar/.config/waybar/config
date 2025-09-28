@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["niri/workspaces", "hyprland/workspaces", "hyprland/submap", "mpris"],
-    "modules-right": ["custom/pomo", "custom/hyprsunset", "custom/audio_idle_inhibitor", "custom/mako", "custom/darkman", "gamemode", "network", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
+    "modules-right": [ "privacy", "custom/hyprsunset", "custom/mako", "custom/darkman", "gamemode", "custom/pomo", "network", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
         "niri/language", "hyprland/language", "clock", "tray"
     ],
     "modules-center": [],
@@ -197,7 +197,7 @@
     "network": {
         "interface": "wlan0",
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": " {essid}",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
         "format-disconnected": "Disconnected",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -216,6 +216,39 @@
         "format-connected-battery": "󰂱 {device_alias} | 󰁹 {device_battery_percentage}%",
         "on-click": "ghostty --class='ghostty.bluetui' -e bluetui",
         "on-click-right": "rofi-mixer",
-    }
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 16,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 16
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 16
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 16
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "cava"
+            },
+            {
+                "type": "screenshare",
+                "name": "obs"
+            }
+        ]
+    },
 }
 vim:ft=json

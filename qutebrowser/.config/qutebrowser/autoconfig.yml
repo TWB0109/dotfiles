@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  tabs.position:
-    global: left
-  tabs.show:
-    global: always
+  colors.webpage.darkmode.enabled:
+    global: false

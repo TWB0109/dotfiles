@@ -140,12 +140,12 @@ c.url.default_page = "startpage.brandonsp.com"
 
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/search?q={}",
-    "am": "https://www.amazon.com/s?k={}",
     "aw": "https://wiki.archlinux.org/?search={}",
     "g": "https://www.google.com/search?q={}",
-    "re": "https://www.reddit.com/r/{}",
-    "ub": "https://www.urbandictionary.com/define.php?term={}",
-    "yt": "https://www.youtube.com/results?search_query={}",
+    "yt": "https://youtube.com/results?search_query={}",
+    "gh": "https://github.com/search?q={}",
+    "fh": "https://flathub.org/apps/search?q={}",
+    "bv": "https://search.brave.com/search?q={}",
 }
 
 c.url.start_pages = ["startpage.brandonsp.com"]

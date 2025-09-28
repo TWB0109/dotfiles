@@ -58,6 +58,15 @@ button:hover {
     padding: 0px 5px;
     color: @gruvboxDark-red;
     background-color: @gruvboxDark-background;
+    border-radius: 5;
+}
+
+#privacy {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxDark-red;
+    background-color: @gruvboxDark-background;
+    border-radius: 5;
 }
 
 #tray {

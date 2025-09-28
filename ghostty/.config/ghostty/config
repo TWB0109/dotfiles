@@ -1,4 +1,4 @@
-theme = "dark:GruvboxDark,light:GruvboxLight"
+theme = "dark:Gruvbox Dark,light:Gruvbox Light"
 window-decoration = "server"
 window-theme = "ghostty"
 window-padding-x = 10
