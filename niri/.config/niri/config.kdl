@@ -395,6 +395,18 @@ window-rule {
     open-focused true
 }
 
+window-rule {
+    match app-id="ghostty.impala"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="ghostty.bluetui"
+    open-floating true
+    open-focused true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
@@ -415,7 +427,13 @@ window-rule {
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    open-focused false
     default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id="steam" title="Steam"
+    open-maximized true
 }
 
 // Indicate screencasted windows with red colors.
@@ -459,7 +477,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "combi"; }
+    Mod+D hotkey-overlay-title="Run an Application launcher: Rofi" { spawn "rofi" "-show" "combi"; }
     Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -698,7 +716,6 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
@@ -712,4 +729,5 @@ binds {
     // Clipboard, requires [Clipse](https://github.com/savedra1/clipse)
     Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
     Mod+Ctrl+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "clipse -clear"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Kill picked window" { spawn-sh "~/.config/niri/nirikill.nu"; }
 }
