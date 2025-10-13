@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["niri/workspaces", "hyprland/workspaces", "hyprland/submap", "mpris"],
-    "modules-right": [ "privacy", "custom/hyprsunset", "custom/mako", "custom/darkman", "gamemode", "custom/pomo", "network", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
+    "modules-right": [ "privacy", "custom/mako", "custom/darkman", "gamemode", "network", "custom/pomo", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
         "niri/language", "hyprland/language", "clock", "tray"
     ],
     "modules-center": [],
@@ -196,10 +196,10 @@
     },
     "network": {
         "interface": "wlan0",
-        "format": "{ifname}",
-        "format-wifi": " {essid}",
+        "format": "",
+        "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "Disconnected",
+        "format-disconnected": "󰖪",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
@@ -210,10 +210,10 @@
     "bluetooth": {
         "format": " {status}",
         "format-on": "",
-        "format-off": "",
+        "format-off": "󰂲",
         "format-disabled": "",
         "format-connected": "󰂱 {num_connections} {device_alias}",
-        "format-connected-battery": "󰂱 {device_alias} | 󰁹 {device_battery_percentage}%",
+        "format-connected-battery": "󰂱 󰁹 {device_battery_percentage}%",
         "on-click": "ghostty --class='ghostty.bluetui' -e bluetui",
         "on-click-right": "rofi-mixer",
     },

@@ -187,6 +187,7 @@ config.bind(
     "xx",
     "config-cycle statusbar.show in-mode always;;config-cycle tabs.show multiple always",
 )
+config.bind("<Ctrl+l>", "edit-url")
 
 color_scheme = get_color_scheme_preference()
 

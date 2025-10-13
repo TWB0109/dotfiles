@@ -28,8 +28,8 @@
     },
     "imageDisplay": {
         "type": "kitty",
-        "scaleX": 24,
-        "scaleY": 24,
+        "scaleX": 16,
+        "scaleY": 16,
         "heightCut": 2
     }
 }

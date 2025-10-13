@@ -6,7 +6,7 @@
 @define-color gruvboxDark-purple #d3869b;
 @define-color gruvboxDark-aqua #8ec07c;
 @define-color gruvboxDark-background rgba(40, 40, 40, 1);
-@define-color gruvboxDark-background-bar rgba(40, 40, 40, 0.3);
+@define-color gruvboxDark-background-bar rgba(40, 40, 40, 0.5);
 @define-color gruvboxDark-foreground #fbf1c7;
 
 @define-color spotify-foreground #1DB954;

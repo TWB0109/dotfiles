@@ -1,1 +1,2 @@
 2025/09/28 11:58:35 logger.go:19: ERROR: could not open a new TTY: open /dev/tty: no such device or address
+2025/10/03 10:02:08 logger.go:19: ERROR: exit status 1

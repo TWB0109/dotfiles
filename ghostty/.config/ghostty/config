@@ -20,3 +20,5 @@ keybind = ctrl+shift+l=goto_split:right
 
 keybind = ctrl+shift+z=toggle_split_zoom
 keybind = ctrl+enter=unbind
+
+window-inherit-working-directory=false
