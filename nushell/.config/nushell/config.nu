@@ -39,6 +39,12 @@ def eget [ service: string ] {
   echo $"(ansi green)Your clipboard has been cleared and your vault locked.(ansi reset)"
 }
 
+# Finally we have jobs
+alias fg = job unfreeze
+def kj [] { 
+  job list | get id | each { job kill $in }
+}
+
 source ~/.zoxide.nu
 
 # Pyenv

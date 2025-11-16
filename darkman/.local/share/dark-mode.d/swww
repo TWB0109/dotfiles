@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-swww img ~/.local/share/backgrounds/mushroom.jpg --transition-type wipe --transition-angle 30 --transition-step 90
+swww img ~/.local/share/backgrounds/waterfallAtNight.gif --transition-type wipe --transition-angle 30 --transition-step 90

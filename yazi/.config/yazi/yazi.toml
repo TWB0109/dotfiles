@@ -1,0 +1,8 @@
+[[opener.set-wallpaper]]
+run = 'waypaper --wallpaper "$1"'
+for = "linux"
+desc = "Set as wallpaper"
+
+[[open.prepend_rules]]
+mime = "image/*"
+use = [ "open", "set-wallpaper"]

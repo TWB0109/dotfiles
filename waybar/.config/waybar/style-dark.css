@@ -135,6 +135,14 @@ button:hover {
     border-radius: 5;
 }
 
+#custom-power {
+    margin: 5px;
+    padding: 0px 5px;
+    color: @gruvboxDark-green;
+    background-color: @gruvboxDark-background;
+    border-radius: 5;
+}
+
 #custom-hyprsunset {
     margin: 5px;
     padding: 0px 5px;
@@ -331,4 +339,23 @@ button:hover {
     color: @gruvboxDark-aqua;
     margin: 5px;
     padding: 0px 5px;
+}
+
+popover,
+menu,
+menuitem {
+    border-radius: 12px;
+    padding: 6px;
+    background-color: @gruvboxDark-background;
+    color: @gruvboxDark-foreground;
+}
+
+menuitem:hover {
+    background-color: @gruvboxDark-green;
+    color: @gruvboxDark-background;
+}
+
+separator {
+    margin: 6px 0;
+    background-color: rgba(255, 255, 255, 0.1);
 }

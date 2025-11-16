@@ -176,7 +176,7 @@ c.fonts.statusbar = f"11pt {c.fonts.default_family}"
 # Bindings for normal mode
 config.bind("<Ctrl+e>", "cmd-set-text -s :open -p")
 config.bind("E", "cmd-set-text -s :open -t")
-config.bind("F", "hint links spawn flatpak run app.zen_browser.zen {hint-url}")
+config.bind("<Ctrl+F>", "hint links spawn xdg-open {hint-url}")
 config.bind("M", "hint links spawn mpv {hint-url} --hwdec=auto")
 config.bind("P", "hint links spawn mpv {hint-url} --no-video")
 config.bind("Z", "hint links spawn ghostty -e ytdlp {hint-url}")

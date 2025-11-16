@@ -82,6 +82,7 @@ environment {
     MOZ_ENABLE_WAYLAND "1"
     XDG_CACHE_DIR "~/.cache/"
     QT_IM_MODULE "fcitx5"
+    GTK_IM_MODULE "fcitx5"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     QT_QPA_PLATFORM "wayland"
@@ -162,7 +163,7 @@ output "HDMI-A-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 5
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -309,8 +310,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
+        left 20
+        right 20
         // top 64
         // bottom 64
     }
@@ -321,8 +322,8 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// spawn-at-startup "swww-daemon"
-spawn-at-startup "swaybg"
+spawn-at-startup "swww-daemon"
+// spawn-at-startup "swaybg"
 spawn-sh-at-startup "waypaper --restore"
 spawn-sh-at-startup "clipse -listen"
 
@@ -344,13 +345,13 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
-animations {
-    // Uncomment to turn off all animations.
-    // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 2.0
-}
+// animations {
+//     // Uncomment to turn off all animations.
+//     // off
+//
+//     // Slow down all animations by this factor. Values below 1 speed them up instead.
+//     slowdown 2.0
+// }
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -368,6 +369,21 @@ window-rule {
 
 window-rule {
     match app-id="app.zen_browser.zen"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="firefox"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="blender"
+    open-maximized true
+}
+
+window-rule {
+    match title="Blender Render"
     open-maximized true
 }
 
@@ -411,11 +427,14 @@ window-rule {
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
     match app-id=r#"^com\.discordapp\.Discord$"#
+    match app-id=r#"^discord$"#
     match app-id=r#"^Bitwarden$"#
-    block-out-from "screen-capture"
 
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
+    // Use this if you want to block the app from everything but the niri screenshot tool and color picker
+    // block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools. (Still blocks out from screen recording and casting like obs and gsr)
+    block-out-from "screencast"
 }
 
 // Example: enable rounded corners for all windows.
@@ -423,6 +442,7 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 window-rule {
@@ -658,7 +678,10 @@ binds {
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Alt+F { expand-column-to-available-width; }
+
+    // Maximize, just like in windows.
+    // Mod+Ctrl+F { maximize-window-to-edges; }
 
     Mod+C { center-column; }
 
@@ -728,6 +751,6 @@ binds {
 
     // Clipboard, requires [Clipse](https://github.com/savedra1/clipse)
     Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
-    Mod+Ctrl+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "clipse -clear"; }
+    Mod+Ctrl+V hotkey-overlay-title="Clear the clipboard" { spawn-sh "clipse -clear;wl-copy -c"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Kill picked window" { spawn-sh "~/.config/niri/nirikill.nu"; }
 }

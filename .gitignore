@@ -6,3 +6,6 @@ mpd/.mpd/mpdstate
 ncmpcpp/.ncmpcpp/lyrics
 nvim/.config/nvim/plugin/packer_compiled.lua
 ncspot/.config/ncspot/userstate.cbor
+clipse/.config/clipse/tmp_files
+clipse/.config/clipse/clipse.log
+clipse/.config/clipse/clipboard_history.json
