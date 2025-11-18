@@ -7,6 +7,7 @@
 @define-color gruvboxLight-aqua #427b58;
 @define-color gruvboxLight-background rgba(242, 229, 188, 1);
 @define-color gruvboxLight-background-bar rgba(242, 229, 188, 0.5);
+@define-color gruvboxLight-background-module rgba(249, 245, 215, 1);
 @define-color gruvboxLight-foreground #3c3836;
 
 @define-color spotify-foreground #1DB954;
@@ -20,7 +21,7 @@
 }
 
 window#waybar {
-    background-color: @gruvboxLight-background-bar;
+    background-color: @gruvboxLight-background;
     color: @gruvboxLight-foreground;
     transition-property: background-color;
     transition-duration: .5s;
@@ -39,7 +40,7 @@ button:hover {
 #workspaces button {
     padding: 0px 5px;
     color: @gruvboxLight-green;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     margin: 5px
 }
 
@@ -57,7 +58,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-red;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -65,7 +66,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-red;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -73,25 +74,24 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-foreground;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
 #tray menu {
     color: @gruvboxLight-green;
-    background-color: @gruvboxLight-background
+    background-color: @gruvboxLight-background;
 }
 
 #tray menu>*:hover {
     color: @gruvboxLight-background;
     background-color: @gruvboxLight-green;
-    border-radius: 5;
 }
 
 #language {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-blue;
     border-radius: 5;
 }
@@ -99,7 +99,7 @@ button:hover {
 #clock {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-foreground;
     border-radius: 5;
 }
@@ -107,7 +107,7 @@ button:hover {
 #wireplumber {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-aqua;
     border-radius: 5;
 }
@@ -115,7 +115,7 @@ button:hover {
 #wireplumber.muted {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-backgroundi-module;
     color: @gruvboxLight-red;
     border-radius: 5;
 }
@@ -123,7 +123,7 @@ button:hover {
 #memory {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-blue;
     border-radius: 5;
 }
@@ -131,7 +131,7 @@ button:hover {
 #cpu {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-blue;
     border-radius: 5;
 }
@@ -140,7 +140,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-green;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -148,7 +148,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-blue;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -156,7 +156,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-foreground;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -164,7 +164,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-yellow;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -172,14 +172,14 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-yellow;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
 #custom-ddcutil {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-purple;
     border-radius: 5;
 }
@@ -187,7 +187,7 @@ button:hover {
 #custom-pomo.running {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-yellow;
     border-radius: 5;
 }
@@ -195,7 +195,7 @@ button:hover {
 #custom-pomo.paused {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-red;
     border-radius: 5;
 }
@@ -203,7 +203,7 @@ button:hover {
 #custom-pomo.finished {
     margin: 5px;
     padding: 0px 5px;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     border-radius: 5;
 }
@@ -212,7 +212,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-green;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -220,7 +220,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-red;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -228,7 +228,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-aqua;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -236,7 +236,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @spotify-foreground;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -244,7 +244,7 @@ button:hover {
     margin: 5px;
     padding: 0px 5px;
     color: @gruvboxLight-red;
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     border-radius: 5;
 }
 
@@ -254,14 +254,14 @@ button:hover {
 }
 
 #keyboard-state label {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #keyboard-state label.locked {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-red;
     margin: 5px;
     padding: 0px 5px;
@@ -274,35 +274,35 @@ button:hover {
 }
 
 #network.disabled {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-red;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #network.disconnected {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-yellow;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #network.linked {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #network.ethernet {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #network.wifi {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     margin: 5px;
     padding: 0px 5px;
@@ -315,28 +315,28 @@ button:hover {
 }
 
 #bluetooth.on {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-yellow;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #bluetooth.off {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-red;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #bluetooth.connected {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-green;
     margin: 5px;
     padding: 0px 5px;
 }
 
 #bluetooth.discovering {
-    background-color: @gruvboxLight-background;
+    background-color: @gruvboxLight-background-module;
     color: @gruvboxLight-aqua;
     margin: 5px;
     padding: 0px 5px;
