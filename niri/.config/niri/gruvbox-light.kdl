@@ -1,0 +1,51 @@
+overview {
+    backdrop-color "#f2e5bc"
+}
+layout {
+    tab-indicator {
+        active-color "#076678"
+        inactive-color "#f2e5bc"
+        urgent-color "#fb4934"
+    }
+
+    focus-ring {
+        active-color "#98971a"
+
+        // Color of the ring on inactive monitors.
+        inactive-color "#f2e5bc"
+    }
+
+    border {
+        active-color "#98971a"
+        inactive-color "#f2e5bc"
+
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+
+    }
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+

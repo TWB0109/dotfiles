@@ -3,7 +3,4 @@
 niriconfig=~/.config/niri/config.kdl
 
 # Change window border colors
-sed -i 's/98971a/b8bb26/g' $niriconfig
-sed -i 's/076678/83a598/g' $niriconfig
-
-sed -i 's/f2e5bc/282828/g' $niriconfig
+sed -i 's/gruvbox-light/gruvbox-dark/g' $niriconfig

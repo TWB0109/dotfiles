@@ -6,6 +6,7 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+include "gruvbox-light.kdl"
 input {
     keyboard {
         xkb {
@@ -73,9 +74,6 @@ cursor {
     hide-after-inactive-ms 10000
 }
 
-overview {
-    backdrop-color "#282828"
-}
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
@@ -140,10 +138,9 @@ output "DP-1" {
     transform "normal"
     position x=0 y=0
     focus-at-startup
-    // Will become available on next release
-    // hot-corners {
-    //     top-left
-    // }
+    hot-corners {
+        top-left
+    }
 }
 
 output "HDMI-A-1" {
@@ -152,10 +149,9 @@ output "HDMI-A-1" {
     transform "normal"
     position x=1920 y=0
     variable-refresh-rate
-    // Will become available on next release
-    // hot-corners {
-    //     top-right
-    // }
+    hot-corners {
+        top-right
+    }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -208,9 +204,6 @@ layout {
     // `draw-border-with-background`.
 
     tab-indicator {
-        active-color "#83a598"
-        inactive-color "#282828"
-        urgent-color "#fb4934"
         width 8
         gaps-between-tabs 5
         corner-radius 10
@@ -224,32 +217,6 @@ layout {
 
         // How many logical pixels the ring extends out from the windows.
         width 4
-
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
-        active-color "#b8bb26"
-
-        // Color of the ring on inactive monitors.
-        inactive-color "#282828"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -259,14 +226,6 @@ layout {
         // off
 
         width 4
-        active-color "#b8bb26"
-        inactive-color "#282828"
-
-        // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     // You can enable drop shadows for windows.
@@ -456,30 +415,6 @@ window-rule {
 window-rule {
     match app-id="steam" title="Steam"
     open-maximized true
-}
-
-// Indicate screencasted windows with red colors.
-window-rule {
-    match is-window-cast-target=true
-
-    focus-ring {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
-
-    border {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
-
-    shadow {
-        color "#7d0d2d70"
-    }
-
-    tab-indicator {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
 }
 
 binds {
@@ -683,7 +618,7 @@ binds {
     Mod+Alt+F { expand-column-to-available-width; }
 
     // Maximize, just like in windows.
-    // Mod+Ctrl+F { maximize-window-to-edges; }
+    Mod+Ctrl+F { maximize-window-to-edges; }
 
     Mod+C { center-column; }
 
@@ -746,7 +681,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode" { spawn "darkman" "toggle"; }
+    Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode" { spawn-sh "niri msg action do-screen-transition;darkman toggle"; }
     Mod+Ctrl+E hotkey-overlay-title="Open an emoji picker" { spawn "rofimoji"; }
     Mod+E hotkey-overlay-title="Open a file manager" { spawn "nautilus"; }
     Mod+Shift+W hotkey-overlay-title="Open a window picker" { spawn "rofi" "-show" "window"; }
@@ -755,4 +690,10 @@ binds {
     Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
     Mod+Ctrl+V hotkey-overlay-title="Clear the clipboard" { spawn-sh "clipse -clear;wl-copy -c"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Kill picked window" { spawn-sh "~/.config/niri/nirikill.nu"; }
+
+    // OpenSpeedrun
+    Ctrl+F12 { spawn-sh "openspeedrun-cli start"; }
+    Ctrl+F11 { spawn-sh "openspeedrun-cli pause"; }
+    Ctrl+F10 { spawn-sh "openspeedrun-cli split"; }
+    Ctrl+F9 { spawn-sh "openspeedrun-cli undolastsplit"; }
 }
