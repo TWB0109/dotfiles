@@ -87,7 +87,7 @@
     },
     "custom/darkman": {
         "exec": "~/.config/waybar/scripts/darkman.sh",
-        "on-click": "darkman toggle;hyprctl reload",
+        "on-click": "niri msg action do-screen-transition;darkman toggle",
         "format": "{}",
         "interval": "once",
         "tooltip": false
