@@ -1,6 +1,7 @@
 overview {
     backdrop-color "#282828"
 }
+
 layout {
     tab-indicator {
         active-color "#83a598"
@@ -49,3 +50,9 @@ window-rule {
     }
 }
 
+recent-windows {
+    highlight {
+        active-color "#b8bb26ff"
+        urgent-color "#9b0000"
+    }
+}

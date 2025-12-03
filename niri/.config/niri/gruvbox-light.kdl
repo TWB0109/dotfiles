@@ -20,7 +20,7 @@ layout {
         inactive-color "#f2e5bc"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
+        urgent-color "#fb4934"
 
     }
 }
@@ -49,3 +49,9 @@ window-rule {
     }
 }
 
+recent-windows {
+    highlight {
+        active-color "#98971a"
+        urgent-color "#fb4934"
+    }
+}
