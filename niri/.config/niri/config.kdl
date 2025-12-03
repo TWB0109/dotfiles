@@ -6,7 +6,7 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
-include "gruvbox-light.kdl"
+include "gruvbox-dark.kdl"
 input {
     keyboard {
         xkb {
@@ -276,6 +276,24 @@ layout {
         right 20
         // top 64
         // bottom 64
+    }
+}
+
+recent-windows {
+    highlight {
+        corner-radius 12 
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
     }
 }
 
