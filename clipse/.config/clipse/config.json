@@ -3,7 +3,7 @@
     "historyFile": "clipboard_history.json",
     "maxHistory": 100,
     "logFile": "clipse.log",
-    "themeFile": "gruvbox-light.json",
+    "themeFile": "gruvbox-dark.json",
     "tempDir": "tmp_files",
     "keyBindings": {
         "choose": "enter",
