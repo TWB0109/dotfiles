@@ -367,6 +367,13 @@ window-rule {
     open-maximized true
 }
 
+window-rule {
+    match app-id=r#"^com\.discordapp\.Discord$"#
+    match app-id=r#"^discord$"#
+
+    open-maximized true
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
