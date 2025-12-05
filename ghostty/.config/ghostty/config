@@ -7,6 +7,7 @@ background-opacity = 0.9
 gtk-single-instance = true
 quit-after-last-window-closed = false
 quit-after-last-window-closed-delay = 1h
+shell-integration-features = ssh-terminfo,ssh-env
 
 keybind = ctrl+alt+h=resize_split:left,10
 keybind = ctrl+alt+j=resize_split:down,10
