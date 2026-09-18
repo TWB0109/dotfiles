@@ -76,14 +76,14 @@ cursor {
 
 
 environment {
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
-    MOZ_ENABLE_WAYLAND "1"
+    // ELECTRON_OZONE_PLATFORM_HINT "auto"
+    // MOZ_ENABLE_WAYLAND "1"
     XDG_CACHE_DIR "~/.cache/"
     QT_IM_MODULE "fcitx5"
     GTK_IM_MODULE "fcitx5"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
-    QT_QPA_PLATFORM "wayland"
+    // QT_QPA_PLATFORM "wayland"
     GLFW_IM_MODULE "fcitx5"
     XMODIFIERS "@im=fcitx5"
     AWT_TOOLKIT "MToolkit"
@@ -93,7 +93,7 @@ environment {
     HYPRCURSOR_SIZE "16"
     XCURSOR_THEME "Bibata-Modern-Classic"
     XCURSOR_SIZE "16"
-    GDK_BACKEND "wayland"
+    // GDK_BACKEND "wayland"
 }
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -132,7 +132,7 @@ environment {
     position x=1280 y=0
 }
 
-output "DP-1" {
+output "DP-3" {
     mode "1920x1200@60"
     scale 1
     transform "normal"
@@ -143,17 +143,17 @@ output "DP-1" {
     }
 }
 
-output "HDMI-A-1" {
-    mode "1920x1080@74.973"
-    scale 1
-    transform "normal"
-    position x=1920 y=0
-    variable-refresh-rate
-    hot-corners {
-        top-right
-    }
-}
-
+ output "HDMI-A-1" {
+     mode "1920x1080@74.973"
+     scale 1
+     transform "normal"
+     position x=1920 y=0
+     variable-refresh-rate
+     hot-corners {
+         top-right
+     }
+ }
+//
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -216,7 +216,7 @@ layout {
          off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -226,7 +226,7 @@ layout {
         // off
         on
 
-        width 4
+        width 2
     }
 
     // You can enable drop shadows for windows.
@@ -302,10 +302,14 @@ recent-windows {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "swww-daemon"
+// spawn-at-startup "swww-daemon"
+// spawn-at-startup "swww-daemon -n wallpaper"
 // spawn-at-startup "swaybg"
-spawn-sh-at-startup "waypaper --restore"
+// spawn-sh-at-startup "waypaper --restore"
+// spawn-sh-at-startup "waytrogen --restore"
+// spawn-at-startup "qs" "-c" "noctalia-shell" "--no-duplicate"
 spawn-sh-at-startup "clipse -listen"
+spawn-sh-at-startup "noctalia"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -370,6 +374,13 @@ window-rule {
 window-rule {
     match app-id=r#"^com\.discordapp\.Discord$"#
     match app-id=r#"^discord$"#
+    match app-id=r#"^vesktop$"#
+
+    open-maximized true
+}
+
+window-rule {
+    match app-id="Block Keeper"
 
     open-maximized true
 }
@@ -393,19 +404,25 @@ window-rule {
 }
 
 window-rule {
-    match app-id="ghostty.clipse"
+    match app-id="wezterm.clipse"
     open-floating true
     open-focused true
 }
 
 window-rule {
-    match app-id="ghostty.impala"
+    match app-id="wezterm.impala"
     open-floating true
     open-focused true
 }
 
 window-rule {
-    match app-id="ghostty.bluetui"
+    match app-id="wezterm.bluetui"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="qutebrowser.url"
     open-floating true
     open-focused true
 }
@@ -427,9 +444,13 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 20
     clip-to-geometry true
     draw-border-with-background false
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 window-rule {
@@ -441,6 +462,56 @@ window-rule {
 window-rule {
     match app-id="steam" title="Steam"
     open-maximized true
+}
+
+window-rule {
+    match app-id="com.heroicgameslauncher.hgl"
+    open-maximized true
+}
+
+// layer-rule {
+//     match namespace="^swww-daemonwallpaper$"
+//     place-within-backdrop true
+// }
+
+
+layer-rule {
+    match namespace="rofi"
+    background-effect {
+        blur true
+        xray false
+    }
+    shadow {
+        on
+    }
+    geometry-corner-radius 12
+}
+
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+/* Enable blur on noctalia's window switcher and disable xray. */
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }
 
 binds {
@@ -459,9 +530,11 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application launcher: Rofi" { spawn "rofi" "-show" "combi"; }
-    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    // Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+    // Mod+D hotkey-overlay-title="Run an Application launcher: Rofi" { spawn "rofi" "-show" "combi"; }
+    Mod+D hotkey-overlay-title="Run an Application launcher: Noctalia" { spawn-sh "noctalia msg panel-open launcher"; }
+    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: Noctalia" { spawn-sh "noctalia msg session lock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -538,8 +611,6 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
@@ -667,8 +738,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+Space       { toggle-window-floating; }
-    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
+    Mod+Space { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+Space       { toggle-window-floating; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -707,19 +778,41 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode" { spawn-sh "niri msg action do-screen-transition;darkman toggle"; }
-    Mod+Ctrl+E hotkey-overlay-title="Open an emoji picker" { spawn "rofimoji"; }
+    // Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode" { spawn-sh "niri msg action do-screen-transition;darkman toggle"; }
+    Mod+Shift+S hotkey-overlay-title="Toggle between light and dark mode: Noctalia" { spawn-sh "noctalia msg theme-mode-toggle"; }
+    Mod+Ctrl+E hotkey-overlay-title="Open an emoji picker: Noctalia" { spawn-sh "noctalia msg panel-open launcher /emo"; }
     Mod+E hotkey-overlay-title="Open a file manager" { spawn "nautilus"; }
-    Mod+Shift+W hotkey-overlay-title="Open a window picker" { spawn "rofi" "-show" "window"; }
+    // Mod+Shift+W hotkey-overlay-title="Open a window picker" { spawn "rofi" "-show" "window"; }
+    Mod+Shift+W hotkey-overlay-title="Open a window picker: Noctalia" { spawn-sh "noctalia msg panel-open launcher /win"; }
+    Mod+Slash hotkey-overlay-title="Open a file search" { spawn "nu" "-c" "xdg-open (fd -t f -H | rofi -dmenu -i -p 'Files')"; }
 
     // Clipboard, requires [Clipse](https://github.com/savedra1/clipse)
-    Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
+    // Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "ghostty --class='ghostty.clipse' -e clipse"; }
+    Mod+V hotkey-overlay-title="Open a clipboard manager" { spawn-sh "wezterm start --class wezterm.clipse -e clipse"; }
     Mod+Ctrl+V hotkey-overlay-title="Clear the clipboard" { spawn-sh "clipse -clear;wl-copy -c"; }
+    Mod+Alt+V hotkey-overlay-title="Pause the clipboard for 1 minute" { spawn-sh "clipse -pause 1m"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Kill picked window" { spawn-sh "~/.config/niri/nirikill.nu"; }
-
-    // OpenSpeedrun
+// OpenSpeedrun
     Ctrl+F12 { spawn-sh "openspeedrun-cli start"; }
     Ctrl+F11 { spawn-sh "openspeedrun-cli pause"; }
     Ctrl+F10 { spawn-sh "openspeedrun-cli split"; }
     Ctrl+F9 { spawn-sh "openspeedrun-cli undolastsplit"; }
+
+    // Noctalia binds
+    Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Page_Up { spawn-sh "noctalia msg settings-toggle"; }
+
+    // Password Manager
+    // Ctrl+Alt+K { spawn "rofi-rbw"; }
+    Ctrl+Alt+K { spawn "keepmenu"; }
 }
+
+blur {
+    passes 3
+    offset 3
+    // noise 0.02
+    noise 0.10
+    saturation 1.5
+}
+
+include "noctalia.kdl"

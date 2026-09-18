@@ -24,6 +24,10 @@ layout {
         urgent-color "#9b0000"
 
     }
+
+    insert-hint {
+        color "#b8bb2680"
+    }
 }
 
 // Indicate screencasted windows with red colors.

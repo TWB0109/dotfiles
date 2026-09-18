@@ -1,0 +1,393 @@
+
+[colors.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.dim]
+black = "#32302f"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#928374"
+yellow = "#b57614"
+
+[[colors.indexed_colors]]
+color = "#458588"
+index = 66
+
+[[colors.indexed_colors]]
+color = "#689d6a"
+index = 72
+
+[[colors.indexed_colors]]
+color = "#98971a"
+index = 106
+
+[[colors.indexed_colors]]
+color = "#8ec07c"
+index = 108
+
+[[colors.indexed_colors]]
+color = "#83a598"
+index = 109
+
+[[colors.indexed_colors]]
+color = "#cc241d"
+index = 124
+
+[[colors.indexed_colors]]
+color = "#b16286"
+index = 132
+
+[[colors.indexed_colors]]
+color = "#b8bb26"
+index = 142
+
+[[colors.indexed_colors]]
+color = "#d65d0e"
+index = 166
+
+[[colors.indexed_colors]]
+color = "#fb4934"
+index = 167
+
+[[colors.indexed_colors]]
+color = "#d79921"
+index = 172
+
+[[colors.indexed_colors]]
+color = "#d3869b"
+index = 175
+
+[[colors.indexed_colors]]
+color = "#fe8019"
+index = 208
+
+[[colors.indexed_colors]]
+color = "#fabd2f"
+index = 214
+
+[[colors.indexed_colors]]
+color = "#ebdbb2"
+index = 223
+
+[[colors.indexed_colors]]
+color = "#fbf1c7"
+index = 229
+
+[[colors.indexed_colors]]
+color = "#1d2021"
+index = 234
+
+[[colors.indexed_colors]]
+color = "#282828"
+index = 235
+
+[[colors.indexed_colors]]
+color = "#32302f"
+index = 236
+
+[[colors.indexed_colors]]
+color = "#3c3836"
+index = 237
+
+[[colors.indexed_colors]]
+color = "#504945"
+index = 239
+
+[[colors.indexed_colors]]
+color = "#665c54"
+index = 241
+
+[[colors.indexed_colors]]
+color = "#7c6f64"
+index = 243
+
+[[colors.indexed_colors]]
+color = "#928374"
+index = 245
+
+[[colors.indexed_colors]]
+color = "#a89984"
+index = 246
+
+[[colors.indexed_colors]]
+color = "#bdae93"
+index = 248
+
+[[colors.indexed_colors]]
+color = "#d5c4a1"
+index = 250
+
+[colors.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[colors.primary]
+background = "#282828"
+bright_foreground = "#fbf1c7"
+dim_foreground = "#a89984"
+foreground = "#ebdbb2"
+
+[colors.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10
+use_thin_strokes = true
+
+[font.bold]
+family = "Sauce Code Pro Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Sauce Code Pro Nerd Font Mono"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[mouse.double_click]
+threshold = 300
+
+[mouse.hints.launcher]
+program = "xdg-open"
+
+[mouse.triple_click]
+threshold = 300
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[schemes.gruvbox_dark.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[schemes.gruvbox_dark.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[schemes.gruvbox_dark.dim]
+black = "#32302f"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#928374"
+yellow = "#b57614"
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#458588"
+index = 66
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#689d6a"
+index = 72
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#98971a"
+index = 106
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#8ec07c"
+index = 108
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#83a598"
+index = 109
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#cc241d"
+index = 124
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#b16286"
+index = 132
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#b8bb26"
+index = 142
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#d65d0e"
+index = 166
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#fb4934"
+index = 167
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#d79921"
+index = 172
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#d3869b"
+index = 175
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#fe8019"
+index = 208
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#fabd2f"
+index = 214
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#ebdbb2"
+index = 223
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#fbf1c7"
+index = 229
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#1d2021"
+index = 234
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#282828"
+index = 235
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#32302f"
+index = 236
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#3c3836"
+index = 237
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#504945"
+index = 239
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#665c54"
+index = 241
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#7c6f64"
+index = 243
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#928374"
+index = 245
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#a89984"
+index = 246
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#bdae93"
+index = 248
+
+[[schemes.gruvbox_dark.indexed_colors]]
+color = "#d5c4a1"
+index = 250
+
+[schemes.gruvbox_dark.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[schemes.gruvbox_dark.primary]
+background = "#282828"
+bright_foreground = "#fbf1c7"
+dim_foreground = "#a89984"
+foreground = "#ebdbb2"
+
+[schemes.gruvbox_dark.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[schemes.gruvbox_dark.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[schemes.gruvbox_light.bright]
+black = "#928374"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#3c3836"
+yellow = "#b57614"
+
+[schemes.gruvbox_light.normal]
+black = "#fbf1c7"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#7c6f64"
+yellow = "#d79921"
+
+[schemes.gruvbox_light.primary]
+background = "#f2e5bc"
+foreground = "#3c3836"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "None"
+dynamic_padding = false
+opacity = 1.0
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 100
+lines = 39
+
+[window.padding]
+x = 10
+y = 10
+
+[general]
+live_config_reload = true

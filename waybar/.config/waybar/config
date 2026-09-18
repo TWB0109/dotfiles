@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["custom/power", "niri/workspaces", "hyprland/workspaces", "hyprland/submap", "mpris"],
+    "modules-left": ["custom/power", "niri/workspaces", "mpris"],
     "modules-right": [ "privacy", "custom/mako", "custom/darkman", "gamemode", "network", "custom/pomo", "bluetooth", "custom/ddcutil", "wireplumber#source", "wireplumber#sink",
-        "niri/language", "hyprland/language", "clock", "tray"
+        "niri/language", "clock", "tray"
     ],
     "modules-center": [],
     "height": 30,
@@ -16,7 +16,7 @@
         "format":        "{player_icon} {status_icon} <b>{title} | {artist}</b>",
         "format-paused": "{player_icon} {status_icon} {title} | {artist}",
         "player-icons": {
-            "default": "🎵",
+            "default": "",
             "spotify": "",
             "cider": "",
         },

@@ -1,8 +1,26 @@
 [[opener.set-wallpaper]]
-run = 'waypaper --wallpaper "$1"'
+run = 'swww img "$1"'
+ # run = 'swww img "$1"; magick "$1" -gaussian-blur 0x5 png:- | swww img -n wallpaper -'
 for = "linux"
 desc = "Set as wallpaper"
+
+[[opener.execute]]
+run = '"$1"'
+for = "linux"
+desc = "Run executable"
+
+[[opener.gear-lever]]
+run = 'flatpak run it.mijorus.gearlever "$1"'
+for = "linux"
+desc = 'Open AppImage with Gear Lever'
 
 [[open.prepend_rules]]
 mime = "image/*"
 use = [ "open", "set-wallpaper"]
+
+[[open.prepend_rules]]
+url = "*.appimage"
+use = ["execute", "gear-lever"]
+
+[mgr]
+linemode = "mtime"

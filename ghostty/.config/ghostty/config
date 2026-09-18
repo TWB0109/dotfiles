@@ -1,9 +1,9 @@
-theme = "dark:Gruvbox Dark,light:Gruvbox Light"
 window-decoration = "server"
 window-theme = "ghostty"
 window-padding-x = 10
 window-padding-y = 10
-background-opacity = 0.9
+background-opacity = 0.8
+background-blur = false
 gtk-single-instance = true
 quit-after-last-window-closed = false
 quit-after-last-window-closed-delay = 1h
@@ -20,6 +20,7 @@ keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
 
 keybind = ctrl+shift+z=toggle_split_zoom
-keybind = ctrl+enter=unbind
+# keybind = ctrl+enter=unbind
 
 window-inherit-working-directory=false
+theme = noctalia

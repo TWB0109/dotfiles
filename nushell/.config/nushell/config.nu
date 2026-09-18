@@ -9,40 +9,58 @@ $env.config = {
   show_banner: false,
 }
 
-def vim [ file: string = "." ] {
-  if $file == "." { nvim . } else { nvim $file }
+# Generate a Bitwarden entry using rbw
+def "rbw-gen" [
+    --uri: string    # The URL for the entry (e.g., google.com)
+    --length: int = 20 # Password length (defaults to 20)
+    entry_name?: string # The name of the entry
+    email?: string      # The email/username for the entry
+] {
+    # Interactive prompts if positional arguments are missing
+    let name = if ($entry_name | is-empty) { 
+        input "Entry Name (e.g., 'google'): " 
+    } else { 
+        $entry_name 
+    }
+
+    let user_email = if ($email | is-empty) { 
+        input "Email/Username: " 
+    } else { 
+        $email 
+    }
+
+    let target_uri = if ($uri | is-empty) { 
+        input "URI (e.g., 'google.com'): " 
+    } else { 
+        $uri 
+    }
+
+    # Execute the rbw command
+    rbw gen --uri $target_uri $length $name $user_email
 }
 
-def pget [ service: string ] {
-  let session = (bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-  bw get password $service --session $session | wl-copy
-  echo $"(ansi green)The password was coppied to your clipboard.(ansi reset) (ansi red)The clipboard will be cleared din 10 seconds(ansi reset)"
-  sleep 10sec
-  wl-copy -c
-  bw lock --quiet
-  echo $"(ansi green)Your clipboard has been cleared and your vault locked.(ansi reset)"
+def --env y [...args] {
+  let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+  ^yazi ...$args --cwd-file $tmp
+  let cwd = (open $tmp)
+  if $cwd != $env.PWD and ($cwd | path exists) {
+    cd $cwd
+  }
+  rm -fp $tmp
 }
 
-def ppipe [ service: string ] {
-  let session = (bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-  bw get password $service --session $session
-  bw lock --quiet
-}
-
-def eget [ service: string ] {
-  let session = (bw unlock | tail -n 1 | sed 's/$//g' | awk '{print $6}')
-  bw get username $service --session $session | wl-copy
-  echo $"(ansi green)The username was coppied to your clipboard.(ansi reset) (ansi red)The clipboard will be cleared din 10 seconds(ansi reset)"
-  sleep 10sec
-  wl-copy -c
-  bw lock --quiet
-  echo $"(ansi green)Your clipboard has been cleared and your vault locked.(ansi reset)"
-}
+alias journal = nvim +"Neorg journal today"
 
 # Finally we have jobs
 alias fg = job unfreeze
 def kj [] { 
   job list | get id | each { job kill $in }
+}
+
+def --wrapped nix-portable [...args] {
+    with-env { NP_RUNTIME: "bwrap" } {
+        ^nix-portable ...$args
+    }
 }
 
 source ~/.zoxide.nu
@@ -52,3 +70,5 @@ $env.PYENV_ROOT = "~/.pyenv" | path expand
 if (( $"($env.PYENV_ROOT)/bin" | path type ) == "dir") {
   $env.PATH = $env.PATH | prepend $"($env.PYENV_ROOT)/bin" }
 $env.PATH = $env.PATH | prepend $"(pyenv root)/shims"
+
+alias vim = nvim
