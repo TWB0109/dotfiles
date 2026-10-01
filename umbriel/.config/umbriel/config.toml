@@ -21,10 +21,10 @@
 # ────────────────────────────────────────────────────────────────────────────
 
 [include]
-files = ["noctalia.toml"]                                      # Example: ["appearance.toml", "outputs.toml", "noctalia.toml"]
+files = []                                      # Example: ["appearance.toml", "outputs.toml"]
 
 [include.optional]
-files = [ ]                                      # Example: ["~/.config/umbriel/noctalia.toml"]
+files = ["noctalia.toml"]                                      # Example: ["~/.config/umbriel/noctalia.toml"]
 
 # ─────────────────────────────── General ────────────────────────────────────
 # Configure startup commands, session behavior, environment variables, and
@@ -33,7 +33,7 @@ files = [ ]                                      # Example: ["~/.config/umbriel/
 # ────────────────────────────────────────────────────────────────────────────
 
 [general]
-autostart = [ "noctalia", "netbird-ui" ]                                  # Commands run once when the session starts
+autostart = [ "noctalia", "netbird-ui", "keepassxc" ]                                  # Commands run once when the session starts
 # mod_key = "Super"                             # Force Super instead of nested-session Alt
 xwayland = true                                 # Requires xwayland-satellite; restart to change
 show_cheatsheet = true                          # Show the keybind overlay on startup
@@ -248,7 +248,8 @@ enabled = true                                  # False disables tablet tools an
 # calibration_matrix = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]
 
 [input.cursor]
-theme = "Bibata-Modern-Classic"                                      # Empty uses environment or default Xcursor theme
+# theme = "Bibata-Modern-Amber"                                      # Empty uses environment or default Xcursor theme
+theme = "miku-cursor"                                      # Empty uses environment or default Xcursor theme
 size = 16                                       # Logical size, 1-512
 hardware_cursor = true                          # False forces cursor composition
 follows_focus = true                           # Warp to windows selected by focus, output, move, or other activations
@@ -288,6 +289,12 @@ follows_mouse = false                           # Focus the pointer target after
 # scroll_button = "MouseBack"
 # scroll_button_lock = false
 
+# ─────────────────────────────── Scratchpads ───────────────────────────────────
+[[scratchpad]]
+name = "pw"
+
+[[scratchpad]]
+name = "def"
 # ─────────────────────────────── Keybinds ───────────────────────────────────
 # Bind chords to compositor actions. Configured chords replace matching
 # built-ins; built-in chords not mentioned here remain active.
@@ -307,8 +314,9 @@ follows_mouse = false                           # Focus the pointer target after
 "Mod+Ctrl+V" = "spawn:noctalia msg clipboard-clear"
 "Mod+D" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+Ctrl+E" = "spawn:noctalia msg panel-toggle launcher /emo"
+"Mod+Ctrl+W" = "spawn:noctalia msg panel-toggle launcher /win"
 # "Ctrl+Alt+K" = "spawn:~/.local/bin/keepmenu"
-"Ctrl+Alt+K" = "spawn:~/.config/umbriel/focus-keepass.nu"
+# "Ctrl+Alt+K" = "spawn:~/.config/umbriel/focus-keepass.nu"
 
 
 "Mod+Q" = "window-close"
@@ -357,8 +365,8 @@ follows_mouse = false                           # Focus the pointer target after
 "Mod+Shift+F" = "window-toggle-fullscreen"
 "Mod+F" = "window-toggle-maximize"
 "Mod+Ctrl+F" = "window-toggle-maximize-to-edges"
-"Mod+R" = "window-cycle-width"
-"Mod+Shift+R" = "window-cycle-width-back"
+"Mod+R" = "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-primary-extent"
 "Mod+Comma" = "window-consume-left"
 # "Mod+Period" = "window-consume-right"
 "Mod+Period" = "window-consume-or-expel-right"
@@ -375,10 +383,12 @@ follows_mouse = false                           # Focus the pointer target after
 # Each output owns a separate scratchpad. Bare actions target the output under
 # the pointer; append `:DP-1` or a monitor Config name to target one explicitly.
 # Documentation: https://docs.noctalia.dev/umbriel/scratchpads/
-"Mod+Shift+Space" = "window-move-to-scratchpad"
-"Mod+Space" = "scratchpad-toggle"
-"Mod+Ctrl+Space" = "window-restore-from-scratchpad"
-"Mod+Semicolon" = "scratchpad-focus-next"
+"Mod+Shift+Space" = "window-move-to-scratchpad:def"
+"Mod+Space" = "scratchpad-toggle:def"
+"Mod+Ctrl+Space" = "window-restore-from-scratchpad:def"
+"Mod+Semicolon" = "scratchpad-focus-next:def"
+
+"Ctrl+Alt+K" = "scratchpad-toggle:pw"
 
 # Optional navigation and sizing recipes. These chords do not replace active
 # bindings above when uncommented.
@@ -394,12 +404,12 @@ follows_mouse = false                           # Focus the pointer target after
 # "Mod+Bracketleft" = "window-focus-previous"
 # "Mod+Shift+Bracketright" = "window-swap-next"
 # "Mod+Shift+Bracketleft" = "window-swap-previous"
-"Mod+Minus" = "window-modify-width:-0.1"
-"Mod+Equal" = "window-modify-width:0.1"
-"Mod+Alt+Minus" = "window-modify-height:-0.1"
-"Mod+Alt+Equal" = "window-modify-height:0.1"
-"Mod+Alt+R" = "window-cycle-height"
-"Mod+Alt+Shift+R" = "window-cycle-height-back"
+"Mod+Minus" = "window-modify-primary-extent:-0.1"
+"Mod+Equal" = "window-modify-primary-extent:0.1"
+"Mod+Alt+Minus" = "window-modify-secondary-extent:-0.1"
+"Mod+Alt+Equal" = "window-modify-secondary-extent:0.1"
+"Mod+Alt+R" = "window-cycle-secondary-extent"
+"Mod+Alt+Shift+R" = "window-cycle-secondary-extent-back"
 "Mod+Tab" = "window-focus-last"
 "Mod+BackSpace" = "window-consume-or-expel-left"
 "Mod+C" = "column-center"
@@ -467,7 +477,7 @@ follows_mouse = false                           # Focus the pointer target after
 [layout]
 mode = "scrolling"                              # scrolling, dwindle, or master
 gap = 5                                         # Logical pixels between tiles, 0-500
-width_presets = [0.333, 0.5, 0.667]             # Width and height cycling fractions
+extent_presets = [0.333, 0.5, 0.667]             # extent and height cycling fractions
 
 [layout.struts]
 # Signed logical pixels reserved after panel exclusive zones. Negative values
@@ -479,10 +489,9 @@ bottom = 0
 
 [layout.scrolling]
 # direction = "horizontal"                      # horizontal or vertical strip axis
-default_width_fraction = 0.5                    # Initial width for new columns, 0.1-1.0
+default_extent_fraction = 0.5                    # Initial width for new columns, 0.1-1.0
 center_underfull_strip = true                   # Center a strip narrower than the viewport
-center_focused = false                          # Always center the focused column
-expand_single_column = true                     # Let a lone column fill the viewport
+center_focused = "never"                          # Always center the focused column
 
 [layout.dwindle]
 # preserve_split = false                        # Keep every split direction fixed after creation
@@ -508,13 +517,13 @@ blur_optimized = false
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_size = [1020, 900]
+default_floating_size_px = { width = 1020, height = 900 }
 
 # Noctalia share picker
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
-default_size = [800, 600]
+default_floating_size_px = { width = 800, height = 600 }
 
 # Browsers expose no semantic PiP role or global position control.
 [[window_rule]]
@@ -620,6 +629,18 @@ default_focused = true
 [[window_rule]]
 match.app_id = "^firefox$"
 default_maximize = true
+
+[[window_rule]]
+match.is_alone = true
+default_maximize = true
+
+[[window_rule]]
+match.app_id = "^org.keepassxc.KeePassXC$"
+default_floating = true
+default_floating_size = { width = 0.60, height = 0.80 }
+default_scratchpad = "pw"
+default_position =  { x = 0, y = 0, anchor = "center" }
+
 # ────────────────────────────── Layer Rules ─────────────────────────────────
 # Match layer-shell surfaces such as panels, launchers, notifications, and
 # desktop widgets by namespace. Run `umbriel layers` to inspect live names.
@@ -655,7 +676,6 @@ duration_ms = 300
 curve = "easeout"
 style = "popin"                                 # popin, zoom, slide, fade, or none
 scale = 0.85                                    # Popin start scale, 0.1-1.0
-shader = "shaders/squash.glsl"                  # Replaces the built-in opening style
 
 # Window closing
 [animation.windows_out]
@@ -663,14 +683,12 @@ enabled = true
 duration_ms = 150
 curve = "easeout"
 style = "slide"                                  # fade or slide
-shader = "shaders/reveal.glsl"
 
 # Window movement, resizing, and floating maximize
 [animation.windows_move]
 enabled = true
 duration_ms = 250
 curve = "snappy"
-shader = "shaders/squash.glsl"      # Subtle compression and settle during move/resize
 
 # Workspace switching
 [animation.workspaces]
@@ -694,7 +712,6 @@ blur = true                                    # Requires appearance.blur.enable
 scale = 0.0                                     # 0 keeps geometry; 0.1-1.0 centers and scales
 maximize = false                                # Maximize to usable-area edges while shown
 fullscreen = false                              # Make the scratchpad window fullscreen while shown
-shader = "shaders/reveal.glsl"
 
 # Focus border color
 [animation.border]

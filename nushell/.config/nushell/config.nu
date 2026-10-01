@@ -50,6 +50,7 @@ def --env y [...args] {
 }
 
 alias journal = nvim +"Neorg journal today"
+alias sudo = run0
 
 # Finally we have jobs
 alias fg = job unfreeze
